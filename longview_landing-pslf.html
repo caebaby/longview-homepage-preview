@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PSLF & Student Loan Strategy Review — LongView Planning Partners</title>
+<meta name="description" content="SAVE is in limbo. PSLF rules keep shifting. Get a complimentary 30-minute loan strategy review from a CSLP® certified advisor. No pitch. No agenda.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & ROOT ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --lv-navy:#0773BB;--lv-dark:#054A82;--lv-deeper:#032F57;
+  --lv-sky:#38B0E3;--lv-light:#8CD7F7;--lv-gray:#939598;
+  --lv-gl:#D1D2D4;--lv-off:#F4F8FC;
+  --ink:#0F1923;--body:#3D4A58;
+  --max:1240px;
+  --grad:linear-gradient(95deg,var(--lv-navy) 0%,var(--lv-sky) 100%);
+  --trans:.22s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--ink);background:#fff;min-width:320px;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 52px}
+
+/* ── PULSE ── */
+@keyframes ctaPulse{
+  0%{box-shadow:0 0 0 0 rgba(7,115,187,.4)}
+  70%{box-shadow:0 0 0 12px rgba(7,115,187,.0)}
+  100%{box-shadow:0 0 0 0 rgba(7,115,187,.0)}
+}
+@keyframes ctaPulseWhite{
+  0%{box-shadow:0 0 0 0 rgba(255,255,255,.35)}
+  70%{box-shadow:0 0 0 12px rgba(255,255,255,.0)}
+  100%{box-shadow:0 0 0 0 rgba(255,255,255,.0)}
+}
+@keyframes playPulse{
+  0%{box-shadow:0 0 0 0 rgba(255,255,255,.35)}
+  60%{box-shadow:0 0 0 18px rgba(255,255,255,.0)}
+  100%{box-shadow:0 0 0 0 rgba(255,255,255,.0)}
+}
+@keyframes formPulse{
+  0%{box-shadow:0 0 0 0 rgba(7,115,187,.4)}
+  70%{box-shadow:0 0 0 12px rgba(7,115,187,.0)}
+  100%{box-shadow:0 0 0 0 rgba(7,115,187,.0)}
+}
+
+/* ── REVEAL ANIMATIONS ── */
+.reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:0;transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
+.reveal{transform:translateY(28px)}
+.reveal-left{transform:translateX(-32px)}
+.reveal-right{transform:translateX(32px)}
+.reveal-scale{transform:scale(.93)}
+.revealed{opacity:1!important;transform:none!important}
+.reveal-children>*{opacity:0;transform:translateY(22px);transition:opacity .55s cubic-bezier(.4,0,.2,1),transform .55s cubic-bezier(.4,0,.2,1)}
+.reveal-children.revealed>*{opacity:1;transform:none}
+
+/* ── MINIMAL NAV ── */
+.nav-out{background:#fff;border-bottom:1px solid var(--lv-gl);position:sticky;top:0;z-index:200;transition:box-shadow .3s}
+.nav-out.scrolled{box-shadow:0 4px 28px rgba(5,74,130,.08)}
+.nav-out .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;flex-direction:column;flex-shrink:0;cursor:pointer}
+.logo-name{font-family:'Libre Baskerville',serif;font-size:22px;font-weight:700;color:var(--lv-navy);letter-spacing:-.02em;line-height:1}
+.logo-sub{font-size:9.5px;font-family:'DM Sans',sans-serif;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--lv-gray);margin-top:4px}
+.nav-phone{font-size:13px;font-weight:500;color:var(--body);opacity:.75;display:flex;align-items:center;gap:7px}
+.nav-phone a{color:inherit}
+.nav-phone svg{opacity:.55}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(130deg,#021E3A 0%,var(--lv-deeper) 40%,#0773BB 80%,#1B90CC 100%);position:relative;overflow:hidden;padding:80px 0 88px;text-align:center}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 1px);background-size:28px 28px}
+.hero::after{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(-45deg,transparent,transparent 18px,rgba(255,255,255,.016) 18px,rgba(255,255,255,.016) 19px)}
+.glow{position:absolute;border-radius:50%;pointer-events:none;z-index:1;filter:blur(100px)}
+.g1{width:560px;height:560px;background:rgba(56,176,227,.18);right:2%;top:-20%}
+.g2{width:360px;height:360px;background:rgba(7,115,187,.28);right:-6%;bottom:-12%}
+.g3{width:280px;height:280px;background:rgba(140,215,247,.09);left:36%;top:20%}
+.hero-in{position:relative;z-index:2}
+
+.eyebrow-pill{display:inline-flex;align-items:center;gap:8px;font-size:10.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--lv-light);background:rgba(140,215,247,.1);border:1px solid rgba(140,215,247,.3);padding:6px 18px;border-radius:20px;margin-bottom:28px;backdrop-filter:blur(8px)}
+.eyebrow-pill .dot{width:5px;height:5px;border-radius:50%;background:var(--lv-sky);flex-shrink:0}
+
+.hero-h1{font-family:'Libre Baskerville',serif;font-size:52px;font-weight:700;line-height:1.1;letter-spacing:-.03em;margin-bottom:24px;max-width:780px;margin-left:auto;margin-right:auto}
+.hero-h1 .l1{color:#fff;display:block}
+.hero-h1 .l2{display:block;background:linear-gradient(105deg,#ffffff 0%,#c2e8f8 20%,#8CD7F7 42%,#4ab8e8 65%,#1a96d4 82%,#0e80c0 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+.hero-sub{font-size:17px;color:rgba(255,255,255,.72);line-height:1.78;font-weight:300;margin-bottom:44px;max-width:620px;margin-left:auto;margin-right:auto}
+
+.hero-cta-wrap{text-align:center;margin-bottom:14px}
+.btn-hero{display:inline-flex;align-items:center;gap:10px;font-size:17px;font-weight:700;padding:18px 38px;background:#fff;color:var(--lv-dark);border-radius:6px;cursor:pointer;letter-spacing:.01em;transition:transform var(--trans),box-shadow var(--trans);max-width:420px;width:100%;justify-content:center;box-shadow:0 8px 32px rgba(0,0,0,.22);animation:ctaPulseWhite 2.6s ease-out infinite}
+.btn-hero:hover{transform:translateY(-2px);box-shadow:0 16px 48px rgba(0,0,0,.3);animation:none}
+.hero-trust{font-size:13px;color:rgba(255,255,255,.42);text-align:center;margin-top:14px;letter-spacing:.01em}
+
+/* ── WHAT WE'LL COVER ── */
+.cover-sec{background:var(--lv-off);border-top:1px solid var(--lv-gl);border-bottom:1px solid var(--lv-gl);padding:80px 0}
+.sec-eyebrow{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--lv-navy);display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.sec-eyebrow::after{content:'';flex:0 0 28px;height:1.5px;background:var(--lv-sky)}
+.sec-hl{font-family:'Libre Baskerville',serif;font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-.02em;color:var(--ink);display:inline-block;padding-bottom:10px;border-bottom:2.5px solid var(--lv-sky)}
+.cover-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:52px}
+.cover-item{display:flex;flex-direction:column;gap:16px}
+.cover-icon{width:52px;height:52px;border-radius:12px;background:rgba(7,115,187,.08);border:1px solid rgba(7,115,187,.16);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cover-title{font-family:'Libre Baskerville',serif;font-size:18px;font-weight:700;color:var(--ink);line-height:1.3;border-bottom:2px solid var(--lv-sky);padding-bottom:8px;display:inline-block}
+.cover-body{font-size:14.5px;color:var(--body);line-height:1.78;font-weight:300}
+
+/* ── VIDEO SECTION ── */
+.vid-sec{background:linear-gradient(135deg,var(--lv-deeper) 0%,var(--lv-dark) 100%);padding:88px 0;position:relative;overflow:hidden}
+.vid-sec::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.05) 1px,transparent 1px);background-size:26px 26px;pointer-events:none}
+.vid-sec-in{position:relative;z-index:2;text-align:center}
+.vid-hl{font-family:'Libre Baskerville',serif;font-size:32px;font-weight:700;color:#fff;line-height:1.25;letter-spacing:-.02em;margin-bottom:12px;max-width:640px;margin-left:auto;margin-right:auto}
+.vid-sub{font-size:15.5px;color:rgba(255,255,255,.55);line-height:1.75;font-weight:300;margin-bottom:40px;max-width:520px;margin-left:auto;margin-right:auto}
+.vid-wrap{max-width:780px;margin:0 auto}
+.vid-aspect{position:relative;width:100%;aspect-ratio:16/9;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);border-radius:12px;overflow:hidden;cursor:pointer;transition:border-color var(--trans)}
+.vid-aspect:hover{border-color:rgba(56,176,227,.45)}
+.vid-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:linear-gradient(135deg,rgba(2,30,58,.92) 0%,rgba(5,74,130,.8) 100%)}
+.play-btn{width:80px;height:80px;border-radius:50%;background:rgba(56,176,227,.2);border:2px solid rgba(56,176,227,.5);display:flex;align-items:center;justify-content:center;transition:background var(--trans),transform var(--trans);animation:playPulse 2.8s ease-in-out infinite}
+.vid-aspect:hover .play-btn{background:rgba(56,176,227,.38);transform:scale(1.07);animation:none}
+.vid-placeholder-label{font-size:12px;color:rgba(255,255,255,.45);letter-spacing:.07em;text-transform:uppercase}
+.vid-expand{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.4,0,.2,1)}
+.vid-expand.open{grid-template-rows:1fr}
+.vid-expand-inner{overflow:hidden;aspect-ratio:16/9}
+/* SWAP: embed video URL here */
+
+/* ── WHO THIS IS FOR ── */
+.qualify-sec{background:#fff;padding:88px 0}
+.qualify-cols{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:52px}
+.qualify-col{border:1px solid var(--lv-gl);border-radius:12px;border-top:3px solid var(--lv-sky);padding:36px;box-shadow:0 2px 14px rgba(5,74,130,.05)}
+.qualify-col.no{border-top-color:var(--lv-gray)}
+.qualify-col-title{font-family:'Libre Baskerville',serif;font-size:18px;font-weight:700;color:var(--ink);margin-bottom:24px;display:flex;align-items:center;gap:10px}
+.qualify-list{display:flex;flex-direction:column;gap:14px}
+.qualify-item{display:flex;align-items:flex-start;gap:12px;font-size:14.5px;color:var(--body);line-height:1.65;font-weight:300}
+.qualify-icon{flex-shrink:0;margin-top:2px;font-size:16px;line-height:1}
+
+/* ── CREDIBILITY STRIP ── */
+.cred-strip{background:var(--lv-deeper);padding:64px 0}
+.cred-strip-in{position:relative;z-index:2}
+.cred-stats-row{display:flex;justify-content:center;gap:0;flex-wrap:wrap;margin-bottom:40px}
+.cred-stat-item{text-align:center;padding:0 48px;position:relative}
+.cred-stat-item::after{content:'';position:absolute;right:0;top:15%;bottom:15%;width:1px;background:rgba(255,255,255,.12)}
+.cred-stat-item:last-child::after{display:none}
+.cred-stat-n{font-family:'Libre Baskerville',serif;font-size:42px;font-weight:700;color:#fff;line-height:1;display:block}
+.cred-stat-l{font-size:12.5px;color:rgba(255,255,255,.42);margin-top:8px;line-height:1.5}
+.cred-line{max-width:620px;margin:0 auto;text-align:center;font-size:15.5px;color:rgba(255,255,255,.65);line-height:1.78;font-weight:300;font-style:italic}
+
+/* ── LEAD CAPTURE FORM ── */
+.form-sec{background:var(--lv-off);padding:96px 0}
+.form-card{background:#fff;border-radius:16px;padding:52px;max-width:640px;margin:0 auto;box-shadow:0 8px 48px rgba(5,74,130,.1);border:1px solid var(--lv-gl)}
+.form-hl{font-family:'Libre Baskerville',serif;font-size:28px;font-weight:700;color:var(--ink);line-height:1.25;letter-spacing:-.02em;margin-bottom:10px;text-align:center}
+.form-sub{font-size:15px;color:var(--body);line-height:1.75;font-weight:300;text-align:center;margin-bottom:36px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group.full{grid-column:1/-1}
+.form-label{font-size:12px;font-weight:600;color:var(--ink);letter-spacing:.04em}
+.form-label .opt{font-weight:400;color:var(--lv-gray);font-size:11px}
+.form-input,.form-select{width:100%;padding:13px 16px;border:1.5px solid var(--lv-gl);border-radius:6px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--ink);outline:none;transition:border-color .15s;background:#fff;-webkit-appearance:none;min-height:48px}
+.form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23939598' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px;cursor:pointer}
+.form-input:focus,.form-select:focus{border-color:var(--lv-navy)}
+.form-submit{width:100%;padding:17px;background:linear-gradient(95deg,var(--lv-navy),var(--lv-sky));color:#fff;border:none;border-radius:6px;font-size:15px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;margin-top:12px;transition:opacity .2s,transform .2s;animation:formPulse 2.8s ease-in-out infinite;min-height:54px}
+.form-submit:hover{opacity:.9;transform:translateY(-1px);animation:none}
+.form-note{text-align:center;font-size:12.5px;color:var(--lv-gray);margin-top:14px;line-height:1.7}
+.form-trust{text-align:center;font-size:11.5px;color:var(--lv-gray);margin-top:8px;letter-spacing:.01em}
+.form-divider{border:none;border-top:1px solid var(--lv-gl);margin:20px 0}
+
+/* Form success state */
+.form-success{display:none;text-align:center;padding:48px 24px}
+.form-success.visible{display:block}
+.success-icon{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--lv-navy),var(--lv-sky));display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.success-title{font-family:'Libre Baskerville',serif;font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px}
+.success-body{font-size:15px;color:var(--body);line-height:1.75;font-weight:300;max-width:400px;margin:0 auto}
+
+/* ── FOOTER ── */
+.footer-min{background:var(--lv-deeper);padding:28px 0}
+.footer-min .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.footer-logo-name{font-family:'Libre Baskerville',serif;font-size:16px;font-weight:700;color:#fff;line-height:1}
+.footer-logo-sub{font-size:8.5px;font-family:'DM Sans',sans-serif;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.32);display:block;margin-top:4px}
+.footer-right{font-size:11.5px;color:rgba(255,255,255,.32);text-align:right;line-height:1.7}
+.footer-right a{color:rgba(255,255,255,.5);text-decoration:underline;text-underline-offset:2px}
+.footer-links{display:flex;align-items:center;gap:16px;margin-bottom:6px;justify-content:flex-end;flex-wrap:wrap}
+.footer-compliance{font-size:10px;color:rgba(255,255,255,.22);font-style:italic;max-width:480px;text-align:right;line-height:1.6}
+/* VERIFY WITH CLIENT: Add actual disclosure link and compliance language */
+
+/* ── MOBILE ── */
+@media(max-width:900px){
+  .cover-grid{grid-template-columns:1fr 1fr}
+  .qualify-cols{grid-template-columns:1fr}
+  .cred-stats-row{gap:32px}
+  .cred-stat-item{padding:0 24px}
+  .cred-stat-item::after{display:none}
+}
+@media(max-width:768px){
+  .wrap{padding:0 24px}
+  .hero{padding:56px 0 64px}
+  .hero-h1{font-size:32px}
+  .hero-sub{font-size:15px}
+  .btn-hero{font-size:15px;padding:16px 24px}
+  .cover-sec{padding:56px 0}
+  .cover-grid{grid-template-columns:1fr;gap:28px}
+  .sec-hl{font-size:26px}
+  .vid-sec{padding:60px 0}
+  .vid-hl{font-size:24px}
+  .qualify-sec{padding:60px 0}
+  .qualify-col{padding:24px}
+  .cred-strip{padding:48px 0}
+  .cred-stat-n{font-size:30px}
+  .form-sec{padding:60px 0}
+  .form-card{padding:32px 20px}
+  .form-hl{font-size:22px}
+  .form-row{grid-template-columns:1fr}
+  .footer-min .wrap{flex-direction:column;gap:16px;align-items:flex-start}
+  .footer-right{text-align:left}
+  .footer-links{justify-content:flex-start}
+  .footer-compliance{text-align:left}
+}
+</style>
+<link rel="stylesheet" href="assets/lv-polish.css">
+</head>
+<body>
+
+<!-- ── 1. MINIMAL NAV ── -->
+<nav class="nav-out" id="mainNav">
+  <div class="wrap">
+    <a class="logo" href="https://www.longviewplan.com">
+      <img src="images/longview-logo.png" alt="LongView Planning Partners" style="height:44px;width:auto;display:block">
+    </a>
+    <div class="nav-phone">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
+      <a href="tel:9013229114">901-322-9114</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── 2. HERO ── -->
+<section class="hero">
+  <div class="glow g1"></div>
+  <div class="glow g2"></div>
+  <div class="glow g3"></div>
+  <div class="wrap hero-in">
+    <div class="eyebrow-pill">
+      <span class="dot"></span>
+      PSLF &amp; Student Loan Strategy
+    </div>
+    <h1 class="hero-h1">
+      <span class="l1">Your loan repayment plan just changed.</span>
+      <span class="l2">Get a clear answer before it costs you.</span>
+    </h1>
+    <p class="hero-sub">SAVE is in limbo. PSLF rules keep shifting. If you haven&rsquo;t reviewed your repayment strategy since starting attending, you may be on the wrong plan &mdash; and losing thousands per month without knowing it.</p>
+    <div class="hero-cta-wrap">
+      <a class="btn-hero" href="#book">
+        Get My Complimentary Loan Strategy Review &rarr;
+      </a>
+    </div>
+    <div class="hero-trust">30 minutes. No pitch. Advice with no agenda.</div>
+  </div>
+</section>
+
+<!-- ── 3. WHAT WE'LL COVER ── -->
+<section class="cover-sec">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-eyebrow">Your Complimentary Loan Review</div>
+      <h2 class="sec-hl">What we&rsquo;ll cover</h2>
+    </div>
+    <div class="cover-grid reveal-children">
+      <!-- Item 1 -->
+      <div class="cover-item">
+        <div class="cover-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0773BB" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <div>
+          <div class="cover-title">Your repayment path</div>
+          <p class="cover-body">PSLF vs. private refinancing, modeled with your actual numbers. We run the math both ways so you know which path saves more &mdash; not which one sounds better on a podcast.</p>
+        </div>
+      </div>
+      <!-- Item 2 -->
+      <div class="cover-item">
+        <div class="cover-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0773BB" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <div class="cover-title">Your IDR plan</div>
+          <p class="cover-body">Whether SAVE, IBR, PAYE, or ICR makes sense given the current rules and court rulings. With SAVE in injunction, many attending physicians are on the wrong plan right now.</p>
+        </div>
+      </div>
+      <!-- Item 3 -->
+      <div class="cover-item">
+        <div class="cover-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0773BB" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div>
+          <div class="cover-title">Your timeline</div>
+          <p class="cover-body">How many qualifying payments you have, what changes with your income, and what happens to your tax bill at forgiveness. We map the full picture, not just the monthly payment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 4. VIDEO SECTION ── -->
+<section class="vid-sec">
+  <div class="wrap vid-sec-in">
+    <div class="reveal">
+      <h2 class="vid-hl">Before you book, watch this 3-minute overview.</h2>
+      <p class="vid-sub">We explain exactly how our loan strategy review works and what you&rsquo;ll walk away with.</p>
+    </div>
+    <div class="vid-wrap reveal-scale">
+      <!-- Click placeholder expands to embedded video -->
+      <div class="vid-aspect" id="vidTrigger" onclick="expandVideo()" role="button" aria-label="Play video overview">
+        <div class="vid-placeholder" id="vidPlaceholder">
+          <div class="vid-coming-soon">Coming Soon</div>
+          <div class="play-btn">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+          </div>
+          <div class="vid-placeholder-label">3-minute overview &mdash; click to play</div>
+        </div>
+        <!-- Expand container for actual embed -->
+        <div class="vid-expand" id="vidExpand">
+          <div class="vid-expand-inner" id="vidEmbed">
+            <!-- SWAP: embed video URL here -->
+            <!-- YouTube: <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1" frameborder="0" allowfullscreen allow="autoplay"></iframe> -->
+            <!-- Vimeo:   <iframe src="https://player.vimeo.com/video/VIDEO_ID?autoplay=1" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen"></iframe> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 5. WHO THIS IS FOR ── -->
+<section class="qualify-sec">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-eyebrow">Is This For You?</div>
+      <h2 class="sec-hl">Qualify yourself first</h2>
+    </div>
+    <div class="qualify-cols">
+      <!-- Yes column -->
+      <div class="qualify-col reveal-left">
+        <div class="qualify-col-title">
+          <span style="font-size:22px">✅</span> This is for you if&hellip;
+        </div>
+        <div class="qualify-list">
+          <div class="qualify-item">
+            <span class="qualify-icon">›</span>
+            <span>You&rsquo;re an attending physician with federal student loans still outstanding</span>
+          </div>
+          <div class="qualify-item">
+            <span class="qualify-icon">›</span>
+            <span>You enrolled in SAVE or another IDR plan and haven&rsquo;t reviewed it since SAVE was blocked in court</span>
+          </div>
+          <div class="qualify-item">
+            <span class="qualify-icon">›</span>
+            <span>You&rsquo;re at a nonprofit or government employer and counting on PSLF to forgive your balance</span>
+          </div>
+          <div class="qualify-item">
+            <span class="qualify-icon">›</span>
+            <span>You&rsquo;re not sure if your payment history is counting correctly toward forgiveness</span>
+          </div>
+          <div class="qualify-item">
+            <span class="qualify-icon">›</span>
+            <span>You want a second opinion before making an irreversible decision, like refinancing out of federal loans</span>
+          </div>
+        </div>
+      </div>
+      <!-- No column -->
+      <div class="qualify-col no reveal-right">
+        <div class="qualify-col-title">
+          <span style="font-size:22px">❌</span> This is NOT for you if&hellip;
+        </div>
+        <div class="qualify-list">
+          <div class="qualify-item">
+            <span class="qualify-icon" style="color:var(--lv-gray)">›</span>
+            <span>You&rsquo;ve already paid off your student loans in full</span>
+          </div>
+          <div class="qualify-item">
+            <span class="qualify-icon" style="color:var(--lv-gray)">›</span>
+            <span>You have only private student loans (private loans are not eligible for PSLF or IDR plans)</span>
+          </div>
+          <div class="qualify-item">
+            <span class="qualify-icon" style="color:var(--lv-gray)">›</span>
+            <span>You&rsquo;re looking for a general investment manager — we do comprehensive planning too, but this review is loan-focused. <a href="https://www.longviewplan.com" style="color:var(--lv-navy);font-weight:500;text-decoration:underline;text-underline-offset:2px">See our full services →</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 6. CREDIBILITY STRIP ── -->
+<section class="cred-strip">
+  <div class="wrap cred-strip-in">
+    <div class="cred-stats-row reveal-children">
+      <div class="cred-stat-item">
+        <span class="cred-stat-n">1,000+</span>
+        <div class="cred-stat-l">Physician households<br>served [VERIFY WITH CLIENT]</div>
+      </div>
+      <div class="cred-stat-item">
+        <span class="cred-stat-n">3</span>
+        <div class="cred-stat-l">Certified Student Loan<br>Professionals (CSLP<sup style="font-size:.6em">®</sup>) on staff</div>
+      </div>
+    </div>
+    <p class="cred-line reveal">We work primarily with physicians and dentists. Student loans are one of the most important financial decisions of your career. We treat it that way.</p>
+  </div>
+</section>
+
+<!-- ── 7. LEAD CAPTURE FORM ── -->
+<section class="form-sec" id="book">
+  <div class="wrap">
+    <div class="form-card reveal-scale">
+      <!-- Default form view -->
+      <div id="formView">
+        <h2 class="form-hl">Book your complimentary loan strategy review</h2>
+        <p class="form-sub">30 minutes. A human advisor, not a chatbot. We&rsquo;ll tell you exactly where you stand.</p>
+
+        <form id="pslfForm" novalidate>
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+          <input type="text" name="company_url" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="firstName">First Name</label>
+              <input class="form-input" type="text" id="firstName" name="firstName" placeholder="Jane" required autocomplete="given-name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="lastName">Last Name</label>
+              <input class="form-input" type="text" id="lastName" name="lastName" placeholder="Smith" required autocomplete="family-name">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="email">Email</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="jane@hospital.org" required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone <span class="opt">(optional)</span></label>
+              <input class="form-input" type="tel" id="phone" name="phone" placeholder="(901) 555-0100" autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group full">
+              <label class="form-label" for="loanBalance">Current loan balance</label>
+              <select class="form-select" id="loanBalance" name="loanBalance" required>
+                <option value="" disabled selected>Select a range&hellip;</option>
+                <option value="under100k">Under $100,000</option>
+                <option value="100k-200k">$100,000 &ndash; $200,000</option>
+                <option value="200k-400k">$200,000 &ndash; $400,000</option>
+                <option value="400k+">$400,000+</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="repaymentPlan">Current repayment plan</label>
+              <select class="form-select" id="repaymentPlan" name="repaymentPlan" required>
+                <option value="" disabled selected>Select a plan&hellip;</option>
+                <option value="save">SAVE</option>
+                <option value="ibr">IBR (Income-Based Repayment)</option>
+                <option value="paye">PAYE (Pay As You Earn)</option>
+                <option value="icr">ICR (Income-Contingent Repayment)</option>
+                <option value="standard">Standard 10-Year</option>
+                <option value="private">Private / Already Refinanced</option>
+                <option value="notsure">Not sure</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="employerType">Employer type</label>
+              <select class="form-select" id="employerType" name="employerType" required>
+                <option value="" disabled selected>Select employer type&hellip;</option>
+                <option value="nonprofit">Nonprofit hospital or health system</option>
+                <option value="academic">Academic medical center / government</option>
+                <option value="private">Private practice</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="form-submit" id="formSubmit">
+            Book My Complimentary Review &rarr;
+          </button>
+        </form>
+
+        <p class="form-note">No spam. No follow-up sequences. A licensed advisor will contact you within 1 business day.</p>
+        <hr class="form-divider">
+        <p class="form-trust">CSLP<sup style="font-size:.7em">®</sup> certified advisors on staff</p>
+        <!-- COMPLIANCE: CRN REQUIRED (PSLF landing page) before publishing -->
+
+      </div>
+
+      <!-- Success state (hidden by default) -->
+      <div class="form-success" id="formSuccess">
+        <div class="success-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="success-title">You&rsquo;re on the schedule.</div>
+        <p class="success-body">A licensed advisor will reach out within 1 business day to confirm your 30-minute loan strategy review. Check your inbox &mdash; including spam, just in case.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LV_CANONICAL_FOOTER -->
+<footer class="lvf" data-canonical-footer="1">
+<style>
+.lvf{background:#0A1A2F;padding:64px 0 0;font-family:'DM Sans',sans-serif;color:#fff}
+.lvf-wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.lvf-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+.lvf-brand{font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:#fff;margin:0 0 6px;line-height:1}
+.lvf-sub{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:10px;display:block}
+.lvf-tag{font-size:12.5px;color:rgba(255,255,255,.4);line-height:1.6;max-width:240px;margin:0}
+.lvf-coltitle{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);margin:0 0 16px}
+.lvf-col a{display:block;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:10px;text-decoration:none;transition:color .18s}
+.lvf-col a:hover{color:rgba(255,255,255,.9)}
+.lvf-crs-row{padding:28px 0;display:flex;justify-content:center;border-bottom:1px solid rgba(255,255,255,.1)}
+.lvf-crs{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#2D6CA2;color:#fff;padding:18px 30px;border-radius:10px;text-decoration:none;min-width:240px;line-height:1.25;box-shadow:0 2px 10px rgba(0,0,0,.22);transition:background .18s,transform .18s;font-family:'DM Sans',sans-serif}
+.lvf-crs:hover{background:#3a7eb8;transform:translateY(-1px)}
+.lvf-crs-top{font-size:14px;font-weight:600;letter-spacing:.06em;color:#fff}
+.lvf-crs-div{display:block;width:80%;height:1px;background:rgba(255,255,255,.5)}
+.lvf-crs-bot{font-size:15px;font-weight:600;color:#fff}
+.lvf-copy{padding:22px 0 6px;font-size:12px;color:rgba(255,255,255,.45);text-align:center;line-height:1.6}
+.lvf-disclosure{padding:6px 0 36px;font-size:11px;color:rgba(255,255,255,.5);line-height:1.65;max-width:920px;margin:0 auto;text-align:center}
+.lvf-bcheck{margin:0 0 14px;font-weight:700;letter-spacing:.06em;color:rgba(255,255,255,.78);font-size:11.5px}
+.lvf-bcheck a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+.lvf-p{margin:0 0 10px;font-style:italic}
+.lvf-p a{color:rgba(255,255,255,.78);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:960px){.lvf-top{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:560px){.lvf-top{grid-template-columns:1fr;gap:28px}}
+</style>
+<div class="lvf-wrap">
+  <div class="lvf-top">
+    <div>
+      <div class="lvf-brand">LongView</div>
+      <span class="lvf-sub">Planning Partners</span>
+      <p class="lvf-tag">Comprehensive Planning for Physicians and Dentists</p>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Services</div>
+      <a href="longview_services.html">Student Loan Strategy</a>
+      <a href="longview_services.html">Tax Planning</a>
+      <a href="longview_services.html">Retirement Planning</a>
+      <a href="longview_services.html">Investment Management</a>
+      <a href="longview_services.html">Insurance Review</a>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Who We Serve</div>
+      <a href="longview_who-we-serve.html">Physicians</a>
+      <a href="longview_who-we-serve.html">Dentists</a>
+      <a href="longview_icp-earlycareer.html">Early Career</a>
+      <a href="longview_icp-laterstage.html">Established</a>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Resources</div>
+      <a href="longview_landing-pslf.html">PSLF Guide</a>
+      <a href="longview_blog.html">Articles</a>
+      <a href="longview_blog.html">All Resources</a>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Contact</div>
+      <a href="mailto:info@longviewplan.com">info@longviewplan.com</a>
+      <a href="tel:9013229114">901-322-9114</a>
+      <a href="longview_book.html">Schedule a Call</a>
+      <a href="longview_licensing.html">Licensing</a>
+      <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener">FINRA BrokerCheck</a>
+    </div>
+  </div>
+  <div class="lvf-crs-row">
+    <a class="lvf-crs" href="https://compass.massmutual.com/file-handler-api-wrapper?url=%2Ffile%2Fblt3e72bd07ab10cfcb" target="_blank" rel="noopener" aria-label="Licensing - Client Relationship Summary (opens in new tab)">
+      <span class="lvf-crs-top">Licensing</span>
+      <span class="lvf-crs-div"></span>
+      <span class="lvf-crs-bot">Client Relationship Summary</span>
+    </a>
+  </div>
+  <div class="lvf-copy">&copy; 2026 LongView Planning Partners &middot; 618 Oakleaf Office Lane, Suite 300, Memphis, TN 38117 &middot; 901-322-9114</div>
+  <div class="lvf-disclosure">
+    <p class="lvf-bcheck">CHECK THE BACKGROUND OF THIS FINANCIAL PROFESSIONAL ON FINRA&rsquo;S <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener">BROKERCHECK</a></p>
+    <p class="lvf-p">Securities, investment advisory and financial planning services are offered through qualified registered representatives of MML Investors Services, LLC, <a href="https://www.sipc.org/" target="_blank" rel="noopener">Member SIPC</a>, 10 Cadillac Drive, Suite 300, Brentwood, TN 37027 (615) 309-6300. LongView Planning Partners is not a subsidiary or affiliate of MML Investors Services, LLC or its affiliated companies. CRN202906-11331036</p>
+    <p class="lvf-p">Financial Plan recommendations can be implemented with the advisor of your choosing. Implementation of specific products or services may result in commissions or fees outside of the financial planning fee.*</p>
+  </div>
+</div>
+</footer>
+<!-- /LV_CANONICAL_FOOTER -->
+
+
+<script>
+(function(){
+  'use strict';
+
+  /* Nav shadow on scroll */
+  var nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', function(){
+    nav.classList.toggle('scrolled', window.scrollY > 16);
+  }, {passive:true});
+
+  /* Scroll reveal */
+  var revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-children');
+  if('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var el = e.target;
+          if(el.classList.contains('reveal-children')){
+            el.classList.add('revealed');
+            var kids = el.children;
+            for(var i=0;i<kids.length;i++){
+              (function(child,idx){
+                setTimeout(function(){
+                  child.style.transitionDelay = '0s';
+                  child.style.opacity = '1';
+                  child.style.transform = 'none';
+                }, idx * 90);
+              })(kids[i], i);
+            }
+          } else {
+            el.classList.add('revealed');
+          }
+          obs.unobserve(el);
+        }
+      });
+    },{threshold:0.01,rootMargin:'0px 0px -40px 0px'});
+    revealEls.forEach(function(el){ obs.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('revealed'); });
+  }
+
+  /* Video expand */
+  window.expandVideo = function(){
+    var trigger = document.getElementById('vidTrigger');
+    var placeholder = document.getElementById('vidPlaceholder');
+    var expand = document.getElementById('vidExpand');
+    if(expand.classList.contains('open')) return;
+    placeholder.style.display = 'none';
+    expand.classList.add('open');
+    trigger.style.cursor = 'default';
+    trigger.onclick = null;
+    /* SWAP: If using YouTube/Vimeo, the iframe with autoplay=1 should be injected here */
+    /* Example:
+    var embed = document.getElementById('vidEmbed');
+    embed.innerHTML = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1" frameborder="0" allowfullscreen allow="autoplay"></iframe>';
+    */
+  };
+
+  /* Form submit */
+  var form = document.getElementById('pslfForm');
+  var formView = document.getElementById('formView');
+  var formSuccess = document.getElementById('formSuccess');
+  var submitBtn = document.getElementById('formSubmit');
+
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      /* Basic validation */
+      var required = form.querySelectorAll('[required]');
+      var valid = true;
+      required.forEach(function(field){
+        if(!field.value.trim()){
+          field.style.borderColor = '#e05252';
+          field.focus();
+          valid = false;
+        } else {
+          field.style.borderColor = '';
+        }
+      });
+      if(!valid) return;
+
+      /* Email validation */
+      var emailField = document.getElementById('email');
+      var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if(!emailRe.test(emailField.value)){
+        emailField.style.borderColor = '#e05252';
+        emailField.focus();
+        return;
+      }
+
+      /* Disable button, show loading state */
+      var origLabel = submitBtn.textContent;
+      submitBtn.textContent = 'Submitting…';
+      submitBtn.disabled = true;
+      submitBtn.style.animation = 'none';
+      submitBtn.style.opacity = '0.7';
+
+      var payload = {
+        source: 'pslf_landing',
+        page: location.pathname,
+        firstName: document.getElementById('firstName').value.trim(),
+        lastName:  document.getElementById('lastName').value.trim(),
+        email:     emailField.value.trim(),
+        phone:     document.getElementById('phone').value.trim(),
+        loanBalance:   document.getElementById('loanBalance').value,
+        repaymentPlan: document.getElementById('repaymentPlan').value,
+        employerType:  document.getElementById('employerType').value
+      };
+
+      fetch('/api/leads', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(payload)
+      }).then(function(r){
+        return r.json().catch(function(){ return {ok:false}; })
+          .then(function(j){ return {ok: r.ok && j.ok}; });
+      }).then(function(res){
+        if(res.ok){
+          formView.style.display = 'none';
+          formSuccess.classList.add('visible');
+          window.scrollTo({top: document.getElementById('book').offsetTop - 80, behavior:'smooth'});
+        } else {
+          throw new Error('submit_failed');
+        }
+      }).catch(function(){
+        submitBtn.textContent = origLabel;
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '';
+        var existing = document.getElementById('pslfFormError');
+        if(!existing){
+          var err = document.createElement('p');
+          err.id = 'pslfFormError';
+          err.style.cssText = 'color:#c0392b;font-size:13px;margin-top:12px;text-align:center';
+          err.textContent = 'Something went wrong submitting your request. Please try again or email info@longviewplan.com.';
+          form.appendChild(err);
+        }
+      });
+    });
+
+    /* Clear error state on input */
+    form.querySelectorAll('.form-input, .form-select').forEach(function(field){
+      field.addEventListener('input', function(){
+        this.style.borderColor = '';
+      });
+    });
+  }
+
+})();
+</script>
+</body>
+</html>

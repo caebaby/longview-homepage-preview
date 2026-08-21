@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pre-RMD Tax Planning Window Many Physicians Begin Evaluating Before 73 &mdash; LongView Planning Partners</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & ROOT ─────────────────────────────────────────── */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --lv-navy:#0773BB;--lv-dark:#054A82;--lv-deeper:#032F57;
+  --lv-sky:#38B0E3;--lv-light:#8CD7F7;
+  --lv-gray:#939598;--lv-gl:#D1D2D4;--lv-off:#F4F8FC;
+  --ink:#0F1923;--body:#3D4A58;
+  --max:1240px;
+  --grad:linear-gradient(95deg,#0773BB 0%,#38B0E3 100%);
+  --trans:.22s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--ink);background:#fff;min-width:320px;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 52px}
+
+/* ── PULSE ANIMATION ──────────────────────────────────────── */
+@keyframes ctaPulse{
+  0%{box-shadow:0 0 0 0 rgba(7,115,187,.4)}
+  70%{box-shadow:0 0 0 10px rgba(7,115,187,0)}
+  100%{box-shadow:0 0 0 0 rgba(7,115,187,0)}
+}
+.btn-primary:not(:hover){animation:ctaPulse 2.4s ease-out infinite}
+
+/* ── TOP BAR ───────────────────────────────────────────────── */
+.topbar{background:var(--lv-deeper)}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:36px}
+.topbar span{font-size:11.5px;color:rgba(255,255,255,.52)}
+.topbar .c{color:rgba(255,255,255,.88);font-weight:500;display:flex;align-items:center;gap:18px}
+.topbar .c a{color:inherit;opacity:.88;transition:opacity var(--trans)}
+.topbar .c a:hover{opacity:1}
+.tb-sep{width:1px;height:12px;background:rgba(255,255,255,.2)}
+
+/* ── NAV ───────────────────────────────────────────────────── */
+.nav-out{background:#fff;border-bottom:1px solid rgba(209,210,212,.6);position:sticky;top:0;z-index:200;transition:box-shadow .3s}
+.nav-out.scrolled{box-shadow:0 4px 32px rgba(5,74,130,.1)}
+.nav-out .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;flex-direction:column;flex-shrink:0;cursor:pointer}
+.logo-name{font-family:'Libre Baskerville',serif;font-size:22px;font-weight:700;color:var(--lv-navy);letter-spacing:-.02em;line-height:1}
+.logo-sub{font-size:9.5px;font-family:'DM Sans',sans-serif;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--lv-gray);margin-top:4px}
+.nav-links{display:flex;gap:6px;align-items:center}
+.nl{font-size:13.5px;color:#5a6472;padding:8px 14px;border-radius:4px;cursor:pointer;transition:color var(--trans);position:relative;white-space:nowrap}
+.nl::after{content:'';position:absolute;bottom:4px;left:14px;right:14px;height:1.5px;background:var(--lv-navy);transform:scaleX(0);transform-origin:left;transition:transform .28s}
+.nl:hover{color:var(--lv-navy)}
+.nl:hover::after,.nl.active::after{transform:scaleX(1)}
+.nl.active{color:var(--lv-navy)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.ncta{font-size:13px;font-weight:600;padding:11px 24px;background:var(--lv-navy);color:#fff;border-radius:4px;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background var(--trans),box-shadow var(--trans),transform var(--trans)}
+.ncta:hover{background:var(--lv-dark);box-shadow:0 6px 20px rgba(7,115,187,.3);transform:translateY(-1px)}
+
+/* ── ARTICLE HERO ──────────────────────────────────────────── */
+.art-hero{background:linear-gradient(130deg,#021E3A 0%,var(--lv-deeper) 50%,var(--lv-dark) 100%);position:relative;overflow:hidden;padding:56px 0 48px}
+.art-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 1px);background-size:26px 26px}
+.art-hero::after{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(-45deg,transparent,transparent 16px,rgba(255,255,255,.016) 16px,rgba(255,255,255,.016) 17px)}
+.art-hero-in{position:relative;z-index:2;max-width:800px}
+.cat-pill{display:inline-flex;align-items:center;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--lv-sky);padding:5px 14px;border-radius:20px;margin-bottom:20px}
+.art-headline{font-family:'Libre Baskerville',serif;font-size:40px;font-weight:700;color:#fff;line-height:1.12;letter-spacing:-.025em;margin-bottom:18px}
+.art-subhead{font-size:16px;color:rgba(255,255,255,.68);line-height:1.72;font-weight:300;margin-bottom:28px;max-width:680px}
+.art-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.art-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--lv-navy),var(--lv-sky));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0;border:2px solid rgba(255,255,255,.25)}
+.art-author-info{display:flex;flex-direction:column;gap:2px}
+.art-author-name{font-size:13px;font-weight:600;color:#fff}
+.art-date{font-size:12px;color:rgba(255,255,255,.5)}
+.art-compliance-pill{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;background:rgba(255,255,255,.06)}
+
+/* ── ARTICLE LAYOUT ────────────────────────────────────────── */
+.art-layout{display:grid;grid-template-columns:1fr 340px;gap:52px;padding:60px 0 80px;align-items:start}
+
+/* ── ARTICLE BODY ──────────────────────────────────────────── */
+.art-body{min-width:0}
+.art-body h2{font-family:'Libre Baskerville',serif;font-size:24px;font-weight:700;color:var(--ink);line-height:1.3;letter-spacing:-.02em;margin-top:40px;margin-bottom:16px;padding-bottom:6px;border-bottom:1px solid var(--lv-gl)}
+.art-body h2:first-child{margin-top:0}
+.art-body p{font-size:16px;color:var(--body);line-height:1.85;margin-bottom:18px;font-weight:300}
+.art-body strong{font-weight:600;color:var(--ink)}
+.art-body ol{margin:0 0 20px 20px;display:flex;flex-direction:column;gap:12px}
+.art-body ol li{font-size:16px;color:var(--body);line-height:1.75;font-weight:300;padding-left:4px}
+.art-body ol li strong{color:var(--ink)}
+.art-body ul{margin:0 0 20px 20px;display:flex;flex-direction:column;gap:10px}
+.art-body ul li{font-size:15.5px;color:var(--body);line-height:1.7;font-weight:300}
+
+/* Pull quote */
+.pull-quote{border-left:4px solid var(--lv-sky);padding:24px 28px;background:rgba(7,115,187,.04);border-radius:0 8px 8px 0;margin:32px 0;position:relative}
+.pull-quote::before{content:'\201C';font-family:'Libre Baskerville',serif;font-size:64px;color:var(--lv-sky);line-height:.7;opacity:.35;position:absolute;top:16px;left:20px}
+.pull-quote-text{font-family:'Libre Baskerville',serif;font-size:20px;font-style:italic;color:#2a3240;line-height:1.68;padding-left:36px}
+.pull-quote-attr{font-size:12px;color:var(--lv-gray);margin-top:10px;padding-left:36px;font-weight:500}
+
+/* Compliance callout */
+.compliance-callout{background:#FFF9EC;border:1px solid #E8D98C;border-left:4px solid #C9A800;border-radius:0 8px 8px 0;padding:20px 24px;margin-top:40px}
+.compliance-callout-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8a6a00;margin-bottom:8px}
+.compliance-callout-text{font-size:13px;color:#5a4a00;line-height:1.65}
+.compliance-callout .cp{display:inline;font-size:10px;background:rgba(201,168,0,.15);border:1px dashed #C9A800;padding:1px 7px;border-radius:3px;color:#8a6a00}
+
+/* ── SIDEBAR ───────────────────────────────────────────────── */
+.art-sidebar{position:sticky;top:100px;display:flex;flex-direction:column;gap:20px}
+.sidebar-card{background:#fff;border:1px solid var(--lv-gl);border-top:3px solid var(--lv-sky);border-radius:8px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.sidebar-card-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lv-sky)}
+.sidebar-author-row{display:flex;align-items:center;gap:12px}
+.sidebar-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--lv-navy),var(--lv-sky));display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0}
+.sidebar-author-name{font-size:14px;font-weight:600;color:var(--ink)}
+.sidebar-bio{font-size:13px;color:var(--body);line-height:1.65;font-weight:300}
+.sidebar-cta{display:flex;align-items:center;justify-content:center;gap:6px;padding:11px 18px;background:var(--lv-navy);color:#fff;border-radius:5px;font-size:13px;font-weight:600;cursor:pointer;transition:background var(--trans),transform var(--trans);text-align:center}
+.sidebar-cta:hover{background:var(--lv-dark);transform:translateY(-1px)}
+.sidebar-lm-title{font-size:15px;font-weight:700;color:var(--ink);line-height:1.35}
+.sidebar-lm-bullets{display:flex;flex-direction:column;gap:8px}
+.sidebar-lm-bullet{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--body);line-height:1.5;font-weight:300}
+.sidebar-lm-bullet-dot{width:5px;height:5px;border-radius:50%;background:var(--lv-sky);flex-shrink:0;margin-top:6px}
+.sidebar-lm-input{height:42px;border:1.5px solid var(--lv-gl);border-radius:5px;padding:0 14px;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--lv-off);width:100%;transition:border-color var(--trans)}
+.sidebar-lm-input:focus{outline:none;border-color:var(--lv-navy)}
+.sidebar-lm-btn{width:100%;height:42px;background:var(--lv-sky);color:#fff;border:none;border-radius:5px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background var(--trans)}
+.sidebar-lm-btn:hover{background:var(--lv-navy)}
+.sidebar-related-title{font-size:13.5px;font-weight:600;color:var(--ink)}
+.related-item{font-size:13px;color:var(--body);line-height:1.5;padding:10px 0;border-bottom:1px solid var(--lv-gl);display:flex;flex-direction:column;gap:4px}
+.related-item:last-child{border-bottom:none}
+.related-coming{font-size:10px;color:var(--lv-gray);text-transform:uppercase;letter-spacing:.1em;font-weight:500}
+
+/* ── AUTHOR BIO STRIP ──────────────────────────────────────── */
+.author-bio-strip{background:var(--lv-off);border-top:1px solid var(--lv-gl);border-bottom:1px solid var(--lv-gl);padding:48px 0}
+.author-bio-in{display:flex;align-items:flex-start;gap:28px}
+.author-bio-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--lv-navy),var(--lv-sky));display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#fff;flex-shrink:0}
+.author-bio-content{flex:1}
+.author-bio-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lv-sky);margin-bottom:6px}
+.author-bio-name{font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:10px}
+.author-bio-text{font-size:14.5px;color:var(--body);line-height:1.75;font-weight:300;margin-bottom:10px;max-width:640px}
+.author-bio-cred{font-size:12px;color:var(--lv-gray);margin-bottom:18px}
+.bio-cta{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;background:var(--lv-navy);color:#fff;border-radius:5px;font-size:13.5px;font-weight:600;cursor:pointer;transition:background var(--trans),transform var(--trans)}
+.bio-cta:hover{background:var(--lv-dark);transform:translateY(-1px)}
+
+/* ── RELATED ARTICLES ──────────────────────────────────────── */
+.related-section{padding:64px 0;background:#fff}
+.section-eyebrow{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--lv-sky);margin-bottom:28px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.related-card{background:#fff;border:1px solid var(--lv-gl);border-top:3px solid var(--lv-gl);border-radius:8px;padding:24px;opacity:.55;filter:grayscale(.3);position:relative;display:flex;flex-direction:column;gap:10px}
+.related-badge{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lv-gray);background:var(--lv-off);border:1px solid var(--lv-gl);padding:3px 10px;border-radius:20px;width:fit-content}
+.related-lock{position:absolute;top:14px;right:14px;width:18px;height:18px;color:var(--lv-gray)}
+.related-card-title{font-size:14.5px;font-weight:600;color:var(--ink);line-height:1.45}
+.related-card-cat{font-size:11px;color:var(--lv-gray)}
+
+/* ── ARTICLE CTA STRIP ─────────────────────────────────────── */
+.art-cta-strip{background:linear-gradient(135deg,#021E3A 0%,var(--lv-dark) 60%,var(--lv-navy) 100%);padding:72px 0;text-align:center;position:relative;overflow:hidden}
+.art-cta-strip::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.05) 1px,transparent 1px);background-size:24px 24px}
+.art-cta-in{position:relative;z-index:2;max-width:600px;margin:0 auto}
+.art-cta-headline{font-family:'Libre Baskerville',serif;font-size:32px;font-weight:700;color:#fff;line-height:1.2;letter-spacing:-.02em;margin-bottom:12px}
+.art-cta-sub{font-size:15.5px;color:rgba(255,255,255,.65);line-height:1.7;font-weight:300;margin-bottom:28px}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:700;padding:16px 36px;background:#fff;color:var(--lv-dark);border-radius:5px;cursor:pointer;letter-spacing:.01em;transition:transform var(--trans),box-shadow var(--trans);text-decoration:none}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(0,0,0,.28)}
+
+/* ── FOOTER ────────────────────────────────────────────────── */
+.footer-pre{background:var(--lv-deeper);padding:22px 0;border-top:1px solid rgba(255,255,255,.07)}
+.footer-pre .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.footer-pre-copy{font-size:13px;color:rgba(255,255,255,.45)}
+.footer-pre-contact{display:flex;align-items:center;gap:24px;font-size:13px;color:rgba(255,255,255,.7);font-weight:500}
+.footer-pre-contact a{color:inherit;transition:color var(--trans)}
+.footer-pre-contact a:hover{color:#fff}
+.footer-out{background:#0D0D0D}
+.footer-out .wrap{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px;padding-top:36px;padding-bottom:36px}
+.footer-logo-name{font-family:'Libre Baskerville',serif;font-size:18px;font-weight:700;color:#fff;line-height:1}
+.footer-logo-sub{font-size:9px;font-family:'DM Sans',sans-serif;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#555;display:block;margin-top:5px}
+.footer-links{display:flex;gap:24px;font-size:12px;color:#666;flex-wrap:wrap}
+.footer-links a{transition:color var(--trans)}
+.footer-links a:hover{color:#999}
+.footer-disc{font-size:11px;color:#444;max-width:480px;line-height:1.65;text-align:right}
+
+/* ── SCROLL REVEAL ─────────────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1);will-change:opacity,transform;backface-visibility:hidden}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ── MOBILE ────────────────────────────────────────────────── */
+@media(max-width:768px){
+  .wrap{padding:0 20px}
+  .topbar .wrap{flex-direction:column;height:auto;padding-top:8px;padding-bottom:8px;gap:4px;text-align:center}
+  .nav-links{display:none}
+  .nav-out .wrap{height:64px}
+  .art-headline{font-size:28px}
+  .art-layout{grid-template-columns:1fr;gap:0}
+  .art-sidebar{position:static;order:2;margin-top:48px}
+  .related-grid{grid-template-columns:1fr}
+  .author-bio-in{flex-direction:column;gap:16px}
+  .footer-out .wrap{flex-direction:column;gap:16px}
+  .footer-disc{text-align:left}
+  .art-cta-headline{font-size:24px}
+}
+
+/* ── BLOG POST EXTENSIONS (5/2026 batch) ──────────────────── */
+.art-body .intro-card{background:linear-gradient(135deg,#F4F8FC 0%,#fff 100%);border:1px solid var(--lv-gl);border-left:4px solid var(--lv-sky);border-radius:0 8px 8px 0;padding:22px 26px;margin-bottom:32px}
+.art-body .intro-card .intro-header{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--lv-dark);margin-bottom:12px}
+.art-body .intro-card .intro-list{margin:0 0 0 18px;display:flex;flex-direction:column;gap:8px;padding:0}
+.art-body .intro-card .intro-list li{font-size:14.5px;color:var(--body);line-height:1.65;font-weight:300}
+.art-body .key-takeaway{background:#021E3A;color:#fff;border-radius:10px;padding:26px 28px;margin:28px 0 36px;position:relative;overflow:hidden}
+.art-body .key-takeaway::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.05) 1px,transparent 1px);background-size:22px 22px;pointer-events:none}
+.art-body .key-takeaway .key-takeaway-label{position:relative;font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--lv-light);margin-bottom:14px}
+.art-body .key-takeaway p{position:relative;color:rgba(255,255,255,.86);font-size:15px;line-height:1.78;font-weight:300;margin-bottom:12px}
+.art-body .key-takeaway p:last-child{margin-bottom:0}
+.art-body .what-this-means{background:rgba(7,115,187,.045);border:1px solid rgba(7,115,187,.16);border-left:4px solid var(--lv-navy);border-radius:0 8px 8px 0;padding:18px 22px;margin:24px 0}
+.art-body .what-this-means .wtm-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--lv-navy);margin-bottom:10px}
+.art-body .what-this-means p{font-size:14.5px;line-height:1.7;margin-bottom:10px}
+.art-body .what-this-means p:last-child{margin-bottom:0}
+.art-body .what-this-means .callout-bullets{margin:6px 0 0 18px;display:flex;flex-direction:column;gap:6px}
+.art-body .what-this-means .callout-bullets li{font-size:14px;color:var(--body);line-height:1.6;font-weight:300}
+.art-body .reflection{background:#FFF9EC;border-left:3px solid #C9A800;padding:14px 18px;border-radius:0 6px 6px 0;font-size:15px;font-style:italic;color:#5a4a00;margin:20px 0}
+.art-body .reflection strong{color:#3a2e00;font-style:normal;font-weight:700}
+.art-body .inline-cta{background:linear-gradient(135deg,#021E3A 0%,var(--lv-dark) 100%);color:#fff;border-radius:10px;padding:28px 30px;margin:36px 0;text-align:center}
+.art-body .inline-cta .inline-cta-eyebrow{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--lv-light);margin-bottom:10px}
+.art-body .inline-cta .inline-cta-body{font-size:15.5px;color:rgba(255,255,255,.85);line-height:1.65;font-weight:300;margin-bottom:18px;max-width:520px;margin-left:auto;margin-right:auto}
+.art-body .inline-cta .inline-cta-btn{display:inline-block;background:#fff;color:var(--lv-dark);font-weight:700;font-size:14px;padding:13px 26px;border-radius:5px;text-decoration:none;transition:transform var(--trans),box-shadow var(--trans)}
+.art-body .inline-cta .inline-cta-btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.28)}
+
+</style>
+<link rel="stylesheet" href="assets/lv-polish.css">
+</head>
+<body>
+
+<!-- ── TOP BAR ─────────────────────────────────────────────── -->
+<div class="topbar">
+  <div class="wrap">
+    <span>Comprehensive financial planning for physicians &amp; dentists &mdash; Memphis, TN &amp; nationwide</span>
+    <span class="c">
+      <a href="tel:9013229114">901-322-9114</a>
+      <span class="tb-sep"></span>
+      <a href="mailto:info@longviewplan.com">info@longviewplan.com</a>
+    </span>
+  </div>
+</div>
+
+<!-- ── NAV ─────────────────────────────────────────────────── -->
+<div class="nav-out" id="nav">
+  <div class="wrap">
+    <a class="logo" href="longview_homepage_v8.html">
+      <img src="images/longview-logo.png" alt="LongView Planning Partners" style="height:44px;width:auto;display:block">
+    </a>
+    <div class="nav-links">
+      <a class="nl" href="longview_homepage_v8.html">Why LongView</a>
+      <a class="nl" href="longview_services.html">Our Services</a>
+      <a class="nl" href="longview_who-we-serve.html">Who We Serve</a>
+      <a class="nl" href="longview_process.html">Our Process</a>
+      <a class="nl" href="longview_team.html">Our Team</a>
+      <a class="nl active" href="longview_blog.html">Resources</a>
+    </div>
+    <div class="nav-right">
+      <a class="ncta" href="longview_book.html">Schedule an Icebreaker Call &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── ARTICLE HERO ───────────────────────────────────────────── -->
+<div class="art-hero">
+  <div class="wrap art-hero-in">
+    <div class="cat-pill">Tax Strategy</div>
+    <h1 class="art-headline">The Pre-RMD Tax Planning Window Many Physicians Begin Evaluating Before 73</h1>
+    <p class="art-subhead">Written for physicians 55&ndash;62 with meaningful balances in pre-tax 401(k), SEP, or IRA accounts.</p>
+    <div class="art-meta">
+      <div class="art-avatar">LV</div>
+      <div class="art-author-info">
+        <div class="art-author-name">LongView Planning Partners</div>
+        <div class="art-date">May 2026 &nbsp;&middot;&nbsp; 10 min read</div>
+      </div>
+      <!-- COMPLIANCE: CRN REQUIRED (article) before publishing -->
+      <div class="art-compliance-pill">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Educational content &mdash; not investment advice
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ARTICLE LAYOUT ─────────────────────────────────────────── -->
+<div class="wrap">
+  <div class="art-layout">
+
+    <!-- ── ARTICLE BODY ──────────────────────────────────────── -->
+    <article class="art-body reveal">
+
+<div class="intro-card">
+  <div class="intro-header">In the next 10 minutes, you&rsquo;ll explore:</div>
+  <ul class="intro-list">
+        <li>Why the years between peak earnings and Required Minimum Distributions are often a focal point for tax-aware retirement planning</li>
+        <li>Eight planning variables that interact with Roth conversion decisions, and why looking at them together matters</li>
+        <li>What a multi-year, coordinated approach can look like in practice &mdash; and how some physicians choose to think about timing</li>
+  </ul>
+</div>
+
+<div class="key-takeaway">
+  <div class="key-takeaway-label">KEY TAKEAWAY &mdash; THE BOTTOM LINE UP FRONT</div>
+  <p>Between the end of peak-earnings years and the start of Required Minimum Distributions at age 73, there is a window during which some physicians review how future withdrawals and tax rules may interact over time. For households where conversions make sense, the strategy involves coordinating against several other variables simultaneously.</p>
+  <p>The potential long-term tax impact varies significantly by household and may range from minimal to substantial depending on account size, income picture, and individual circumstances. In some households, this planning matters meaningfully. In others, existing arrangements already reflect what&rsquo;s needed and no changes are pursued.</p>
+</div>
+
+<h2>What the Pre-RMD Window Is, and Why It Surfaces for Some Households</h2>
+
+<p>The Roth conversion window refers to the period during which pre-tax retirement dollars can be voluntarily moved into a Roth account. The converted amount is taxable in the year of conversion; the converted dollars may qualify for tax-free growth and distributions under current Roth rules, assuming applicable requirements are met.</p>
+
+<p>For physicians between the end of peak earnings and the start of RMDs at 73, this window is a topic that often comes up in financial planning conversations. The reason is structural: during peak earnings, the marginal tax bracket on a conversion is typically high. After peak earnings end but before RMDs and Social Security stack up, the marginal bracket may be different. For households where that bracket differential is meaningful, conversions during the window can be part of a broader tax-aware retirement approach.</p>
+
+<p>Some physicians enter their late fifties with an implicit assumption that retirement will naturally place them in a lower tax environment &mdash; and may notice over time that large pre-tax balances, future RMDs, Social Security, and investment income can interact in ways that create a different picture than initially expected. Recognizing that interaction isn&rsquo;t a problem to solve in a single year. It&rsquo;s often the prompt that brings the topic into focus for the first time.</p>
+
+<p>The relevance of this planning varies significantly across households. For physicians with larger pre-tax balances and a clear gap between peak-earnings brackets and projected RMD-era brackets, the topic may warrant attention. In other situations, the math doesn&rsquo;t work out to meaningful long-term impact, and no conversions are pursued. Both are legitimate outcomes.</p>
+
+<p>One observation worth naming: the assumption that retirement-era brackets will be lower than working-era brackets is one some physicians make implicitly when contributing to pre-tax accounts. Whether that assumption holds depends on the eventual mix of Social Security, RMDs, investment income, and tax law at the time of retirement. For households with larger pre-tax balances, that interaction is one of the more useful topics to think through ahead of time &mdash; not because the outcome is predictable, but because understanding the variables involved supports clearer planning decisions.</p>
+
+<div class="what-this-means">
+  <div class="wtm-label">WHAT THIS MEANS FOR YOU</div>
+  <p>If you have meaningful balances in pre-tax retirement accounts and haven&rsquo;t yet looked at how RMDs at 73 might interact with your other retirement income, that&rsquo;s one of the topics often worth understanding during this window. Whether a multi-year conversion approach is useful in your situation depends on specifics that vary considerably household to household. Individual circumstances vary significantly, and the relevance of these considerations differs by case.</p>
+</div>
+
+<p>By the considerations &mdash; what&rsquo;s typically in scope:</p>
+
+<ul>
+  <li>The projected interaction of Social Security, RMDs, and investment income in the RMD-era years</li>
+  <li>Current marginal bracket relative to projected retirement-era bracket</li>
+  <li>Medicare income threshold awareness for the relevant years</li>
+  <li>Pro-rata rule considerations for households with multiple pre-tax IRA balances</li>
+  <li>Coordination with broader retirement income sequencing</li>
+</ul>
+
+<h2>What a Coordinated Approach Generally Looks Like</h2>
+
+<p>A multi-year Roth conversion approach, where it makes sense for a household, isn&rsquo;t a single decision &mdash; it&rsquo;s a sequence of annual decisions, each one informed by how it interacts with other variables. For households that pursue this type of planning, several elements typically inform the year-by-year approach.</p>
+
+<p>The high-level shape, where the planning is relevant, often involves:</p>
+
+<p>Years during peak earnings: typically not a conversion period; marginal brackets are usually too high for conversions to be efficient</p>
+
+<p>Years transitioning out of peak earnings: smaller conversions, sized against current bracket position and awareness of Medicare income thresholds for the years ahead</p>
+
+<p>Years between full retirement and RMD age: larger conversion amounts may become relevant, depending on bracket position, Social Security claiming timing, and other variables</p>
+
+<p>The RMD years themselves: conversion strategy generally concludes; the focus shifts to income sequencing across remaining accounts</p>
+
+<p>For some physicians, this kind of multi-year view fits their preference for written, integrated planning. In other situations, the planning question is addressed differently, and that&rsquo;s also legitimate. The relevance and magnitude differ by household.</p>
+
+<p>For some physicians, this topic first surfaces almost incidentally &mdash; a passing comment during tax preparation, an article about RMDs, or simply looking at a pre-tax balance and thinking about how it will eventually be drawn down. The potential long-term impact varies significantly by household. From there, the path forward looks different depending on what the existing planning already covers.</p>
+
+<h2>Eight Variables That Interact With Conversion Decisions</h2>
+
+<p>The reason multi-year Roth planning is its own category, rather than a one-off transaction, is that the decision interacts with at least eight other planning variables at the same time. Looking at any of these in isolation can produce a different answer than looking at them together.</p>
+
+<ol>
+  <li><strong>Medicare income thresholds.</strong> Conversions raise reported income for the year, which can interact with Medicare premium calculations under current rules. Awareness of how a conversion in one year relates to Medicare costs two years later is one of the variables some physicians prefer to map ahead of time.</li>
+  <li><strong>Federal bracket management.</strong> The marginal bracket a conversion fills is a key variable. The optimal amount, where conversions are pursued, depends on current bracket position and projected RMD-era bracket position &mdash; both of which are subject to change.</li>
+  <li><strong>Pro-rata rule.</strong> For households with multiple pre-tax IRA balances &mdash; including from older SEP-IRAs or rollovers &mdash; conversions are taxed proportionally across all pre-tax IRA dollars. This affects households differently depending on account history.</li>
+  <li><strong>Social Security and provisional income.</strong> Once Social Security has been claimed, conversions can change the portion of benefits that becomes taxable. Certain households prefer to think through claiming timing and conversion timing together.</li>
+  <li><strong>Capital gains coordination.</strong> A conversion in the same year as large realized capital gains stacks income, which can affect bracket position and trigger other tax considerations.</li>
+  <li><strong>State residency timing.</strong> State income tax treatment varies, and timing of conversions relative to state moves is a consideration for households where state of residence may change.</li>
+  <li><strong>Estate considerations.</strong> Roth assets and pre-tax assets pass to heirs differently under current rules. The interaction with estate planning structures varies by household.</li>
+  <li><strong>Charitable considerations.</strong> Qualified Charitable Distributions from traditional IRAs at 70½+ can interact with RMD planning, which in turn affects how a household might approach earlier conversion decisions.</li>
+</ol>
+
+<p>Some physicians prefer to evaluate these topics together because financial decisions can relate to one another over time. A decision in one variable may have implications for how another is approached. That interaction is why multi-year, written planning is useful for households where coordination becomes meaningful &mdash; though in other situations, existing arrangements already account for these variables and no changes are pursued.</p>
+
+<div class="what-this-means">
+  <div class="wtm-label">WHAT THIS MEANS FOR YOU</div>
+  <p>A transactional approach to conversions &mdash; where one is made occasionally based on a single year&rsquo;s tax picture &mdash; is different from a coordinated multi-year view that considers all eight variables together. Whether the coordinated view adds meaningful value in your situation depends on account size, income picture, and the variables that are most relevant to your household.</p>
+</div>
+
+<div class="inline-cta">
+  <div class="inline-cta-eyebrow">A QUICK REFLECTION</div>
+  <div class="inline-cta-body">Three questions worth thinking about: Do you have a written view of how your pre-tax retirement balances will be drawn down across the years between peak earnings and Required Minimum Distributions? Have your current pre-tax balances, projected RMDs, and Social Security timing been looked at together rather than as separate topics? When you think about tax-aware retirement planning, where does your current clarity sit, and which areas might you most want to think through further? There are no right answers. In certain situations, the reflection confirms current planning already addresses these topics well. In others, it surfaces an area where a focused conversation could be useful.</div>
+  <a class="inline-cta-btn" href="longview_book.html">Schedule a Roth Window Analysis &rarr;</a>
+</div>
+
+<h2>A Note on Hypothetical Examples</h2>
+
+<p>A common observation in conversations about this topic is that hypothetical examples &mdash; "a physician with $X in pre-tax accounts" type scenarios &mdash; illustrate the mechanics of how variables interact but do not represent expected outcomes for any specific household. Account balances, marginal brackets, retirement timing, Social Security claiming, Medicare thresholds, and tax law all shape the actual picture. The variability between households is significant.</p>
+
+<p>What can be said generally, rather than through specific dollar projections, is that the more variables interact in a household&rsquo;s situation, the more value some physicians find in looking at them together in writing. For households with larger balances and more interacting variables, written multi-year views may be useful. Where the picture is simpler &mdash; smaller pre-tax balances, predictable income, no Medicare interaction concerns &mdash; single-topic planning may already cover what&rsquo;s needed.</p>
+
+<h2>How Different Households Approach the Timing Question</h2>
+
+<p>A common question is when, exactly, this kind of multi-year view becomes useful. The honest answer is that it varies. Some physicians develop a coordinated view in their late fifties because they prefer integrated long-range planning. Others address each topic individually as it becomes time-relevant and arrive at retirement well-coordinated through a different path. Depending on account structure and household preference, multi-year conversion planning may or may not be pursued at all &mdash; and in households where the math doesn&rsquo;t favor it, no action is also a legitimate outcome.</p>
+
+<p>What&rsquo;s worth noting is that several of these planning variables are tied to age-based rules and timelines, which is part of why some households prefer to evaluate them proactively. RMD timing, Medicare&rsquo;s two-year lookback, and Social Security claiming windows all sit inside fixed calendars. The relevance of considering them ahead of the relevant ages varies by household, but the underlying rules themselves don&rsquo;t move. Individual circumstances vary significantly, and the relevance of these considerations differs by case.</p>
+
+<p class="reflection"><strong>Reflection:</strong> If you&rsquo;ve heard the topic of Roth conversions raised in passing &mdash; by a tax professional, by a colleague, or in your own reading &mdash; but haven&rsquo;t yet looked at it in a written, multi-year context, that&rsquo;s a common starting position. The next step, where one is taken, is usually a focused conversation rather than an immediate decision.</p>
+
+<h2>Tax, Planning, and the Different Roles They Play</h2>
+
+<p>Tax preparation and tax-aware retirement planning are related but distinct activities. Tax preparation looks at what happened during the year and reports it accurately. Multi-year retirement tax planning looks ahead at how decisions in one year may interact with tax outcomes in later years.</p>
+
+<p>Both have a role. In situations where the planning side is already addressed within an existing relationship, no additional layer is needed. Where it isn&rsquo;t, a focused conversation can help identify whether the planning side warrants attention or whether existing arrangements are already sufficient. There&rsquo;s no single right configuration.</p>
+
+<div class="key-takeaway">
+  <div class="key-takeaway-label">KEY TAKEAWAY &mdash; WHAT TO REMEMBER</div>
+  <p>The years between peak earnings and Required Minimum Distributions are often a focal point for tax-aware retirement planning. For households where multi-year Roth conversion planning is relevant, the strategy involves coordinating eight or more variables simultaneously.</p>
+  <p>The potential long-term impact varies significantly by household and may range from minimal to substantial depending on circumstances. In some cases, a written, multi-year view is useful during this period. In others, existing arrangements already address these topics.</p>
+  <p>A useful next step, for households exploring the question, is a conversation that identifies which planning topics are already well-addressed and which might benefit from a closer look.</p>
+</div>
+
+<div class="inline-cta">
+  <div class="inline-cta-eyebrow">YOUR NEXT STEP</div>
+  <div class="inline-cta-body">A focused conversation about your conversion window &mdash; if one is relevant in your situation. A Roth Window Analysis looks at your pre-tax balances, projected RMDs, and the variables that interact with conversion decisions. The conversation maps what current planning already addresses and surfaces areas that might benefit from a closer look. Whether that conversation leads to further engagement is entirely your decision.</div>
+  <a class="inline-cta-btn" href="longview_book.html">Schedule a Roth Window Analysis &rarr;</a>
+</div>
+
+<p>This content is intended for general educational purposes and does not constitute individualized financial advice.</p>
+
+<p>Follow Longview Planning Partners for general educational content on financial topics relevant to medical professionals.</p>
+
+<!-- Compliance callout -->
+<div class="compliance-callout">
+  <div class="compliance-callout-label">Important Disclosure</div>
+  <div class="compliance-callout-text">
+    This content is intended for general educational purposes and does not constitute individualized financial, tax, or legal advice. Every physician&rsquo;s situation is different. Federal tax rules, Social Security and Medicare provisions, and retirement-account regulations change over time. Physicians should consult with a qualified advisor, attorney, and/or tax professional before making any decisions based on the topics discussed above.
+  </div>
+</div>
+
+</article>
+
+    <!-- ── SIDEBAR ─────────────────────────────────────────── -->
+    <aside class="art-sidebar">
+
+      <!-- Author card -->
+      <div class="sidebar-card">
+        <div class="sidebar-card-label">Written by</div>
+        <div class="sidebar-author-row">
+          <div class="sidebar-avatar">LV</div>
+          <div class="sidebar-author-name">LongView Planning Partners</div>
+        </div>
+        <div class="sidebar-bio">Advisors serving physicians and dentists. Based in Memphis, TN. Nationwide clients.</div>
+        <a class="sidebar-cta" href="longview_book.html">Schedule an Icebreaker Call &rarr;</a>
+      </div>
+
+      <!-- Lead magnet card -->
+      <div class="sidebar-card">
+        <div class="sidebar-card-label">Free Assessment</div>
+        <div class="sidebar-lm-title">Are You On Track? Take the Physician Financial Readiness Check</div>
+        <div class="sidebar-lm-bullets">
+          <div class="sidebar-lm-bullet"><div class="sidebar-lm-bullet-dot"></div><span>See where you stand across debt, taxes, insurance, and retirement &mdash; in 3 minutes</span></div>
+          <div class="sidebar-lm-bullet"><div class="sidebar-lm-bullet-dot"></div><span>Personalized to your career stage: resident through later-career attending</span></div>
+          <div class="sidebar-lm-bullet"><div class="sidebar-lm-bullet-dot"></div><span>Free. No email required. Instant results.</span></div>
+        </div>
+        <a class="sidebar-lm-btn" href="longview_post-assessment.html" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;text-decoration:none;line-height:42px">See If You&rsquo;re On Track &rarr;</a>
+      </div>
+
+      <!-- Related articles -->
+      <div class="sidebar-card">
+        <div class="sidebar-related-title">Related Articles</div>
+        <a class="related-item" href="longview_post-retire-at-60.html" style="text-decoration:none;color:inherit;cursor:pointer">
+          <span>How to Know &mdash; Whether You Can Realistically Retire at 60</span>
+          <span class="related-coming" style="color:var(--lv-sky)">Pre-Retirement &middot; Read &rarr;</span>
+        </a>
+        <a class="related-item" href="longview_post-coordinate-accounts.html" style="text-decoration:none;color:inherit;cursor:pointer">
+          <span>Coordinating 8&ndash;12 Scattered Accounts Into a Retirement Structure</span>
+          <span class="related-coming" style="color:var(--lv-sky)">Pre-Retirement &middot; Read &rarr;</span>
+        </a>
+        <a class="related-item" href="longview_post-comprehensive-planning.html" style="text-decoration:none;color:inherit;cursor:pointer">
+          <span>What Comprehensive Retirement Planning Includes Beyond Portfolio Management</span>
+          <span class="related-coming" style="color:var(--lv-sky)">Pre-Retirement &middot; Read &rarr;</span>
+        </a>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- ── AUTHOR BIO STRIP ───────────────────────────────────────── -->
+<div class="author-bio-strip">
+  <div class="wrap">
+    <div class="author-bio-in reveal">
+      <div class="author-bio-avatar">LV</div>
+      <div class="author-bio-content">
+        <div class="author-bio-label">About the author</div>
+        <div class="author-bio-name">LongView Planning Partners</div>
+        <div class="author-bio-text">LongView Planning Partners is a financial planning firm serving physicians and dentists. We work with clients at every career stage &mdash; from residency through retirement &mdash; on student loans, tax strategy, investment management, and comprehensive financial planning.</div>
+        <div class="author-bio-cred">SEC Registered Representatives &nbsp;&middot;&nbsp; Certified Student Loan Professionals (CSLP&reg;) on staff</div>
+        <a class="bio-cta" href="longview_book.html">Schedule an Icebreaker Call &rarr;</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── RELATED ARTICLES ───────────────────────────────────────── -->
+<div class="related-section">
+  <div class="wrap reveal">
+    <div class="section-eyebrow">You might also like</div>
+    <div class="related-grid">
+      <a class="related-card" href="longview_post-retire-at-60.html" style="opacity:1;filter:none;cursor:pointer;text-decoration:none;color:inherit;transition:transform var(--trans),box-shadow var(--trans)" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 10px 32px rgba(7,115,187,.14)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div class="related-badge">Pre-Retirement</div>
+        <div class="related-card-title">How to Know &mdash; Whether You Can Realistically Retire at 60</div>
+        <div class="related-card-cat" style="color:var(--lv-navy);font-weight:600">Read article &rarr;</div>
+      </a>
+      <a class="related-card" href="longview_post-coordinate-accounts.html" style="opacity:1;filter:none;cursor:pointer;text-decoration:none;color:inherit;transition:transform var(--trans),box-shadow var(--trans)" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 10px 32px rgba(7,115,187,.14)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div class="related-badge">Pre-Retirement</div>
+        <div class="related-card-title">Coordinating 8&ndash;12 Scattered Accounts Into a Retirement Structure</div>
+        <div class="related-card-cat" style="color:var(--lv-navy);font-weight:600">Read article &rarr;</div>
+      </a>
+      <a class="related-card" href="longview_post-comprehensive-planning.html" style="opacity:1;filter:none;cursor:pointer;text-decoration:none;color:inherit;transition:transform var(--trans),box-shadow var(--trans)" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 10px 32px rgba(7,115,187,.14)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div class="related-badge">Pre-Retirement</div>
+        <div class="related-card-title">What Comprehensive Retirement Planning Includes Beyond Portfolio Management</div>
+        <div class="related-card-cat" style="color:var(--lv-navy);font-weight:600">Read article &rarr;</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── ARTICLE CTA STRIP ──────────────────────────────────────── -->
+<div class="art-cta-strip">
+  <div class="wrap art-cta-in reveal">
+    <div class="art-cta-headline">Want a focused conversation about your situation?</div>
+    <p class="art-cta-sub">A 30-minute call with an advisor who works primarily with physicians and dentists. No pitch.</p>
+    <a class="btn-primary" href="longview_book.html">Schedule an Icebreaker Call &rarr;</a>
+  </div>
+</div>
+
+<!-- LV_CANONICAL_FOOTER -->
+<footer class="lvf" data-canonical-footer="1">
+<style>
+.lvf{background:#0A1A2F;padding:64px 0 0;font-family:'DM Sans',sans-serif;color:#fff}
+.lvf-wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.lvf-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+.lvf-brand{font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:#fff;margin:0 0 6px;line-height:1}
+.lvf-sub{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:10px;display:block}
+.lvf-tag{font-size:12.5px;color:rgba(255,255,255,.4);line-height:1.6;max-width:240px;margin:0}
+.lvf-coltitle{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);margin:0 0 16px}
+.lvf-col a{display:block;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:10px;text-decoration:none;transition:color .18s}
+.lvf-col a:hover{color:rgba(255,255,255,.9)}
+.lvf-crs-row{padding:28px 0;display:flex;justify-content:center;border-bottom:1px solid rgba(255,255,255,.1)}
+.lvf-crs{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#2D6CA2;color:#fff;padding:18px 30px;border-radius:10px;text-decoration:none;min-width:240px;line-height:1.25;box-shadow:0 2px 10px rgba(0,0,0,.22);transition:background .18s,transform .18s;font-family:'DM Sans',sans-serif}
+.lvf-crs:hover{background:#3a7eb8;transform:translateY(-1px)}
+.lvf-crs-top{font-size:14px;font-weight:600;letter-spacing:.06em;color:#fff}
+.lvf-crs-div{display:block;width:80%;height:1px;background:rgba(255,255,255,.5)}
+.lvf-crs-bot{font-size:15px;font-weight:600;color:#fff}
+.lvf-copy{padding:22px 0 6px;font-size:12px;color:rgba(255,255,255,.45);text-align:center;line-height:1.6}
+.lvf-disclosure{padding:6px 0 36px;font-size:11px;color:rgba(255,255,255,.5);line-height:1.65;max-width:920px;margin:0 auto;text-align:center}
+.lvf-bcheck{margin:0 0 14px;font-weight:700;letter-spacing:.06em;color:rgba(255,255,255,.78);font-size:11.5px}
+.lvf-bcheck a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+.lvf-p{margin:0 0 10px;font-style:italic}
+.lvf-p a{color:rgba(255,255,255,.78);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:960px){.lvf-top{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:560px){.lvf-top{grid-template-columns:1fr;gap:28px}}
+</style>
+<div class="lvf-wrap">
+  <div class="lvf-top">
+    <div>
+      <div class="lvf-brand">LongView</div>
+      <span class="lvf-sub">Planning Partners</span>
+      <p class="lvf-tag">Comprehensive Planning for Physicians and Dentists</p>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Services</div>
+      <a href="longview_services.html">Student Loan Strategy</a>
+      <a href="longview_services.html">Tax Planning</a>
+      <a href="longview_services.html">Retirement Planning</a>
+      <a href="longview_services.html">Investment Management</a>
+      <a href="longview_services.html">Insurance Review</a>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Who We Serve</div>
+      <a href="longview_who-we-serve.html">Physicians</a>
+      <a href="longview_who-we-serve.html">Dentists</a>
+      <a href="longview_icp-earlycareer.html">Early Career</a>
+      <a href="longview_icp-laterstage.html">Established</a>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Resources</div>
+      <a href="longview_landing-pslf.html">PSLF Guide</a>
+      <a href="longview_blog.html">Articles</a>
+      <a href="longview_blog.html">All Resources</a>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Contact</div>
+      <a href="mailto:info@longviewplan.com">info@longviewplan.com</a>
+      <a href="tel:9013229114">901-322-9114</a>
+      <a href="longview_book.html">Schedule a Call</a>
+      <a href="longview_licensing.html">Licensing</a>
+      <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener">FINRA BrokerCheck</a>
+    </div>
+  </div>
+  <div class="lvf-crs-row">
+    <a class="lvf-crs" href="https://compass.massmutual.com/file-handler-api-wrapper?url=%2Ffile%2Fblt3e72bd07ab10cfcb" target="_blank" rel="noopener" aria-label="Licensing - Client Relationship Summary (opens in new tab)">
+      <span class="lvf-crs-top">Licensing</span>
+      <span class="lvf-crs-div"></span>
+      <span class="lvf-crs-bot">Client Relationship Summary</span>
+    </a>
+  </div>
+  <div class="lvf-copy">&copy; 2026 LongView Planning Partners &middot; 618 Oakleaf Office Lane, Suite 300, Memphis, TN 38117 &middot; 901-322-9114</div>
+  <div class="lvf-disclosure">
+    <p class="lvf-bcheck">CHECK THE BACKGROUND OF THIS FINANCIAL PROFESSIONAL ON FINRA&rsquo;S <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener">BROKERCHECK</a></p>
+    <p class="lvf-p">Securities, investment advisory and financial planning services are offered through qualified registered representatives of MML Investors Services, LLC, <a href="https://www.sipc.org/" target="_blank" rel="noopener">Member SIPC</a>, 10 Cadillac Drive, Suite 300, Brentwood, TN 37027 (615) 309-6300. LongView Planning Partners is not a subsidiary or affiliate of MML Investors Services, LLC or its affiliated companies. CRN____________</p>
+    <p class="lvf-p">Financial Plan recommendations can be implemented with the advisor of your choosing. Implementation of specific products or services may result in commissions or fees outside of the financial planning fee.*</p>
+  </div>
+</div>
+</footer>
+<!-- /LV_CANONICAL_FOOTER -->
+
+
+<script>
+(function(){
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){
+    nav.classList.toggle('scrolled', window.scrollY > 24);
+  }, {passive:true});
+
+  var targets = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+  },{threshold:0.01,rootMargin:'0px 0px -20px 0px'});
+  targets.forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>

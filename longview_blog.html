@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insights — LongView Planning Partners</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & ROOT ─────────────────────────────────────────── */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --lv-navy:#0773BB;--lv-dark:#054A82;--lv-deeper:#032F57;
+  --lv-sky:#38B0E3;--lv-light:#8CD7F7;
+  --lv-gray:#939598;--lv-gl:#D1D2D4;--lv-off:#F4F8FC;
+  --ink:#0F1923;--body:#3D4A58;
+  --max:1240px;
+  --grad:linear-gradient(95deg,#0773BB 0%,#38B0E3 100%);
+  --trans:.22s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--ink);background:#fff;min-width:320px;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 52px}
+
+/* ── PULSE ANIMATION ──────────────────────────────────────── */
+@keyframes ctaPulse{
+  0%{box-shadow:0 0 0 0 rgba(7,115,187,.4)}
+  70%{box-shadow:0 0 0 10px rgba(7,115,187,0)}
+  100%{box-shadow:0 0 0 0 rgba(7,115,187,0)}
+}
+.btn-primary:not(:hover){animation:ctaPulse 2.4s ease-out infinite}
+
+/* ── CHIPS ─────────────────────────────────────────────────── */
+.chip{display:inline-flex;align-items:center;gap:7px;font-size:10.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--lv-navy);border:1px solid rgba(7,115,187,.22);padding:5px 14px;border-radius:20px;background:rgba(7,115,187,.05)}
+.chip-dot{width:5px;height:5px;border-radius:50%;background:var(--lv-sky);flex-shrink:0}
+.chip.light{color:var(--lv-light);border-color:rgba(140,215,247,.3);background:rgba(140,215,247,.08)}
+
+/* ── GRADIENT TEXT ─────────────────────────────────────────── */
+.gt{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ── TOP BAR ───────────────────────────────────────────────── */
+.topbar{background:var(--lv-deeper)}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:36px}
+.topbar span{font-size:11.5px;color:rgba(255,255,255,.52)}
+.topbar .c{color:rgba(255,255,255,.88);font-weight:500;display:flex;align-items:center;gap:18px}
+.topbar .c a{color:inherit;opacity:.88;transition:opacity var(--trans)}
+.topbar .c a:hover{opacity:1}
+.tb-sep{width:1px;height:12px;background:rgba(255,255,255,.2)}
+
+/* ── NAV ───────────────────────────────────────────────────── */
+.nav-out{background:#fff;border-bottom:1px solid rgba(209,210,212,.6);position:sticky;top:0;z-index:200;transition:box-shadow .3s}
+.nav-out.scrolled{box-shadow:0 4px 32px rgba(5,74,130,.1)}
+.nav-out .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;flex-direction:column;flex-shrink:0;cursor:pointer}
+.logo-name{font-family:'Libre Baskerville',serif;font-size:22px;font-weight:700;color:var(--lv-navy);letter-spacing:-.02em;line-height:1}
+.logo-sub{font-size:9.5px;font-family:'DM Sans',sans-serif;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--lv-gray);margin-top:4px}
+.nav-links{display:flex;gap:6px;align-items:center}
+.nl{font-size:13.5px;color:#5a6472;padding:8px 14px;border-radius:4px;cursor:pointer;transition:color var(--trans),background var(--trans);position:relative;white-space:nowrap}
+.nl::after{content:'';position:absolute;bottom:4px;left:14px;right:14px;height:1.5px;background:var(--lv-navy);transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.4,0,.2,1)}
+.nl:hover{color:var(--lv-navy)}
+.nl:hover::after,.nl.active::after{transform:scaleX(1)}
+.nl.active{color:var(--lv-navy)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.ncta{font-size:13px;font-weight:600;padding:11px 24px;background:var(--lv-navy);color:#fff;border-radius:4px;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background var(--trans),box-shadow var(--trans),transform var(--trans);letter-spacing:.01em}
+.ncta:hover{background:var(--lv-dark);box-shadow:0 6px 20px rgba(7,115,187,.3);transform:translateY(-1px)}
+
+/* ── PAGE HERO ─────────────────────────────────────────────── */
+.page-hero{background:linear-gradient(130deg,#021E3A 0%,var(--lv-deeper) 50%,var(--lv-dark) 100%);position:relative;overflow:hidden;padding:64px 0 56px}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 1px);background-size:26px 26px}
+.page-hero::after{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(-45deg,transparent,transparent 16px,rgba(255,255,255,.016) 16px,rgba(255,255,255,.016) 17px)}
+.ph-in{position:relative;z-index:2}
+.ph-eyebrow{font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--lv-sky);margin-bottom:14px}
+.ph-headline{font-family:'Libre Baskerville',serif;font-size:44px;font-weight:700;color:#fff;line-height:1.12;letter-spacing:-.03em;margin-bottom:16px;max-width:680px}
+.ph-sub{font-size:16px;color:rgba(255,255,255,.65);line-height:1.75;font-weight:300;max-width:580px}
+
+/* ── COMPLIANCE NOTICE BAR ─────────────────────────────────── */
+.compliance-bar{background:#FFF9EC;border-bottom:1px solid #E8D98C;border-top:1px solid #E8D98C;padding:10px 0}
+.compliance-bar .wrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.compliance-bar-icon{width:18px;height:18px;flex-shrink:0;color:#8a6a00}
+.compliance-bar-text{font-size:11.5px;color:#5a4a00;line-height:1.5;flex:1}
+.compliance-bar-text a{color:#0773BB;text-decoration:underline;cursor:pointer}
+.compliance-placeholder{font-size:10px;color:#8a6a00;background:#FFF3C4;border:1px dashed #C9A800;padding:2px 8px;border-radius:3px;white-space:nowrap}
+
+/* ── CATEGORY FILTER ───────────────────────────────────────── */
+.cat-filter{background:#fff;border-bottom:1px solid var(--lv-gl);padding:0}
+.cat-filter .wrap{overflow-x:auto;display:flex;gap:0;padding-top:0;padding-bottom:0;-ms-overflow-style:none;scrollbar-width:none}
+.cat-filter .wrap::-webkit-scrollbar{display:none}
+.cat-tab{font-size:13px;font-weight:500;color:var(--lv-gray);padding:16px 22px;cursor:pointer;white-space:nowrap;border-bottom:2.5px solid transparent;transition:color var(--trans),border-color var(--trans);flex-shrink:0}
+.cat-tab:hover{color:var(--lv-navy)}
+.cat-tab.active{color:var(--lv-navy);border-bottom-color:var(--lv-sky);font-weight:600}
+
+/* ── BLOG GRID ─────────────────────────────────────────────── */
+.blog-section{padding:64px 0 80px;background:#fff}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.blog-card{background:#fff;border:1px solid var(--lv-gl);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:border-color var(--trans)}
+.blog-card:hover{border-color:rgba(7,115,187,.35);transform:none;box-shadow:none}
+.blog-card:hover .blog-card-img img{transform:none}
+.blog-card-img{width:100%;aspect-ratio:3/2;background:linear-gradient(130deg,#021E3A 0%,var(--lv-deeper) 50%,var(--lv-dark) 100%);position:relative;overflow:hidden;flex-shrink:0}
+.blog-card-img::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 1px);background-size:22px 22px}
+.blog-card-img::after{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(-45deg,transparent,transparent 14px,rgba(255,255,255,.018) 14px,rgba(255,255,255,.018) 15px)}
+.thumb-content{position:absolute;inset:0;padding:18px 20px;display:flex;flex-direction:column;justify-content:space-between;z-index:2}
+.thumb-top{display:flex;align-items:center;gap:8px}
+.thumb-cat{font-size:8.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#38B0E3;background:rgba(56,176,227,.12);border:1px solid rgba(56,176,227,.25);padding:4px 10px;border-radius:2px;white-space:nowrap}
+.thumb-rule{flex:0 0 24px;height:1px;background:rgba(56,176,227,.25)}
+.thumb-mid{flex:1;display:flex;align-items:center;padding:10px 0}
+.thumb-title{font-family:'Libre Baskerville',serif;font-size:15px;font-weight:700;color:#fff;line-height:1.3;letter-spacing:-.01em}
+.thumb-bottom{display:flex;align-items:center;justify-content:space-between}
+
+.thumb-brand{font-size:8px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28)}
+.thumb-watermark{position:absolute;bottom:-16px;right:-16px;width:110px;opacity:.05;filter:brightness(0) invert(1);z-index:1}
+.blog-card-body{padding:22px 22px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.blog-card-cat{display:inline-flex;align-items:center;font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lv-navy);background:rgba(7,115,187,.06);border:1px solid rgba(7,115,187,.18);padding:3px 10px;border-radius:20px;width:fit-content}
+.blog-card-title{font-size:19px;font-weight:700;color:var(--ink);line-height:1.35;flex:1}
+.blog-card-excerpt{font-size:13px;color:var(--body);line-height:1.65;font-weight:300}
+.blog-card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--lv-gl);margin-top:auto}
+.blog-card-stage{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--lv-gray);background:var(--lv-off);border:1px solid var(--lv-gl);padding:3px 10px;border-radius:20px}
+.blog-card-link{font-size:13px;font-weight:600;color:var(--lv-navy);transition:color var(--trans)}
+.blog-card-link:hover{color:var(--lv-dark)}
+
+/* ── NEWSLETTER STRIP ──────────────────────────────────────── */
+.newsletter-strip{background:linear-gradient(135deg,var(--lv-deeper) 0%,var(--lv-dark) 100%);padding:64px 0;position:relative;overflow:hidden}
+.newsletter-strip::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.055) 1px,transparent 1px);background-size:22px 22px}
+.nl-in{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.nl-headline{font-family:'Libre Baskerville',serif;font-size:30px;font-weight:700;color:#fff;line-height:1.2;letter-spacing:-.02em;margin-bottom:10px}
+.nl-sub{font-size:15px;color:rgba(255,255,255,.6);line-height:1.7;font-weight:300}
+.nl-form{display:flex;gap:10px}
+.nl-email{flex:1;height:50px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:5px;padding:0 16px;font-size:13.5px;color:#fff;font-family:'DM Sans',sans-serif;transition:border-color var(--trans),background var(--trans)}
+.nl-email::placeholder{color:rgba(255,255,255,.45)}
+.nl-email:focus{outline:none;border-color:rgba(56,176,227,.6);background:rgba(255,255,255,.14)}
+.nl-submit{height:50px;padding:0 24px;background:#fff;color:var(--lv-dark);border:none;border-radius:5px;font-size:13.5px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:'DM Sans',sans-serif;transition:opacity var(--trans),transform var(--trans)}
+.nl-submit:hover{opacity:.9;transform:translateY(-1px)}
+.nl-compliance{font-size:10.5px;color:rgba(255,255,255,.35);margin-top:10px;line-height:1.5}
+.nl-compliance .cp{display:inline;font-size:9.5px;background:rgba(255,255,255,.08);border:1px dashed rgba(255,255,255,.2);padding:1px 6px;border-radius:3px;color:rgba(255,255,255,.4)}
+
+/* ── BOTTOM CTA STRIP ──────────────────────────────────────── */
+.cta-strip{background:linear-gradient(135deg,#021E3A 0%,var(--lv-dark) 60%,var(--lv-navy) 100%);padding:72px 0;text-align:center;position:relative;overflow:hidden}
+.cta-strip::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.05) 1px,transparent 1px);background-size:24px 24px}
+.cta-strip-in{position:relative;z-index:2}
+.cta-strip-headline{font-family:'Libre Baskerville',serif;font-size:36px;font-weight:700;color:#fff;line-height:1.15;letter-spacing:-.025em;margin-bottom:28px}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:700;padding:16px 36px;background:#fff;color:var(--lv-dark);border-radius:5px;cursor:pointer;letter-spacing:.01em;transition:transform var(--trans),box-shadow var(--trans);text-decoration:none}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(0,0,0,.28)}
+
+/* ── FOOTER ────────────────────────────────────────────────── */
+.footer-pre{background:var(--lv-deeper);padding:22px 0;border-top:1px solid rgba(255,255,255,.07)}
+.footer-pre .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.footer-pre-copy{font-size:13px;color:rgba(255,255,255,.45)}
+.footer-pre-contact{display:flex;align-items:center;gap:24px;font-size:13px;color:rgba(255,255,255,.7);font-weight:500}
+.footer-pre-contact a{color:inherit;transition:color var(--trans)}
+.footer-pre-contact a:hover{color:#fff}
+.footer-out{background:#0D0D0D}
+.footer-out .wrap{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px;padding-top:36px;padding-bottom:36px}
+.footer-logo-name{font-family:'Libre Baskerville',serif;font-size:18px;font-weight:700;color:#fff;line-height:1}
+.footer-logo-sub{font-size:9px;font-family:'DM Sans',sans-serif;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#555;display:block;margin-top:5px}
+.footer-links{display:flex;gap:24px;font-size:12px;color:#666;flex-wrap:wrap}
+.footer-links a{transition:color var(--trans)}
+.footer-links a:hover{color:#999}
+.footer-disc{font-size:11px;color:#444;max-width:440px;line-height:1.65;text-align:right}
+
+/* ── SCROLL REVEAL ─────────────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1);will-change:opacity,transform;backface-visibility:hidden}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-children>*{opacity:0;transform:translateY(22px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1);will-change:opacity,transform;backface-visibility:hidden}
+.reveal-children.visible>*:nth-child(1){opacity:1;transform:translateY(0);transition-delay:.05s}
+.reveal-children.visible>*:nth-child(2){opacity:1;transform:translateY(0);transition-delay:.12s}
+.reveal-children.visible>*:nth-child(3){opacity:1;transform:translateY(0);transition-delay:.19s}
+.reveal-children.visible>*:nth-child(4){opacity:1;transform:translateY(0);transition-delay:.26s}
+.reveal-children.visible>*:nth-child(5){opacity:1;transform:translateY(0);transition-delay:.33s}
+.reveal-children.visible>*:nth-child(6){opacity:1;transform:translateY(0);transition-delay:.40s}
+.reveal-children.visible>*:nth-child(n+7){opacity:1;transform:translateY(0);transition-delay:.46s}
+
+/* ── MOBILE ────────────────────────────────────────────────── */
+@media(max-width:768px){
+  .wrap{padding:0 20px}
+  .topbar .wrap{flex-direction:column;height:auto;padding-top:8px;padding-bottom:8px;gap:4px;text-align:center}
+  .nav-links{display:none}
+  .nav-out .wrap{height:64px}
+  .ph-headline{font-size:30px}
+  .blog-grid{grid-template-columns:1fr}
+  .nl-in{grid-template-columns:1fr}
+  .nl-form{flex-direction:column}
+  .cta-strip-headline{font-size:26px}
+  .footer-out .wrap{flex-direction:column;gap:16px}
+  .footer-disc{text-align:left}
+  .cat-tab{padding:14px 16px;font-size:12px}
+}
+</style>
+<link rel="stylesheet" href="assets/lv-polish.css">
+</head>
+<body>
+
+<!-- ── TOP BAR ─────────────────────────────────────────────── -->
+<div class="topbar">
+  <div class="wrap">
+    <span>Comprehensive financial planning for physicians &amp; dentists &mdash; Memphis, TN &amp; nationwide</span>
+    <span class="c">
+      <a href="tel:9013229114">901-322-9114</a>
+      <span class="tb-sep"></span>
+      <a href="mailto:info@longviewplan.com">info@longviewplan.com</a>
+    </span>
+  </div>
+</div>
+
+<!-- ── NAV ─────────────────────────────────────────────────── -->
+<div class="nav-out" id="nav">
+  <div class="wrap">
+    <a class="logo" href="longview_homepage_v8.html">
+      <img src="images/longview-logo.png" alt="LongView Planning Partners" style="height:44px;width:auto;display:block">
+    </a>
+    <div class="nav-links">
+      <a class="nl" href="longview_homepage_v8.html">Why LongView</a>
+      <a class="nl" href="longview_services.html">Our Services</a>
+      <a class="nl" href="longview_who-we-serve.html">Who We Serve</a>
+      <a class="nl" href="longview_process.html">Our Process</a>
+      <a class="nl" href="longview_team.html">Our Team</a>
+      <a class="nl active" href="longview_blog.html">Resources</a>
+    </div>
+    <div class="nav-right">
+      <a class="ncta" href="longview_book.html">Schedule an Icebreaker Call &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── PAGE HERO ─────────────────────────────────────────────── -->
+<div class="page-hero">
+  <div class="wrap ph-in">
+    <div class="ph-eyebrow">Resources</div>
+    <h1 class="ph-headline">Financial clarity for physicians and dentists &mdash; at every stage of your career.</h1>
+    <p class="ph-sub">Practical guidance on the decisions that matter most &mdash; written for doctors, not Wall Street.</p>
+  </div>
+</div>
+
+<!-- ── COMPLIANCE NOTICE BAR ─────────────────────────────────── -->
+<div class="compliance-bar">
+  <div class="wrap">
+    <svg class="compliance-bar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    <div class="compliance-bar-text">
+      <strong>Educational content only.</strong> Nothing here constitutes investment advice. Securities, investment advisory and financial planning services are offered through qualified registered representatives of MML Investors Services, LLC, Member SIPC. <!-- COMPLIANCE: confirm exact entity/registration language with Longview/MassMutual -->
+      <a href="longview_licensing.html">Full disclosure</a>
+      &nbsp;&mdash;&nbsp;<span class="compliance-placeholder">COMPLIANCE PLACEHOLDER &mdash; verify with MassMutual/MML compliance before publishing any content</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── CATEGORY FILTER ────────────────────────────────────────── -->
+<div class="cat-filter">
+  <div class="wrap">
+    <div class="cat-tab active" data-cat="all">All</div>
+    <div class="cat-tab" data-cat="resident">Resident</div>
+    <div class="cat-tab" data-cat="early-career">Early Career</div>
+    <div class="cat-tab" data-cat="tax-strategy">Tax Strategy</div>
+    <div class="cat-tab" data-cat="mid-career">Mid-Career</div>
+    <div class="cat-tab" data-cat="pre-retirement">Pre-Retirement</div>
+    <div class="cat-tab" data-cat="student-loans">Student Loans</div>
+  </div>
+</div>
+
+<!-- ── BLOG GRID ───────────────────────────────────────────────── -->
+<div class="blog-section">
+  <div class="wrap">
+    <div class="blog-grid reveal-children">
+
+      <!-- Card NEW: longview_post-retire-at-60.html -->
+      <a class="blog-card" href="longview_post-retire-at-60.html" data-cat="pre-retirement">
+        <div class="blog-card-img">
+          <img class="thumb-watermark" src="images/longview-logo.png" alt="">
+          <div class="thumb-content">
+            <div class="thumb-top"><div class="thumb-cat">Pre-Retirement</div><div class="thumb-rule"></div></div>
+            <div class="thumb-mid"><div class="thumb-title">How to Know &mdash; Whether You Can Realistically Retire at 60</div></div>
+            <div class="thumb-bottom"><span class="thumb-brand">LongView Planning Partners</span></div>
+          </div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-cat">Pre-Retirement</div>
+                    <div class="blog-card-excerpt">Five planning categories that often come into focus for physicians between 55 and 65 &mdash; and a short reflection to gauge your own clarity on each.</div>
+          <div class="blog-card-footer">
+            <div class="blog-card-stage">Pre-Retirement</div>
+            <span class="blog-card-link">Read more &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card NEW: longview_post-pre-rmd-tax-window.html -->
+      <a class="blog-card" href="longview_post-pre-rmd-tax-window.html" data-cat="tax-strategy">
+        <div class="blog-card-img">
+          <img class="thumb-watermark" src="images/longview-logo.png" alt="">
+          <div class="thumb-content">
+            <div class="thumb-top"><div class="thumb-cat">Tax Strategy</div><div class="thumb-rule"></div></div>
+            <div class="thumb-mid"><div class="thumb-title">The Pre-RMD Tax Planning Window Many Physicians Evaluate Before 73</div></div>
+            <div class="thumb-bottom"><span class="thumb-brand">LongView Planning Partners</span></div>
+          </div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-cat">Tax Strategy</div>
+                    <div class="blog-card-excerpt">The years between peak earnings and Required Minimum Distributions are often a focal point for multi-year, tax-aware retirement planning.</div>
+          <div class="blog-card-footer">
+            <div class="blog-card-stage">Pre-Retirement</div>
+            <span class="blog-card-link">Read more &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card NEW: longview_post-coordinate-accounts.html -->
+      <a class="blog-card" href="longview_post-coordinate-accounts.html" data-cat="pre-retirement">
+        <div class="blog-card-img">
+          <img class="thumb-watermark" src="images/longview-logo.png" alt="">
+          <div class="thumb-content">
+            <div class="thumb-top"><div class="thumb-cat">Pre-Retirement</div><div class="thumb-rule"></div></div>
+            <div class="thumb-mid"><div class="thumb-title">Coordinating 8&ndash;12 Scattered Accounts Into a Retirement Structure</div></div>
+            <div class="thumb-bottom"><span class="thumb-brand">LongView Planning Partners</span></div>
+          </div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-cat">Pre-Retirement</div>
+                    <div class="blog-card-excerpt">Five categories &mdash; account mix, withdrawal sequencing, costs, beneficiary designations, and household accessibility &mdash; often come into focus during the years approaching retirement.</div>
+          <div class="blog-card-footer">
+            <div class="blog-card-stage">Pre-Retirement</div>
+            <span class="blog-card-link">Read more &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card NEW: longview_post-comprehensive-planning.html -->
+      <a class="blog-card" href="longview_post-comprehensive-planning.html" data-cat="pre-retirement">
+        <div class="blog-card-img">
+          <img class="thumb-watermark" src="images/longview-logo.png" alt="">
+          <div class="thumb-content">
+            <div class="thumb-top"><div class="thumb-cat">Pre-Retirement</div><div class="thumb-rule"></div></div>
+            <div class="thumb-mid"><div class="thumb-title">What Comprehensive Retirement Planning Includes Beyond Portfolio Management</div></div>
+            <div class="thumb-bottom"><span class="thumb-brand">LongView Planning Partners</span></div>
+          </div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-cat">Pre-Retirement</div>
+                    <div class="blog-card-excerpt">Eight planning topics &mdash; from multi-year tax considerations to practice transition &mdash; that often come into sharper focus as physicians approach retirement.</div>
+          <div class="blog-card-footer">
+            <div class="blog-card-stage">Pre-Retirement</div>
+            <span class="blog-card-link">Read more &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card NEW: longview_post-planning-windows.html -->
+      <a class="blog-card" href="longview_post-planning-windows.html" data-cat="pre-retirement">
+        <div class="blog-card-img">
+          <img class="thumb-watermark" src="images/longview-logo.png" alt="">
+          <div class="thumb-content">
+            <div class="thumb-top"><div class="thumb-cat">Pre-Retirement</div><div class="thumb-rule"></div></div>
+            <div class="thumb-mid"><div class="thumb-title">6 Planning Windows Between Peak Earnings and RMD Age</div></div>
+            <div class="thumb-bottom"><span class="thumb-brand">LongView Planning Partners</span></div>
+          </div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-cat">Pre-Retirement</div>
+                    <div class="blog-card-excerpt">Six age-linked planning windows &mdash; pre-RMD years, Medicare thresholds, Social Security claiming, RMD-year income, estate, and beneficiaries &mdash; and how they interact.</div>
+          <div class="blog-card-footer">
+            <div class="blog-card-stage">Pre-Retirement</div>
+            <span class="blog-card-link">Read more &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+
+      <!-- Card 1: PSLF -->
+      <a class="blog-card" href="longview_blog-post.html" data-cat="student-loans">
+        <div class="blog-card-img">
+          <img class="thumb-watermark" src="images/longview-logo.png" alt="">
+          <div class="thumb-content">
+            <div class="thumb-top"><div class="thumb-cat">Student Loans</div><div class="thumb-rule"></div></div>
+            <div class="thumb-mid"><div class="thumb-title">PSLF in 2026: What Attending Physicians Need to Recalculate Right Now</div></div>
+            <div class="thumb-bottom"><span class="thumb-brand">LongView Planning Partners</span></div>
+          </div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-cat">Student Loans</div>
+                    <div class="blog-card-excerpt">The rules changed. Again. Here&rsquo;s what it means for attending physicians currently on income-driven repayment &mdash; and what to do before the window closes.</div>
+          <div class="blog-card-footer">
+            <div class="blog-card-stage">Early Attending</div>
+            <span class="blog-card-link">Read more &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 2: Whole Life education -->
+      <a class="blog-card" href="longview_post-whole-life-trap.html" data-cat="resident">
+        <div class="blog-card-img">
+          <img class="thumb-watermark" src="images/longview-logo.png" alt="">
+          <div class="thumb-content">
+            <div class="thumb-top"><div class="thumb-cat">Resident Resources</div><div class="thumb-rule"></div></div>
+            <div class="thumb-mid"><div class="thumb-title">Whole Life Insurance for Physicians: How to Evaluate It</div></div>
+            <div class="thumb-bottom"><span class="thumb-brand">LongView Planning Partners</span></div>
+          </div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-cat">Resident Resources</div>
+                    <div class="blog-card-excerpt">Whole life is one of several tools that can fit a financial plan. Here&rsquo;s how it works, how to evaluate whether it fits yours, and what to do if you already own a policy.</div>
+          <div class="blog-card-footer">
+            <div class="blog-card-stage">Resident</div>
+            <span class="blog-card-link">Read more &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 3: First Year Attending -->
+      <a class="blog-card" href="longview_post-first-year-attending.html" data-cat="early-career">
+        <div class="blog-card-img">
+          <img class="thumb-watermark" src="images/longview-logo.png" alt="">
+          <div class="thumb-content">
+            <div class="thumb-top"><div class="thumb-cat">Early Career</div><div class="thumb-rule"></div></div>
+            <div class="thumb-mid"><div class="thumb-title">The 5 Financial Mistakes Attendings Make in Their First Year Out of Residency</div></div>
+            <div class="thumb-bottom"><span class="thumb-brand">LongView Planning Partners</span></div>
+          </div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-cat">Early Career</div>
+                    <div class="blog-card-excerpt">Your income just doubled or tripled. Here are the five decisions most physicians get wrong in year one &mdash; and how to avoid them before they compound.</div>
+          <div class="blog-card-footer">
+            <div class="blog-card-stage">Early Attending</div>
+            <span class="blog-card-link">Read more &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 4: Tax Planning -->
+      <a class="blog-card" href="longview_post-tax-planning.html" data-cat="tax-strategy">
+        <div class="blog-card-img">
+          <img class="thumb-watermark" src="images/longview-logo.png" alt="">
+          <div class="thumb-content">
+            <div class="thumb-top"><div class="thumb-cat">Tax Strategy</div><div class="thumb-rule"></div></div>
+            <div class="thumb-mid"><div class="thumb-title">Tax Planning vs. Tax Filing: Why High-Income Physicians Overpay Every Year</div></div>
+            <div class="thumb-bottom"><span class="thumb-brand">LongView Planning Partners</span></div>
+          </div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-cat">Tax Strategy</div>
+                    <div class="blog-card-excerpt">Filing your taxes and planning your taxes are not the same thing. Most physicians who work with a CPA are only getting one of them.</div>
+          <div class="blog-card-footer">
+            <div class="blog-card-stage">All Career Stages</div>
+            <span class="blog-card-link">Read more &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 5: Burnout-Finance -->
+      <a class="blog-card" href="longview_post-burnout-number.html" data-cat="mid-career">
+        <div class="blog-card-img">
+          <img class="thumb-watermark" src="images/longview-logo.png" alt="">
+          <div class="thumb-content">
+            <div class="thumb-top"><div class="thumb-cat">Mid-Career</div><div class="thumb-rule"></div></div>
+            <div class="thumb-mid"><div class="thumb-title">The Burnout-Finance Connection: What Your &ldquo;Number&rdquo; Has to Do With How You Feel About Medicine</div></div>
+            <div class="thumb-bottom"><span class="thumb-brand">LongView Planning Partners</span></div>
+          </div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-cat">Mid-Career</div>
+                    <div class="blog-card-excerpt">Physicians who know their financial independence number experience burnout differently. Financial clarity doesn&rsquo;t fix burnout &mdash; but it changes the options.</div>
+          <div class="blog-card-footer">
+            <div class="blog-card-stage">Established</div>
+            <span class="blog-card-link">Read more &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 6: Work-Optional -->
+      <a class="blog-card" href="longview_post-work-optional.html" data-cat="pre-retirement">
+        <div class="blog-card-img">
+          <img class="thumb-watermark" src="images/longview-logo.png" alt="">
+          <div class="thumb-content">
+            <div class="thumb-top"><div class="thumb-cat">Pre-Retirement</div><div class="thumb-rule"></div></div>
+            <div class="thumb-mid"><div class="thumb-title">What &ldquo;Work-Optional&rdquo; Actually Looks Like for Physicians</div></div>
+            <div class="thumb-bottom"><span class="thumb-brand">LongView Planning Partners</span></div>
+          </div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-cat">Pre-Retirement</div>
+                    <div class="blog-card-excerpt">Most physicians don&rsquo;t want to retire &mdash; they want to stop being owned by medicine. Here&rsquo;s what the path to work-optional actually requires financially.</div>
+          <div class="blog-card-footer">
+            <div class="blog-card-stage">Pre-Retirement</div>
+            <span class="blog-card-link">Read more &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── NEWSLETTER STRIP ───────────────────────────────────────── -->
+<div class="newsletter-strip">
+  <div class="wrap">
+    <div class="nl-in reveal">
+      <div>
+        <div class="nl-headline">Get the LongView letter</div>
+        <p class="nl-sub">Financial insights for physicians and dentists. No spam. No product pitches. Unsubscribe anytime.</p>
+      </div>
+      <div>
+        <form class="nl-form" id="nlForm" novalidate>
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+          <input type="text" name="company_url" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+          <input class="nl-email" id="nlEmail" type="email" placeholder="Your email address" required>
+          <button class="nl-submit" type="submit" id="nlSubmit">Subscribe &rarr;</button>
+        </form>
+        <div class="nl-compliance" id="nlCompliance">
+          By subscribing you agree to receive educational content from LongView Planning Partners. We will never sell your information.
+          &nbsp;<span class="cp">COMPLIANCE PLACEHOLDER</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── BOTTOM CTA STRIP ───────────────────────────────────────── -->
+<div class="cta-strip">
+  <div class="cta-strip-in reveal">
+    <div class="cta-strip-headline">Rather talk through your situation?</div>
+    <a class="btn-primary" href="longview_book.html">
+      Schedule an Icebreaker Call &rarr;
+    </a>
+  </div>
+</div>
+
+<!-- LV_CANONICAL_FOOTER -->
+<footer class="lvf" data-canonical-footer="1">
+<style>
+.lvf{background:#0A1A2F;padding:64px 0 0;font-family:'DM Sans',sans-serif;color:#fff}
+.lvf-wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.lvf-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+.lvf-brand{font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:#fff;margin:0 0 6px;line-height:1}
+.lvf-sub{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:10px;display:block}
+.lvf-tag{font-size:12.5px;color:rgba(255,255,255,.4);line-height:1.6;max-width:240px;margin:0}
+.lvf-coltitle{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);margin:0 0 16px}
+.lvf-col a{display:block;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:10px;text-decoration:none;transition:color .18s}
+.lvf-col a:hover{color:rgba(255,255,255,.9)}
+.lvf-crs-row{padding:28px 0;display:flex;justify-content:center;border-bottom:1px solid rgba(255,255,255,.1)}
+.lvf-crs{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#2D6CA2;color:#fff;padding:18px 30px;border-radius:10px;text-decoration:none;min-width:240px;line-height:1.25;box-shadow:0 2px 10px rgba(0,0,0,.22);transition:background .18s,transform .18s;font-family:'DM Sans',sans-serif}
+.lvf-crs:hover{background:#3a7eb8;transform:translateY(-1px)}
+.lvf-crs-top{font-size:14px;font-weight:600;letter-spacing:.06em;color:#fff}
+.lvf-crs-div{display:block;width:80%;height:1px;background:rgba(255,255,255,.5)}
+.lvf-crs-bot{font-size:15px;font-weight:600;color:#fff}
+.lvf-copy{padding:22px 0 6px;font-size:12px;color:rgba(255,255,255,.45);text-align:center;line-height:1.6}
+.lvf-disclosure{padding:6px 0 36px;font-size:11px;color:rgba(255,255,255,.5);line-height:1.65;max-width:920px;margin:0 auto;text-align:center}
+.lvf-bcheck{margin:0 0 14px;font-weight:700;letter-spacing:.06em;color:rgba(255,255,255,.78);font-size:11.5px}
+.lvf-bcheck a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+.lvf-p{margin:0 0 10px;font-style:italic}
+.lvf-p a{color:rgba(255,255,255,.78);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:960px){.lvf-top{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:560px){.lvf-top{grid-template-columns:1fr;gap:28px}}
+</style>
+<div class="lvf-wrap">
+  <div class="lvf-top">
+    <div>
+      <div class="lvf-brand">LongView</div>
+      <span class="lvf-sub">Planning Partners</span>
+      <p class="lvf-tag">Comprehensive Planning for Physicians and Dentists</p>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Services</div>
+      <a href="longview_services.html">Student Loan Strategy</a>
+      <a href="longview_services.html">Tax Planning</a>
+      <a href="longview_services.html">Retirement Planning</a>
+      <a href="longview_services.html">Investment Management</a>
+      <a href="longview_services.html">Insurance Review</a>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Who We Serve</div>
+      <a href="longview_who-we-serve.html">Physicians</a>
+      <a href="longview_who-we-serve.html">Dentists</a>
+      <a href="longview_icp-earlycareer.html">Early Career</a>
+      <a href="longview_icp-laterstage.html">Established</a>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Resources</div>
+      <a href="longview_landing-pslf.html">PSLF Guide</a>
+      <a href="longview_blog.html">Articles</a>
+      <a href="longview_blog.html">All Resources</a>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Contact</div>
+      <a href="mailto:info@longviewplan.com">info@longviewplan.com</a>
+      <a href="tel:9013229114">901-322-9114</a>
+      <a href="longview_book.html">Schedule a Call</a>
+      <a href="longview_licensing.html">Licensing</a>
+      <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener">FINRA BrokerCheck</a>
+    </div>
+  </div>
+  <div class="lvf-crs-row">
+    <a class="lvf-crs" href="https://compass.massmutual.com/file-handler-api-wrapper?url=%2Ffile%2Fblt3e72bd07ab10cfcb" target="_blank" rel="noopener" aria-label="Licensing - Client Relationship Summary (opens in new tab)">
+      <span class="lvf-crs-top">Licensing</span>
+      <span class="lvf-crs-div"></span>
+      <span class="lvf-crs-bot">Client Relationship Summary</span>
+    </a>
+  </div>
+  <div class="lvf-copy">&copy; 2026 LongView Planning Partners &middot; 618 Oakleaf Office Lane, Suite 300, Memphis, TN 38117 &middot; 901-322-9114</div>
+  <div class="lvf-disclosure">
+    <p class="lvf-bcheck">CHECK THE BACKGROUND OF THIS FINANCIAL PROFESSIONAL ON FINRA&rsquo;S <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener">BROKERCHECK</a></p>
+    <p class="lvf-p">Securities, investment advisory and financial planning services are offered through qualified registered representatives of MML Investors Services, LLC, <a href="https://www.sipc.org/" target="_blank" rel="noopener">Member SIPC</a>, 10 Cadillac Drive, Suite 300, Brentwood, TN 37027 (615) 309-6300. LongView Planning Partners is not a subsidiary or affiliate of MML Investors Services, LLC or its affiliated companies. CRN202906-11331036</p>
+    <p class="lvf-p">Financial Plan recommendations can be implemented with the advisor of your choosing. Implementation of specific products or services may result in commissions or fees outside of the financial planning fee.*</p>
+  </div>
+</div>
+</footer>
+<!-- /LV_CANONICAL_FOOTER -->
+
+
+<script>
+(function(){
+  /* Nav scroll shadow */
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){
+    nav.classList.toggle('scrolled', window.scrollY > 24);
+  }, {passive:true});
+
+  /* Scroll reveal */
+  var targets = document.querySelectorAll('.reveal,.reveal-children');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+  },{threshold:0.01,rootMargin:'0px 0px -20px 0px'});
+  targets.forEach(function(el){ io.observe(el); });
+
+  /* Newsletter subscribe */
+  var nlForm = document.getElementById('nlForm');
+  if(nlForm){
+    nlForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var inp = document.getElementById('nlEmail');
+      var btn = document.getElementById('nlSubmit');
+      var email = (inp.value || '').trim();
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+        inp.style.borderColor = '#e05';
+        inp.focus();
+        return;
+      }
+      inp.style.borderColor = '';
+      var orig = btn.textContent;
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      fetch('/api/leads', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({source:'blog_newsletter', page:location.pathname, email:email})
+      }).then(function(r){
+        return r.json().catch(function(){return{ok:false};})
+          .then(function(j){ return {ok: r.ok && j.ok}; });
+      }).then(function(res){
+        if(res.ok){
+          nlForm.outerHTML = '<div style="color:#fff;font-size:14px;padding:14px 0">✓ Thanks — you\'re subscribed. Check your inbox.</div>';
+          var c = document.getElementById('nlCompliance');
+          if(c) c.style.display = 'none';
+        } else {
+          btn.textContent = orig;
+          btn.disabled = false;
+          inp.style.borderColor = '#e05';
+        }
+      }).catch(function(){
+        btn.textContent = orig;
+        btn.disabled = false;
+        inp.style.borderColor = '#e05';
+      });
+    });
+  }
+
+  /* Category filter — show/hide cards */
+  document.querySelectorAll('.cat-tab').forEach(function(tab){
+    tab.addEventListener('click', function(){
+      document.querySelectorAll('.cat-tab').forEach(function(t){ t.classList.remove('active'); });
+      tab.classList.add('active');
+      var cat = tab.getAttribute('data-cat');
+      document.querySelectorAll('.blog-card').forEach(function(card){
+        if(cat === 'all' || card.getAttribute('data-cat') === cat){
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

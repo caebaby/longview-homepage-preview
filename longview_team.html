@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Team — LongView Planning Partners</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & ROOT ─────────────────────────────────────────── */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --lv-navy:#0773BB;--lv-dark:#054A82;--lv-deeper:#032F57;
+  --lv-sky:#38B0E3;--lv-light:#8CD7F7;
+  --lv-gray:#939598;--lv-gl:#D1D2D4;--lv-off:#F4F8FC;
+  --ink:#0F1923;--body:#3D4A58;
+  --max:1240px;
+  --grad:linear-gradient(95deg,#0773BB 0%,#38B0E3 100%);
+  --trans:.22s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--ink);background:#fff;min-width:320px;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 52px}
+
+/* ── TOP BAR ────────────────────────────────────────────── */
+.topbar{background:var(--lv-deeper)}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:36px}
+.topbar span{font-size:11.5px;color:rgba(255,255,255,.52)}
+.topbar .c{color:rgba(255,255,255,.88);font-weight:500;display:flex;align-items:center;gap:18px}
+.topbar .c a{color:inherit;opacity:.88;transition:opacity var(--trans)}
+.topbar .c a:hover{opacity:1}
+.tb-sep{width:1px;height:12px;background:rgba(255,255,255,.2)}
+
+/* ── NAV ────────────────────────────────────────────────── */
+.nav-out{background:#fff;border-bottom:1px solid rgba(209,210,212,.6);position:sticky;top:0;z-index:200;transition:box-shadow .3s}
+.nav-out.scrolled{box-shadow:0 4px 32px rgba(5,74,130,.1)}
+.nav-out .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;flex-direction:column;flex-shrink:0;cursor:pointer}
+.logo-name{font-family:'Libre Baskerville',serif;font-size:22px;font-weight:700;color:var(--lv-navy);letter-spacing:-.02em;line-height:1}
+.logo-sub{font-size:9.5px;font-family:'DM Sans',sans-serif;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--lv-gray);margin-top:4px}
+.nav-links{display:flex;gap:6px;align-items:center}
+.nl{font-size:13.5px;color:#5a6472;padding:8px 14px;border-radius:4px;cursor:pointer;transition:color var(--trans),background var(--trans);position:relative;white-space:nowrap}
+.nl::after{content:'';position:absolute;bottom:4px;left:14px;right:14px;height:1.5px;background:var(--lv-navy);transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.4,0,.2,1)}
+.nl:hover{color:var(--lv-navy)}
+.nl:hover::after,.nl.active::after{transform:scaleX(1)}
+.nl.active{color:var(--lv-navy)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.ncta{font-size:13px;font-weight:600;padding:11px 24px;background:var(--lv-navy);color:#fff;border-radius:4px;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background var(--trans),box-shadow var(--trans),transform var(--trans);letter-spacing:.01em}
+.ncta:hover{background:var(--lv-dark);box-shadow:0 6px 20px rgba(7,115,187,.3);transform:translateY(-1px)}
+
+/* ── MOBILE NAV ─────────────────────────────────────────── */
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.nav-hamburger span{width:22px;height:2px;background:var(--ink);display:block;transition:all .25s}
+.mobile-nav{display:none;position:fixed;inset:0;background:rgba(3,47,87,.97);z-index:300;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+.mobile-nav.open{display:flex}
+.mobile-nav a{font-size:22px;font-family:'Libre Baskerville',serif;color:#fff;opacity:.85;transition:opacity var(--trans)}
+.mobile-nav a:hover{opacity:1}
+.mobile-nav-close{position:absolute;top:28px;right:28px;font-size:28px;color:#fff;cursor:pointer;opacity:.6}
+.mobile-nav-close:hover{opacity:1}
+.mobile-cta{font-size:15px!important;font-weight:600;padding:14px 32px;background:var(--lv-navy);border-radius:4px;opacity:1!important}
+
+/* ── PAGE HERO ──────────────────────────────────────────── */
+.page-hero{background:linear-gradient(135deg,#032F57 0%,#054A82 100%);position:relative;overflow:hidden;padding:72px 0 64px}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.055) 1px,transparent 1px);background-size:28px 28px}
+.page-hero::after{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(-45deg,transparent,transparent 18px,rgba(255,255,255,.016) 18px,rgba(255,255,255,.016) 19px)}
+.page-hero-in{position:relative;z-index:2}
+.page-eyebrow{font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--lv-sky);margin-bottom:14px}
+.page-hero-h1{font-family:'Libre Baskerville',serif;font-size:48px;font-weight:700;color:#fff;line-height:1.1;letter-spacing:-.03em;margin-bottom:16px}
+.page-hero-sub{font-size:16px;color:rgba(255,255,255,.68);font-weight:300;line-height:1.7;max-width:520px}
+
+/* ── CREDENTIAL BAR ─────────────────────────────────────── */
+.cred-bar{background:var(--lv-off);border-bottom:1px solid #dde8f2;padding:20px 0 14px}
+.cred-bar-items{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;margin-bottom:10px}
+.cred-bar-item{font-size:12.5px;font-weight:600;color:var(--lv-dark);letter-spacing:.01em;display:flex;align-items:center;gap:8px}
+.cred-bar-item::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--lv-sky);flex-shrink:0}
+.cred-bar-item:first-child::before{display:none}
+.cred-bar-sep{width:1px;height:16px;background:var(--lv-gl)}
+.cred-bar-note{text-align:center;font-size:11.5px;color:var(--lv-gray);font-style:italic;line-height:1.5}
+
+/* ── SECTION CHROME ─────────────────────────────────────── */
+.sec{padding:88px 0}
+.sec.alt{background:var(--lv-off);border-top:1px solid #dde8f2;border-bottom:1px solid #dde8f2}
+.sec-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--lv-navy);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:rgba(7,115,187,.18)}
+.sec-title{font-family:'Libre Baskerville',serif;font-size:36px;font-weight:700;color:var(--ink);letter-spacing:-.025em;line-height:1.18;margin-bottom:10px}
+.sec-title .ul{padding-bottom:4px;border-bottom:2.5px solid var(--lv-sky)}
+.sec-sub{font-size:15.5px;color:var(--body);line-height:1.78;font-weight:300;max-width:560px}
+.sec-hd{margin-bottom:52px}
+
+/* ── PARTNER GRID ───────────────────────────────────────── */
+.partner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+
+/* ── PLANNER GRID ───────────────────────────────────────── */
+.planner-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+
+/* ── TEAM CARD (shared base) ────────────────────────────── */
+.team-card{background:#fff;border:1px solid var(--lv-gl);border-top:3px solid var(--lv-sky);border-radius:12px;box-shadow:0 2px 20px rgba(5,74,130,.07);display:flex;flex-direction:column;transition:transform var(--trans),box-shadow var(--trans)}
+.team-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(5,74,130,.12)}
+.card-photo{border-radius:12px 12px 0 0;overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--lv-navy),var(--lv-sky))}
+.card-photo-lg{height:320px}
+.card-photo-sm{height:240px}
+.card-initials{font-family:'Libre Baskerville',serif;font-size:40px;font-weight:700;color:#fff;letter-spacing:-.02em;user-select:none}
+.card-initials-sm{font-size:32px}
+.card-body{padding:24px 20px 20px}
+.card-name{font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:4px}
+.card-name-sm{font-size:17px}
+.card-title{font-size:12px;color:var(--lv-gray);margin-bottom:12px;line-height:1.4}
+.card-creds{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.cred-pill{font-size:11px;font-weight:600;padding:4px 11px;border-radius:20px;background:rgba(7,115,187,.08);border:1px solid rgba(7,115,187,.2);color:var(--lv-dark);white-space:nowrap}
+.cred-pill.cslp{background:var(--lv-sky);border-color:var(--lv-sky);color:#fff}
+.card-bio{font-size:13px;color:var(--body);line-height:1.75;font-style:italic;margin-bottom:16px;padding:12px;background:rgba(7,115,187,.03);border-radius:6px;border-left:2px solid rgba(56,176,227,.3)}
+.card-bio-placeholder{color:var(--lv-gray);font-style:italic;font-size:12.5px}
+.card-contact{display:flex;flex-direction:column;gap:6px;margin-top:auto;padding-top:14px;border-top:1px solid var(--lv-gl)}
+.card-profile-link{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;font-weight:600;color:var(--lv-navy);margin-top:12px;border-bottom:1.5px solid rgba(7,115,187,.3);padding-bottom:1px;transition:border-color var(--trans),color var(--trans)}
+.card-profile-link:hover{border-bottom-color:var(--lv-navy);color:var(--lv-dark)}
+.card-contact-row{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--body)}
+.card-contact-row a{color:var(--lv-navy);transition:color var(--trans)}
+.card-contact-row a:hover{color:var(--lv-dark)}
+.contact-icon{width:18px;height:18px;color:var(--lv-sky);flex-shrink:0}
+
+/* ── CSLP CALLOUT ───────────────────────────────────────── */
+.cslp-strip{background:linear-gradient(135deg,var(--lv-deeper) 0%,var(--lv-dark) 100%);position:relative;overflow:hidden;padding:64px 0}
+.cslp-strip::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.05) 1px,transparent 1px);background-size:24px 24px}
+.cslp-strip::after{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(-45deg,transparent,transparent 16px,rgba(255,255,255,.014) 16px,rgba(255,255,255,.014) 17px)}
+.cslp-in{position:relative;z-index:2;display:flex;align-items:flex-start;gap:64px}
+.cslp-num{font-family:'Libre Baskerville',serif;font-size:96px;font-weight:700;line-height:1;color:var(--lv-sky);opacity:.25;flex-shrink:0;align-self:center}
+.cslp-content{flex:1}
+.cslp-tag{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--lv-sky);margin-bottom:12px}
+.cslp-h{font-family:'Libre Baskerville',serif;font-size:30px;font-weight:700;color:#fff;line-height:1.2;letter-spacing:-.02em;margin-bottom:16px}
+.cslp-body{font-size:15.5px;color:rgba(255,255,255,.62);line-height:1.8;font-weight:300;max-width:640px}
+
+/* ── SUPPORT GRID ───────────────────────────────────────── */
+.support-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+
+/* ── BOTTOM CTA ─────────────────────────────────────────── */
+.bottom-cta{background:linear-gradient(135deg,var(--lv-deeper) 0%,var(--lv-dark) 60%,var(--lv-navy) 100%);position:relative;overflow:hidden;padding:88px 0;text-align:center}
+.bottom-cta::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.055) 1px,transparent 1px);background-size:24px 24px}
+.bottom-cta-in{position:relative;z-index:2}
+.bottom-cta-h{font-family:'Libre Baskerville',serif;font-size:40px;font-weight:700;color:#fff;letter-spacing:-.025em;line-height:1.15;margin-bottom:14px}
+.bottom-cta-sub{font-size:16px;color:rgba(255,255,255,.62);font-weight:300;margin-bottom:36px}
+.btn-pulse{display:inline-flex;align-items:center;gap:10px;padding:18px 40px;background:#fff;color:var(--lv-dark);border-radius:4px;font-size:15px;font-weight:700;cursor:pointer;letter-spacing:.01em;box-shadow:0 8px 32px rgba(0,0,0,.2);animation:pulse 2.8s ease-in-out infinite;transition:transform var(--trans),box-shadow var(--trans)}
+.btn-pulse:hover{transform:translateY(-2px);box-shadow:0 16px 48px rgba(0,0,0,.28);animation:none}
+@keyframes pulse{0%,100%{box-shadow:0 8px 32px rgba(0,0,0,.2),0 0 0 0 rgba(255,255,255,.2)}60%{box-shadow:0 8px 32px rgba(0,0,0,.2),0 0 0 12px rgba(255,255,255,0)}}
+.bottom-cta-trust{margin-top:22px;font-size:12px;color:rgba(255,255,255,.38);letter-spacing:.04em}
+
+/* ── FOOTER PRE-BAR ─────────────────────────────────────── */
+.footer-pre{background:var(--lv-deeper);padding:22px 0;border-top:1px solid rgba(255,255,255,.07)}
+.footer-pre .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.footer-pre-copy{font-size:13px;color:rgba(255,255,255,.45)}
+.footer-pre-contact{display:flex;align-items:center;gap:24px;font-size:13px;color:rgba(255,255,255,.7);font-weight:500}
+.footer-pre-contact a{color:inherit;transition:color var(--trans)}
+.footer-pre-contact a:hover{color:#fff}
+.footer-out{background:#0D0D0D}
+.footer-out .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;padding-top:36px;padding-bottom:36px}
+.footer-logo-name{font-family:'Libre Baskerville',serif;font-size:18px;font-weight:700;color:#fff;line-height:1}
+.footer-logo-sub{font-size:9px;font-family:'DM Sans',sans-serif;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#555;display:block;margin-top:5px}
+.footer-links{display:flex;gap:24px;font-size:12px;color:#666}
+.footer-links a{transition:color var(--trans)}
+.footer-links a:hover{color:#999}
+.footer-disc{font-size:11px;color:#444}
+
+/* ── SCROLL REVEAL ──────────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1);will-change:opacity,transform;backface-visibility:hidden}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-children>*{opacity:0;transform:translateY(22px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1);will-change:opacity,transform;backface-visibility:hidden}
+.reveal-children.visible>*:nth-child(1){opacity:1;transform:translateY(0);transition-delay:.05s}
+.reveal-children.visible>*:nth-child(2){opacity:1;transform:translateY(0);transition-delay:.12s}
+.reveal-children.visible>*:nth-child(3){opacity:1;transform:translateY(0);transition-delay:.19s}
+.reveal-children.visible>*:nth-child(4){opacity:1;transform:translateY(0);transition-delay:.26s}
+.reveal-children.visible>*:nth-child(5){opacity:1;transform:translateY(0);transition-delay:.33s}
+.reveal-children.visible>*:nth-child(6){opacity:1;transform:translateY(0);transition-delay:.40s}
+.reveal-children.visible>*:nth-child(7){opacity:1;transform:translateY(0);transition-delay:.47s}
+.reveal-children.visible>*:nth-child(8){opacity:1;transform:translateY(0);transition-delay:.54s}
+.reveal-children.visible>*:nth-child(9){opacity:1;transform:translateY(0);transition-delay:.61s}
+.reveal-children.visible>*:nth-child(10){opacity:1;transform:translateY(0);transition-delay:.68s}
+.reveal-children.visible>*:nth-child(11){opacity:1;transform:translateY(0);transition-delay:.75s}
+.reveal-children.visible>*:nth-child(12){opacity:1;transform:translateY(0);transition-delay:.82s}
+.reveal-children.visible>*:nth-child(13){opacity:1;transform:translateY(0);transition-delay:.89s}
+.reveal-children.visible>*:nth-child(14){opacity:1;transform:translateY(0);transition-delay:.96s}
+.reveal-children.visible>*:nth-child(15){opacity:1;transform:translateY(0);transition-delay:1.03s}
+.reveal-children.visible>*:nth-child(16){opacity:1;transform:translateY(0);transition-delay:1.10s}
+.reveal-children.visible>*:nth-child(17){opacity:1;transform:translateY(0);transition-delay:1.17s}
+
+/* ── RESPONSIVE ─────────────────────────────────────────── */
+@media(max-width:900px){
+  .partner-grid{grid-template-columns:1fr 1fr}
+  .planner-grid,.support-grid{grid-template-columns:1fr 1fr}
+  .cslp-in{flex-direction:column;gap:20px}
+  .cslp-num{font-size:56px}
+}
+@media(max-width:768px){
+  .wrap{padding:0 24px}
+  .nav-links,.nav-right .ncta,.topbar .c,.footer-pre-contact{display:none}
+  .nav-hamburger{display:flex}
+  .partner-grid,.planner-grid,.support-grid{grid-template-columns:1fr}
+  .page-hero-h1{font-size:34px}
+  .bottom-cta-h{font-size:28px}
+  .cred-bar-items{gap:16px}
+  .cred-bar-sep{display:none}
+  .footer-out .wrap{flex-direction:column;align-items:flex-start;gap:16px}
+}
+</style>
+<link rel="stylesheet" href="assets/lv-polish.css">
+</head>
+<body>
+
+<!-- ── TOP BAR ──────────────────────────────────────────── -->
+<div class="topbar">
+  <div class="wrap">
+    <span>Comprehensive planning — Memphis, TN &amp; nationwide</span>
+    <span class="c">
+      <a href="tel:9013229114">901-322-9114</a>
+      <span class="tb-sep"></span>
+      <a href="mailto:info@longviewplan.com">info@longviewplan.com</a>
+    </span>
+  </div>
+</div>
+
+<!-- ── NAV ──────────────────────────────────────────────── -->
+<div class="nav-out" id="nav">
+  <div class="wrap">
+    <a href="longview_homepage_v8.html" class="logo">
+      <img src="images/longview-logo.png" alt="LongView Planning Partners" style="height:44px;width:auto;display:block">
+    </a>
+    <div class="nav-links">
+      <a class="nl" href="longview_homepage_v8.html">Why LongView</a>
+      <a class="nl" href="longview_services.html">Our Services</a>
+      <a class="nl" href="longview_who-we-serve.html">Who We Serve</a>
+      <a class="nl" href="longview_process.html">Our Process</a>
+      <a class="nl active" href="longview_team.html">Our Team</a>
+      <a class="nl" href="longview_blog.html">Resources</a>
+    </div>
+    <div class="nav-right">
+      <a class="ncta" href="longview_book.html">Schedule an Icebreaker Call &rarr;</a>
+    </div>
+    <div class="nav-hamburger" id="ham" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</div>
+
+<!-- ── MOBILE NAV ────────────────────────────────────────── -->
+<div class="mobile-nav" id="mobileNav">
+  <span class="mobile-nav-close" id="mobileClose">&times;</span>
+  <a href="longview_homepage_v8.html">Why LongView</a>
+  <a href="longview_services.html">Our Services</a>
+  <a href="longview_who-we-serve.html">Who We Serve</a>
+  <a href="longview_process.html">Our Process</a>
+  <a href="longview_team.html" class="nl active">Our Team</a>
+  <a href="longview_blog.html">Resources</a>
+  <a href="longview_book.html" class="mobile-cta">Schedule an Icebreaker Call &rarr;</a>
+</div>
+
+<!-- ── PAGE HERO ─────────────────────────────────────────── -->
+<div class="page-hero">
+  <div class="wrap">
+    <div class="page-hero-in reveal">
+      <div class="page-eyebrow">OUR TEAM</div>
+      <h1 class="page-hero-h1">The people behind your plan</h1>
+      <p class="page-hero-sub">Advisors who work primarily with physicians and dentists.</p>
+      <!-- COMPLIANCE: confirm office/direct phone lines cannot receive texts before presenting them as contact numbers -->
+
+    </div>
+  </div>
+</div>
+
+<!-- ── CREDENTIAL BAR ────────────────────────────────────── -->
+<div class="cred-bar">
+  <div class="wrap">
+    <div class="cred-bar-items">
+      <div class="cred-bar-item">CFP&reg; professionals</div>
+      <div class="cred-bar-sep"></div>
+      <div class="cred-bar-item">CSLP&reg; Student Loan Specialists</div>
+      <div class="cred-bar-sep"></div>
+      <div class="cred-bar-item">CPA Tax Expertise</div>
+    </div>
+    <div class="cred-bar-note">
+      CSLP&reg; = Certified Student Loan Professional — a rare designation held by only 3 of our planners, critical for physician student loan strategy.
+    </div>
+  </div>
+</div>
+
+<!-- ── MANAGING PARTNERS ──────────────────────────────────── -->
+<div class="sec">
+  <div class="wrap">
+    <div class="sec-hd">
+      <div class="sec-label">Managing Partners</div>
+      <h2 class="sec-title">Leadership <span class="ul">you can reach</span></h2>
+    </div>
+    <div class="partner-grid reveal-children">
+
+      <!-- John Prather -->
+      <div class="team-card">
+        <div class="card-photo card-photo-lg">
+          <img src="images/john-prather-card-v4.jpg" alt="John Prather" style="width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:inherit;display:block;">
+        </div>
+        <div class="card-body">
+          <div class="card-name">John Prather</div>
+          <div class="card-title">Managing Partner</div>
+          <div class="card-creds">
+            <span class="cred-pill">CFP&reg;</span>
+          </div>
+          <div class="card-bio">
+            John developed expertise working with medical residents at the University of Tennessee, recognizing their unique financial challenges as they start both families and careers. His practice now focuses on serving physicians and their families, with over two decades of healthcare-focused experience. Originally from Illinois, John is based in East Memphis with his wife Hermenia and five children.
+          </div>
+          <div class="card-contact">
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:jcprather@financialguide.com">jcprather@financialguide.com</a>
+            </div>
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:9013220291">901-322-0291</a>
+            </div>
+          </div>
+          <a class="card-profile-link" href="longview_advisor-profile.html">View Full Profile &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Marcus Esposito -->
+      <div class="team-card">
+        <div class="card-photo card-photo-lg">
+          <img src="images/marcus-esposito-v6.jpg" alt="Marcus Esposito" style="width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:inherit;display:block;">
+        </div>
+        <div class="card-body">
+          <div class="card-name">Marcus Esposito</div>
+          <div class="card-title">Managing Partner</div>
+          <div class="card-creds">
+            <span class="cred-pill">CFP&reg;</span>
+            <span class="cred-pill">ChFC</span>
+          </div>
+          <div class="card-bio">
+            Marcus holds a degree in Banking &amp; Finance from Ole Miss and completed International Finance studies in London. He teaches the Financial Literacy curriculum for M4 medical students at the University of Tennessee Health Science Center and helped establish LongView Planning Partners in Memphis. Named to Nashville Business Journal's "Top 30 Under 30" in 2010; married with three children.
+          </div>
+          <div class="card-contact">
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:marcusesposito@financialguide.com">marcusesposito@financialguide.com</a>
+            </div>
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:9013229104">901-322-9104</a>
+            </div>
+          </div>
+          <a class="card-profile-link" href="longview_advisor-profile-esposito.html">View Full Profile &rarr;</a>
+        </div>
+      </div>
+
+      <!-- W. Louis Holmes -->
+      <div class="team-card">
+        <div class="card-photo card-photo-lg">
+          <img src="images/louis-holmes-v2.jpg" alt="W. Louis Holmes" style="width:100%;height:100%;object-fit:cover;object-position:40% top;border-radius:inherit;display:block;">
+        </div>
+        <div class="card-body">
+          <div class="card-name">W. Louis Holmes</div>
+          <div class="card-title">Managing Partner</div>
+          <div class="card-creds">
+            <span class="cred-pill">MBA</span>
+          </div>
+          <div class="card-bio">
+            Louis holds an MBA from Ole Miss (1989) and transitioned to financial planning in 2010 after 20 years in banking, bringing a deep emphasis on long-term client relationships and quality work. Based in Tupelo, MS, he has been married to Coppie since 1989, has two children, serves as an elder in his church, and enjoys hunting.
+          </div>
+          <div class="card-contact">
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:lholmes@financialguide.com">lholmes@financialguide.com</a>
+            </div>
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:6628420222">662-842-0222</a>
+            </div>
+          </div>
+          <a class="card-profile-link" href="longview_advisor-profile-holmes.html">View Full Profile &rarr;</a>
+        </div>
+      </div>
+
+    </div><!-- /partner-grid -->
+  </div>
+</div>
+
+<!-- ── FINANCIAL PLANNERS ─────────────────────────────────── -->
+<div class="sec alt">
+  <div class="wrap">
+    <div class="sec-hd">
+      <div class="sec-label">Financial Planners</div>
+      <h2 class="sec-title">Your planning <span class="ul">specialists</span></h2>
+      <p class="sec-sub">Each planner focuses on physician and dentist households. Three hold the CSLP&reg; designation — among the rarest credentials in student loan strategy.</p>
+    </div>
+    <div class="planner-grid reveal-children">
+
+      <!-- Andy Vinson -->
+      <div class="team-card">
+        <div class="card-photo card-photo-sm">
+          <img src="https://cdn.prod.website-files.com/5b7f182e0151a0d755efd64c/5b96edb75630ee9e880a19d5_Vinson.jpg" alt="Andy Vinson" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;border-radius:inherit;display:block;">
+        </div>
+        <div class="card-body">
+          <div class="card-name card-name-sm">Andy Vinson</div>
+          <div class="card-title">Client Service Associate</div>
+          <!-- COMPLIANCE: confirm Andy Vinson's permitted title/credentials — reviewer states not CRIA affiliated; may not use "Director of Financial Planning" title or CFP designation -->
+          <div class="card-creds">
+          </div>
+          <div class="card-contact">
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:avinson@financialguide.com">avinson@financialguide.com</a>
+            </div>
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:9013229118">901-322-9118</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Beau Hill -->
+      <div class="team-card">
+        <div class="card-photo card-photo-sm">
+          <img src="images/beau-hill.jpg" alt="Beau Hill" style="width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:inherit;display:block;">
+        </div>
+        <div class="card-body">
+          <div class="card-name card-name-sm">Beau Hill</div>
+          <div class="card-title">Financial Planner</div>
+          <div class="card-creds">
+            <span class="cred-pill">CFP&reg;</span>
+            <span class="cred-pill cslp">CSLP&reg; Student Loan Specialist</span>
+          </div>
+          <div class="card-contact">
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:beauhill@financialguide.com">beauhill@financialguide.com</a>
+            </div>
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:6628420222">662-842-0222</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Garrett East -->
+      <div class="team-card">
+        <div class="card-photo card-photo-sm">
+          <img src="images/garrett-east.jpg" alt="Garrett East" style="width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:inherit;display:block;">
+        </div>
+        <div class="card-body">
+          <div class="card-name card-name-sm">Garrett East</div>
+          <div class="card-title">Financial Planner</div>
+          <div class="card-creds">
+            <span class="cred-pill">CFP&reg;</span>
+            <span class="cred-pill">MSFFP</span>
+            <span class="cred-pill">ChSNC&reg;</span>
+          </div>
+          <div class="card-contact">
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:garretteast@financialguide.com">garretteast@financialguide.com</a>
+            </div>
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:9013220295">901-322-0295</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jason Schultz -->
+      <div class="team-card">
+        <div class="card-photo card-photo-sm">
+          <img src="images/jason-schultz.jpg" alt="Jason Schultz" style="width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:inherit;display:block;">
+        </div>
+        <div class="card-body">
+          <div class="card-name card-name-sm">Jason Schultz</div>
+          <div class="card-title">Financial Planner</div>
+          <div class="card-creds">
+            <span class="cred-pill">CFP&reg;</span>
+            <span class="cred-pill">ChFC&reg;</span>
+            <span class="cred-pill">CLU&reg;</span>
+            <span class="cred-pill">CASL&reg;</span>
+          </div>
+          <div class="card-contact">
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:jasonschultz@financialguide.com">jasonschultz@financialguide.com</a>
+            </div>
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:7312078393">731-207-8393</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- John Jordan -->
+      <div class="team-card">
+        <div class="card-photo card-photo-sm">
+          <img src="images/john-jordan.jpg" alt="John Jordan" style="width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:inherit;display:block;">
+        </div>
+        <div class="card-body">
+          <div class="card-name card-name-sm">John Jordan</div>
+          <div class="card-title">Financial Planner</div>
+          <div class="card-creds">
+            <span class="cred-pill">CPA</span>
+          </div>
+          <div class="card-contact">
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:johnjordan@financialguide.com">johnjordan@financialguide.com</a>
+            </div>
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:6018985678">601-898-5678</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Noah Douglas -->
+      <div class="team-card">
+        <div class="card-photo card-photo-sm">
+          <img src="images/noah-douglas.jpg" alt="Noah Douglas" style="width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:inherit;display:block;">
+        </div>
+        <div class="card-body">
+          <div class="card-name card-name-sm">Noah Douglas</div>
+          <div class="card-title">Financial Planner</div>
+          <div class="card-creds">
+            <span class="cred-pill cslp">CSLP&reg; Student Loan Specialist</span>
+          </div>
+          <div class="card-contact">
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:ndouglas@financialguide.com">ndouglas@financialguide.com</a>
+            </div>
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:6628420222">662-842-0222</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mitchell Marino -->
+      <div class="team-card">
+        <div class="card-photo card-photo-sm">
+          <img src="images/mitchell-marino.jpg" alt="Mitchell Marino" style="width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:inherit;display:block;">
+        </div>
+        <div class="card-body">
+          <div class="card-name card-name-sm">Mitchell Marino</div>
+          <div class="card-title">Financial Planner</div>
+          <div class="card-creds">
+            <span class="cred-pill">CFP&reg;</span>
+            <span class="cred-pill cslp">CSLP&reg; Student Loan Specialist</span>
+          </div>
+          <div class="card-contact">
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:mitchellmarino@financialguide.com">mitchellmarino@financialguide.com</a>
+            </div>
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:9013229118">901-322-9118</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Will Holmes -->
+      <div class="team-card">
+        <div class="card-photo card-photo-sm">
+          <div style="width:100%;height:100%;border-radius:inherit;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#054A82 0%,#38B0E3 100%);"><span style="font-family:'Libre Baskerville',serif;font-size:42px;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.04em;">WH</span></div>
+          <!-- TODO: replace placeholder with headshot when available -->
+        </div>
+        <div class="card-body">
+          <div class="card-name card-name-sm">Will Holmes</div>
+          <div class="card-title">Financial Planning Analyst</div>
+          <!-- TODO: add email/phone contact rows when provided -->
+        </div>
+      </div>
+
+      <!-- James Prather -->
+      <div class="team-card">
+        <div class="card-photo card-photo-sm">
+          <div style="width:100%;height:100%;border-radius:inherit;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#054A82 0%,#38B0E3 100%);"><span style="font-family:'Libre Baskerville',serif;font-size:42px;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.04em;">JP</span></div>
+          <!-- TODO: replace placeholder with headshot when available -->
+        </div>
+        <div class="card-body">
+          <div class="card-name card-name-sm">James Prather</div>
+          <div class="card-title">Financial Planning Analyst</div>
+          <!-- TODO: add email/phone contact rows when provided -->
+        </div>
+      </div>
+
+    </div><!-- /planner-grid -->
+  </div>
+</div>
+
+<!-- ── CSLP CALLOUT ───────────────────────────────────────── -->
+<div class="cslp-strip">
+  <div class="wrap">
+    <div class="cslp-in reveal">
+      <div class="cslp-num">3</div>
+      <div class="cslp-content">
+        <div class="cslp-tag">Why it matters</div>
+        <h3 class="cslp-h">3 Certified Student Loan Professionals on our team</h3>
+        <p class="cslp-body">The CSLP&reg; designation is held by fewer than 2,000 professionals nationwide. For physicians carrying significant student debt, having a certified specialist on your planning team isn&rsquo;t a luxury &mdash; it&rsquo;s the difference between a strategy and a guess.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CLIENT SERVICES ────────────────────────────────────── -->
+<div class="sec">
+  <div class="wrap">
+    <div class="sec-hd">
+      <div class="sec-label">Client Services</div>
+      <h2 class="sec-title">The people who <span class="ul">keep things running</span></h2>
+    </div>
+    <div class="support-grid reveal-children">
+
+      <!-- Alexandria Works -->
+      <div class="team-card">
+        <div class="card-photo card-photo-sm">
+          <img src="images/ale-works.jpg" alt="Alexandria Works" style="width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:inherit;display:block;">
+        </div>
+        <div class="card-body">
+          <div class="card-name card-name-sm">Alexandria Works</div>
+          <div class="card-title">Client Service Coordinator</div>
+          <div class="card-contact">
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:aswords@financialguide.com">aswords@financialguide.com</a>
+            </div>
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:6628420222">662-842-0222</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chelsea LeGuenec -->
+      <div class="team-card">
+        <div class="card-photo card-photo-sm">
+          <img src="images/chelsea-leguenec.jpg" alt="Chelsea LeGuenec" style="width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:inherit;display:block;">
+        </div>
+        <div class="card-body">
+          <div class="card-name card-name-sm">Chelsea LeGuenec</div>
+          <div class="card-title">Director of Development</div>
+          <div class="card-contact">
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:cleguenec@financialguide.com">cleguenec@financialguide.com</a>
+            </div>
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:9013229114">901-322-9114</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Susan Shorter -->
+      <div class="team-card">
+        <div class="card-photo card-photo-sm">
+          <img src="images/susan-shorter.jpg" alt="Susan Shorter" style="width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:inherit;display:block;">
+        </div>
+        <div class="card-body">
+          <div class="card-name card-name-sm">Susan Shorter</div>
+          <div class="card-title">Office Manager</div>
+          <div class="card-contact">
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:susanshorter@financialguide.com">susanshorter@financialguide.com</a>
+            </div>
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:9013220295">901-322-0295</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Savannah Reeves -->
+      <div class="team-card">
+        <div class="card-photo card-photo-sm">
+          <img src="images/savannah-reeves.jpg" alt="Savannah Reeves" style="width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:inherit;display:block;">
+        </div>
+        <div class="card-body">
+          <div class="card-name card-name-sm">Savannah Reeves</div>
+          <div class="card-title">Client Services Coordinator</div>
+          <div class="card-contact">
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:savannahreeves@financialguide.com">savannahreeves@financialguide.com</a>
+            </div>
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:9013229115">901-322-9115</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tierra Waddell -->
+      <div class="team-card">
+        <div class="card-photo card-photo-sm">
+          <img src="https://cdn.prod.website-files.com/5b7f182e0151a0d755efd64c/6634f8bda65c0d17d2b35d9d_Waddell%2C%20Tierra%20-%20Headshot%205-3-24.jpg" alt="Tierra Waddell" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;">
+        </div>
+        <div class="card-body">
+          <div class="card-name card-name-sm">Tierra Waddell</div>
+          <div class="card-title">New Business Coordinator</div>
+          <div class="card-contact">
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:twaddell@financialguide.com">twaddell@financialguide.com</a>
+            </div>
+            <div class="card-contact-row">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:9013229108">901-322-9108</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lauren Clarke -->
+      <div class="team-card">
+        <div class="card-photo card-photo-sm">
+          <div style="width:100%;height:100%;border-radius:inherit;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#054A82 0%,#38B0E3 100%);"><span style="font-family:'Libre Baskerville',serif;font-size:42px;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.04em;">LC</span></div>
+          <!-- TODO: replace placeholder with headshot when available -->
+        </div>
+        <div class="card-body">
+          <div class="card-name card-name-sm">Lauren Clarke</div>
+          <div class="card-title">Client Service Coordinator</div>
+          <!-- TODO: add email/phone contact rows when provided -->
+        </div>
+      </div>
+
+    </div><!-- /support-grid -->
+  </div>
+</div>
+
+<!-- ── BOTTOM CTA ─────────────────────────────────────────── -->
+<div class="bottom-cta">
+  <div class="wrap">
+    <div class="bottom-cta-in reveal">
+      <h2 class="bottom-cta-h">Ready to meet the team in person?</h2>
+      <p class="bottom-cta-sub">Schedule a Clarity Call &mdash; 30 minutes, no pitch, no commitment.</p>
+      <a href="longview_book.html" class="btn-pulse">Schedule an Icebreaker Call &rarr;</a>
+      <p class="bottom-cta-trust">SEC Registered Representatives &nbsp;&middot;&nbsp; Focused on Physicians &amp; Dentists</p>
+    </div>
+  </div>
+</div>
+
+<!-- LV_CANONICAL_FOOTER -->
+<footer class="lvf" data-canonical-footer="1">
+<style>
+.lvf{background:#0A1A2F;padding:64px 0 0;font-family:'DM Sans',sans-serif;color:#fff}
+.lvf-wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.lvf-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+.lvf-brand{font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:#fff;margin:0 0 6px;line-height:1}
+.lvf-sub{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:10px;display:block}
+.lvf-tag{font-size:12.5px;color:rgba(255,255,255,.4);line-height:1.6;max-width:240px;margin:0}
+.lvf-coltitle{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);margin:0 0 16px}
+.lvf-col a{display:block;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:10px;text-decoration:none;transition:color .18s}
+.lvf-col a:hover{color:rgba(255,255,255,.9)}
+.lvf-crs-row{padding:28px 0;display:flex;justify-content:center;border-bottom:1px solid rgba(255,255,255,.1)}
+.lvf-crs{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#2D6CA2;color:#fff;padding:18px 30px;border-radius:10px;text-decoration:none;min-width:240px;line-height:1.25;box-shadow:0 2px 10px rgba(0,0,0,.22);transition:background .18s,transform .18s;font-family:'DM Sans',sans-serif}
+.lvf-crs:hover{background:#3a7eb8;transform:translateY(-1px)}
+.lvf-crs-top{font-size:14px;font-weight:600;letter-spacing:.06em;color:#fff}
+.lvf-crs-div{display:block;width:80%;height:1px;background:rgba(255,255,255,.5)}
+.lvf-crs-bot{font-size:15px;font-weight:600;color:#fff}
+.lvf-copy{padding:22px 0 6px;font-size:12px;color:rgba(255,255,255,.45);text-align:center;line-height:1.6}
+.lvf-disclosure{padding:6px 0 36px;font-size:11px;color:rgba(255,255,255,.5);line-height:1.65;max-width:920px;margin:0 auto;text-align:center}
+.lvf-bcheck{margin:0 0 14px;font-weight:700;letter-spacing:.06em;color:rgba(255,255,255,.78);font-size:11.5px}
+.lvf-bcheck a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+.lvf-p{margin:0 0 10px;font-style:italic}
+.lvf-p a{color:rgba(255,255,255,.78);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:960px){.lvf-top{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:560px){.lvf-top{grid-template-columns:1fr;gap:28px}}
+</style>
+<div class="lvf-wrap">
+  <div class="lvf-top">
+    <div>
+      <div class="lvf-brand">LongView</div>
+      <span class="lvf-sub">Planning Partners</span>
+      <p class="lvf-tag">Comprehensive Planning for Physicians and Dentists</p>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Services</div>
+      <a href="longview_services.html">Student Loan Strategy</a>
+      <a href="longview_services.html">Tax Planning</a>
+      <a href="longview_services.html">Retirement Planning</a>
+      <a href="longview_services.html">Investment Management</a>
+      <a href="longview_services.html">Insurance Review</a>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Who We Serve</div>
+      <a href="longview_who-we-serve.html">Physicians</a>
+      <a href="longview_who-we-serve.html">Dentists</a>
+      <a href="longview_icp-earlycareer.html">Early Career</a>
+      <a href="longview_icp-laterstage.html">Established</a>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Resources</div>
+      <a href="longview_landing-pslf.html">PSLF Guide</a>
+      <a href="longview_blog.html">Articles</a>
+      <a href="longview_blog.html">All Resources</a>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Contact</div>
+      <a href="mailto:info@longviewplan.com">info@longviewplan.com</a>
+      <a href="tel:9013229114">901-322-9114</a>
+      <a href="longview_book.html">Schedule a Call</a>
+      <a href="longview_licensing.html">Licensing</a>
+      <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener">FINRA BrokerCheck</a>
+    </div>
+  </div>
+  <div class="lvf-crs-row">
+    <a class="lvf-crs" href="https://compass.massmutual.com/file-handler-api-wrapper?url=%2Ffile%2Fblt3e72bd07ab10cfcb" target="_blank" rel="noopener" aria-label="Licensing - Client Relationship Summary (opens in new tab)">
+      <span class="lvf-crs-top">Licensing</span>
+      <span class="lvf-crs-div"></span>
+      <span class="lvf-crs-bot">Client Relationship Summary</span>
+    </a>
+  </div>
+  <div class="lvf-copy">&copy; 2026 LongView Planning Partners &middot; 618 Oakleaf Office Lane, Suite 300, Memphis, TN 38117 &middot; 901-322-9114</div>
+  <div class="lvf-disclosure">
+    <p class="lvf-bcheck">CHECK THE BACKGROUND OF THIS FINANCIAL PROFESSIONAL ON FINRA&rsquo;S <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener">BROKERCHECK</a></p>
+    <p class="lvf-p">Securities, investment advisory and financial planning services are offered through qualified registered representatives of MML Investors Services, LLC, <a href="https://www.sipc.org/" target="_blank" rel="noopener">Member SIPC</a>, 10 Cadillac Drive, Suite 300, Brentwood, TN 37027 (615) 309-6300. LongView Planning Partners is not a subsidiary or affiliate of MML Investors Services, LLC or its affiliated companies. CRN____________</p>
+    <p class="lvf-p">Financial Plan recommendations can be implemented with the advisor of your choosing. Implementation of specific products or services may result in commissions or fees outside of the financial planning fee.*</p>
+  </div>
+</div>
+</footer>
+<!-- /LV_CANONICAL_FOOTER -->
+
+
+<script>
+(function(){
+  /* Nav scroll shadow */
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){
+    nav.classList.toggle('scrolled', window.scrollY > 24);
+  }, {passive:true});
+
+  /* Mobile nav */
+  var ham = document.getElementById('ham');
+  var mobileNav = document.getElementById('mobileNav');
+  var mobileClose = document.getElementById('mobileClose');
+  if(ham && mobileNav){
+    ham.addEventListener('click', function(){ mobileNav.classList.add('open'); });
+    mobileClose.addEventListener('click', function(){ mobileNav.classList.remove('open'); });
+    mobileNav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ mobileNav.classList.remove('open'); });
+    });
+  }
+
+  /* Scroll reveal */
+  var classes = ['reveal','reveal-children'];
+  var targets = document.querySelectorAll(classes.map(function(c){return '.'+c}).join(','));
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+  },{threshold:0.01,rootMargin:'0px 0px -20px 0px'});
+  targets.forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>

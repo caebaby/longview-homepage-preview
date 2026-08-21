@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Next Step — LongView Planning Partners</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & ROOT ─────────────────────────────────────────── */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --lv-navy:#0773BB;--lv-dark:#054A82;--lv-deeper:#032F57;
+  --lv-sky:#38B0E3;--lv-light:#8CD7F7;
+  --lv-gray:#939598;--lv-gl:#D1D2D4;--lv-off:#F4F8FC;
+  --ink:#0F1923;--body:#3D4A58;
+  --max:1140px;
+  --trans:.22s cubic-bezier(.4,0,.2,1);
+  --grad:linear-gradient(95deg,var(--lv-navy) 0%,var(--lv-sky) 100%);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--ink);background:#fff;min-width:320px;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 32px}
+
+/* ── MINIMAL NAV ───────────────────────────────────────────── */
+.nav-out{background:#fff;border-bottom:1px solid var(--lv-gl);position:sticky;top:0;z-index:200;transition:box-shadow .3s}
+.nav-out.scrolled{box-shadow:0 4px 24px rgba(5,74,130,.08)}
+.nav-out .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;flex-shrink:0}
+.nav-cta{font-size:13px;font-weight:600;padding:11px 22px;background:var(--lv-navy);color:#fff;border-radius:4px;cursor:pointer;white-space:nowrap;letter-spacing:.01em;transition:background var(--trans),box-shadow var(--trans),transform var(--trans)}
+.nav-cta:hover{background:var(--lv-dark);box-shadow:0 6px 20px rgba(7,115,187,.3);transform:translateY(-1px)}
+
+/* ── HERO / CALLOUT ─────────────────────────────────────────── */
+.callout{background:var(--lv-deeper);position:relative;overflow:hidden;padding:72px 0 56px}
+.callout::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(900px 400px at 15% -10%,rgba(56,176,227,.22),transparent 60%),
+    radial-gradient(700px 360px at 100% 110%,rgba(7,115,187,.28),transparent 60%);
+  pointer-events:none;
+}
+.callout .wrap{position:relative;text-align:center}
+.callout-eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--lv-light);border:1px solid rgba(140,215,247,.32);padding:7px 18px;border-radius:20px;background:rgba(140,215,247,.07);margin-bottom:24px}
+.callout-eyebrow .dot{width:5px;height:5px;border-radius:50%;background:var(--lv-sky)}
+.callout-h1{font-family:'Libre Baskerville',serif;font-size:46px;font-weight:700;color:#fff;line-height:1.15;letter-spacing:-.02em;max-width:880px;margin:0 auto 22px}
+.callout-h1 em{color:var(--lv-light);font-style:italic;font-weight:400}
+.callout-sub{font-size:18px;color:rgba(255,255,255,.74);font-weight:300;line-height:1.6;max-width:680px;margin:0 auto}
+
+/* ── VIDEO ──────────────────────────────────────────────────── */
+.video-sec{background:var(--lv-deeper);padding:0 0 96px}
+.video-card{max-width:920px;margin:0 auto;background:#000;border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.45),0 2px 6px rgba(0,0,0,.3);position:relative;aspect-ratio:16/9;border:1px solid rgba(255,255,255,.06)}
+.video-card iframe,.video-card video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:linear-gradient(135deg,#0a2a4f 0%,#054A82 60%,#0773BB 100%);text-align:center;padding:32px;color:#fff}
+.vp-play{width:84px;height:84px;border-radius:50%;background:rgba(255,255,255,.96);display:flex;align-items:center;justify-content:center;box-shadow:0 18px 50px rgba(0,0,0,.35);transition:transform var(--trans)}
+.vp-play:hover{transform:scale(1.06)}
+.vp-play svg{margin-left:5px;color:var(--lv-navy)}
+.vp-label{font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;letter-spacing:-.01em}
+.vp-sub{font-size:13px;color:rgba(255,255,255,.62);max-width:420px;line-height:1.6}
+.vp-instr{font-size:11.5px;color:var(--lv-light);font-family:monospace;background:rgba(0,0,0,.35);border:1px dashed rgba(140,215,247,.35);padding:8px 14px;border-radius:4px;line-height:1.6;margin-top:8px}
+.video-cta{display:flex;justify-content:center;margin-top:28px}
+.video-cta-btn{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;padding:14px 28px;background:#fff;color:var(--lv-dark);border-radius:6px;cursor:pointer;box-shadow:0 8px 32px rgba(0,0,0,.22);transition:transform var(--trans),box-shadow var(--trans);letter-spacing:.01em}
+.video-cta-btn:hover{transform:translateY(-1px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+
+/* ── CONTEXT / WHAT WE OFFER ─────────────────────────────────── */
+.context{background:#fff;padding:88px 0}
+.ctx-head{text-align:center;max-width:760px;margin:0 auto 56px}
+.ctx-eyebrow{font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--lv-navy);display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
+.ctx-eyebrow::before,.ctx-eyebrow::after{content:'';width:28px;height:1.5px;background:var(--lv-sky);display:inline-block}
+.ctx-h2{font-family:'Libre Baskerville',serif;font-size:36px;font-weight:700;color:var(--ink);line-height:1.2;letter-spacing:-.02em;margin-bottom:18px}
+.ctx-lead{font-size:17px;color:var(--body);font-weight:300;line-height:1.7}
+
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px}
+.pillar{background:#fff;border:1px solid var(--lv-gl);border-radius:12px;border-top:3px solid var(--lv-sky);padding:30px 28px;transition:box-shadow var(--trans),transform var(--trans)}
+.pillar:hover{box-shadow:0 12px 36px rgba(5,74,130,.09);transform:translateY(-2px)}
+.pillar-icon{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--lv-navy),var(--lv-sky));display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:18px}
+.pillar-title{font-family:'Libre Baskerville',serif;font-size:18px;font-weight:700;color:var(--ink);margin-bottom:10px;line-height:1.3}
+.pillar-body{font-size:14.5px;color:var(--body);line-height:1.65;font-weight:300}
+
+.fit-strip{margin-top:64px;background:var(--lv-off);border:1px solid var(--lv-gl);border-radius:12px;padding:36px 40px;display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.fit-col h3{font-family:'Libre Baskerville',serif;font-size:18px;font-weight:700;color:var(--ink);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.fit-col h3 .ico{width:24px;height:24px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center}
+.fit-col.yes .ico{background:rgba(56,176,227,.18);color:var(--lv-navy)}
+.fit-col.no  .ico{background:rgba(147,149,152,.14);color:var(--lv-gray)}
+.fit-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.fit-list li{font-size:14.5px;color:var(--body);line-height:1.6;padding-left:22px;position:relative;font-weight:300}
+.fit-col.yes .fit-list li::before{content:'';position:absolute;left:0;top:7px;width:14px;height:14px;border-radius:50%;background:var(--lv-sky)}
+.fit-col.no  .fit-list li::before{content:'';position:absolute;left:0;top:7px;width:14px;height:14px;border-radius:50%;background:var(--lv-gl)}
+
+/* ── BOOK A CALL ────────────────────────────────────────────── */
+.book{background:var(--lv-deeper);padding:88px 0 96px;position:relative;overflow:hidden}
+.book::before{content:'';position:absolute;inset:0;background:radial-gradient(800px 380px at 50% -20%,rgba(56,176,227,.2),transparent 60%);pointer-events:none}
+.book .wrap{position:relative;text-align:center}
+.book-eyebrow{font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--lv-light);margin-bottom:16px}
+.book-h2{font-family:'Libre Baskerville',serif;font-size:38px;font-weight:700;color:#fff;line-height:1.2;letter-spacing:-.02em;margin:0 auto 18px;max-width:720px}
+.book-sub{font-size:16.5px;color:rgba(255,255,255,.72);font-weight:300;line-height:1.7;max-width:620px;margin:0 auto 36px}
+.book-meta{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.book-chip{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.82);padding:8px 16px;border:1px solid rgba(140,215,247,.28);border-radius:20px;background:rgba(140,215,247,.06);white-space:nowrap}
+.book-chip svg{color:var(--lv-sky)}
+.book-cta{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:700;padding:18px 36px;background:#fff;color:var(--lv-dark);border-radius:6px;cursor:pointer;box-shadow:0 14px 44px rgba(0,0,0,.32);transition:transform var(--trans),box-shadow var(--trans);letter-spacing:.01em}
+.book-cta:hover{transform:translateY(-2px);box-shadow:0 18px 56px rgba(0,0,0,.42)}
+.book-fineprint{margin-top:22px;font-size:12.5px;color:rgba(255,255,255,.5);line-height:1.6}
+.book-fineprint a{color:rgba(255,255,255,.75);text-decoration:underline}
+
+/* ── MINIMAL FOOTER ─────────────────────────────────────────── */
+.foot{background:#0A1A2F;padding:26px 0;text-align:center;color:rgba(255,255,255,.4);font-size:12px;line-height:1.7}
+.foot strong{color:rgba(255,255,255,.65);font-weight:600;font-family:'Libre Baskerville',serif;letter-spacing:-.01em}
+.foot a{color:rgba(255,255,255,.6);text-decoration:underline;text-underline-offset:2px}
+
+/* ── MOBILE ────────────────────────────────────────────────── */
+@media(max-width:880px){
+  .wrap{padding:0 22px}
+  .callout{padding:56px 0 40px}
+  .callout-h1{font-size:32px}
+  .callout-sub{font-size:15px}
+  .video-sec{padding:0 0 60px}
+  .context{padding:60px 0}
+  .ctx-h2{font-size:28px}
+  .ctx-lead{font-size:15px}
+  .pillars{grid-template-columns:1fr;gap:16px}
+  .fit-strip{grid-template-columns:1fr;padding:28px;gap:28px}
+  .book{padding:60px 0 72px}
+  .book-h2{font-size:28px}
+  .book-sub{font-size:15px}
+  .nav-out .wrap{height:62px}
+  .nav-cta{padding:10px 16px;font-size:12.5px}
+}
+@media(max-width:480px){
+  .wrap{padding:0 18px}
+  .callout-h1{font-size:26px;line-height:1.18}
+  .ctx-h2{font-size:24px}
+  .book-h2{font-size:24px}
+  .book-cta{padding:16px 24px;font-size:14px}
+  .vp-play{width:64px;height:64px}
+}
+</style>
+<link rel="stylesheet" href="assets/lv-polish.css">
+</head>
+<body>
+
+<!-- ── MINIMAL NAV ────────────────────────────────────────────── -->
+<div class="nav-out" id="nav">
+  <div class="wrap">
+    <a class="logo" href="longview_homepage_v8.html" aria-label="LongView Planning Partners home">
+      <img src="images/longview-logo.png" alt="LongView Planning Partners" style="height:42px;width:auto;display:block">
+    </a>
+    <a class="nav-cta" href="longview_book.html">Skip ahead &mdash; Book a Call &rarr;</a>
+  </div>
+</div>
+
+<!-- ── CALLOUT ────────────────────────────────────────────────── -->
+<section class="callout">
+  <div class="wrap">
+    <div class="callout-eyebrow"><span class="dot"></span>You&rsquo;ve completed the assessment</div>
+    <h1 class="callout-h1">Here&rsquo;s the <em>5&#8209;minute walkthrough</em> we put together for physicians and dentists at your stage.</h1>
+    <p class="callout-sub">Watch this before you do anything else. It explains what your score actually means, what we&rsquo;d look at first, and how a Clarity Call works &mdash; so you can decide if it&rsquo;s worth your 30 minutes.</p>
+  </div>
+</section>
+
+<!-- ── VIDEO ──────────────────────────────────────────────────── -->
+<section class="video-sec">
+  <div class="wrap">
+    <!-- COMPLIANCE: CRN REQUIRED (video) before publishing -->
+    <div class="video-card" id="videoCard">
+
+      <!-- ─────────────────────────────────────────────────────── -->
+      <!-- VSL VIDEO EMBED                                         -->
+      <!-- To go live, replace the .video-placeholder block below  -->
+      <!-- with one of:                                            -->
+      <!--                                                         -->
+      <!--   YouTube (unlisted is fine):                           -->
+      <!--   <iframe src="https://www.youtube.com/embed/VIDEO_ID?rel=0&modestbranding=1" -->
+      <!--           title="LongView VSL" frameborder="0"          -->
+      <!--           allow="autoplay; encrypted-media; picture-in-picture" -->
+      <!--           allowfullscreen></iframe>                     -->
+      <!--                                                         -->
+      <!--   Vimeo:                                                -->
+      <!--   <iframe src="https://player.vimeo.com/video/VIDEO_ID?title=0&byline=0&portrait=0" -->
+      <!--           title="LongView VSL" frameborder="0"          -->
+      <!--           allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> -->
+      <!--                                                         -->
+      <!--   Self-hosted MP4:                                      -->
+      <!--   <video src="/videos/longview-vsl.mp4" controls playsinline poster="/images/vsl-poster.jpg"></video> -->
+      <!-- ─────────────────────────────────────────────────────── -->
+
+      <div class="video-placeholder" id="videoPlaceholder">
+        <div class="vid-coming-soon">Coming Soon</div>
+        <div class="vp-play" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="vp-label">Your walkthrough plays here</div>
+        <div class="vp-sub">Replace this placeholder with a YouTube, Vimeo, or self-hosted &lt;video&gt; tag inside <code>longview_vsl.html</code>.</div>
+        <div class="vp-instr">data-video="YOUTUBE_OR_VIMEO_ID"</div>
+      </div>
+    </div>
+
+    <div class="video-cta">
+      <a class="video-cta-btn" href="#book">
+        Ready to talk? Book a Clarity Call
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTEXT / WHAT WE OFFER ────────────────────────────────── -->
+<section class="context">
+  <div class="wrap">
+
+    <div class="ctx-head">
+      <div class="ctx-eyebrow">What LongView actually does</div>
+      <h2 class="ctx-h2">Comprehensive financial planning, built for physicians and dentists.</h2>
+      <p class="ctx-lead">We&rsquo;re a fiduciary firm &mdash; just one team that coordinates every moving piece of your financial life so the decisions stop competing with each other.</p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/></svg>
+        </div>
+        <div class="pillar-title">Student loans &amp; cash flow</div>
+        <div class="pillar-body">PSLF, SAVE/IDR coordination, refinance vs. forgiveness math &mdash; modeled against your actual income and household, not generic rules of thumb.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="pillar-title">Tax planning that compounds</div>
+        <div class="pillar-body">Pre-RMD window strategy, backdoor / mega-backdoor Roth, charitable bunching, and retirement account sequencing &mdash; not just filing in April.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div class="pillar-title">Retirement &amp; investment strategy</div>
+        <div class="pillar-body">Coordinating 8&ndash;12 scattered accounts into one coherent structure, with a withdrawal plan that protects against tax and sequence-of-returns risk.</div>
+      </div>
+    </div>
+
+    <div class="fit-strip">
+      <div class="fit-col yes">
+        <h3><span class="ico"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Likely a fit if&hellip;</h3>
+        <ul class="fit-list">
+          <li>You&rsquo;re a physician or dentist juggling 5+ financial decisions at once</li>
+          <li>You want someone who coordinates loans, taxes, investments, and insurance together</li>
+          <li>You&rsquo;d rather work with a fiduciary than someone whose advice changes based on what you buy</li>
+          <li>You&rsquo;re comfortable making decisions once you have the math in front of you</li>
+        </ul>
+      </div>
+      <div class="fit-col no">
+        <h3><span class="ico"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>Probably not a fit if&hellip;</h3>
+        <ul class="fit-list">
+          <li>You&rsquo;re looking for a single product to buy or a hot stock pick</li>
+          <li>You only want help filing your taxes once a year</li>
+          <li>You want someone to make every decision for you with no input</li>
+          <li>You&rsquo;re not ready to look honestly at where things are today</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── BOOK A CALL ────────────────────────────────────────────── -->
+<section class="book" id="book">
+  <div class="wrap">
+    <div class="book-eyebrow">The next step</div>
+    <h2 class="book-h2">Book a 20&#8209;minute Clarity Call.</h2>
+    <p class="book-sub">No pitch. We&rsquo;ll walk through your results, tell you what we&rsquo;d focus on first for someone in your situation, and let you know whether LongView is the right fit. If we&rsquo;re not, we&rsquo;ll say so.</p>
+
+    <div class="book-meta">
+      <div class="book-chip">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        30 minutes
+      </div>
+      <div class="book-chip">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+        Video or phone
+      </div>
+      <div class="book-chip">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        No follow-up unless you ask
+      </div>
+    </div>
+
+    <a class="book-cta" href="longview_book.html">
+      Schedule my Clarity Call
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+
+    <div class="book-fineprint">
+      Prefer email? Reach us at <a href="mailto:info@longviewplan.com">info@longviewplan.com</a> &middot; 901&#8209;322&#8209;9114
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────── -->
+<footer class="foot">
+  <div class="wrap">
+    <strong>LongView Planning Partners</strong> &middot; Memphis, TN &middot; <a href="longview_homepage_v8.html">longviewplan.com</a><br>
+    &copy; 2026 LongView Planning Partners &middot; Educational content &mdash; not investment advice.
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){
+    nav.classList.toggle('scrolled', window.scrollY > 16);
+  }, { passive: true });
+
+  // Clean the ?t=... token out of the URL bar once the page is loaded.
+  // The server has already accepted the token and dropped an HttpOnly
+  // cookie, so reloads still work.
+  try {
+    var u = new URL(window.location.href);
+    if (u.searchParams.has('t')) {
+      u.searchParams.delete('t');
+      var clean = u.pathname + (u.search ? u.search : '') + u.hash;
+      window.history.replaceState({}, '', clean);
+    }
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>

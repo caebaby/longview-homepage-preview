@@ -1,0 +1,2143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LongView Planning Partners — Comprehensive Financial Planning for Physicians and Dentists</title>
+<meta name="description" content="Financial planning for physicians and dentists. A plan built entirely around your outcome — not around what you buy or invest in.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<script>
+(function(){
+  var params=new URLSearchParams(location.search);
+  var classicPreview=params.get('design')==='classic'||params.get('comparison')==='current';
+  if(!classicPreview)document.documentElement.classList.add('motion-mode');
+})();
+</script>
+<style>
+/* ── RESET & ROOT ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --lv-navy:#0773BB;--lv-dark:#054A82;--lv-deeper:#032F57;
+  --lv-sky:#38B0E3;--lv-light:#8CD7F7;--lv-gray:#939598;
+  --lv-gl:#D1D2D4;--lv-off:#F4F8FC;
+  --ink:#0F1923;--body:#3D4A58;
+  --max:1240px;
+  --grad:linear-gradient(95deg,var(--lv-navy) 0%,var(--lv-sky) 100%);
+  --trans:.22s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--ink);background:#fff;min-width:320px;overflow-x:clip;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 52px}
+
+/* ── GRADIENT TEXT ── */
+.gt{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ── CHIP ── */
+.chip{display:inline-flex;align-items:center;gap:7px;font-size:10.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--lv-navy);border:1px solid rgba(7,115,187,.22);padding:5px 14px;border-radius:20px;background:rgba(7,115,187,.05)}
+.chip-dot{width:5px;height:5px;border-radius:50%;background:var(--lv-sky);flex-shrink:0}
+.chip.light{color:var(--lv-light);border-color:rgba(140,215,247,.3);background:rgba(140,215,247,.08)}
+
+/* ── EYEBROW ── */
+.eyebrow-label{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--lv-navy);display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.eyebrow-label::after{content:'';flex:0 0 28px;height:1.5px;background:var(--lv-sky)}
+
+/* ── SECTION HEADLINE UNDERLINE ── */
+.sec-hl{font-family:'Libre Baskerville',serif;font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-.02em;color:var(--ink);display:inline-block;padding-bottom:10px;border-bottom:2.5px solid var(--lv-sky)}
+.sec-hl.gt-title{border-bottom:none;padding-bottom:0;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ── TOP BAR ── */
+.topbar{background:var(--lv-deeper)}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:36px}
+.topbar-left{font-size:11.5px;color:rgba(255,255,255,.55);font-weight:400}
+.topbar-right{display:flex;align-items:center;gap:16px;font-size:11.5px;color:rgba(255,255,255,.85);font-weight:500}
+.topbar-right a{color:inherit;transition:opacity var(--trans)}
+.topbar-right a:hover{opacity:.7}
+.tb-sep{width:1px;height:11px;background:rgba(255,255,255,.2)}
+
+/* ── NAV ── */
+.nav-out{background:#fff;border-bottom:1px solid rgba(209,210,212,.6);position:sticky;top:0;z-index:200;transition:box-shadow .3s}
+.nav-out.scrolled{box-shadow:0 4px 32px rgba(5,74,130,.1)}
+.nav-out .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;flex-direction:column;flex-shrink:0;cursor:pointer}
+.logo-name{font-family:'Libre Baskerville',serif;font-size:22px;font-weight:700;color:var(--lv-navy);letter-spacing:-.02em;line-height:1}
+.logo-sub{font-size:9.5px;font-family:'DM Sans',sans-serif;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--lv-gray);margin-top:4px}
+.nav-links{display:flex;gap:2px;align-items:center}
+.nl{font-size:13.5px;color:#5a6472;padding:8px 14px;border-radius:4px;cursor:pointer;transition:color var(--trans),background var(--trans);position:relative;white-space:nowrap}
+.nl::after{content:'';position:absolute;bottom:4px;left:14px;right:14px;height:1.5px;background:var(--lv-navy);transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.4,0,.2,1)}
+.nl:hover{color:var(--lv-navy)}
+.nl:hover::after{transform:scaleX(1)}
+.nav-right{display:flex;align-items:center;gap:14px}
+.ncta{font-size:13px;font-weight:600;padding:11px 22px;background:var(--lv-navy);color:#fff;border-radius:4px;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background var(--trans),box-shadow var(--trans),transform var(--trans);letter-spacing:.01em}
+.ncta:hover{background:var(--lv-dark);box-shadow:0 6px 20px rgba(7,115,187,.3);transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger{border:0;background:none;font:inherit}
+.hamburger span{width:22px;height:2px;background:var(--ink);border-radius:1px}
+.mobile-nav{display:none;position:fixed;top:var(--mobile-menu-top,76px);left:0;right:0;max-height:calc(100svh - var(--mobile-menu-top,76px));overflow-y:auto;background:#fff;border-bottom:1px solid var(--lv-gl);padding:16px 24px;z-index:199;box-shadow:0 8px 32px rgba(0,0,0,.08)}
+.mobile-nav.open{display:block}
+.mobile-nav a{display:block;padding:12px 0;font-size:15px;color:var(--ink);border-bottom:1px solid var(--lv-gl)}
+.mobile-nav a:last-child{border-bottom:none}
+
+/* ── HERO ── */
+.hero-out{position:relative;overflow:hidden;background:var(--lv-deeper)}
+.hero-bg{position:absolute;inset:0;z-index:0;background:linear-gradient(135deg,#032F57 0%,#054A82 50%,#0773BB 100%)}
+.hero-bg::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 1px);background-size:28px 28px}
+.glow{position:absolute;border-radius:50%;pointer-events:none;z-index:1;filter:blur(90px)}
+.g1{width:580px;height:580px;background:rgba(56,176,227,.2);right:0%;top:-18%}
+.g2{width:380px;height:380px;background:rgba(7,115,187,.3);right:-8%;bottom:-15%}
+.g3{width:300px;height:300px;background:rgba(140,215,247,.1);left:34%;top:15%}
+.hero-in{position:relative;z-index:3;display:flex;align-items:stretch;gap:60px;min-height:640px;padding:88px 0}
+.hero-copy{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.eyebrow-pill{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--lv-light);border:1px solid rgba(140,215,247,.28);padding:6px 16px;border-radius:20px;background:rgba(140,215,247,.07);margin-bottom:28px}
+.eyebrow-pill .dot{width:5px;height:5px;border-radius:50%;background:var(--lv-sky);flex-shrink:0}
+.h1{font-family:'Libre Baskerville',serif;font-size:46px;font-weight:700;line-height:1.12;letter-spacing:-.025em;margin-bottom:26px}
+.h1 .l1{color:#fff;display:block}
+.h1 .l2{display:block;background:linear-gradient(105deg,#ffffff 0%,#c2e8f8 20%,#8CD7F7 42%,#4ab8e8 65%,#1a96d4 82%,#0e80c0 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hsub{font-size:16.5px;line-height:1.8;color:rgba(255,255,255,.7);margin-bottom:36px;font-weight:300;max-width:500px}
+.hacts{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+.btn-solid-white{font-size:14px;font-weight:600;padding:15px 28px;background:#fff;color:var(--lv-dark);border-radius:4px;cursor:pointer;white-space:nowrap;box-shadow:0 8px 32px rgba(0,0,0,.18);letter-spacing:.01em;transition:transform var(--trans),box-shadow var(--trans);display:inline-flex;align-items:center}
+.btn-solid-white:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,.25)}
+.btn-ghost{font-size:14px;font-weight:400;padding:15px 26px;border:1.5px solid rgba(255,255,255,.28);color:rgba(255,255,255,.9);border-radius:4px;cursor:pointer;display:inline-flex;align-items:center;gap:10px;white-space:nowrap;transition:border-color var(--trans),background var(--trans)}
+.btn-ghost:hover{border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.07)}
+.hstats{display:flex;gap:36px;padding-top:36px;border-top:1px solid rgba(255,255,255,.14)}
+.stat-n{font-family:'Libre Baskerville',serif;font-size:28px;font-weight:700;color:#fff;line-height:1}
+.stat-l{font-size:11px;color:rgba(255,255,255,.4);margin-top:5px;letter-spacing:.01em}
+
+/* Hero glass panel */
+.hero-panel{width:360px;flex-shrink:0;display:flex;align-items:center}
+.hcard{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:40px;width:100%;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 16px 64px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.15)}
+.hcard-label{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(140,215,247,.65);margin-bottom:10px}
+.hcard-title{font-family:'Libre Baskerville',serif;font-size:18px;font-weight:700;color:#fff;line-height:1.32;letter-spacing:-.01em;margin-bottom:24px}
+.hcheck{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.hcheck:last-of-type{border-bottom:none;margin-bottom:24px}
+.hcheck-icon{width:22px;height:22px;border-radius:50%;background:rgba(56,176,227,.18);border:1px solid rgba(56,176,227,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.hcheck-text{font-size:13.5px;color:rgba(255,255,255,.82);line-height:1.6;font-weight:300}
+.hcard-cta{display:flex;align-items:center;justify-content:center;padding:14px 20px;background:#fff;color:var(--lv-dark);border-radius:6px;font-size:13.5px;font-weight:700;cursor:pointer;transition:transform var(--trans),box-shadow var(--trans);letter-spacing:.01em}
+.hcard-cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+
+/* ── TRUST BAR ── */
+.trust-bar{background:var(--lv-off);border-top:1px solid var(--lv-gl);border-bottom:1px solid var(--lv-gl)}
+.trust-bar .wrap{display:flex;flex-direction:column;align-items:center;padding-top:36px;padding-bottom:36px;gap:20px}
+.trust-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--lv-gray)}
+.trust-items{display:flex;align-items:center;gap:0;flex-wrap:wrap;justify-content:center}
+.trust-item{font-size:13.5px;font-weight:500;color:var(--body);padding:0 28px;position:relative}
+.trust-item::after{content:'|';position:absolute;right:0;top:50%;transform:translateY(-50%);color:var(--lv-gl);font-weight:300}
+.trust-item:last-child::after{display:none}
+
+/* ── PAIN SECTION ── */
+.pain-sec{background:#fff;padding:96px 0}
+.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:52px}
+.pain-card{background:#fff;border:1px solid var(--lv-gl);border-radius:12px;border-top:3px solid var(--lv-sky);padding:32px;box-shadow:0 2px 16px rgba(5,74,130,.05);transition:box-shadow var(--trans),transform var(--trans)}
+.pain-card:hover{box-shadow:0 8px 32px rgba(5,74,130,.1);transform:translateY(-2px)}
+.pain-tag{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--lv-navy);border:1px solid rgba(7,115,187,.2);background:rgba(7,115,187,.05);padding:4px 12px;border-radius:20px;margin-bottom:14px}
+.pain-q{font-family:'Libre Baskerville',serif;font-size:17px;font-weight:700;color:var(--ink);line-height:1.4;margin-bottom:12px;font-style:italic}
+.pain-q::before{content:'\201C';color:var(--lv-sky);font-size:24px;line-height:0;vertical-align:-.3em;margin-right:2px}
+.pain-body{font-size:14px;color:var(--body);line-height:1.78;font-weight:300}
+.pain-cta-stage{grid-column:1/-1}
+.pain-cta-strip{margin-top:52px;padding:36px;background:linear-gradient(95deg,rgba(7,115,187,.05),rgba(56,176,227,.05));border:1px solid rgba(7,115,187,.12);border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.pain-cta-text{font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:var(--ink)}
+.btn-navy{font-size:14px;font-weight:600;padding:14px 28px;background:var(--lv-navy);color:#fff;border-radius:4px;cursor:pointer;white-space:nowrap;transition:background var(--trans),box-shadow var(--trans),transform var(--trans);display:inline-flex;align-items:center;gap:8px}
+.btn-navy:hover{background:var(--lv-dark);box-shadow:0 6px 20px rgba(7,115,187,.3);transform:translateY(-1px)}
+
+/* ── CAREER SLIDER SECTION ── */
+.slider-sec{background:var(--lv-off);padding:96px 0}
+.slider-sec-head{margin-bottom:48px}
+.slider-sec-sub{font-size:16px;color:var(--body);line-height:1.75;font-weight:300;max-width:580px;margin-top:16px}
+
+/* Embedded slider card */
+.section{max-width:980px;margin:0 auto;background:linear-gradient(180deg,#EEF4FA 0%,#F8FBFF 100%);border-radius:20px;border:1px solid #dde8f2;overflow:hidden}
+.s-head{padding:48px 56px 36px;border-bottom:1px solid #dde8f2}
+.chip-sl{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#0773BB;border:1px solid rgba(7,115,187,.2);padding:5px 14px;border-radius:20px;background:rgba(7,115,187,.05);margin-bottom:16px}
+.chip-dot-sl{width:5px;height:5px;border-radius:50%;background:#38B0E3}
+.s-title{font-family:'Libre Baskerville',serif;font-size:32px;font-weight:700;line-height:1.2;letter-spacing:-.02em;color:#0F1923;margin-bottom:12px}
+.s-title .hl{background:linear-gradient(95deg,#0773BB,#38B0E3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.s-sub{font-size:15px;color:#3D4A58;line-height:1.75;font-weight:300;max-width:560px}
+.s-slider{padding:36px 56px 0}
+.slider-track{position:relative;height:6px;background:#D1D2D4;border-radius:3px;cursor:pointer}
+.slider-fill{position:absolute;left:0;top:0;height:100%;background:linear-gradient(90deg,#0773BB,#38B0E3);border-radius:3px;pointer-events:none;transition:width .25s cubic-bezier(.4,0,.2,1)}
+.slider-thumb{position:absolute;top:50%;width:28px;height:28px;border-radius:50%;background:#fff;border:3px solid #0773BB;box-shadow:0 2px 12px rgba(7,115,187,.35);transform:translate(-50%,-50%);cursor:grab;z-index:2;transition:left .25s cubic-bezier(.4,0,.2,1);touch-action:none;user-select:none}
+.slider-thumb:active,.slider-thumb.dragging{cursor:grabbing;box-shadow:0 0 0 8px rgba(7,115,187,.1),0 2px 12px rgba(7,115,187,.35);transition:none}
+.s-dots{position:relative;height:62px;margin-top:2px}
+.s-dot-wrap{position:absolute;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;width:88px}
+.s-dot{width:2px;height:6px;border-radius:1px;background:#D1D2D4;transition:background .25s,height .2s,width .2s}
+.s-dot.on{background:#0773BB;width:3px;height:6px}
+.s-dot-name{font-size:11px;font-weight:600;color:#939598;letter-spacing:.04em;text-align:center;line-height:1.3;transition:color .2s;white-space:nowrap}
+.s-dot-name.on{color:#0773BB}
+.s-dot-years{font-size:10px;color:#C0C4CC;text-align:center;transition:color .2s;white-space:nowrap}
+.s-dot-years.on{color:#939598}
+.s-hl{padding:24px 56px 0;min-height:64px}
+.s-hl-title{font-family:'Libre Baskerville',serif;font-size:19px;font-weight:700;color:#0F1923;line-height:1.3}
+.s-hl-desc{font-size:14px;color:#3D4A58;line-height:1.75;margin-top:6px;font-weight:300;max-width:680px}
+.s-probs{padding:24px 56px 20px}
+.s-probs-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#939598;margin-bottom:14px}
+.probs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.prob{background:#fff;border:1px solid #D1D2D4;border-radius:10px;padding:20px 18px;border-top:3px solid #38B0E3;box-shadow:0 2px 10px rgba(5,74,130,.06)}
+.prob-icon{width:34px;height:34px;border-radius:8px;background:rgba(7,115,187,.07);border:1px solid rgba(7,115,187,.12);display:flex;align-items:center;justify-content:center;margin-bottom:11px}
+.prob-title{font-size:13px;font-weight:600;color:#0F1923;line-height:1.38;margin-bottom:5px;font-style:italic}
+.prob-title::before{content:'\201C';color:#38B0E3;font-family:'Libre Baskerville',serif;font-size:18px;line-height:0;vertical-align:-.25em;margin-right:1px}
+.prob-body{font-size:12px;color:#5a6472;line-height:1.7}
+.prob-tag{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#0773BB}
+.prob-tag::before{content:'';width:4px;height:4px;border-radius:50%;background:#38B0E3;display:inline-block}
+.s-kc{padding:20px 56px 36px}
+.cta-card{background:linear-gradient(135deg,#021E3A,#054A82);border-radius:12px;padding:20px 32px;display:flex;align-items:center;gap:32px;position:relative;overflow:hidden}
+.cta-card::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.05) 1px,transparent 1px);background-size:20px 20px;pointer-events:none}
+.cta-inner{position:relative;z-index:2;display:flex;align-items:center;gap:24px;width:100%}
+.cta-text{flex:1;display:flex;flex-direction:column;gap:2px}
+.cta-tag{font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(140,215,247,.8)}
+.cta-title{font-family:'Libre Baskerville',serif;font-size:15px;font-weight:700;color:#fff;line-height:1.3}
+.cta-sub{font-size:12.5px;color:rgba(255,255,255,.45);line-height:1.5;font-weight:300}
+.cta-actions{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0}
+.cta-btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;background:#fff;color:#054A82;border:0;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:transform .15s,box-shadow .15s,background .2s,color .2s;white-space:nowrap;min-height:44px;user-select:none}
+.cta-btn:not(.is-open){animation:ctaPulse 2.4s ease-in-out infinite}
+@keyframes ctaPulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.35)}60%{box-shadow:0 0 0 10px rgba(255,255,255,.0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,.0)}}
+.cta-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,.3);animation:none}
+.cta-btn.is-open{background:rgba(255,255,255,.08);color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.15);transform:none;box-shadow:none;animation:none}
+.cta-trust{font-size:10px;color:rgba(255,255,255,.25);white-space:nowrap}
+.assess-wrap{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.4,0,.2,1)}
+.assess-wrap.open{grid-template-rows:1fr}
+.assess-inner{overflow:hidden}
+.assess-body{padding:36px 56px 56px;border-top:1px solid #dde8f2}
+.assess-form{max-width:640px;margin:0 auto}
+.assess-progress{display:flex;align-items:center;gap:14px;margin-bottom:32px}
+.prog-bar{flex:1;height:3px;background:#D1D2D4;border-radius:2px;overflow:hidden}
+.prog-fill{height:100%;background:linear-gradient(90deg,#0773BB,#38B0E3);border-radius:2px;transition:width .4s ease}
+.prog-label{font-size:11px;font-weight:600;color:#939598;white-space:nowrap;min-width:96px;text-align:right}
+.assess-step{display:none}
+.assess-step.on{display:block;animation:stepIn .3s ease}
+@keyframes stepIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.step-num{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#38B0E3;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.step-num::before{content:'';width:16px;height:1px;background:#38B0E3;display:block}
+.step-q{font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:#0F1923;line-height:1.35;margin-bottom:6px}
+.step-hint{font-size:13px;color:#939598;margin-bottom:22px;line-height:1.5}
+.step-opts{display:flex;flex-direction:column;gap:10px}
+.s-opt{display:flex;align-items:center;gap:14px;padding:14px 18px;border:1.5px solid #D1D2D4;border-radius:8px;cursor:pointer;transition:border-color .15s,background .15s;min-height:52px;background:#fff}
+.s-opt:hover{border-color:#0773BB;background:rgba(7,115,187,.03)}
+.s-opt.sel{border-color:#0773BB;background:rgba(7,115,187,.08);animation:optPulse .22s ease}
+@keyframes optPulse{0%{transform:scale(1)}50%{transform:scale(1.012)}100%{transform:scale(1)}}
+.s-opt.locked{pointer-events:none}
+.assess-step.locked .s-opt:not(.sel){opacity:.55}
+.s-opt-k{width:28px;height:28px;border-radius:6px;border:1.5px solid #D1D2D4;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#939598;flex-shrink:0;transition:all .15s}
+.s-opt:hover .s-opt-k,.s-opt.sel .s-opt-k{border-color:#0773BB;background:#0773BB;color:#fff}
+.s-opt-t{font-size:14px;color:#0F1923;font-weight:400;line-height:1.4}
+.step-nav{display:flex;align-items:center;justify-content:space-between;margin-top:20px}
+.step-next{display:flex;align-items:center;gap:8px;padding:12px 26px;background:#0773BB;color:#fff;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer;transition:background .15s,transform .15s;min-height:44px;user-select:none}
+.step-next:hover{background:#054A82;transform:translateY(-1px)}
+.step-back{font-size:13px;color:#939598;cursor:pointer;transition:color .15s;min-height:44px;display:flex;align-items:center;padding:0 4px;user-select:none}
+.step-back:hover{color:#0773BB}
+.assess-result{display:none;text-align:center;animation:stepIn .4s ease}
+.assess-result.on{display:block}
+.score-ring{width:96px;height:96px;border-radius:50%;background:linear-gradient(135deg,#0773BB,#38B0E3);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 24px;box-shadow:0 8px 32px rgba(7,115,187,.28)}
+.score-n{font-family:'Libre Baskerville',serif;font-size:38px;font-weight:700;color:#fff;line-height:1}
+.score-d{font-size:12px;color:rgba(255,255,255,.55);margin-top:2px}
+.result-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#0773BB;border:1px solid rgba(7,115,187,.25);background:rgba(7,115,187,.06);padding:4px 14px;border-radius:20px;margin-bottom:14px}
+.result-title{font-family:'Libre Baskerville',serif;font-size:22px;font-weight:700;color:#0F1923;line-height:1.3;margin-bottom:10px}
+.result-sub{font-size:14px;color:#5a6472;line-height:1.72;margin-bottom:28px;max-width:460px;margin-left:auto;margin-right:auto}
+.email-box{background:#f4f8fc;border:1px solid #dde8f2;border-radius:12px;padding:24px;margin-bottom:16px;text-align:left}
+.email-lbl{font-size:13px;font-weight:600;color:#0F1923;margin-bottom:4px}
+.email-sub-lbl{font-size:12px;color:#939598;margin-bottom:14px}
+.email-row{display:flex;gap:10px}
+.email-in{flex:1;padding:13px 16px;border:1.5px solid #D1D2D4;border-radius:6px;font-size:14px;font-family:'DM Sans',sans-serif;color:#0F1923;outline:none;min-height:44px;transition:border-color .15s;background:#fff}
+.email-in:focus{border-color:#0773BB}
+.email-go{padding:13px 20px;background:linear-gradient(95deg,#0773BB,#38B0E3);color:#fff;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;min-height:44px;transition:opacity .15s;user-select:none}
+.email-go:hover{opacity:.9}
+.email-stack{display:flex;flex-direction:column;gap:10px}
+.email-go-block{text-align:center;padding:14px 20px;font-size:14px}
+.email-note{font-size:11px;color:#939598;text-align:center;margin-top:10px}
+.result-alt{font-size:13px;color:#0773BB;font-weight:500;cursor:pointer;text-decoration:underline;text-underline-offset:3px;display:inline-block}
+.result-disclaimer{font-size:11.5px;color:#8A94A0;line-height:1.62;max-width:460px;margin:-8px auto 24px}
+.result-finedisc{font-size:10.5px;color:#9aa3ad;line-height:1.62;max-width:500px;margin:22px auto 0;border-top:1px solid #e9eef3;padding-top:14px;text-align:left}
+
+/* ── SERVICES ── */
+.services-sec{background:#fff;padding:96px 0}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+.svc-card{background:#fff;border:1px solid var(--lv-gl);border-radius:12px;border-top:3px solid var(--lv-sky);padding:32px;box-shadow:0 2px 12px rgba(5,74,130,.04);transition:box-shadow var(--trans),transform var(--trans)}
+.svc-card:hover{box-shadow:0 8px 28px rgba(5,74,130,.1);transform:translateY(-2px)}
+.svc-icon{width:44px;height:44px;border-radius:10px;background:rgba(7,115,187,.08);border:1px solid rgba(7,115,187,.14);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.svc-title{font-family:'Libre Baskerville',serif;font-size:17px;font-weight:700;color:var(--ink);margin-bottom:10px;line-height:1.3}
+.svc-body{font-size:13.5px;color:var(--body);line-height:1.75;font-weight:300}
+.svc-body strong{font-weight:600;color:var(--ink)}
+
+/* ── CREDIBILITY ── */
+.cred-sec{background:var(--lv-deeper);padding:96px 0}
+
+/* ── ICP SELF-SORT ── */
+.icp-sort-sec{background:#fff;border-top:1px solid var(--lv-gl);padding:80px 0}
+.icp-sort-header{text-align:center;margin-bottom:52px}
+.icp-sort-eyebrow{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--lv-navy);margin-bottom:14px}
+.icp-sort-h{font-family:'Libre Baskerville',serif;font-size:36px;font-weight:700;color:var(--ink);letter-spacing:-.025em;line-height:1.18;margin-bottom:10px}
+.icp-sort-sub{font-size:16px;color:var(--body);line-height:1.75;font-weight:300;max-width:480px;margin:0 auto}
+.icp-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.icp-card{padding:36px 30px;border:1px solid var(--lv-gl);border-radius:12px;background:#fff;box-shadow:0 2px 20px rgba(5,74,130,.05);transition:box-shadow var(--trans),transform var(--trans);display:flex;flex-direction:column}
+.icp-card:hover{box-shadow:0 8px 36px rgba(5,74,130,.1);transform:translateY(-3px)}
+.icp-card-badge{display:inline-flex;align-items:center;font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:20px;width:fit-content}
+.icp-card-badge.early{color:var(--lv-navy);background:rgba(7,115,187,.08);border:1px solid rgba(7,115,187,.2)}
+.icp-card-badge.peak{color:var(--lv-dark);background:rgba(5,74,130,.08);border:1px solid rgba(5,74,130,.2)}
+.icp-card-badge.diy{color:var(--lv-deeper);background:rgba(3,47,87,.08);border:1px solid rgba(3,47,87,.18)}
+.icp-card-h{font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:12px;line-height:1.28}
+.icp-card-body{font-size:14px;color:var(--body);line-height:1.78;font-weight:300;flex:1;margin-bottom:28px}
+.icp-card-link{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:var(--lv-navy);padding:11px 22px;border:2px solid var(--lv-navy);border-radius:4px;transition:background var(--trans),color var(--trans);align-self:flex-start;cursor:pointer}
+.icp-card-link:hover{background:var(--lv-navy);color:#fff}
+@media(max-width:900px){.icp-cards{grid-template-columns:1fr}}
+.cred-quote-wrap{text-align:center;max-width:760px;margin:52px auto}
+.cred-open{font-family:'Libre Baskerville',serif;font-size:72px;line-height:.7;color:var(--lv-sky);display:block;margin-bottom:-10px}
+.cred-quote{font-family:'Libre Baskerville',serif;font-size:26px;font-weight:400;font-style:italic;color:#fff;line-height:1.55;letter-spacing:-.01em}
+.cred-attr{font-size:13px;color:rgba(255,255,255,.45);margin-top:20px;font-weight:400}
+.cred-placeholder{font-size:11px;color:rgba(255,255,255,.25);font-style:italic;margin-top:8px}
+.cred-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(255,255,255,.1);margin-top:64px;padding-top:64px}
+.cred-stat{text-align:center;padding:0 32px;position:relative}
+.cred-stat::after{content:'';position:absolute;right:0;top:10%;bottom:10%;width:1px;background:rgba(255,255,255,.1)}
+.cred-stat:last-child::after{display:none}
+.cred-stat-n{font-family:'Libre Baskerville',serif;font-size:52px;font-weight:700;color:#fff;line-height:1;display:block}
+.cred-stat-label{font-size:13px;color:rgba(255,255,255,.45);margin-top:10px;line-height:1.6}
+
+/* ── PROCESS ── */
+.process-sec{background:#fff;padding:96px 0}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:64px;position:relative}
+.process-connector{position:absolute;top:32px;left:calc(12.5%);right:calc(12.5%);height:2px;background:linear-gradient(90deg,var(--lv-navy),var(--lv-sky));z-index:0}
+.process-step{position:relative;z-index:1;text-align:center;padding:0 20px}
+.step-circle{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--lv-dark),var(--lv-navy));display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 4px 20px rgba(7,115,187,.28)}
+.step-circle span{font-family:'Libre Baskerville',serif;font-size:22px;font-weight:700;color:#fff}
+.step-label{font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--lv-navy);margin-bottom:10px}
+.step-title{font-family:'Libre Baskerville',serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:10px;line-height:1.3}
+.step-body{font-size:13px;color:var(--body);line-height:1.75;font-weight:300}
+
+/* ── TESTIMONIALS ── */
+.testi-sec{background:var(--lv-off);padding:96px 0}
+.testi-warning{background:#fef3c7;border:1px solid #f59e0b;border-radius:8px;padding:14px 20px;margin-top:32px;margin-bottom:40px;font-size:13px;color:#92400e;font-weight:500;display:flex;align-items:flex-start;gap:10px}
+.testi-warning::before{content:'⚠';flex-shrink:0;font-size:16px}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testi-card{background:#fff;border:1px solid var(--lv-gl);border-left:3px solid var(--lv-sky);border-radius:12px;padding:32px;box-shadow:0 2px 12px rgba(5,74,130,.04)}
+.testi-stars{display:flex;gap:3px;margin-bottom:16px}
+.star{color:#f59e0b;font-size:14px}
+.testi-q{font-family:'Libre Baskerville',serif;font-size:15px;font-weight:400;font-style:italic;color:var(--ink);line-height:1.7;margin-bottom:20px}
+.testi-q::before{content:'\201C';color:var(--lv-sky);font-size:28px;line-height:0;vertical-align:-.4em;margin-right:2px;font-family:'Libre Baskerville',serif}
+.testi-attr{font-size:12.5px;color:var(--lv-gray);font-weight:500}
+
+/* ── RESOURCES ── */
+.resources-sec{background:#fff;padding:96px 0}
+.resources-note{font-size:12px;color:var(--lv-gray);font-style:italic;margin-top:8px}
+.resources-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.res-card{background:#fff;border:1px solid var(--lv-gl);border-radius:12px;border-top:3px solid var(--lv-sky);padding:28px;box-shadow:0 2px 12px rgba(5,74,130,.04);transition:box-shadow var(--trans),transform var(--trans)}
+.res-card:hover{box-shadow:0 8px 28px rgba(5,74,130,.1);transform:translateY(-2px)}
+.res-tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lv-navy);border:1px solid rgba(7,115,187,.2);background:rgba(7,115,187,.05);padding:4px 12px;border-radius:20px;margin-bottom:14px}
+.res-title{font-family:'Libre Baskerville',serif;font-size:17px;font-weight:700;color:var(--ink);line-height:1.4;margin-bottom:10px}
+.res-excerpt{font-size:13.5px;color:var(--body);line-height:1.75;font-weight:300;margin-bottom:18px}
+.res-link{font-size:13px;font-weight:600;color:var(--lv-navy);display:inline-flex;align-items:center;gap:6px;border-bottom:1.5px solid transparent;transition:border-color var(--trans)}
+.res-link:hover{border-bottom-color:var(--lv-navy)}
+.resources-all{text-align:center;margin-top:40px}
+.resources-all a{font-size:14px;font-weight:600;color:var(--lv-navy);border-bottom:1.5px solid rgba(7,115,187,.3);padding-bottom:2px;transition:border-color var(--trans)}
+.resources-all a:hover{border-bottom-color:var(--lv-navy)}
+
+/* ── FINAL CTA ── */
+.fcta-sec{background:linear-gradient(135deg,var(--lv-deeper),var(--lv-dark));padding:96px 0}
+.fcta-headline{font-family:'Libre Baskerville',serif;font-size:44px;font-weight:700;color:#fff;line-height:1.15;letter-spacing:-.02em;text-align:center;margin-bottom:16px}
+.fcta-sub{font-size:16px;color:rgba(255,255,255,.6);line-height:1.75;font-weight:300;text-align:center;max-width:580px;margin:0 auto 56px}
+.fcta-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:48px}
+.fcta-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:36px;backdrop-filter:blur(8px)}
+.fcta-card-label{font-size:9.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(140,215,247,.65);margin-bottom:12px}
+.fcta-card-title{font-family:'Libre Baskerville',serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:12px;line-height:1.3}
+.fcta-card-body{font-size:14px;color:rgba(255,255,255,.55);line-height:1.75;font-weight:300;margin-bottom:24px}
+.btn-white-solid{font-size:14px;font-weight:600;padding:14px 28px;background:#fff;color:var(--lv-dark);border-radius:4px;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:8px;transition:transform var(--trans),box-shadow var(--trans)}
+.btn-white-solid:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.btn-white-ghost{font-size:14px;font-weight:600;padding:14px 28px;border:1.5px solid rgba(255,255,255,.35);color:#fff;border-radius:4px;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:8px;transition:border-color var(--trans),background var(--trans)}
+.btn-white-ghost:hover{border-color:rgba(255,255,255,.7);background:rgba(255,255,255,.07)}
+.fcta-divider{text-align:center;margin:48px 0;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);position:relative}
+.fcta-divider::before,.fcta-divider::after{content:'';position:absolute;top:50%;width:calc(50% - 120px);height:1px;background:rgba(255,255,255,.12)}
+.fcta-divider::before{left:0}
+.fcta-divider::after{right:0}
+.fcta-form-wrap{background:#fff;border-radius:16px;padding:48px;max-width:680px;margin:0 auto}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group.full{grid-column:1/-1}
+.form-label{font-size:12px;font-weight:600;color:var(--ink);letter-spacing:.04em}
+.form-input,.form-select,.form-textarea{width:100%;padding:13px 16px;border:1.5px solid var(--lv-gl);border-radius:6px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--ink);outline:none;transition:border-color .15s;background:#fff;-webkit-appearance:none}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--lv-navy)}
+.form-textarea{min-height:100px;resize:vertical}
+.form-submit{width:100%;padding:16px;background:linear-gradient(95deg,var(--lv-navy),var(--lv-sky));color:#fff;border:none;border-radius:6px;font-size:15px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;margin-top:8px;transition:opacity .2s,transform .2s;animation:formPulse 2.8s ease-in-out infinite}
+@keyframes formPulse{0%{box-shadow:0 0 0 0 rgba(7,115,187,.4)}70%{box-shadow:0 0 0 12px rgba(7,115,187,.0)}100%{box-shadow:0 0 0 0 rgba(7,115,187,.0)}}
+.form-submit:hover{opacity:.9;transform:translateY(-1px);animation:none}
+.form-note{text-align:center;font-size:12px;color:var(--lv-gray);margin-top:14px;line-height:1.6}
+.form-trust{text-align:center;font-size:11.5px;color:var(--lv-gray);margin-top:10px;letter-spacing:.01em}
+
+/* ── FOOTER ── */
+.footer{background:var(--lv-deeper);padding:72px 0 0}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-brand-name{font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:6px}
+.footer-tagline{font-size:12.5px;color:rgba(255,255,255,.4);line-height:1.6;max-width:240px;margin-top:4px}
+.footer-col-title{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:10px;transition:color var(--trans)}
+.footer-col a:hover{color:rgba(255,255,255,.9)}
+.footer-bottom{padding:24px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.3)}
+.footer-compliance{font-size:11px;color:rgba(255,255,255,.2);font-style:italic;max-width:600px;line-height:1.6}
+
+/* ── VIDEO SECTION ── */
+.vid-sec{background:#fff;padding:72px 0;border-bottom:1px solid var(--lv-gl)}
+.vid-sec-in{display:flex;align-items:center;gap:72px}
+.vid-copy{flex:0 0 380px}
+.vid-player-wrap{flex:1;min-width:0;border-radius:14px;overflow:hidden;box-shadow:0 16px 56px rgba(5,74,130,.14);position:relative}
+.vid-thumb{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,#032F57 0%,#054A82 60%,#0773BB 100%);cursor:pointer;overflow:hidden}
+.vid-thumb::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 1px);background-size:24px 24px}
+.vid-overlay{position:absolute;inset:0;background:rgba(0,0,0,.18)}
+.vid-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);transition:transform .2s,background .2s;animation:playPulse 2.8s ease-in-out infinite}
+.vid-thumb:hover .vid-play-btn{transform:translate(-50%,-50%) scale(1.08);background:rgba(255,255,255,.25);animation:none}
+@keyframes playPulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.3)}60%{box-shadow:0 0 0 16px rgba(255,255,255,.0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,.0)}}
+.vid-caption{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);font-size:11.5px;font-weight:600;color:rgba(255,255,255,.7);letter-spacing:.06em;white-space:nowrap;background:rgba(0,0,0,.3);padding:5px 14px;border-radius:20px;backdrop-filter:blur(6px)}
+.vid-expand{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.4,0,.2,1)}
+.vid-expand.open{grid-template-rows:1fr}
+.vid-inner{overflow:hidden;aspect-ratio:16/9}
+@media(max-width:900px){.vid-sec-in{flex-direction:column;gap:36px}.vid-copy{flex:none}}
+
+/* ── REVEAL ANIMATIONS ── */
+.reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:0;transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
+.reveal{transform:translateY(28px)}
+.reveal-left{transform:translateX(-32px)}
+.reveal-right{transform:translateX(32px)}
+.reveal-scale{transform:scale(.93)}
+.revealed{opacity:1!important;transform:none!important}
+.reveal-children>*{opacity:0;transform:translateY(22px);transition:opacity .55s cubic-bezier(.4,0,.2,1),transform .55s cubic-bezier(.4,0,.2,1)}
+.reveal-children.revealed>*{opacity:1;transform:none}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .services-grid{grid-template-columns:1fr 1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .cred-stats{grid-template-columns:1fr 1fr}
+  .cred-stat:nth-child(2)::after{display:none}
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media(max-width:768px){
+  .wrap{padding:0 24px}
+  section[id]{scroll-margin-top:84px}
+  .topbar .wrap{flex-direction:column;height:auto;padding-top:8px;padding-bottom:8px;gap:4px;text-align:center}
+  .nav-links{display:none}
+  .nav-right .ncta{display:none}
+  .hamburger{display:flex}
+  .hero-in{flex-direction:column;gap:40px;padding:64px 0}
+  .hero-panel{width:100%}
+  .h1{font-size:32px}
+  .hstats{gap:20px;flex-wrap:wrap}
+  .pain-grid{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr}
+  .process-steps{grid-template-columns:1fr 1fr;gap:40px}
+  .process-connector{display:none}
+  .cred-stats{grid-template-columns:1fr}
+  .cred-stat::after{display:none}
+  .cred-stat{padding:0 0 32px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .cred-stat:last-child{border-bottom:none;padding-bottom:0}
+  .cred-quote{font-size:20px}
+  .cred-open{font-size:52px}
+  .resources-grid{grid-template-columns:1fr}
+  .fcta-cards{grid-template-columns:1fr}
+  .fcta-headline{font-size:30px}
+  .form-row{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:12px}
+  .sec-hl{font-size:28px}
+  .testi-grid{grid-template-columns:1fr}
+  .probs-grid{grid-template-columns:1fr}
+  .s-head{padding:28px 20px 24px}
+  .s-slider{padding:24px 48px 0}
+  .s-hl{padding:18px 20px 0}
+  .s-probs{padding:18px 20px 0}
+  .s-kc{padding:16px 20px 0}
+  .s-dot-name{font-size:9px;white-space:normal;line-height:1.2}
+  .s-dot-years{font-size:9px}
+  .cta-card{padding:18px 20px;flex-wrap:wrap;gap:16px}
+  .cta-inner{flex-direction:column;align-items:flex-start;gap:14px}
+  .cta-actions{align-items:stretch;width:100%}
+  .cta-btn{justify-content:center}
+  .assess-body{padding:24px 20px 40px}
+  .email-row{flex-direction:column}
+  .s-title{font-size:22px}
+  .s-dots{height:78px}
+  .s-dot-wrap{width:72px}
+  .pain-cta-strip{flex-direction:column;text-align:center}
+  .fcta-form-wrap{padding:32px 20px}
+}
+
+/* ─────────────────────────────────────────────────────────────
+   2026 EXPERIENCE UPGRADE — "THE LIVING LONG VIEW"
+   ───────────────────────────────────────────────────────────── */
+.gt,.sec-hl.gt-title,.s-title .hl{
+  background:none;
+  -webkit-background-clip:initial;
+  -webkit-text-fill-color:initial;
+  background-clip:initial;
+  color:inherit;
+}
+.sec-hl.gt-title{color:var(--ink)}
+
+/* Cinematic hero: ambient film, readable copy, honest poster fallback */
+.lv-hero{min-height:clamp(720px,calc(100svh - 112px),940px);background:var(--lv-deeper);isolation:isolate}
+.lv-hero .hero-bg{background:var(--lv-deeper)}
+.lv-hero .hero-bg::before{background-image:linear-gradient(rgba(140,215,247,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(140,215,247,.045) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(90deg,#000,transparent 80%)}
+.lv-hero::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(140,215,247,.24);z-index:5}
+.lv-hero-bg-video,.lv-hero-poster,.lv-hero-scrim{position:absolute;inset:0;width:100%;height:100%}
+.lv-hero-bg-video{z-index:1;object-fit:cover;opacity:0;transition:opacity .8s cubic-bezier(.16,1,.3,1)}
+.lv-hero.has-video .lv-hero-bg-video{opacity:1}
+.lv-hero-poster{z-index:1;background:var(--lv-deeper);transition:opacity .8s cubic-bezier(.16,1,.3,1)}
+.lv-hero.has-video .lv-hero-poster{opacity:0}
+.lv-hero-poster-still{position:absolute;inset:0;margin:0;opacity:0;animation:lvHeroSequence 18s infinite;overflow:hidden}
+.lv-hero-poster-still:nth-child(2){animation-delay:6s}.lv-hero-poster-still:nth-child(3){animation-delay:12s}
+.lv-hero-poster-still img{width:62%;height:100%;margin-left:auto;object-fit:cover;object-position:center 20%;filter:saturate(.72) contrast(1.04);transform:scale(1.03);animation:lvHeroDrift 6s cubic-bezier(.16,1,.3,1) infinite}
+@keyframes lvHeroSequence{0%{opacity:1}29%{opacity:1}33.333%,100%{opacity:0}}
+@keyframes lvHeroDrift{from{transform:scale(1.03)}to{transform:scale(1.08) translate3d(-.8%,-.5%,0)}}
+.lv-hero-scrim{z-index:2;background:linear-gradient(90deg,#032F57 0%,#032F57 42%,rgba(3,47,87,.9) 66%,rgba(3,47,87,.24) 100%)}
+.lv-hero .wrap{position:relative;z-index:3}
+.lv-hero .hero-in{display:flex;align-items:center;justify-content:space-between;gap:42px;min-height:clamp(720px,calc(100svh - 112px),940px);padding:74px 0}
+.lv-hero .hero-copy{display:block;width:min(690px,64%)}
+.lv-kicker{display:flex;align-items:center;gap:12px;margin-bottom:24px;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--lv-light)}
+.lv-kicker::before{content:'';width:34px;height:2px;background:var(--lv-sky)}
+.lv-hero .h1{font-size:clamp(44px,5vw,74px);line-height:1.025;max-width:760px;margin-bottom:24px;text-wrap:balance}
+.lv-hero .h1 .l2{color:var(--lv-light);background:none;-webkit-text-fill-color:initial}
+.lv-hero .hsub{max-width:650px;font-size:16px;line-height:1.75;margin-bottom:30px}
+.lv-hero .hacts{margin-bottom:42px}
+.lv-career-line{display:grid;grid-template-columns:repeat(4,1fr);max-width:650px;border-top:1px solid rgba(255,255,255,.18);padding-top:18px}
+.lv-career-stage{position:relative;padding:0 14px 0 0;font-size:10px;line-height:1.35;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.lv-career-stage::before{content:'';position:absolute;top:-22px;left:0;width:7px;height:7px;border-radius:50%;background:var(--lv-sky);box-shadow:0 0 0 5px rgba(56,176,227,.12)}
+.lv-career-stage strong{display:block;margin-bottom:4px;font-size:11px;color:#fff;letter-spacing:.03em}
+.lv-not-physician{display:inline-block;margin:0 0 22px;font-size:12.5px;color:rgba(255,255,255,.64);text-decoration:underline;text-underline-offset:4px}
+.lv-hero-callout{width:340px;flex:0 0 340px;padding:32px;background:rgba(3,47,87,.92);border:1px solid rgba(140,215,247,.24);box-shadow:0 28px 70px rgba(3,47,87,.24)}
+.lv-hero-callout .hcard-title{font-size:17px}
+.lv-hero-callout-foot{padding-top:16px;margin-top:10px;border-top:1px solid rgba(255,255,255,.1);font-size:11.5px;line-height:1.6;color:rgba(255,255,255,.45);text-align:center}
+.lv-hero-film-status{position:absolute;z-index:4;right:24px;bottom:22px;padding:8px 10px;background:rgba(3,47,87,.78);border:1px solid rgba(140,215,247,.28);color:rgba(255,255,255,.72);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.lv-hero.has-video .lv-hero-film-status{display:none}
+.lv-orbit-wheel{position:absolute;z-index:2;width:420px;right:-185px;bottom:-165px;opacity:.12;animation:lvOrbit 48s linear infinite}
+@keyframes lvOrbit{to{transform:rotate(360deg)}}
+
+/* Story film: spoken, user-initiated, and immediately after the hero */
+.lv-story-sec{padding:clamp(78px,9vw,128px) 0;background:var(--lv-off)}
+.lv-story-head{display:grid;grid-template-columns:minmax(0,.9fr) minmax(320px,.55fr);gap:70px;align-items:end;margin-bottom:46px}
+.lv-story-title{font-family:'Libre Baskerville',serif;font-size:clamp(36px,4.5vw,62px);line-height:1.08;letter-spacing:-.025em;max-width:760px}
+.lv-story-intro{font-size:16px;line-height:1.75;color:var(--body);max-width:520px}
+.lv-story-frame{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--lv-deeper);box-shadow:0 28px 70px rgba(3,47,87,.2);isolation:isolate}
+.lv-story-video{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;opacity:0;background:var(--lv-deeper)}
+.lv-story-frame.has-video .lv-story-video{opacity:1}
+.lv-story-posters{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);z-index:1}
+.lv-story-poster{position:relative;margin:0;overflow:hidden}
+.lv-story-poster img{width:100%;height:100%;object-fit:cover;object-position:center 18%;filter:saturate(.7)}
+.lv-story-poster::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,47,87,.05),rgba(3,47,87,.52))}
+.lv-story-frame.has-video .lv-story-posters{opacity:0}
+.lv-story-control{position:absolute;z-index:4;left:50%;top:50%;transform:translate(-50%,-50%);width:90px;height:90px;border-radius:50%;border:1px solid rgba(255,255,255,.76);background:rgba(3,47,87,.82);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 14px 36px rgba(3,47,87,.24);transition:transform .25s cubic-bezier(.16,1,.3,1),background .25s}
+.lv-story-control:not(:disabled):hover{transform:translate(-50%,-50%) scale(1.04);background:var(--lv-navy)}
+.lv-story-control:disabled{cursor:not-allowed}
+.lv-story-control svg{margin-left:5px}
+.lv-story-frame.is-playing .lv-story-control{opacity:0;pointer-events:none}
+.lv-story-caption{position:absolute;z-index:3;left:28px;bottom:24px;color:#fff;font-size:13px;font-weight:600}
+.lv-story-caption span{display:block;margin-top:5px;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lv-light)}
+.lv-story-frame.has-video .lv-story-caption{opacity:0}
+.lv-story-status{position:absolute;z-index:4;right:22px;top:22px;padding:8px 10px;background:var(--lv-light);color:var(--lv-deeper);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.lv-story-frame.has-video .lv-story-status{display:none}
+
+/* Editorial problem section — one narrative, not four floating tiles */
+.pain-sec>.wrap{display:grid;grid-template-columns:minmax(280px,.78fr) minmax(0,1.22fr);gap:72px 88px;align-items:start}
+.pain-sec>.wrap>.reveal:first-child{position:sticky;top:136px}
+.pain-sec .sec-hl{font-size:clamp(34px,3.6vw,50px);line-height:1.12;border:0;padding:0}
+.pain-grid{display:block;margin:0;border-top:1px solid var(--lv-gl)}
+.pain-card{display:grid;grid-template-columns:150px minmax(180px,.72fr) minmax(240px,1fr);gap:24px;align-items:start;padding:30px 0;border:0;border-bottom:1px solid var(--lv-gl);border-radius:0;box-shadow:none;background:transparent;transition:border-color var(--trans)}
+.pain-card:hover{box-shadow:none;transform:none;border-color:var(--lv-navy)}
+.pain-tag{margin:2px 0 0;padding:0;border:0;border-radius:0;background:none;color:var(--lv-navy)}
+.pain-q{font-style:normal;font-size:17px;margin:0}
+.pain-q::before{display:none}
+.pain-body{font-size:13.5px}
+.pain-cta-strip{grid-column:1/-1;margin:0;padding:30px 34px;border-radius:0;border:1px solid rgba(7,115,187,.2);background:var(--lv-off)}
+
+/* Planning scope presented as an integrated system */
+.services-grid{grid-template-columns:repeat(2,1fr);gap:0;margin-top:50px;border-top:1px solid var(--lv-gl)}
+.svc-card{display:grid;grid-template-columns:52px 1fr;grid-template-rows:auto 1fr;column-gap:20px;padding:30px 28px 30px 0;border:0;border-bottom:1px solid var(--lv-gl);border-radius:0;box-shadow:none;background:transparent}
+.svc-card:nth-child(odd){border-right:1px solid var(--lv-gl)}
+.svc-card:nth-child(even){padding-left:28px}
+.svc-card:hover{box-shadow:none;transform:none;background:var(--lv-off)}
+.svc-icon{grid-row:1/3;margin:0;border-radius:50%}
+.svc-title{grid-column:2;margin-bottom:8px}
+.svc-body{grid-column:2}
+
+/* The process wheel becomes the visual anchor of the page */
+.lv-process-layout{display:grid;grid-template-columns:minmax(320px,.82fr) minmax(0,1.18fr);gap:84px;align-items:start;margin-top:58px}
+.lv-process-visual{--process-offset:289;--process-angle:0deg;--process-scale:.97;position:sticky;top:126px;min-height:480px;display:grid;place-items:center;background:var(--lv-off);overflow:hidden;border:1px solid #dce9f3;isolation:isolate}
+.lv-process-visual::after{content:'';position:absolute;inset:9%;border:1px solid rgba(7,115,187,.12);border-radius:50%;z-index:-1}
+.lv-process-wheel{width:min(92%,520px);transform:rotate(var(--wheel-turn,0deg)) scale(var(--process-scale));transition:filter .35s cubic-bezier(.16,1,.3,1);filter:drop-shadow(0 22px 30px rgba(5,74,130,.1));will-change:transform}
+.lv-process-progress{position:absolute;width:88%;height:88%;transform:rotate(-90deg);pointer-events:none}
+.lv-process-progress .track{fill:none;stroke:rgba(7,115,187,.1);stroke-width:.8}
+.lv-process-progress .trace{fill:none;stroke:var(--lv-sky);stroke-width:1.35;stroke-linecap:round;stroke-dasharray:289;stroke-dashoffset:var(--process-offset);transition:stroke-dashoffset .12s linear}
+.lv-process-marker{position:absolute;inset:6%;border-radius:50%;transform:rotate(var(--process-angle));pointer-events:none;will-change:transform}
+.lv-process-marker::before{content:'';position:absolute;top:-4px;left:50%;width:10px;height:10px;border-radius:50%;background:var(--lv-sky);box-shadow:0 0 0 7px rgba(56,176,227,.16);transform:translateX(-50%)}
+.lv-process-dial{display:none}
+.lv-process-center{position:absolute;display:flex;align-items:center;justify-content:center;width:124px;height:124px;border-radius:50%;background:var(--lv-deeper);color:#fff;text-align:center;font-size:10px;font-weight:700;line-height:1.45;letter-spacing:.1em;text-transform:uppercase;box-shadow:0 0 0 12px rgba(255,255,255,.82)}
+.lv-process-list{border-top:1px solid var(--lv-gl)}
+.lv-process-step{display:grid;grid-template-columns:72px 1fr;gap:18px;padding:32px 0;border-bottom:1px solid var(--lv-gl);transition:border-color .25s,opacity .25s;opacity:.58}
+.lv-process-step.is-active{opacity:1;border-color:var(--lv-navy)}
+.lv-step-number{font-family:'Libre Baskerville',serif;font-size:34px;color:var(--lv-navy);line-height:1}
+.lv-process-step .step-label{margin-bottom:8px}
+.lv-process-step .step-title{font-size:19px}
+.lv-process-step .step-body{max-width:560px}
+
+/* Vertical perspectives: a light reset after the main conversion section */
+.lv-reels-sec{padding:clamp(84px,9vw,124px) 0;background:var(--lv-off);overflow:hidden}
+.lv-reels-head{display:flex;align-items:end;justify-content:space-between;gap:48px;margin-bottom:42px}
+.lv-reels-title{font-family:'Libre Baskerville',serif;font-size:clamp(34px,4vw,50px);line-height:1.12;color:var(--ink);max-width:720px}
+.lv-reels-intro{max-width:370px;color:var(--body);font-size:14px;line-height:1.7}
+.lv-reel-rail{display:grid;grid-template-columns:repeat(3,minmax(0,300px));justify-content:center;gap:24px}
+.lv-reel{position:relative;aspect-ratio:9/16;overflow:hidden;background:#061f36;border:1px solid rgba(140,215,247,.22);isolation:isolate}
+.lv-reel img{width:100%;height:100%;object-fit:cover;object-position:center 18%;filter:saturate(.68);transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .5s}
+.lv-reel-video{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;background:var(--lv-deeper);opacity:0}
+.lv-reel.has-video .lv-reel-video{opacity:1}
+.lv-reel.is-playing img{opacity:0}
+.lv-reel:hover img,.lv-reel:focus-within img{transform:scale(1.045);filter:saturate(.88)}
+.lv-reel::after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(3,47,87,.05) 24%,rgba(3,47,87,.94) 88%)}
+.lv-reel-meta{position:absolute;z-index:2;top:16px;left:16px;right:16px;display:flex;justify-content:space-between;gap:10px;font-size:8.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.lv-reel-meta span:last-child{color:var(--lv-light)}
+.lv-reel-copy{position:absolute;z-index:2;left:18px;right:18px;bottom:20px;color:#fff}
+.lv-reel-copy h3{font-family:'Libre Baskerville',serif;font-size:17px;line-height:1.35;margin-bottom:9px}
+.lv-reel-copy p{font-size:11.5px;line-height:1.55;color:rgba(255,255,255,.64)}
+.lv-reel-play{width:48px;height:48px;margin-bottom:16px;border-radius:50%;border:1px solid rgba(255,255,255,.65);display:flex;align-items:center;justify-content:center;background:rgba(3,47,87,.62);color:#fff;cursor:pointer}
+.lv-reel-play:disabled{cursor:not-allowed}
+.lv-reel.is-playing::after,.lv-reel.is-playing .lv-reel-meta,.lv-reel.is-playing .lv-reel-copy h3,.lv-reel.is-playing .lv-reel-copy p{opacity:0;pointer-events:none}
+.lv-reel-cta{display:flex;flex-direction:column;justify-content:space-between;padding:26px;background:var(--lv-navy);color:#fff;border-color:rgba(255,255,255,.18)}
+.lv-reel-cta::after{display:none}
+.lv-reel-cta .lv-reel-index{font-family:'Libre Baskerville',serif;font-size:74px;line-height:1;color:rgba(255,255,255,.15)}
+.lv-reel-cta h3{font-family:'Libre Baskerville',serif;font-size:27px;line-height:1.22;margin-bottom:14px}
+.lv-reel-cta p{font-size:13.5px;line-height:1.7;color:rgba(255,255,255,.68);margin-bottom:24px}
+.lv-reel-cta a{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;background:#fff;color:var(--lv-dark);font-size:13px;font-weight:700}
+
+/* Reduce generic card movement and glass treatments */
+.fcta-sec{background:var(--lv-dark)}
+.fcta-card{background:rgba(3,47,87,.58);backdrop-filter:none;border-radius:2px}
+.form-submit{background:var(--lv-navy);animation:none}
+.res-card:hover,.icp-card:hover{transform:none}
+
+@media(max-width:1050px){
+  .lv-hero .hero-copy{width:min(650px,62%)}
+  .lv-hero-callout{width:310px;flex-basis:310px;padding:26px}
+  .lv-process-layout{gap:46px}
+  .pain-sec>.wrap{gap:56px}
+  .pain-card{grid-template-columns:120px 1fr}.pain-body{grid-column:2}
+}
+@media(max-width:820px){
+  .lv-hero,.lv-hero .hero-in{min-height:720px}
+  .lv-hero .hero-in{padding:58px 0 72px;flex-direction:column;align-items:flex-start;justify-content:center}
+  .lv-hero .hero-copy{width:100%}
+  .lv-hero-callout{width:100%;max-width:720px;flex-basis:auto}
+  .lv-hero-poster-still img{width:100%;opacity:.58}
+  .lv-hero-scrim{background:linear-gradient(90deg,rgba(3,47,87,.96),rgba(3,47,87,.68))}
+  .lv-story-head{grid-template-columns:1fr;gap:20px}
+  .pain-sec>.wrap{grid-template-columns:1fr;gap:44px}
+  .pain-sec>.wrap>.reveal:first-child{position:static}
+  .lv-process-layout{grid-template-columns:1fr;gap:40px}
+  .lv-process-visual{position:relative;top:auto;min-height:440px}
+  .lv-reel-rail{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px;margin-right:-24px;scrollbar-width:thin}
+  .lv-reel{flex:0 0 min(72vw,300px);scroll-snap-align:start}
+  .lv-reels-head{display:block}.lv-reels-intro{margin-top:18px}
+}
+@media(max-width:640px){
+  .lv-hero .h1{font-size:38px}
+  .lv-hero .hacts{flex-direction:column;align-items:stretch}.lv-hero .hacts a{justify-content:center;width:100%}
+  .lv-hero-film-status{right:16px;bottom:14px}
+  .lv-career-line{grid-template-columns:repeat(2,1fr);gap:28px 16px}
+  .lv-career-stage:nth-child(n+3)::before{top:-8px}
+  .lv-story-frame{aspect-ratio:4/5}.lv-story-control{width:74px;height:74px}.lv-story-caption{left:18px;bottom:18px}.lv-story-status{right:14px;top:14px}
+  .pain-card{grid-template-columns:1fr;gap:10px;padding:26px 0}.pain-body{grid-column:1}.pain-q{font-size:18px}
+  .services-grid{grid-template-columns:1fr}.svc-card:nth-child(odd){border-right:0}.svc-card:nth-child(even){padding-left:0}
+  .lv-process-visual{min-height:350px}.lv-process-center{width:100px;height:100px;font-size:9px}.lv-process-step{grid-template-columns:52px 1fr}
+  .lv-reels-sec{padding:76px 0}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal,.reveal-left,.reveal-right,.reveal-scale,.reveal-children>*{opacity:1!important;transform:none!important}
+  .lv-hero-poster-still{animation:none;opacity:0}.lv-hero-poster-still:first-child{opacity:1}
+  .lv-hero-poster-still img,.lv-orbit-wheel{animation:none!important;transform:none!important}
+  .lv-process-wheel,.lv-process-marker{transition:none;transform:none!important}.lv-reel img{transition:none}
+}
+</style>
+<link rel="stylesheet" href="assets/lv-polish.css">
+<link rel="stylesheet" href="assets/longview-motion.css">
+</head>
+<body>
+
+<!-- ── 1. TOP BAR ── -->
+<div class="topbar">
+  <div class="wrap">
+    <span class="topbar-left">Memphis, TN &middot; Serving physicians and dentists nationwide</span>
+    <div class="topbar-right">
+      <a href="mailto:info@longviewplan.com">info@longviewplan.com</a>
+      <div class="tb-sep"></div>
+      <a href="tel:9013229114">901-322-9114</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── 2. STICKY NAV ── -->
+<nav class="nav-out" id="mainNav">
+  <div class="wrap">
+    <div class="logo">
+      <img src="images/longview-logo.png" alt="LongView Planning Partners" style="height:44px;width:auto;display:block">
+    </div>
+    <div class="nav-links">
+      <a class="nl" href="#pain">Who We Serve</a>
+      <a class="nl" href="longview_services.html">Our Services</a>
+      <a class="nl" href="longview_process.html">Our Process</a>
+      <a class="nl" href="longview_team.html">Our Team</a>
+      <a class="nl" href="longview_blog.html">Resources</a>
+    </div>
+    <div class="nav-right">
+      <a class="ncta" href="longview_book.html">Schedule an Icebreaker Call &rarr;</a>
+      <button class="hamburger" id="hamburger" type="button" aria-label="Open navigation" aria-controls="mobileNav" aria-expanded="false" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="#pain" onclick="toggleMobileNav()">Who We Serve</a>
+  <a href="longview_services.html" onclick="toggleMobileNav()">Our Services</a>
+  <a href="longview_process.html" onclick="toggleMobileNav()">Our Process</a>
+  <a href="longview_team.html" onclick="toggleMobileNav()">Our Team</a>
+  <a href="longview_blog.html" onclick="toggleMobileNav()">Resources</a>
+  <a href="longview_book.html" onclick="toggleMobileNav()" style="color:var(--lv-navy);font-weight:600">Schedule an Icebreaker Call &rarr;</a>
+</div>
+
+<!-- ── 3. HERO ── -->
+<section class="hero-out lv-hero" data-video-src="media/longview-hero-loop.mp4">
+  <div class="hero-bg"></div>
+  <video class="lv-hero-bg-video" muted loop playsinline preload="none" poster="images/john-prather-card-v4.jpg" aria-hidden="true" tabindex="-1"></video>
+  <div class="lv-hero-poster" aria-hidden="true">
+    <figure class="lv-hero-poster-still"><img src="images/john-prather-card-v4.jpg" alt=""></figure>
+    <figure class="lv-hero-poster-still"><img src="images/marcus-esposito-v6.jpg" alt=""></figure>
+    <figure class="lv-hero-poster-still"><img src="images/louis-holmes-v2.jpg" alt=""></figure>
+  </div>
+  <div class="lv-hero-scrim"></div>
+  <img class="lv-orbit-wheel" src="images/longview-process-wheel-v4.png" alt="" aria-hidden="true">
+  <div class="wrap">
+    <div class="hero-in">
+      <div class="hero-copy">
+        <div class="lv-kicker">Built for Physicians &amp; Dentists</div>
+        <a class="lv-not-physician" href="longview_not-a-physician.html">Not a physician? See how we can still help &rarr;</a>
+        <h1 class="h1">
+          <span class="l1">Physicians at every career stage have one question:</span>
+          <span class="l2">Am I actually on track?</span>
+        </h1>
+        <p class="hsub">We work primarily with physicians and dentists. Our advisory fee is structured to be consistent and is not based on the particular investments or products chosen — just a plan built entirely around your outcome.</p>
+        <div class="hacts">
+          <a class="btn-solid-white" href="#contact">Schedule a Clarity Call &rarr;</a>
+          <a class="btn-ghost" href="#assessment">Take the Assessment &rarr;</a>
+        </div>
+        <!-- COMPLIANCE: substantiation required for "1,000+ households" (also appears in the credibility + form sections) -->
+        <div class="hstats">
+          <div>
+            <div class="stat-n">1,000+</div>
+            <div class="stat-l">Physician &amp; Dentist Households</div>
+          </div>
+          <div>
+            <div class="stat-n">CFP&reg;</div>
+            <div class="stat-l">&amp; CSLP&reg; Credentialed Advisors</div>
+          </div>
+        </div>
+      </div>
+      <aside class="lv-hero-callout" aria-label="What this call is not">
+        <div class="hcard-label">WHAT THIS CALL IS NOT</div>
+        <div class="hcard-title">Not a pitch. Not a product demo. A 30-minute conversation about where you stand.</div>
+        <div class="hcheck">
+          <div class="hcheck-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#38B0E3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="hcheck-text">A conversation about where you are — your loans, your savings, your questions</div>
+        </div>
+        <div class="hcheck">
+          <div class="hcheck-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#38B0E3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="hcheck-text">You decide whether a deeper conversation makes sense — no verdicts, no pressure</div>
+        </div>
+        <div class="hcheck">
+          <div class="hcheck-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#38B0E3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="hcheck-text">No follow-up unless you ask for it</div>
+        </div>
+        <div class="lv-hero-callout-foot">Serving Physicians &amp; Dentists &middot; SEC Registered Representatives</div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ── 4. LONGVIEW STORY FILM ── -->
+<section class="lv-story-sec" id="story">
+  <div class="wrap">
+    <div class="lv-story-frame reveal-scale" data-video-src="media/longview-story-film.mp4" aria-label="LongView story video">
+      <video class="lv-story-video" playsinline preload="none" poster="images/john-prather-card-v4.jpg"></video>
+      <div class="lv-story-posters" aria-hidden="true">
+        <figure class="lv-story-poster"><img src="images/john-prather-card-v4.jpg" alt=""></figure>
+        <figure class="lv-story-poster"><img src="images/marcus-esposito-v6.jpg" alt=""></figure>
+        <figure class="lv-story-poster"><img src="images/louis-holmes-v2.jpg" alt=""></figure>
+      </div>
+      <button class="lv-story-control" type="button" data-video-control disabled aria-label="LongView story film will be available when approved footage is supplied">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ── 5. TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="wrap">
+    <div class="trust-label">TRUSTED CREDENTIALS</div>
+    <div class="trust-items">
+      <div class="trust-item">CFP&reg; Certified</div>
+      <div class="trust-item">SEC Registered Representatives</div>
+      <div class="trust-item">Focused on Physicians &amp; Dentists</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 6. PAIN SECTION ── -->
+<section class="pain-sec" id="pain">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow-label">THE PROBLEM</div>
+      <h2 class="sec-hl gt-title">The math doesn't add up for most physicians.</h2>
+      <p style="font-size:12px;color:#8a94a3;letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-top:14px">Illustrative examples of common physician situations &mdash; not client testimonials</p>
+      <p style="font-size:16px;color:var(--body);line-height:1.8;font-weight:300;max-width:660px;margin-top:20px">High income, complex tax situation, student loans, a practice, a family — and somehow the net worth doesn't reflect any of it. You're not alone, and it's not your fault.</p>
+    </div>
+    <div class="pain-grid reveal-children">
+      <!-- Card 1 -->
+      <div class="pain-card">
+        <div class="pain-tag">Student Loans</div>
+        <div class="pain-q">My loan repayment plan just got pulled out from under me.</div>
+        <p class="pain-body">PSLF. SAVE. IDR. The rules keep changing and the stakes keep rising. If you qualified under one program and now you don't, you're not behind — you've been failed by a system that keeps moving the target. We track this so you don't have to.</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="pain-card">
+        <div class="pain-tag">Net Worth Gap</div>
+        <div class="pain-q">I make good money. I should have more to show for it.</div>
+        <p class="pain-body">High income doesn't automatically become wealth. Attendings leaving residency face a transition problem: the same habits that got you through training are actively working against building net worth. <strong>Filing is not planning.</strong></p>
+      </div>
+      <!-- Card 3 -->
+      <div class="pain-card">
+        <div class="pain-tag">Retirement Readiness</div>
+        <div class="pain-q">My spouse asked 'when can you retire?' and I didn't have an answer.</div>
+        <p class="pain-body">After 20+ years of sacrifice, you should be able to answer that question. Most physicians can't — not because they haven't earned it, but because nobody's ever mapped their whole financial picture and told them the number. We do that.</p>
+      </div>
+      <!-- Card 4 -->
+      <div class="pain-card">
+        <div class="pain-tag">Advisor Risk</div>
+        <div class="pain-q">I've been sold products by people who said they specialized in doctors.</div>
+        <p class="pain-body">If you've been recommended financial products and weren't sure whether they fit your situation, you're not alone. When we act in an advisory capacity, we operate under a fiduciary standard — required to act in your best interest — and we're glad to give a second opinion on anything you already own. Our advisory fee is structured to be consistent and is not based on what you buy.</p>
+      </div>
+    </div>
+    <div class="pain-cta-stage reveal">
+      <div class="pain-cta-strip">
+        <div class="pain-cta-text">Ready to see where you actually stand?</div>
+        <a class="btn-navy" href="#assessment">Take the Assessment &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 6. CAREER STAGE SLIDER ── -->
+<!-- COMPLIANCE: CRN REQUIRED (assessment) before publishing -->
+<section class="slider-sec" id="assessment">
+  <div class="wrap">
+    <div class="slider-sec-head reveal">
+      <div class="eyebrow-label">YOUR SITUATION</div>
+      <h2 class="sec-hl gt-title">Find out if You're On Track Based on Your Career Timeline</h2>
+      <p class="slider-sec-sub">Slide to your stage for a personalized view of what we typically see — and what to do about it.</p>
+    </div>
+
+    <div class="section">
+      <!-- Header -->
+      <div class="s-head">
+        <div class="chip-sl"><span class="chip-dot-sl"></span>Where are you right now?</div>
+        <div class="s-title">The financial problems physicians face<br>change <span class="hl">at every stage of your career.</span></div>
+        <p class="s-sub">Slide to your stage. We'll show you what we see — and how physicians ahead of you fixed it.</p>
+      </div>
+
+      <!-- Slider -->
+      <div class="s-slider">
+        <div class="slider-track" id="track">
+          <div class="slider-fill" id="fill"></div>
+          <div class="slider-thumb" id="thumb"></div>
+        </div>
+        <div class="s-dots" id="dots"></div>
+      </div>
+
+      <!-- Stage headline -->
+      <div class="s-hl">
+        <div class="s-hl-title" id="stageHl"></div>
+        <div class="s-hl-desc" id="stageDesc"></div>
+      </div>
+
+      <!-- Problems -->
+      <div class="s-probs">
+        <div class="s-probs-label">What we typically see at this stage</div>
+        <div class="probs-grid" id="probsGrid"></div>
+      </div>
+
+      <!-- CTA strip -->
+      <div class="s-kc">
+        <div class="cta-card">
+          <div class="cta-inner">
+            <div class="cta-text">
+              <div class="cta-tag">Complimentary — 3 minutes</div>
+              <div class="cta-title" id="ctaTitle"></div>
+              <div class="cta-sub" id="ctaSub"></div>
+            </div>
+            <div class="cta-actions">
+              <button class="cta-btn" type="button" id="ctaBtn" onclick="toggleAssess()"></button>
+              <div class="cta-trust">No account required &middot; No spam</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Assessment expand -->
+      <div class="assess-wrap" id="assessWrap">
+        <div class="assess-inner">
+          <div class="assess-body">
+            <div class="assess-form">
+              <div class="assess-progress">
+                <div class="prog-bar"><div class="prog-fill" id="progFill"></div></div>
+                <div class="prog-label" id="progLabel"></div>
+              </div>
+              <div id="stepsWrap"></div>
+              <div class="assess-result" id="resultScreen"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.section -->
+  </div>
+</section>
+
+<!-- ── 7. SERVICES ── -->
+<section class="services-sec" id="services">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow-label">AREAS WE COVER</div>
+      <h2 class="sec-hl gt-title">Everything your financial life needs. Nothing it doesn't.</h2>
+      <p style="font-size:16px;color:var(--body);line-height:1.8;font-weight:300;max-width:640px;margin-top:20px">We don't manage just your portfolio. We manage the whole picture — because for physicians and dentists, the whole picture can be complicated.</p>
+    </div>
+    <div class="services-grid reveal-children">
+      <!-- 1 -->
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0773BB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div class="svc-title">Student Loan Strategy</div>
+        <p class="svc-body">PSLF, IDR, SAVE, refinancing — we model the scenarios that matter and build a repayment strategy that survives rule changes. For physicians carrying significant student debt, this single decision is often one of the most consequential financial choices we'll work on together.</p>
+      </div>
+      <!-- 2 -->
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0773BB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div class="svc-title">Tax Planning (Not Just Filing)</div>
+        <p class="svc-body"><strong>Filing is not planning.</strong> We work year-round to reduce your tax burden — income, practice, investments, estate — not just document it in April.</p>
+      </div>
+      <!-- 3 -->
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0773BB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="svc-title">Retirement &amp; Financial Independence</div>
+        <p class="svc-body">Not "retire and play golf." Work-optional — so you can practice medicine on your own terms, not because you have to. We'll give you a number and a timeline.</p>
+      </div>
+      <!-- 4 -->
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0773BB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="svc-title">Investment Management</div>
+        <p class="svc-body">Evidence-based portfolios built around your plan, not around any product outcome. We focus on keeping investment costs transparent and aligned with your goals.</p>
+      </div>
+      <!-- 5 -->
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0773BB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="svc-title">Insurance &amp; Risk Analysis</div>
+        <p class="svc-body">Disability. Malpractice. Life. We review what you have, flag what you may be missing, and help you structure disability and life coverage the right way for your situation. As your advisor, our recommendation is based on your needs, not on any product outcome.</p>
+      </div>
+      <!-- 6 -->
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0773BB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        </div>
+        <div class="svc-title">Practice Transitions &amp; Business Planning</div>
+        <p class="svc-body">Partnership buy-in. Ownership. PE acquisition decisions. Selling. These aren't just financial events — they have the potential to restructure everything downstream. <!-- VERIFY WITH CLIENT --><em style="color:var(--lv-gray);font-size:12px">[VERIFY — confirm PE advisory is offered]</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="assessment-reminder" aria-label="Take the assessment">
+  <div class="pain-cta-strip reveal">
+    <div class="pain-cta-text">Ready to see where you actually stand?</div>
+    <a class="btn-navy" href="#assessment">Take the Assessment &rarr;</a>
+  </div>
+</section>
+
+<!-- ── 7b. ICP SELF-SORT ── -->
+<section class="icp-sort-sec">
+  <div class="wrap">
+    <div class="icp-sort-header reveal">
+      <div class="icp-sort-eyebrow">Find Your Path</div>
+      <h2 class="icp-sort-h">Every physician's situation is different.</h2>
+      <p class="icp-sort-sub">Start where you are. Each path leads to tailored solutions — a financial plan designed for a physician's life.</p>
+    </div>
+    <div class="icp-cards reveal-children">
+
+      <div class="icp-card">
+        <span class="icp-prompt" aria-hidden="true">Is this you?</span>
+        <div class="icp-card-badge early">Early Career</div>
+        <h3 class="icp-card-h">Building the right foundation</h3>
+        <p class="icp-card-body">New attending or finishing residency. The income is real now — and so are the decisions. Student loan strategy, first investment accounts, life and disability coverage. Getting this right in years one through five compounds for decades.</p>
+        <a href="longview_icp-earlycareer.html" class="icp-card-link">I'm early career &rarr;</a>
+      </div>
+
+      <div class="icp-card">
+        <span class="icp-prompt" aria-hidden="true">Is this you?</span>
+        <div class="icp-card-badge peak">Peak Earning Years</div>
+        <h3 class="icp-card-h">Making it all work together</h3>
+        <p class="icp-card-body">High income. Practice ownership or partnership. Real estate. Retirement accounts maxed. The financial picture has grown — and what worked at year three doesn't work at year fifteen. You need a plan that accounts for all of it.</p>
+        <a href="longview_icp-laterstage.html" class="icp-card-link">I'm mid-to-late career &rarr;</a>
+      </div>
+
+      <div class="icp-card">
+        <span class="icp-prompt" aria-hidden="true">Is this you?</span>
+        <div class="icp-card-badge diy">Self-Managing</div>
+        <h3 class="icp-card-h">A second opinion on your plan</h3>
+        <p class="icp-card-body">You've read the books, built the spreadsheets, made real decisions. You don't need an advisor — you need someone to look at what you've built and tell you if anything's quietly off before it compounds.</p>
+        <a href="longview_icp-diy.html" class="icp-card-link">Get a financial audit &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 8. CREDIBILITY ── -->
+<section class="cred-sec" id="credibility">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center">
+      <h2 style="font-family:'Libre Baskerville',serif;font-size:38px;font-weight:700;color:#fff;line-height:1.2;letter-spacing:-.02em">Why physicians and dentists choose LongView</h2>
+      <p style="font-size:16px;color:rgba(255,255,255,.5);line-height:1.75;font-weight:300;max-width:520px;margin:16px auto 0">We didn't stumble into this niche. It's the only one we've ever worked in.</p>
+    </div>
+    <div class="cred-quote-wrap reveal-scale">
+      <!-- COMPLIANCE: signed client testimonial consent form required before using any real quote here -->
+      <span class="cred-open">&ldquo;</span>
+      <p class="cred-quote">It's amazing how much you can love medicine when you can retire whenever the fancy hits you.</p>
+      <div class="cred-attr">— David, Physician on FIRE</div>
+      <div class="cred-placeholder">[COMPLIANCE PLACEHOLDER — real verified client quote required before launch. SEC Marketing Rule 206(4)-1 review needed.]</div>
+      <!-- VERIFY WITH CLIENT -->
+      <div class="cred-placeholder">[PLACEHOLDER — Replace with real client quote before launch. Verify usage rights with compliance.]</div>
+    </div>
+    <div class="cred-stats reveal-children" style="grid-template-columns:repeat(2,1fr)">
+      <div class="cred-stat">
+        <span class="cred-stat-n count-up" data-target="1000" data-suffix="+">0</span>
+        <div class="cred-stat-label">Physician &amp; Dentist<br>Households Served</div>
+      </div>
+      <div class="cred-stat">
+        <span class="cred-stat-n" style="font-size:40px">CFP&reg; &amp; CSLP&reg;</span>
+        <div class="cred-stat-label">Credentialed<br>Advisors</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 9. PROCESS ── -->
+<section class="process-sec" id="process">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow-label">THE FOUR PHASES</div>
+      <h2 class="sec-hl">Our planning process</h2>
+      <p style="font-size:16px;color:var(--body);line-height:1.8;font-weight:300;max-width:520px;margin:16px 0 0">A continuous cycle &mdash; each phase builds on the last and feeds the next. This is not a one-time engagement. It&rsquo;s an ongoing relationship calibrated to wherever you are in your career.</p>
+    </div>
+    <div class="lv-process-layout">
+      <div class="lv-process-visual reveal-scale" aria-label="LongView planning process wheel">
+        <svg class="lv-process-progress" viewBox="0 0 100 100" aria-hidden="true">
+          <circle class="track" cx="50" cy="50" r="46"></circle>
+          <circle class="trace" cx="50" cy="50" r="46"></circle>
+        </svg>
+        <div class="lv-process-marker" aria-hidden="true"></div>
+        <img class="lv-process-wheel lv-process-wheel-baseline" src="images/longview-process-wheel-v4.png" alt="LongView process wheel showing the connected parts of a physician's financial life">
+        <div class="lv-process-dial" id="lvProcessWheel" aria-hidden="true">
+          <span class="lv-dial-node lv-dial-node-1">01</span>
+          <span class="lv-dial-node lv-dial-node-2">02</span>
+          <span class="lv-dial-node lv-dial-node-3">03</span>
+          <span class="lv-dial-node lv-dial-node-4">04</span>
+          <span class="lv-dial-orbit"></span>
+          <span class="lv-dial-core">
+            <span class="lv-dial-step" id="lvDialStep">01</span>
+          </span>
+        </div>
+      </div>
+      <div class="lv-process-list">
+        <div class="lv-process-step is-active" data-wheel-turn="0">
+          <div class="lv-step-number">01</div>
+          <div><div class="step-label">PHASE 01</div><div class="step-title">Discover</div><div class="lv-step-actions">Explore &middot; Identify<br>Gather &middot; Affirm</div><p class="step-body">We learn everything about you &mdash; income, debts, benefits, goals, and fears. No judgment, no product pitch, no agenda. Just a complete picture of where you are today and where you want to go.</p></div>
+        </div>
+        <div class="lv-process-step" data-wheel-turn="28">
+          <div class="lv-step-number">02</div>
+          <div><div class="step-label">PHASE 02</div><div class="step-title">Plan</div><div class="lv-step-actions">Organize &middot; Design<br>Test &middot; Recommend</div><p class="step-body">We build your customized financial plan &mdash; every recommendation tied directly to your goals and values, stress-tested against real scenarios. A clear framework for making financial decisions with confidence, not guesswork.</p></div>
+        </div>
+        <div class="lv-process-step" data-wheel-turn="56">
+          <div class="lv-step-number">03</div>
+          <div><div class="step-label">PHASE 03</div><div class="step-title">Implement*</div><div class="lv-step-actions">Construct &middot; Analyze<br>Execute &middot; Protect</div><p class="step-body">Your plan becomes real. We coordinate with your accountant, estate planning attorney, and other advisors to execute &mdash; taking complexity off your plate so you can focus on medicine.</p><p class="lv-step-footnote">*Financial plan recommendations can be implemented with the advisor of your choosing. Implementation of specific products or services may result in commissions or fees outside of the financial plan fee. Periodic reviews may require a new planning agreement and result in additional fees.</p></div>
+        </div>
+        <div class="lv-process-step" data-wheel-turn="84">
+          <div class="lv-step-number">04</div>
+          <div><div class="step-label">PHASE 04</div><div class="step-title">Guide</div><div class="lv-step-actions">Monitor &middot; Measure<br>Review &middot; Align</div><p class="step-body">Life changes. Your plan adapts. We meet regularly to keep your financial life aligned as your career, family, and goals evolve. A plan that isn&rsquo;t reviewed is just a document &mdash; this is where the ongoing relationship earns its keep.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="assessment-reminder assessment-reminder--process" aria-label="Take the assessment">
+  <div class="pain-cta-strip reveal">
+    <div class="pain-cta-text">Ready to see where you actually stand?</div>
+    <a class="btn-navy" href="#assessment">Take the Assessment &rarr;</a>
+  </div>
+</section>
+
+<!-- ── 10. TESTIMONIALS ── -->
+<section class="testi-sec" id="testimonials">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow-label">CLIENT RESULTS</div>
+      <h2 class="sec-hl">What clients say</h2>
+    </div>
+    <div class="testi-warning reveal">
+      Placeholder testimonials — real client quotes + SEC Rule 206(4)-1 compliance review required before launch. Do not publish without attorney and compliance sign-off.
+    </div>
+    <!-- COMPLIANCE: each testimonial requires a signed client consent form before use -->
+    <!-- COMPLIANCE: testimonial detail ($340k loan figure) must match substantiated client facts before publishing -->
+    <!-- COMPLIANCE: CRN REQUIRED before any real testimonials are published -->
+    <!-- COMPLIANCE: submit all linked resources/articles for review; CRNs required before publishing -->
+    <div class="testi-grid reveal-children">
+      <div class="testi-card">
+        <div class="testi-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="testi-q">I came in carrying $340k in loans and no idea whether PSLF was still going to work for me. They built a scenario model that showed me exactly where I stood under each repayment option. I finally had an answer instead of anxiety.</p>
+        <div class="testi-attr">[First name], Internal Medicine Attending, Year 4</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="testi-q">My spouse asked me when I could retire and I couldn't answer. After six months with LongView, I not only have an answer — I have a date. That changed everything about how I show up at work.</p>
+        <div class="testi-attr">[First name], Cardiologist, [XX] years in practice</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="testi-q">I'd seen three advisors before LongView. All three tried to sell me something in the first meeting. LongView's first question was 'what does success look like for you?' That was different.</p>
+        <div class="testi-attr">[First name], Periodontist, [City]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 11. RESOURCES ── -->
+<section class="resources-sec" id="resources">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow-label">INSIGHTS</div>
+      <h2 class="sec-hl gt-title">Insights for physicians and dentists</h2>
+      <p style="font-size:16px;color:var(--body);line-height:1.8;font-weight:300;max-width:580px;margin-top:16px">From loan repayment to practice transitions — if it affects your financial life, we've written about it.</p>
+      <!-- VERIFY WITH CLIENT -->
+      <p class="resources-note">[VERIFY WITH CLIENT — replace with actual published content before launch]</p>
+    </div>
+    <div class="resources-grid reveal-children">
+      <div class="res-card">
+        <div class="res-tag">TIMELY</div>
+        <div class="res-title">PSLF Changed Again. Here's What It Means for Attending Physicians in 2026</div>
+        <p class="res-excerpt">The rules keep shifting, and the stakes keep rising. If you've been counting on PSLF, here's what changed and what to do about it now.</p>
+        <a class="res-link" href="longview_blog-post.html">Read more &rarr;</a>
+      </div>
+      <div class="res-card">
+        <div class="res-tag">EARLY CAREER</div>
+        <div class="res-title">The 5 Financial Mistakes Attendings Make in Their First Year Out of Residency</div>
+        <p class="res-excerpt">Your income tripled. Your plan didn't. Here's what most new attendings get wrong — and how to avoid the same traps.</p>
+        <a class="res-link" href="longview_post-first-year-attending.html">Read more &rarr;</a>
+      </div>
+      <div class="res-card">
+        <div class="res-tag">PLANNING</div>
+        <div class="res-title">What 'Work-Optional' Actually Looks Like for Physicians</div>
+        <p class="res-excerpt">Work-optional isn't retirement. It's practicing medicine on your own terms. Here's what it takes to get there — and what physicians who've done it say it changed.</p>
+        <a class="res-link" href="longview_post-work-optional.html">Read more &rarr;</a>
+      </div>
+    </div>
+    <div class="resources-all reveal">
+      <a href="longview_blog.html">See all resources &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section class="assessment-reminder" aria-label="Take the assessment">
+  <div class="pain-cta-strip reveal">
+    <div class="pain-cta-text">Ready to see where you actually stand?</div>
+    <a class="btn-navy" href="#assessment">Take the Assessment &rarr;</a>
+  </div>
+</section>
+
+<!-- ── 12. FINAL CTA + FORM ── -->
+<section class="fcta-sec" id="contact">
+  <div class="wrap">
+    <h2 class="fcta-headline reveal">Ready to find out where you actually stand?</h2>
+    <p class="fcta-sub reveal">One conversation. No pitch. No follow-up unless you ask for it. We'll tell you what physicians at your stage are getting right — and what they're getting wrong.</p>
+    <div class="fcta-cards reveal-children">
+      <div class="fcta-card">
+        <div class="fcta-card-label">IN TRAINING OR FIRST 10 YEARS</div>
+        <div class="fcta-card-title">See if you're on track</div>
+        <p class="fcta-card-body">Loans, net worth, savings rate — we'll map where you stand in 30 minutes. No commitment. No pitch.</p>
+        <a class="btn-white-solid" href="#contact-form">Schedule a Clarity Call &rarr;</a>
+      </div>
+      <div class="fcta-card">
+        <div class="fcta-card-label">10+ YEARS IN PRACTICE</div>
+        <div class="fcta-card-title">Get your retirement readiness score</div>
+        <p class="fcta-card-body">Do you have enough to stop when you want to? Let's find out — and give you a number you can actually use.</p>
+        <a class="btn-white-ghost" href="#assessment">Take the Assessment &rarr;</a>
+      </div>
+    </div>
+    <div class="fcta-divider">OR FILL OUT THE FORM BELOW</div>
+    <div class="fcta-form-wrap reveal" id="contact-form">
+      <form id="clarityForm" onsubmit="handleFormSubmit(event)" novalidate>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <input type="text" name="company_url" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="clarityFirstName">First Name</label>
+            <input class="form-input" id="clarityFirstName" name="firstName" type="text" placeholder="Jane" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="clarityLastName">Last Name</label>
+            <input class="form-input" id="clarityLastName" name="lastName" type="text" placeholder="Smith" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group full">
+            <label class="form-label" for="clarityEmail">Email Address</label>
+            <input class="form-input" id="clarityEmail" name="email" type="email" placeholder="jane@example.com" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="claritySpecialty">Specialty</label>
+            <select class="form-select" id="claritySpecialty" name="specialty" required>
+              <option value="">Select specialty...</option>
+              <option>Physician</option>
+              <option>Dentist</option>
+              <option>Both</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="clarityCareerStage">Career Stage</label>
+            <select class="form-select" id="clarityCareerStage" name="careerStage" required>
+              <option value="">Select stage...</option>
+              <option>In training (resident/fellow)</option>
+              <option>Early attending (0–10 yrs)</option>
+              <option>Established (10+ yrs)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group full">
+            <label class="form-label" for="clarityMessage">What's your most pressing financial question right now? <span style="font-weight:400;color:var(--lv-gray)">(optional)</span></label>
+            <textarea class="form-textarea" id="clarityMessage" name="message" placeholder="PSLF confusion, retirement timeline, tax planning..."></textarea>
+          </div>
+        </div>
+        <div class="form-error" id="clarityFormError" style="display:none;color:#c0392b;font-size:13px;margin-top:10px;text-align:center"></div>
+        <button class="form-submit" type="submit">Schedule a Clarity Call &rarr;</button>
+        <p class="form-note">No automated follow-up sequences. A human will reach out once. That's it.</p>
+        <p class="form-trust">Focused on physicians and dentists &middot; 1,000+ households served</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ── 13. SHORT-FORM PERSPECTIVES ── -->
+<section class="lv-reels-sec" id="perspectives">
+  <div class="wrap">
+    <div class="lv-reel-rail">
+      <article class="lv-reel reveal" data-video-src="media/reels/john-on-track.mp4" aria-label="John Prather short-form video preview; approved clip pending">
+        <img src="images/john-prather-card-v4.jpg" alt="John Prather of LongView Planning Partners">
+        <video class="lv-reel-video" playsinline preload="none" poster="images/john-prather-card-v4.jpg"></video>
+        <div class="lv-reel-meta"><span>01 &middot; John</span><span>Clip pending</span></div>
+        <div class="lv-reel-copy">
+          <button class="lv-reel-play" type="button" data-video-control disabled aria-label="John's clip will be available when approved footage is supplied"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+        </div>
+      </article>
+      <article class="lv-reel reveal" data-video-src="media/reels/marcus-income-to-wealth.mp4" aria-label="Marcus Esposito short-form video preview; approved clip pending">
+        <img src="images/marcus-esposito-v6.jpg" alt="Marcus Esposito of LongView Planning Partners">
+        <video class="lv-reel-video" playsinline preload="none" poster="images/marcus-esposito-v6.jpg"></video>
+        <div class="lv-reel-meta"><span>02 &middot; Marcus</span><span>Clip pending</span></div>
+        <div class="lv-reel-copy">
+          <button class="lv-reel-play" type="button" data-video-control disabled aria-label="Marcus's clip will be available when approved footage is supplied"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+        </div>
+      </article>
+      <article class="lv-reel reveal" data-video-src="media/reels/louis-retirement-number.mp4" aria-label="Louis Holmes short-form video preview; approved clip pending">
+        <img src="images/louis-holmes-v2.jpg" alt="Louis Holmes of LongView Planning Partners">
+        <video class="lv-reel-video" playsinline preload="none" poster="images/louis-holmes-v2.jpg"></video>
+        <div class="lv-reel-meta"><span>03 &middot; Louis</span><span>Clip pending</span></div>
+        <div class="lv-reel-copy">
+          <button class="lv-reel-play" type="button" data-video-control disabled aria-label="Louis's clip will be available when approved footage is supplied"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- LV_CANONICAL_FOOTER -->
+<footer class="lvf" data-canonical-footer="1">
+<style>
+.lvf{background:#0A1A2F;padding:64px 0 0;font-family:'DM Sans',sans-serif;color:#fff}
+.lvf-wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.lvf-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+.lvf-brand{font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:#fff;margin:0 0 6px;line-height:1}
+.lvf-sub{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:10px;display:block}
+.lvf-tag{font-size:12.5px;color:rgba(255,255,255,.4);line-height:1.6;max-width:240px;margin:0}
+.lvf-coltitle{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);margin:0 0 16px}
+.lvf-col a{display:block;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:10px;text-decoration:none;transition:color .18s}
+.lvf-col a:hover{color:rgba(255,255,255,.9)}
+.lvf-crs-row{padding:28px 0;display:flex;justify-content:center;border-bottom:1px solid rgba(255,255,255,.1)}
+.lvf-crs{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#2D6CA2;color:#fff;padding:18px 30px;border-radius:10px;text-decoration:none;min-width:240px;line-height:1.25;box-shadow:0 2px 10px rgba(0,0,0,.22);transition:background .18s,transform .18s;font-family:'DM Sans',sans-serif}
+.lvf-crs:hover{background:#3a7eb8;transform:translateY(-1px)}
+.lvf-crs-top{font-size:14px;font-weight:600;letter-spacing:.06em;color:#fff}
+.lvf-crs-div{display:block;width:80%;height:1px;background:rgba(255,255,255,.5)}
+.lvf-crs-bot{font-size:15px;font-weight:600;color:#fff}
+.lvf-copy{padding:22px 0 6px;font-size:12px;color:rgba(255,255,255,.45);text-align:center;line-height:1.6}
+.lvf-disclosure{padding:6px 0 36px;font-size:11px;color:rgba(255,255,255,.5);line-height:1.65;max-width:920px;margin:0 auto;text-align:center}
+.lvf-bcheck{margin:0 0 14px;font-weight:700;letter-spacing:.06em;color:rgba(255,255,255,.78);font-size:11.5px}
+.lvf-bcheck a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+.lvf-p{margin:0 0 10px;font-style:italic}
+.lvf-p a{color:rgba(255,255,255,.78);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:960px){.lvf-top{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:560px){.lvf-top{grid-template-columns:1fr;gap:28px}}
+</style>
+<div class="lvf-wrap">
+  <div class="lvf-top">
+    <div>
+      <div class="lvf-brand">LongView</div>
+      <span class="lvf-sub">Planning Partners</span>
+      <p class="lvf-tag">Comprehensive Planning for Physicians and Dentists</p>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Services</div>
+      <a href="longview_services.html">Student Loan Strategy</a>
+      <a href="longview_services.html">Tax Planning</a>
+      <a href="longview_services.html">Retirement Planning</a>
+      <a href="longview_services.html">Investment Management</a>
+      <a href="longview_services.html">Insurance Review</a>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Who We Serve</div>
+      <a href="longview_who-we-serve.html">Physicians</a>
+      <a href="longview_who-we-serve.html">Dentists</a>
+      <a href="longview_icp-earlycareer.html">Early Career</a>
+      <a href="longview_icp-laterstage.html">Established</a>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Resources</div>
+      <a href="longview_landing-pslf.html">PSLF Guide</a>
+      <a href="longview_blog.html">Articles</a>
+      <a href="longview_blog.html">All Resources</a>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Contact</div>
+      <a href="mailto:info@longviewplan.com">info@longviewplan.com</a>
+      <a href="tel:9013229114">901-322-9114</a>
+      <a href="longview_book.html">Schedule a Call</a>
+      <a href="longview_licensing.html">Licensing</a>
+      <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener">FINRA BrokerCheck</a>
+    </div>
+  </div>
+  <div class="lvf-crs-row">
+    <a class="lvf-crs" href="https://compass.massmutual.com/file-handler-api-wrapper?url=%2Ffile%2Fblt3e72bd07ab10cfcb" target="_blank" rel="noopener" aria-label="Licensing - Client Relationship Summary (opens in new tab)">
+      <span class="lvf-crs-top">Licensing</span>
+      <span class="lvf-crs-div"></span>
+      <span class="lvf-crs-bot">Client Relationship Summary</span>
+    </a>
+  </div>
+  <div class="lvf-copy">&copy; 2026 LongView Planning Partners &middot; 618 Oakleaf Office Lane, Suite 300, Memphis, TN 38117 &middot; 901-322-9114</div>
+  <div class="lvf-disclosure">
+    <p class="lvf-bcheck">CHECK THE BACKGROUND OF THIS FINANCIAL PROFESSIONAL ON FINRA&rsquo;S <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener">BROKERCHECK</a></p>
+    <p class="lvf-p">Securities, investment advisory and financial planning services are offered through qualified registered representatives of MML Investors Services, LLC, <a href="https://www.sipc.org/" target="_blank" rel="noopener">Member SIPC</a>, 10 Cadillac Drive, Suite 300, Brentwood, TN 37027 (615) 309-6300. LongView Planning Partners is not a subsidiary or affiliate of MML Investors Services, LLC or its affiliated companies. CRN202906-11331036</p>
+    <p class="lvf-p">Financial Plan recommendations can be implemented with the advisor of your choosing. Implementation of specific products or services may result in commissions or fees outside of the financial planning fee.*</p>
+    <p class="lvf-p">MassMutual, its employees and representatives are not authorized to give legal or tax advice. Consult your own personal attorney, legal or tax counsel for advice on specific legal and tax matters.</p>
+  </div>
+</div>
+</footer>
+<!-- /LV_CANONICAL_FOOTER -->
+
+
+<!-- ── JAVASCRIPT ── -->
+<script>
+// ── NAV SCROLL SHADOW ──
+var nav = document.getElementById('mainNav');
+window.addEventListener('scroll', function(){
+  nav.classList.toggle('scrolled', window.scrollY > 10);
+});
+
+// ── MOBILE NAV ──
+// ── VIDEO EXPAND ──
+function expandVideo() {
+  var thumb = document.getElementById('vidThumb');
+  var expand = document.getElementById('vidExpand');
+  thumb.style.display = 'none';
+  expand.classList.add('open');
+}
+
+function toggleMobileNav() {
+  var mobileNav = document.getElementById('mobileNav');
+  var menuButton = document.getElementById('hamburger');
+  var isOpen = mobileNav.classList.toggle('open');
+  if(isOpen){
+    var navBar = document.querySelector('.nav-out');
+    var navBottom = navBar ? Math.max(0, navBar.getBoundingClientRect().bottom) : 76;
+    mobileNav.style.setProperty('--mobile-menu-top', navBottom + 'px');
+  }
+  menuButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  menuButton.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+}
+
+// ── SMOOTH SCROLL FOR ANCHOR LINKS ──
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var id = this.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
+  });
+});
+
+// ── INTERSECTION OBSERVER — REVEAL ANIMATIONS ──
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var el = entry.target;
+      if(el.classList.contains('reveal-children')){
+        el.classList.add('revealed');
+        Array.from(el.children).forEach(function(child, i){
+          setTimeout(function(){ child.style.opacity='1'; child.style.transform='none'; }, i * 80);
+        });
+      } else {
+        el.classList.add('revealed');
+      }
+      io.unobserve(el);
+    });
+  }, {threshold: 0.01, rootMargin:'0px 0px -40px 0px'});
+
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale,.reveal-children').forEach(function(el){
+    io.observe(el);
+  });
+})();
+
+// ── COUNT-UP ──
+(function(){
+  var io2 = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var el = entry.target;
+      var target = parseInt(el.getAttribute('data-target'), 10);
+      var suffix = el.getAttribute('data-suffix') || '';
+      var dur = 1500;
+      var start = performance.now();
+      el.style.minWidth = el.offsetWidth + 'px';
+      function tick(now){
+        var t = Math.min((now - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = Math.round(eased * target) + suffix;
+        if(t < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      io2.unobserve(el);
+    });
+  }, {threshold: 0.5});
+  document.querySelectorAll('.count-up[data-target]').forEach(function(el){ io2.observe(el); });
+})();
+
+// ── FORM SUBMIT HANDLER ──
+function postLead(payload) {
+  return fetch('/api/leads', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(payload)
+  }).then(function(r){
+    return r.json().catch(function(){ return {ok:false, error:'bad_response'}; })
+      .then(function(j){ return {ok: r.ok && j.ok, body: j, status: r.status}; });
+  });
+}
+
+function handleFormSubmit(e){
+  e.preventDefault();
+  var form = e.target;
+  var errEl = document.getElementById('clarityFormError');
+  errEl.style.display = 'none';
+
+  var data = {
+    source: 'homepage_clarity_call',
+    page: location.pathname,
+    firstName: (form.firstName.value || '').trim(),
+    lastName:  (form.lastName.value  || '').trim(),
+    email:     (form.email.value     || '').trim(),
+    specialty: form.specialty.value,
+    careerStage: form.careerStage.value,
+    message:   (form.message.value || '').trim()
+  };
+
+  if(!data.firstName || !data.lastName || !data.specialty || !data.careerStage ||
+     !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+    errEl.textContent = 'Please fill in all required fields with a valid email.';
+    errEl.style.display = 'block';
+    return;
+  }
+
+  var btn = form.querySelector('.form-submit');
+  var origLabel = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  postLead(data).then(function(res){
+    if(res.ok){
+      form.innerHTML = '<div style="text-align:center;padding:40px 20px"><div style="font-size:48px;margin-bottom:16px">&#10003;</div><div style="font-family:\'Libre Baskerville\',serif;font-size:22px;font-weight:700;color:var(--ink);margin-bottom:10px">We\'ll be in touch.</div><div style="font-size:14px;color:var(--lv-gray);line-height:1.7">A member of our team will reach out once — no automated sequences, no drip campaigns. Just a human who read what you wrote.</div></div>';
+    } else {
+      btn.disabled = false;
+      btn.textContent = origLabel;
+      errEl.textContent = 'Something went wrong sending your request. Please try again or email info@longviewplan.com.';
+      errEl.style.display = 'block';
+    }
+  }).catch(function(){
+    btn.disabled = false;
+    btn.textContent = origLabel;
+    errEl.textContent = 'Network error. Please try again or email info@longviewplan.com.';
+    errEl.style.display = 'block';
+  });
+}
+
+// ── CAREER SLIDER JS ──
+var STAGES = [
+  {
+    name:'Resident / Fellow', years:'0–3 yrs',
+    hl:'Training shouldn\'t mean your finances are already broken.',
+    desc:'Low income, high debt load, and aggressive product sales targeting you specifically. The decisions you make now set the foundation for everything that follows — including whether PSLF will save you or cost you.',
+    probs:[
+      {title:'I have no idea which loan repayment path to be on',body:'PSLF? Private refinancing? IDR? Most residents are on the wrong plan and losing thousands per month without knowing it.',tag:'Student Loans'},
+      {title:'Someone just offered me a whole life policy "designed for doctors"',body:'This is the most common financial mistake made by physicians in training. It will cost you six figures if you sign.',tag:'Insurance Alert'},
+      {title:'I\'m earning $60k with $300k in debt — where do I even start?',body:'Cash flow during training is brutally tight. The right moves now protect your transition to attending income.',tag:'Cash Flow'}
+    ],
+    kit:{tag:'Complimentary Guide',title:'The Resident\'s Survival Guide',desc:'',items:[]},
+    cta:{title:'See exactly where your training-year decisions are setting you up.',sub:'10 quick questions. We\'ll show you the gaps most residents don\'t know they have.',btn:'Get my resident snapshot →'},
+    qs:[
+      {q:'Are you enrolled in an income-driven repayment plan (PAYE/SAVE/IBR) for your student loans?',hint:'This matters for PSLF eligibility — and the plan type matters.',opts:['Yes — PAYE, SAVE, or IBR','No — I\'m on the standard plan','I refinanced privately','Not sure what plan I\'m on'],score:[1,0,0,0]},
+      {q:'Has anyone pitched you a whole life or universal life policy since starting training?',hint:'Be honest — there\'s no wrong answer here.',opts:['Yes — and implemented a policy','Yes — reviewed but did not implement','Not yet','Not sure what kind of policy I have'],score:[0,1,1,0]},
+      {q:'Do you have own-occupation disability insurance?',hint:'Your earning capacity is your most valuable asset right now. Insurance decisions should be based on individual financial and protection needs.',opts:['Yes — appropriate coverage based on my needs','Some coverage — not sure what type','No, not yet','I rely on employer group coverage'],score:[1,0,0,0]},
+      {q:'If you\'re going for PSLF, are you confident your employer qualifies AND your payments are being counted?',hint:'PSLF tracking errors are common — and expensive if missed.',opts:['Yes — I verify annually','I think so','I\'m not pursuing PSLF','I don\'t know how to check'],score:[1,0,1,0]},
+      {q:'Are you contributing to a Roth IRA during training?',hint:'Residency is the only window most physicians qualify for direct Roth contributions.',opts:['Yes — maxing it','Some, not the max','Not yet','Didn\'t know I could'],score:[1,1,0,0]},
+      {q:'How many months of expenses do you have in an emergency fund?',hint:'Aim for at least 3 months before attacking debt aggressively.',opts:['3+ months','1–3 months','Less than 1 month','Living paycheck to paycheck'],score:[1,0,0,0]},
+      {q:'Do you carry credit-card or consumer debt beyond your student loans?',hint:'High-interest debt is the one fire to put out before anything else.',opts:['None','Small — paid off monthly','Carrying a balance most months','Significant balances'],score:[1,1,0,0]},
+      {q:'Has a "physician-focused" financial advisor reached out to you yet?',hint:'Plenty reach out — worth asking how any advisor is paid and whether they are a fiduciary.',opts:['Yes — and I signed up','Yes — I passed','Not yet','I already have a financial advisor'],score:[0,1,1,1]},
+      {q:'Are you learning about physician finance on your own (WCI, PoF, etc.)?',hint:'Self-education in training pays compounding dividends.',opts:['Yes — actively','Some reading','Just getting started','Haven\'t started'],score:[1,1,0,0]},
+      {q:'What would be most valuable for you to get clarity on next?',hint:'Pick whichever feels most urgent right now.',opts:['Student loan strategy','Insurance & protection','Starting to invest','Picking the right advisor','Knowing I\'m not making the big mistakes'],score:[0,0,0,0,0]}
+    ]
+  },
+  {
+    name:'Early Attending', years:'3–10 yrs',
+    hl:'Your income tripled. Your plan didn\'t.',
+    desc:'The transition from training to attending is when most physicians make their most expensive financial mistakes — lifestyle inflation, wrong loan strategy, and the wrong advisors finding them first.',
+    probs:[
+      {title:'My income jumped but I\'m not sure where it\'s all going',body:'Lifestyle creep is quiet and fast. Without a plan in the first 12 months of attending income, you\'ll spend what you earn.',tag:'Cash Flow'},
+      {title:'Should I refinance my loans or invest — I can\'t do both',body:'This one decision is worth tens of thousands of dollars. The right answer depends on your specific numbers, not general advice.',tag:'Strategy'},
+      {title:'An advisor says he specializes in doctors — should I trust him?',body:'Most don\'t. Ask any advisor how they\'re compensated and whether their fee changes based on what you buy. The answer tells you everything.',tag:'Advisor Risk'}
+    ],
+    kit:{tag:'Complimentary Checklist',title:'The New Attending\'s First-Year Financial Checklist',desc:'',items:[]},
+    cta:{title:'See how your first-year financial decisions are stacking up.',sub:'10 quick questions. We\'ll tell you the gaps most new attendings miss.',btn:'Get my early-career snapshot →'},
+    qs:[
+      {q:'Since your income jumped, do you know where every dollar is going each month?',hint:'Lifestyle creep happens in the first 12 months if it\'s going to happen.',opts:['Yes — tracked','Mostly','Not really','No — and it scares me'],score:[1,1,0,0]},
+      {q:'Have you evaluated tax-advantaged strategies appropriate to your situation?',hint:'401(k), backdoor Roth, HSA, 457(b) if your employer offers one.',opts:['Yes — have evaluated and implemented where appropriate','Most of them','Some, not all','Not sure what\'s available'],score:[1,1,0,0]},
+      {q:'What kind of advisor are you working with?',hint:'Different advisor compensation models may be appropriate depending on client needs and preferences.',opts:['Fee-based or flat-fee advisor relationship','Commission-based or product-based relationship','Different people in different areas','Self-managing'],score:[1,0,0,0]},
+      {q:'Have you revisited your student loan strategy since becoming an attending?',hint:'Your optimal path changes dramatically when income jumps.',opts:['Yes — refinanced or adjusted IDR','Same plan as training','Paid them off already','Not sure'],score:[1,0,1,0]},
+      {q:'Have you updated your disability and life insurance to match your new income?',hint:'Coverage from residency rarely matches attending earnings.',opts:['Yes — both updated','Updated one of the two','Same as training','I don\'t have either'],score:[1,0,0,0]},
+      {q:'Have you evaluated tax-advantaged strategies appropriate to your situation?',hint:'401(k), backdoor Roth, HSA, 457(b) if your employer offers one.',opts:['Yes — have evaluated and implemented where appropriate','Most of them','Some, not all','Not sure what\'s available'],score:[1,1,0,0]},
+      {q:'How did you approach your housing decision after training?',hint:'A house bought without strategy is one of the biggest early-attending traps.',opts:['Made a housing decision as part of a broader financial strategy','Renting on purpose while I plan','Bought without a strategy','Buying without thinking it through'],score:[1,1,0,0]},
+      {q:'Do you have a written financial plan — not investment accounts, an actual plan?',hint:'A plan is a document with goals and timelines. Not an account balance.',opts:['Yes — written, from an advisor','I have accounts but no formal plan','Working on it','No, not yet'],score:[1,0,0,0]},
+      {q:'Do you have clarity on your practice ownership / partnership / W-2 path?',hint:'This decision shapes your taxes, retirement options, and exit value.',opts:['Have a clear plan','Considering options','Not sure yet','Hadn\'t thought about it'],score:[1,1,0,0]},
+      {q:'What would be most valuable for you to get clarity on next?',hint:'Pick whichever feels most urgent right now.',opts:['Loan strategy','Tax-advantaged investing','Finding the right advisor','Insurance & protection','A real written plan'],score:[0,0,0,0,0]}
+    ]
+  },
+  {
+    name:'Established Attending', years:'10–20 yrs',
+    hl:'Millions earned. Still feels disorganized.',
+    desc:'You\'ve been earning well for a decade. Most physicians at this stage have accounts scattered across firms, no unified strategy, and an uneasy feeling that something important is being missed.',
+    probs:[
+      {title:'I have accounts at three firms and no one\'s looking at the whole picture',body:'Fragmented wealth is inefficient and expensive. Account silos create tax drag, coverage gaps, and duplicate fees.',tag:'Coordination'},
+      {title:'I\'m starting to burn out and I don\'t know how much longer I can do this',body:'Financial clarity is what makes it possible to love medicine again. Knowing your number changes everything about how you show up.',tag:'Burnout / Exit'},
+      {title:'My estate is a mess — I\'m not sure my beneficiaries are even right',body:'Most physicians who\'ve built meaningful wealth have never had a true estate review. This is expensive when it matters.',tag:'Estate Planning'}
+    ],
+    kit:{tag:'Complimentary Audit',title:'The Mid-Career Physician\'s Money Audit',desc:'',items:[]},
+    cta:{title:'Find out if your decade of income built what it should have.',sub:'10 quick questions. We\'ll show you what established physicians most commonly miss.',btn:'Get my mid-career snapshot →'},
+    qs:[
+      {q:'How organized is your financial life across accounts and institutions?',hint:'Many established physicians have accounts scattered across multiple firms.',opts:['Fully organized','Mostly organized','Somewhat scattered','Very scattered'],score:[1,1,0,0]},
+      {q:'Which statement feels most true right now?',hint:'Honest answers here lead to the most useful results.',opts:['I know what I own and why I own it','I know most of it','I have pieces in place but no big picture','I don\'t have a clear picture'],score:[1,1,0,0]},
+      {q:'How confident are you that your current tax strategy is optimized?',hint:'Tax strategy is an often-overlooked area for high earners.',opts:['Very confident','Somewhat confident','Not very confident','I suspect I\'m missing opportunities'],score:[1,1,0,0]},
+      {q:'Which best describes your current planning approach?',hint:'Coordinated planning compounds. Fragmented decisions don\'t.',opts:['One connected strategy across everything','Strong investments, less clarity elsewhere','A mix of old decisions made over time','Reactive and overdue for cleanup'],score:[1,0,0,0]},
+      {q:'Which best describes your current advisor relationship?',hint:'Investment-only advice is not the same as comprehensive planning.',opts:['Comprehensive financial planning approach','An advisor who is mostly investment-focused','Different people in different areas','I don\'t feel fully confident in the advice I have'],score:[1,0,0,0]},
+      {q:'Do you know your retirement number with precision — not a rule of thumb?',hint:'Your number = annual income needed ÷ safe withdrawal rate.',opts:['Yes — specific number with a plan to hit it','Rough idea, nothing precise','Haven\'t calculated it seriously','My advisor tracks it for me'],score:[1,0,0,0]},
+      {q:'Are your investments, taxes, insurance, and estate planning actually coordinated?',hint:'Many physicians have all four — but rarely talking to each other.',opts:['Yes — coordinated as one strategy','Mostly, with some gaps','Each is handled separately','I don\'t know if they\'re coordinated'],score:[1,1,0,0]},
+      {q:'When did you last review your estate plan (wills, trusts, beneficiaries, POAs)?',hint:'Beneficiary errors are the most expensive estate mistakes.',opts:['Within the last 2 years','2–5 years ago','More than 5 years ago','I don\'t have one / not sure'],score:[1,1,0,0]},
+      {q:'How are you balancing college funding and your own retirement saving?',hint:'You can borrow for college. You can\'t borrow for retirement.',opts:['We have a plan that covers both','Funding college first, retirement later','Retirement first, college TBD','Haven\'t decided how to balance them'],score:[1,0,1,0]},
+      {q:'What would be most valuable for you to get clarity on next?',hint:'Pick whichever feels most urgent right now.',opts:['Whether I can retire on my terms','Tax opportunities I\'m missing','Fragmentation across accounts','Right advisor & strategy','Family & legacy planning'],score:[0,0,0,0,0]}
+    ]
+  },
+  {
+    name:'Pre-Retirement', years:'20+ yrs',
+    hl:'You\'ve earned the right to leave whenever the fancy hits you.',
+    desc:'The goal at this stage isn\'t retirement — it\'s optionality. Knowing you can stop changes how you show up in medicine. Most physicians this close to the finish line still don\'t have a clear exit plan.',
+    probs:[
+      {title:'I\'m not sure exactly when I can afford to stop practicing',body:'Retirement readiness isn\'t a feeling — it\'s a calculation. Most physicians this close still don\'t have an actual number.',tag:'Retirement Readiness'},
+      {title:'I have a lot in pre-tax accounts and no distribution strategy',body:'The decade before retirement is the highest-leverage window for Roth conversion. Every year you wait narrows it.',tag:'Tax Strategy'},
+      {title:'I\'m thinking about selling my practice and don\'t know where to start',body:'Practice exits are complex — valuations, earnouts, tax implications. Most advisors aren\'t equipped for this.',tag:'Practice Exit'}
+    ],
+    kit:{tag:'Complimentary Playbook',title:'The Physician\'s Retirement Readiness Playbook',desc:'',items:[]},
+    cta:{title:'See exactly where you stand on retirement readiness.',sub:'10 quick questions. We\'ll show you the gap between where you are and where you need to be.',btn:'Get my retirement snapshot →'},
+    qs:[
+      {q:'How clear are you on when you could realistically retire if you wanted to?',hint:'Retirement readiness is a calculation, not a feeling.',opts:['Very clear','Somewhat clear','Not very clear','No real clarity yet'],score:[1,1,0,0]},
+      {q:'Have you evaluated tax-advantaged strategies appropriate to your situation?',hint:'The pre-retirement decade is the highest-leverage Roth window.',opts:['Yes — written, with a CPA or advisor','Discussed it but nothing formal','Haven\'t started seriously','Didn\'t know this was something to plan'],score:[1,0,0,0]},
+      {q:'Have you planned your Social Security claiming strategy?',hint:'The wrong claiming age can cost $100–250K over a lifetime.',opts:['Yes — modeled multiple scenarios with a date','I have a target age','I\'ll just claim at full retirement age','Haven\'t thought about it'],score:[1,1,0,0]},
+      {q:'Have you planned for Medicare and IRMAA (the 2-year income lookback that raises premiums)?',hint:'IRMAA decisions made at 63 lock in your premiums at 65.',opts:['Yes — planned around income','Aware and watching it','I\'ll deal with it at 65','I don\'t know what IRMAA is'],score:[1,1,0,0]},
+      {q:'How are you managing sequence-of-returns risk in the years right before and after retirement?',hint:'A bad market in the first 3 years of retirement can cost $500K+.',opts:['I have a written glide-path / bucket strategy','Aware of it, talking about it','Not really managing for it','What is sequence-of-returns risk?'],score:[1,1,0,0]},
+      {q:'Do you have a withdrawal strategy for which accounts you\'ll draw from first?',hint:'Order matters — taxable, tax-deferred, and Roth each have different consequences.',opts:['Yes — specific order tied to taxes','Rough order in mind','Will figure it out when I get there','No idea'],score:[1,0,0,0]},
+      {q:'If you own a practice or have practice equity, do you have an exit / sale plan?',hint:'Practice exits are complex — valuation, earnouts, tax implications.',opts:['Specific timeline + valuation','Considering options','Years away from deciding','N/A — I\'m W-2'],score:[1,1,0,1]},
+      {q:'Does your estate / legacy plan reflect your current wealth and family situation?',hint:'Estate plans drift out of date quickly as wealth grows.',opts:['Yes — recent and current','Outdated','Basic will only','Don\'t have one'],score:[1,0,0,0]},
+      {q:'Have you started planning for who you\'ll be when you\'re no longer practicing?',hint:'Identity shift is real. Physicians who plan for it do better in retirement.',opts:['Yes — I have a vision for that chapter','I\'ve thought about it','Honestly, no','I plan to never fully stop'],score:[1,0,0,0]},
+      {q:'What would be most valuable for you to get clarity on next?',hint:'Pick whichever feels most urgent right now.',opts:['Whether I can retire on my terms','Tax opportunities I\'m missing','Fragmentation across accounts','Right advisor & strategy','Family & legacy planning'],score:[0,0,0,0,0]}
+    ]
+  }
+];
+
+var RESULTS = [
+  {label:'Areas to Review',title:'Your responses suggest there may be areas of your financial planning approach that could benefit from further review.',sub:'You may wish to review these areas further to determine appropriate next steps based on your individual situation. This result reflects a general snapshot based on your responses — it is not a comprehensive evaluation of your financial situation.'},
+  {label:'Building Momentum',title:'Your responses indicate progress in several planning areas, along with opportunities for additional review.',sub:'It is common to have a mix of well-established decisions and areas that may benefit from refinement. This assessment highlights general planning concepts based on the information provided and is not a comprehensive analysis.'},
+  {label:'Established Foundations',title:'Your responses suggest that many core elements of your financial planning approach are in place.',sub:'Additional refinement or coordination across strategies may be beneficial. Many individuals at this stage focus on improving alignment across different areas of their financial strategy. This is a high-level, educational snapshot based on limited inputs.'},
+  {label:'Advanced Position',title:'Your responses indicate a well-developed approach across several financial planning areas.',sub:'Individuals at this stage often focus on maintaining alignment over time and evaluating advanced planning considerations. These may include areas such as tax planning, estate considerations, and long-term financial objectives. This assessment is informational in nature and not a comprehensive financial plan.'}
+];
+
+var stage = 1;
+var assessOpen = false;
+var step = 0;
+var answers = [];
+
+var thumbEl   = document.getElementById('thumb');
+var fillEl    = document.getElementById('fill');
+var trackEl   = document.getElementById('track');
+var dotsEl    = document.getElementById('dots');
+var hlEl      = document.getElementById('stageHl');
+var descEl    = document.getElementById('stageDesc');
+var probsEl   = document.getElementById('probsGrid');
+var ctaTitleEl= document.getElementById('ctaTitle');
+var ctaSubEl  = document.getElementById('ctaSub');
+var ctaBtnEl  = document.getElementById('ctaBtn');
+var assessEl  = document.getElementById('assessWrap');
+var progFill  = document.getElementById('progFill');
+var progLabel = document.getElementById('progLabel');
+var stepsWrap = document.getElementById('stepsWrap');
+var resultEl  = document.getElementById('resultScreen');
+
+function setCtaButtonLabel(text, animate) {
+  var arrow = text.indexOf('→') > -1 ? '→' : '';
+  var label = text.replace('→', '').trim();
+  var labelWrap = document.createElement('span');
+  labelWrap.className = 'cta-btn-label';
+  labelWrap.setAttribute('aria-hidden', 'true');
+
+  var characterIndex = 0;
+  label.split(' ').forEach(function(word){
+    var wordWrap = document.createElement('span');
+    wordWrap.className = 'cta-btn-word';
+    Array.from(word).forEach(function(character){
+      var letter = document.createElement('span');
+      letter.className = 'cta-btn-char';
+      letter.style.setProperty('--char-index', characterIndex++);
+      letter.textContent = character;
+      wordWrap.appendChild(letter);
+    });
+    labelWrap.appendChild(wordWrap);
+  });
+
+  ctaBtnEl.replaceChildren(labelWrap);
+  if (arrow) {
+    var arrowEl = document.createElement('span');
+    arrowEl.className = 'cta-btn-arrow';
+    arrowEl.setAttribute('aria-hidden', 'true');
+    arrowEl.textContent = arrow;
+    ctaBtnEl.appendChild(arrowEl);
+  }
+  ctaBtnEl.setAttribute('aria-label', label);
+  ctaBtnEl.classList.remove('is-inviting');
+  if (animate) {
+    void ctaBtnEl.offsetWidth;
+    ctaBtnEl.classList.add('is-inviting');
+  }
+}
+
+var PCTS = [0, 33.33, 66.67, 100];
+
+var ICONS = [
+  '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0773BB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>',
+  '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0773BB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+  '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0773BB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>'
+];
+
+STAGES.forEach(function(s, i) {
+  var w = document.createElement('div');
+  w.className = 's-dot-wrap';
+  w.style.left = PCTS[i] + '%';
+  w.innerHTML =
+    '<div class="s-dot" id="dot'+i+'"></div>' +
+    '<div class="s-dot-name" id="dn'+i+'">'+s.name+'</div>' +
+    '<div class="s-dot-years" id="dy'+i+'">'+s.years+'</div>';
+  w.addEventListener('click', function(){ setStage(i, true); });
+  dotsEl.appendChild(w);
+});
+
+function fadeSet(el, fn) {
+  el.style.transition = 'none';
+  el.style.opacity = '0';
+  fn();
+  requestAnimationFrame(function(){
+    requestAnimationFrame(function(){
+      el.style.transition = 'opacity .22s';
+      el.style.opacity = '1';
+    });
+  });
+}
+
+function render(idx, animate) {
+  var s = STAGES[idx];
+  STAGES.forEach(function(_, i){
+    var on = i === idx;
+    var dot = document.getElementById('dot'+i);
+    var dn  = document.getElementById('dn'+i);
+    var dy  = document.getElementById('dy'+i);
+    if(dot) dot.className = 's-dot'+(on?' on':'');
+    if(dn)  dn.className  = 's-dot-name'+(on?' on':'');
+    if(dy)  dy.className  = 's-dot-years'+(on?' on':'');
+  });
+  if (animate) {
+    fadeSet(hlEl, function(){ hlEl.textContent = s.hl; });
+    fadeSet(descEl, function(){ descEl.textContent = s.desc; });
+    fadeSet(probsEl, function(){ buildProbs(s); });
+  } else {
+    hlEl.textContent = s.hl;
+    descEl.textContent = s.desc;
+    buildProbs(s);
+  }
+  ctaTitleEl.textContent = s.cta.title;
+  ctaSubEl.textContent = s.cta.sub;
+  if (!assessOpen) setCtaButtonLabel(s.cta.btn, animate);
+  if (assessOpen) resetAssess();
+}
+
+function buildProbs(s) {
+  probsEl.innerHTML = '';
+  s.probs.forEach(function(p, i){
+    var d = document.createElement('div');
+    d.className = 'prob';
+    d.innerHTML =
+      '<div class="prob-icon">'+ICONS[i % ICONS.length]+'</div>' +
+      '<div class="prob-title">'+p.title+'</div>' +
+      '<div class="prob-body">'+p.body+'</div>' +
+      '<div class="prob-tag">'+p.tag+'</div>';
+    probsEl.appendChild(d);
+  });
+}
+
+function setStage(idx, animate) {
+  stage = idx;
+  thumbEl.style.left = PCTS[idx] + '%';
+  fillEl.style.width = PCTS[idx] + '%';
+  render(idx, animate);
+}
+
+var dragging = false;
+function clientXFromEvent(e) {
+  return e.touches ? e.touches[0].clientX : (e.changedTouches ? e.changedTouches[0].clientX : e.clientX);
+}
+function pctFromX(clientX) {
+  var r = trackEl.getBoundingClientRect();
+  return Math.max(0, Math.min(100, (clientX - r.left) / r.width * 100));
+}
+function nearestStage(pct) {
+  var best = 0, bd = Infinity;
+  PCTS.forEach(function(t, i){ var d = Math.abs(pct - t); if(d < bd){ bd = d; best = i; } });
+  return best;
+}
+
+thumbEl.addEventListener('mousedown', function(e){ dragging = true; thumbEl.classList.add('dragging'); e.preventDefault(); });
+trackEl.addEventListener('click', function(e){ if(dragging) return; setStage(nearestStage(pctFromX(clientXFromEvent(e))), true); });
+document.addEventListener('mousemove', function(e){
+  if(!dragging) return;
+  var pct = pctFromX(clientXFromEvent(e));
+  thumbEl.style.left = pct + '%';
+  fillEl.style.width = pct + '%';
+  var ns = nearestStage(pct);
+  if(ns !== stage) setStage(ns, true);
+});
+document.addEventListener('mouseup', function(e){
+  if(!dragging) return;
+  dragging = false;
+  thumbEl.classList.remove('dragging');
+  setStage(stage, false);
+});
+thumbEl.addEventListener('touchstart', function(e){ dragging = true; thumbEl.classList.add('dragging'); e.preventDefault(); }, {passive:false});
+document.addEventListener('touchmove', function(e){
+  if(!dragging) return;
+  e.preventDefault();
+  var pct = pctFromX(clientXFromEvent(e));
+  thumbEl.style.left = pct + '%';
+  fillEl.style.width = pct + '%';
+  var ns = nearestStage(pct);
+  if(ns !== stage) setStage(ns, true);
+}, {passive:false});
+document.addEventListener('touchend', function(e){
+  if(!dragging) return;
+  dragging = false;
+  thumbEl.classList.remove('dragging');
+  setStage(stage, false);
+});
+
+function toggleAssess() {
+  assessOpen = !assessOpen;
+  assessEl.classList.toggle('open', assessOpen);
+  if(assessOpen) {
+    setCtaButtonLabel('↑ Close', false);
+    ctaBtnEl.classList.add('is-open');
+    resetAssess();
+    setTimeout(function(){
+      document.querySelector('.assess-body').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 520);
+  } else {
+    setCtaButtonLabel(STAGES[stage].cta.btn, true);
+    ctaBtnEl.classList.remove('is-open');
+  }
+}
+
+function resetAssess() {
+  step = 0;
+  answers = new Array(STAGES[stage].qs.length).fill(null);
+  resultEl.className = 'assess-result';
+  buildSteps();
+  updateProgress();
+}
+
+function buildSteps() {
+  stepsWrap.innerHTML = '';
+  var total = STAGES[stage].qs.length;
+  STAGES[stage].qs.forEach(function(q, i){
+    var d = document.createElement('div');
+    d.className = 'assess-step' + (i === 0 ? ' on' : '');
+    d.id = 'st'+i;
+    d.innerHTML =
+      '<div class="step-num">Question '+(i+1)+' of '+total+'</div>' +
+      '<div class="step-q">'+q.q+'</div>' +
+      '<div class="step-hint">'+q.hint+'</div>' +
+      '<div class="step-opts">'+q.opts.map(function(o,j){
+        return '<div class="s-opt" onclick="pickOpt(this,'+i+','+j+')">' +
+          '<div class="s-opt-k">'+(j+1)+'</div>' +
+          '<div class="s-opt-t">'+o+'</div></div>';
+      }).join('')+'</div>' +
+      '<div class="step-nav">' +
+        '<div class="step-back" onclick="goBack()" style="'+(i===0?'visibility:hidden':'')+'">← Back</div>' +
+        '<div style="font-size:12px;color:#939598">Tap an answer to continue</div>' +
+      '</div>';
+    stepsWrap.appendChild(d);
+  });
+}
+
+function updateProgress() {
+  var total = STAGES[stage].qs.length;
+  var pct = Math.round(((step + 1) / (total + 1)) * 100);
+  progFill.style.width = pct + '%';
+  if(resultEl.classList.contains('on')) {
+    progLabel.textContent = 'Complete';
+    progFill.style.width = '100%';
+  } else {
+    progLabel.textContent = 'Question ' + (step+1) + ' of ' + total;
+  }
+}
+
+var advancing = false;
+function pickOpt(el, stepIdx, optIdx) {
+  if (advancing) return;
+  var stepCard = el.closest('.assess-step');
+  var opts = el.parentNode.querySelectorAll('.s-opt');
+  opts.forEach(function(o){ o.classList.remove('sel'); });
+  el.classList.add('sel');
+  answers[stepIdx] = optIdx;
+  advancing = true;
+  if (stepCard) stepCard.classList.add('locked');
+  setTimeout(function(){
+    advancing = false;
+    if (stepCard) stepCard.classList.remove('locked');
+    goNext();
+  }, 260);
+}
+
+function showStep(idx) {
+  stepsWrap.querySelectorAll('.assess-step').forEach(function(s, i){
+    s.className = 'assess-step' + (i === idx ? ' on' : '');
+  });
+  resultEl.className = 'assess-result';
+  updateProgress();
+}
+
+function goNext() {
+  var total = STAGES[stage].qs.length;
+  if(step < total - 1) { step++; showStep(step); }
+  else { showResult(); }
+}
+
+function goBack() {
+  if(advancing) return;
+  if(step > 0) { step--; showStep(step); }
+}
+
+function showResult() {
+  var qs = STAGES[stage].qs;
+  var score = answers.reduce(function(sum, a, i){
+    return sum + (a !== null && qs[i] && qs[i].score[a] === 1 ? 1 : 0);
+  }, 0);
+  var bandIdx = score <= 3 ? 0 : (score <= 6 ? 1 : (score <= 8 ? 2 : 3));
+  var r = RESULTS[bandIdx] || RESULTS[0];
+  var kitName = STAGES[stage].kit.tag;
+  var total = qs.length;
+
+  stepsWrap.querySelectorAll('.assess-step').forEach(function(s){ s.className = 'assess-step'; });
+  progFill.style.width = '100%';
+  progLabel.textContent = 'Complete';
+
+  resultEl.innerHTML =
+    '<div class="score-ring"><div class="score-n">'+score+'</div><div class="score-d">/ '+total+'</div></div>' +
+    '<div class="result-badge">'+r.label+'</div>' +
+    '<div class="result-title">'+r.title+'</div>' +
+    '<div class="result-sub">'+r.sub+'</div>' +
+    '<div class="result-disclaimer">This scoring framework is a simplified educational tool. It does not evaluate all relevant financial factors and should not be interpreted as a recommendation or assessment of overall financial health.</div>' +
+    '<div class="email-box">' +
+      '<div class="email-lbl">Where should we send your breakdown + '+kitName+'?</div>' +
+      '<div class="email-sub-lbl">We\'ll include your score, what it means, and the full guide.</div>' +
+      '<div class="email-stack">' +
+        '<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />' +
+        '<input type="text" name="company_url" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />' +
+        '<input class="email-in name-in first-in" type="text" placeholder="First name" autocomplete="given-name" />' +
+        '<input class="email-in name-in last-in" type="text" placeholder="Last name" autocomplete="family-name" />' +
+        '<input class="email-in" type="email" placeholder="Your email address" autocomplete="email" />' +
+        '<input class="email-in phone-in" type="tel" placeholder="Phone number" autocomplete="tel" inputmode="tel" />' +
+        '<div class="email-go email-go-block" onclick="emailSubmit(this)">Send it →</div>' +
+      '</div>' +
+      '<div class="email-note">No spam. One email with your results and guide. We only call if you ask.</div>' +
+    '</div>' +
+    '<div class="result-alt">Or schedule a Clarity Call instead →</div>' +
+    '<div class="result-finedisc"><strong>Important Disclosure:</strong> This assessment is provided for educational purposes only and is based solely on your responses to a limited set of questions. It is not a comprehensive financial plan or personalized investment advice. Results are general in nature and do not take into account your full financial situation, objectives, or risk tolerance. Different financial strategies may be appropriate depending on individual circumstances. You should consult a qualified financial professional before making any financial decisions.<br><br>This assessment uses a simplified point system to highlight general financial planning concepts based on your responses. Certain answers are assigned points because they reflect commonly discussed planning considerations, but they do not indicate that one approach is universally better than another.</div>';
+
+  resultEl.className = 'assess-result on';
+}
+
+function emailSubmit(btn) {
+  var box = btn.closest('.email-box');
+  var firstInp = box.querySelector('.first-in');
+  var lastInp  = box.querySelector('.last-in');
+  var inp      = box.querySelector('input[type="email"]');
+  var phoneInp = box.querySelector('input[type="tel"]');
+  var firstName = firstInp ? (firstInp.value || '').trim() : '';
+  var lastName  = lastInp  ? (lastInp.value  || '').trim() : '';
+  var email     = (inp.value || '').trim();
+  var phone     = phoneInp ? (phoneInp.value || '').trim() : '';
+
+  var bad = false;
+  if(!firstName) { firstInp.style.borderColor = '#e05'; bad = true; } else { firstInp.style.borderColor = ''; }
+  if(!lastName)  { lastInp.style.borderColor  = '#e05'; bad = true; } else { lastInp.style.borderColor  = ''; }
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { inp.style.borderColor = '#e05'; bad = true; } else { inp.style.borderColor = ''; }
+  if(!phone || phone.replace(/\D/g, '').length < 7) { phoneInp.style.borderColor = '#e05'; bad = true; } else { phoneInp.style.borderColor = ''; }
+  if(bad) return;
+
+  var stageObj = STAGES[stage] || {};
+  var qs = stageObj.qs || [];
+  var score = (answers || []).reduce(function(sum, a, i){
+    return sum + (a !== null && qs[i] && qs[i].score[a] === 1 ? 1 : 0);
+  }, 0);
+  var LETTERS = ['A','B','C','D','E','F'];
+  var answerTexts = (answers || []).map(function(a, i){
+    if(a === null || !qs[i]) return '';
+    return qs[i].q + ' — ' + (LETTERS[a] || ('#'+(a+1))) + ' - ' + (qs[i].opts[a] || '');
+  }).filter(Boolean);
+
+  var origHtml = box.innerHTML;
+  btn.textContent = 'Sending…';
+  btn.style.pointerEvents = 'none';
+
+  postLead({
+    source: 'homepage_assessment',
+    page: location.pathname,
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    phone: phone,
+    stage: stageObj.name || '',
+    score: score + '/' + qs.length,
+    answers: answerTexts
+  }).then(function(res){
+    if(res.ok){
+      box.innerHTML = '<div style="text-align:center;padding:12px 0"><div style="font-size:28px;margin-bottom:10px">✓</div><div style="font-family:\'Libre Baskerville\',serif;font-size:16px;font-weight:700;color:#0F1923;margin-bottom:6px">Got it. Taking you to your next step…</div><div style="font-size:13px;color:#939598">Your full breakdown is also on its way to '+email+'</div></div>';
+      // After the assessment, send the visitor to the gated VSL page.
+      // The server returns a single-use token; we hand it over via the URL
+      // and the server also drops an HttpOnly cookie so refreshes work.
+      var vslUrl = res.body && res.body.vsl_url;
+      if (vslUrl) {
+        setTimeout(function(){ window.location.assign(vslUrl); }, 900);
+      }
+    } else {
+      box.innerHTML = origHtml + '<div style="text-align:center;color:#c0392b;font-size:12px;margin-top:8px">Couldn\'t send — please try again or email info@longviewplan.com.</div>';
+    }
+  }).catch(function(){
+    box.innerHTML = origHtml + '<div style="text-align:center;color:#c0392b;font-size:12px;margin-top:8px">Network error. Please try again.</div>';
+  });
+}
+
+// ── KEYBOARD SHORTCUTS (assessment) ──
+document.addEventListener('keydown', function(e){
+  if(!assessOpen) return;
+  var tgt = e.target;
+  if(tgt && (tgt.tagName === 'INPUT' || tgt.tagName === 'TEXTAREA')) return;
+  if(resultEl.classList.contains('on')) {
+    if(e.key === 'Escape') toggleAssess();
+    return;
+  }
+  if(e.key === 'Escape') { toggleAssess(); return; }
+  if(e.key === 'ArrowLeft') { e.preventDefault(); goBack(); return; }
+  if(/^[1-5]$/.test(e.key)) {
+    var card = stepsWrap.querySelector('.assess-step.on');
+    if(!card) return;
+    var opts = card.querySelectorAll('.s-opt');
+    var idx = parseInt(e.key, 10) - 1;
+    if(opts[idx]) { e.preventDefault(); opts[idx].click(); }
+  }
+});
+
+// ── INIT SLIDER ──
+setStage(stage, false);
+
+// ── MEDIA SLOTS — source files activate automatically when supplied ──
+(function(){
+  var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var slots = Array.prototype.slice.call(document.querySelectorAll('[data-video-src]'));
+
+  slots.forEach(function(slot){
+    var source = slot.getAttribute('data-video-src');
+    var video = slot.querySelector('video');
+    if(!source || !video || (reducedMotion && slot.classList.contains('lv-hero'))) return;
+
+    fetch(source, {method:'HEAD'}).then(function(response){
+      if(!response.ok) return;
+      video.src = source;
+      video.load();
+
+      if(slot.classList.contains('lv-hero')){
+        video.addEventListener('canplay', function(){
+          slot.classList.add('has-video');
+          video.play().catch(function(){});
+        }, {once:true});
+        return;
+      }
+
+      var control = slot.querySelector('[data-video-control]');
+      video.addEventListener('loadedmetadata', function(){
+        slot.classList.add('has-video');
+        if(control){
+          control.disabled = false;
+          control.setAttribute('aria-label', 'Play video');
+        }
+        var status = slot.querySelector('.lv-reel-meta span:last-child');
+        if(status) status.textContent = 'Watch';
+      }, {once:true});
+
+      if(control){
+        control.addEventListener('click', function(){
+          video.controls = true;
+          slot.classList.add('is-playing');
+          video.play().catch(function(){ slot.classList.remove('is-playing'); });
+        });
+      }
+      video.addEventListener('ended', function(){ slot.classList.remove('is-playing'); });
+    }).catch(function(){ /* Poster fallback remains fully functional. */ });
+  });
+})();
+
+// ── PROCESS WHEEL — continuous progress tied directly to page scroll ──
+(function(){
+  var section = document.querySelector('.process-sec');
+  var layout = document.querySelector('.lv-process-layout');
+  var visual = document.querySelector('.lv-process-visual');
+  var list = document.querySelector('.lv-process-list');
+  var wheel = document.getElementById('lvProcessWheel');
+  var steps = Array.prototype.slice.call(document.querySelectorAll('.lv-process-step'));
+  var dialNodes = Array.prototype.slice.call(document.querySelectorAll('.lv-dial-node'));
+  var dialStep = document.getElementById('lvDialStep');
+  if(!section || !layout || !visual || !wheel || !steps.length) return;
+
+  var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var motionMode = document.documentElement.classList.contains('motion-mode');
+  var ticking = false;
+
+  function activate(index){
+    steps.forEach(function(item, i){ item.classList.toggle('is-active', i === index); });
+    dialNodes.forEach(function(item, i){ item.classList.toggle('is-active', i === index); });
+    if(dialStep) dialStep.textContent = String(index + 1).padStart(2, '0');
+  }
+
+  function updateProcessMotion(){
+    ticking = false;
+    var layoutRect = layout.getBoundingClientRect();
+    var stickyTop = parseFloat(window.getComputedStyle(visual).top) || 0;
+    var timelineStart;
+    var timelineEnd;
+
+    if(motionMode && list){
+      var lastStep = steps[steps.length - 1];
+      var releaseSpace = Math.max(0, (visual.offsetHeight - lastStep.offsetHeight) / 2);
+      list.style.setProperty('--process-release-space', Math.ceil(releaseSpace) + 'px');
+
+      var firstRect = steps[0].getBoundingClientRect();
+      var lastRect = lastStep.getBoundingClientRect();
+      var visualCenter = stickyTop + (visual.offsetHeight / 2);
+      timelineStart = window.scrollY + firstRect.top + (firstRect.height / 2) - visualCenter;
+      timelineEnd = window.scrollY + lastRect.top + (lastRect.height / 2) - visualCenter;
+    }else{
+      timelineStart = window.scrollY + layoutRect.top - stickyTop;
+      timelineEnd = timelineStart + Math.max(layout.offsetHeight - visual.offsetHeight, 1);
+    }
+
+    var timelineTravel = Math.max(timelineEnd - timelineStart, 1);
+    var progress = Math.max(0, Math.min(1, (window.scrollY - timelineStart) / timelineTravel));
+    var index = Math.min(steps.length - 1, Math.floor(progress * steps.length));
+    activate(index);
+
+    if(!reducedMotion){
+      visual.style.setProperty('--wheel-turn', (progress * 285).toFixed(2) + 'deg');
+      visual.style.setProperty('--process-angle', (progress * 360).toFixed(2) + 'deg');
+      visual.style.setProperty('--process-offset', (289 * (1 - progress)).toFixed(2));
+      visual.style.setProperty('--process-scale', (.97 + (progress * .03)).toFixed(3));
+    }
+  }
+
+  function requestProcessUpdate(){
+    if(ticking) return;
+    ticking = true;
+    requestAnimationFrame(updateProcessMotion);
+  }
+
+  steps.forEach(function(step, index){
+    step.addEventListener('mouseenter', function(){ activate(index); });
+    step.addEventListener('focusin', function(){ activate(index); });
+  });
+  window.addEventListener('scroll', requestProcessUpdate, {passive:true});
+  window.addEventListener('resize', requestProcessUpdate);
+  updateProcessMotion();
+})();
+</script>
+<script src="assets/longview-motion.js"></script>
+</body>
+</html>

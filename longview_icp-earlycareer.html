@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Planning for Early-Career Physicians — LongView Planning Partners</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --lv-navy:#0773BB;
+      --lv-dark:#054A82;
+      --lv-deeper:#032F57;
+      --lv-sky:#38B0E3;
+      --lv-light:#8CD7F7;
+      --lv-gray:#939598;
+      --lv-gl:#D1D2D4;
+      --lv-off:#F4F8FC;
+      --ink:#0F1923;
+      --body:#3D4A58;
+      --max:1240px;
+      --trans:.22s cubic-bezier(.4,0,.2,1);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;color:var(--ink);background:#fff;min-width:320px;-webkit-font-smoothing:antialiased}
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 52px}
+    .nav-out{background:#fff;border-bottom:1px solid rgba(209,210,212,.6);position:sticky;top:0;z-index:200;transition:box-shadow .3s}
+    .nav-out.scrolled{box-shadow:0 4px 32px rgba(5,74,130,.1)}
+    .nav-out .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+    .logo{display:flex;flex-shrink:0;cursor:pointer}
+    .nav-links{display:flex;gap:6px;align-items:center}
+    .nl{font-size:13.5px;color:#5a6472;padding:8px 14px;border-radius:4px;cursor:pointer;transition:color var(--trans);white-space:nowrap}
+    .nl:hover{color:var(--lv-navy)}
+    .ncta{font-size:13px;font-weight:600;padding:11px 24px;background:var(--lv-navy);color:#fff;border-radius:4px;cursor:pointer;white-space:nowrap;transition:background var(--trans),box-shadow var(--trans),transform var(--trans)}
+    .ncta:hover{background:var(--lv-dark);box-shadow:0 6px 20px rgba(7,115,187,.3);transform:translateY(-1px)}
+
+    /* HERO */
+    .hero{background:linear-gradient(135deg,#032F57 0%,#054A82 100%);padding:96px 0 88px;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.055) 1px,transparent 1px);background-size:28px 28px}
+    .hero-in{position:relative;z-index:2;max-width:760px;margin:0 auto;text-align:center}
+    .hero-chip{display:inline-flex;align-items:center;gap:7px;font-size:10.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--lv-light);border:1px solid rgba(140,215,247,.3);padding:5px 14px;border-radius:20px;background:rgba(140,215,247,.08);margin-bottom:28px}
+    .hero-chip-dot{width:5px;height:5px;border-radius:50%;background:var(--lv-sky);flex-shrink:0}
+    .hero-h1{font-family:'Libre Baskerville',serif;font-size:54px;font-weight:700;color:#fff;line-height:1.08;letter-spacing:-.03em;margin-bottom:28px}
+    .hero-h1 em{font-style:italic;background:linear-gradient(105deg,#fff 0%,#c2e8f8 30%,#8CD7F7 60%,#4ab8e8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:inline-block;padding-bottom:0.12em}
+    .hero-sub{font-size:18px;color:rgba(255,255,255,.65);line-height:1.78;font-weight:300;margin:0 auto 44px;max-width:580px}
+    .hero-sub strong{color:rgba(255,255,255,.9);font-weight:500}
+    .hero-cta-group{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:36px}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:17px 34px;background:#fff;color:var(--lv-dark);border-radius:4px;font-size:15px;font-weight:700;cursor:pointer;transition:transform var(--trans),box-shadow var(--trans)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,0,0,.2)}
+    .btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:17px 28px;border:1.5px solid rgba(255,255,255,.28);color:rgba(255,255,255,.8);border-radius:4px;font-size:14px;font-weight:500;cursor:pointer;transition:border-color var(--trans),color var(--trans)}
+    .btn-ghost:hover{border-color:rgba(255,255,255,.65);color:#fff}
+    .hero-trust{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap}
+    .hero-trust-item{font-size:11.5px;color:rgba(255,255,255,.42);letter-spacing:.04em;display:flex;align-items:center;gap:6px}
+    .hero-trust-item::before{content:'';width:4px;height:4px;border-radius:50%;background:rgba(56,176,227,.55);flex-shrink:0}
+    .hero-trust-item:first-child::before{display:none}
+
+    /* INSIGHT */
+    .insight-sec{background:var(--lv-off);border-bottom:1px solid #dde8f2;padding:80px 0}
+    .insight-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+    .insight-quote{position:relative;padding:44px 48px 40px;background:#fff;border-radius:12px;border:1px solid var(--lv-gl);border-left:4px solid var(--lv-sky);box-shadow:0 4px 32px rgba(5,74,130,.07)}
+    .insight-qmark{font-family:'Libre Baskerville',serif;font-size:130px;line-height:.55;color:var(--lv-sky);opacity:.12;position:absolute;top:28px;left:32px;pointer-events:none;user-select:none}
+    .insight-qt{font-family:'Libre Baskerville',serif;font-size:19px;line-height:1.65;color:var(--ink);position:relative;z-index:1;font-style:italic}
+    .insight-source{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--lv-gray);margin-top:20px}
+    .insight-copy-eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--lv-navy);margin-bottom:12px}
+    .insight-copy-h{font-family:'Libre Baskerville',serif;font-size:30px;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:18px;letter-spacing:-.02em}
+    .insight-copy-body{font-size:15.5px;color:var(--body);line-height:1.78;font-weight:300;margin-bottom:14px}
+
+    /* WHO */
+    .who-sec{background:#fff;padding:80px 0}
+    .sec-label{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--lv-navy);margin-bottom:12px}
+    .sec-title{font-family:'Libre Baskerville',serif;font-size:36px;font-weight:700;color:var(--ink);letter-spacing:-.025em;line-height:1.18;margin-bottom:10px}
+    .sec-title span{padding-bottom:4px;border-bottom:2.5px solid var(--lv-sky)}
+    .sec-sub{font-size:16px;color:var(--body);line-height:1.78;font-weight:300;max-width:520px;margin-bottom:48px}
+    .who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .who-card{padding:32px 28px;border:1px solid var(--lv-gl);border-radius:10px;border-top:3px solid var(--lv-sky)}
+    .who-card-num{font-family:'Libre Baskerville',serif;font-size:13px;font-weight:700;color:var(--lv-sky);letter-spacing:.08em;margin-bottom:14px}
+    .who-card-h{font-family:'Libre Baskerville',serif;font-size:18px;font-weight:700;color:var(--ink);margin-bottom:10px;line-height:1.3}
+    .who-card-body{font-size:14.5px;color:var(--body);line-height:1.75;font-weight:300}
+
+    /* FOCUS */
+    .focus-sec{background:var(--lv-off);padding:80px 0}
+    .focus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--lv-gl);border:1px solid var(--lv-gl);border-radius:12px;overflow:hidden;margin-top:44px}
+    .focus-item{background:#fff;padding:32px 28px}
+    .focus-item:hover{background:rgba(7,115,187,.03)}
+    .focus-icon{width:40px;height:40px;background:rgba(7,115,187,.08);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+    .focus-item-h{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:8px}
+    .focus-item-body{font-size:13.5px;color:var(--body);line-height:1.72;font-weight:300}
+    .focus-urgency{font-size:12px;font-weight:600;color:var(--lv-navy);margin-top:10px;display:block}
+
+    /* HOW */
+    .how-sec{background:#fff;padding:80px 0}
+    .how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:44px;position:relative}
+    .how-steps::before{content:'';position:absolute;top:28px;left:calc(16.67% + 16px);right:calc(16.67% + 16px);height:1px;background:var(--lv-gl);z-index:0}
+    .how-step{position:relative;z-index:1}
+    .how-step-num{width:56px;height:56px;border-radius:50%;background:var(--lv-navy);color:#fff;font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:20px;flex-shrink:0}
+    .how-step-h{font-family:'Libre Baskerville',serif;font-size:19px;font-weight:700;color:var(--ink);margin-bottom:10px;line-height:1.25}
+    .how-step-body{font-size:14.5px;color:var(--body);line-height:1.75;font-weight:300}
+
+    /* OBJECTIONS */
+    .obj-sec{background:var(--lv-deeper);padding:80px 0}
+    .obj-inner{max-width:860px;margin:0 auto}
+    .obj-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:44px}
+    .obj-item{padding:28px 24px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.04)}
+    .obj-q{font-size:15px;font-weight:600;color:#fff;margin-bottom:10px;line-height:1.4}
+    .obj-a{font-size:14px;color:rgba(255,255,255,.55);line-height:1.75;font-weight:300}
+
+    /* Section header reuse for obj */
+    .obj-sec .sec-label{color:rgba(140,215,247,.7)}
+    .obj-sec .sec-title{color:#fff}
+    .obj-sec .sec-title span{border-bottom-color:rgba(56,176,227,.5)}
+
+    /* CTA */
+    .cta-sec{background:var(--lv-deeper);padding:96px 0;text-align:center}
+    .cta-h{font-family:'Libre Baskerville',serif;font-size:48px;font-weight:700;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:20px}
+    .cta-h em{font-style:italic;background:linear-gradient(105deg,#fff 0%,#8CD7F7 60%,#4ab8e8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:inline-block;padding-bottom:0.12em}
+    .cta-sub{font-size:17px;color:rgba(255,255,255,.58);line-height:1.78;font-weight:300;max-width:520px;margin:0 auto 40px}
+    .cta-btn{display:inline-flex;align-items:center;gap:8px;padding:18px 44px;background:#fff;color:var(--lv-dark);border-radius:4px;font-size:16px;font-weight:700;cursor:pointer;transition:transform var(--trans),box-shadow var(--trans)}
+    .cta-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,.25)}
+    .cta-note{font-size:12px;color:rgba(255,255,255,.3);margin-top:16px;letter-spacing:.04em}
+    .cta-trust{display:flex;justify-content:center;gap:28px;margin-top:24px;flex-wrap:wrap}
+    .cta-trust-item{font-size:12px;color:rgba(255,255,255,.35);letter-spacing:.06em;text-transform:uppercase}
+
+    /* FOOTER */
+    .footer-pre{background:var(--lv-deeper);padding:22px 0;border-top:1px solid rgba(255,255,255,.07)}
+    .footer-pre .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+    .footer-pre-copy{font-size:13px;color:rgba(255,255,255,.45)}
+    .footer-pre-contact{display:flex;align-items:center;gap:24px;font-size:13px;color:rgba(255,255,255,.7);font-weight:500}
+    .footer-pre-contact a{color:inherit}
+    .footer-out{background:#0D0D0D}
+    .footer-out .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;padding-top:36px;padding-bottom:36px}
+    .footer-logo-name{font-family:'Libre Baskerville',serif;font-size:18px;font-weight:700;color:#fff}
+    .footer-logo-sub{font-size:9px;font-family:'DM Sans',sans-serif;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#555;display:block;margin-top:5px}
+    .footer-links{display:flex;gap:24px;font-size:12px;color:#666;flex-wrap:wrap}
+    .footer-links a:hover{color:#999}
+    .footer-disc{font-size:11px;color:#444}
+
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1);will-change:opacity,transform;backface-visibility:hidden}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .reveal-children>*{opacity:0;transform:translateY(22px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1);will-change:opacity,transform;backface-visibility:hidden}
+    .reveal-children.visible>*:nth-child(1){opacity:1;transform:translateY(0);transition-delay:.05s}
+    .reveal-children.visible>*:nth-child(2){opacity:1;transform:translateY(0);transition-delay:.12s}
+    .reveal-children.visible>*:nth-child(3){opacity:1;transform:translateY(0);transition-delay:.19s}
+    .reveal-children.visible>*:nth-child(4){opacity:1;transform:translateY(0);transition-delay:.26s}
+    .reveal-children.visible>*:nth-child(5){opacity:1;transform:translateY(0);transition-delay:.33s}
+    .reveal-children.visible>*:nth-child(6){opacity:1;transform:translateY(0);transition-delay:.40s}
+
+    /* RESPONSIVE */
+    @media(max-width:1024px){.focus-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:900px){
+      .wrap{padding:0 28px}
+      .hero-h1{font-size:38px}
+      .insight-inner,.who-grid,.how-steps,.obj-grid{grid-template-columns:1fr}
+      .how-steps::before{display:none}
+      .focus-grid{grid-template-columns:1fr}
+      .nav-links{display:none}
+    }
+    @media(max-width:480px){
+      .hero-h1{font-size:32px}
+      .cta-h{font-size:30px}
+    }
+  </style>
+<link rel="stylesheet" href="assets/lv-polish.css">
+</head>
+<body>
+
+<!-- NAV -->
+<div id="nav" class="nav-out">
+  <div class="wrap">
+    <a href="longview_homepage_v8.html" class="logo">
+      <img src="images/longview-logo.png" alt="LongView Planning Partners" style="height:44px;width:auto;display:block">
+    </a>
+    <nav class="nav-links">
+      <a class="nl" href="longview_homepage_v8.html">Why LongView</a>
+      <a class="nl" href="longview_services.html">Our Services</a>
+      <a class="nl" href="longview_who-we-serve.html">Who We Serve</a>
+      <a class="nl" href="longview_process.html">Our Process</a>
+      <a class="nl" href="longview_team.html">Our Team</a>
+      <a class="nl" href="longview_blog.html">Resources</a>
+    </nav>
+    <a href="longview_book.html" class="ncta">Schedule an Icebreaker Call &rarr;</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-in">
+      <div class="hero-chip">
+        <span class="hero-chip-dot"></span>
+        For Residents, Fellows &amp; New Attendings
+      </div>
+      <h1 class="hero-h1">The first five years<br><em>determine everything else.</em></h1>
+      <p class="hero-sub">You spent a decade in training. The paycheck finally reflects it. And in the next 90 days, you'll make financial decisions that compound — for better or worse — for the next 30 years. <strong>Student loans. Disability coverage. Tax strategy. Investments. Most physicians figure it out alone. That's where the expensive mistakes happen.</strong></p>
+      <div class="hero-cta-group">
+        <a href="longview_book.html" class="btn-primary">Schedule an Icebreaker Call &rarr;</a>
+        <a href="#focus" class="btn-ghost">See what we focus on</a>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-trust-item">SEC Registered Representatives</div>
+        <div class="hero-trust-item">Student loan strategy specialists</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHT -->
+<section class="insight-sec">
+  <div class="wrap">
+    <div class="insight-inner">
+      <div class="insight-quote reveal">
+        <div class="insight-qmark">&ldquo;</div>
+        <p class="insight-qt">Most advisors talk to physicians once the money's already there. The decisions that matter most — the ones worth substantial money — happen in the first 18 months.</p>
+        <div class="insight-source">— LongView Planning Partners</div>
+      </div>
+      <div class="reveal">
+        <div class="insight-copy-eyebrow">The window that closes</div>
+        <h2 class="insight-copy-h">The decisions you don't make in year one are the hardest ones to fix.</h2>
+        <p class="insight-copy-body">Three months into your first attending job, your student loan grace period ends. Your income is now 3–5x what it was. Your malpractice situation is new. Your tax filing is suddenly complicated. And every product-selling advisor in a 50-mile radius knows exactly when you signed your employment contract.</p>
+        <p class="insight-copy-body">We built our early-career practice around one idea: meet physicians before the mistakes happen — not after. Because what you do in year one sets the floor for everything that follows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO THIS IS FOR -->
+<section class="who-sec">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label">Who this is for</div>
+      <h2 class="sec-title"><span>Physicians in the first decade</span></h2>
+      <p class="sec-sub">Whether you're finishing training or a few years into practice, this is when the foundational decisions get made — and unmade.</p>
+    </div>
+    <div class="who-grid reveal-children">
+      <div class="who-card">
+        <div class="who-card-num">01</div>
+        <h3 class="who-card-h">The finishing resident or fellow</h3>
+        <p class="who-card-body">You're about to sign your first contract. Your loans are accruing. Your income is going to jump by a factor of five. The PSLF/IDR decision needs to happen before you start your first day — not after you've already made one year of wrong payments.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-card-num">02</div>
+        <h3 class="who-card-h">The early attending who started late</h3>
+        <p class="who-card-body">You've been practicing 2–4 years. You have income, maybe some investments, probably insurance you were sold during residency that you're not sure about. You know you're behind on retirement. Let's find out how far and build a real plan.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-card-num">03</div>
+        <h3 class="who-card-h">The new attending with sudden complexity</h3>
+        <p class="who-card-body">Multiple income streams. A practice entity. A spouse with income. Student loans you're trying to optimize. A lot of decisions landing at once. You need someone who's done this specific thing a hundred times.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE FOCUS ON -->
+<section class="focus-sec" id="focus">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label">What we focus on</div>
+      <h2 class="sec-title"><span>Six areas that move the needle most</span></h2>
+      <p class="sec-sub">Early-career physicians face a specific set of decisions. We've built our practice around getting these right.</p>
+    </div>
+    <div class="focus-grid reveal-children">
+
+      <div class="focus-item">
+        <div class="focus-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:var(--lv-navy)">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+          </svg>
+        </div>
+        <div class="focus-item-h">Student Loan Strategy</div>
+        <p class="focus-item-body">PSLF, IDR, SAVE, refinancing — this single decision is often worth substantial money. The rules changed. If your strategy is more than a year old, it needs to be rebuilt.</p>
+        <span class="focus-urgency">Most urgent right now — 6-12 month window</span>
+      </div>
+
+      <div class="focus-item">
+        <div class="focus-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:var(--lv-navy)">
+            <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <div class="focus-item-h">First-Year Cash Flow Plan</div>
+        <p class="focus-item-body">Your income tripled overnight. We build a spending plan that protects your future without making you feel like you're living in residency.</p>
+      </div>
+
+      <div class="focus-item">
+        <div class="focus-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:var(--lv-navy)">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="focus-item-h">Disability &amp; Life Insurance</div>
+        <p class="focus-item-body">Physicians are dramatically underinsured at this stage. We'll tell you exactly what you need, what you were sold that you don't need, and where to get coverage that actually fits.</p>
+      </div>
+
+      <div class="focus-item">
+        <div class="focus-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:var(--lv-navy)">
+            <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+          </svg>
+        </div>
+        <div class="focus-item-h">Investment Account Sequencing</div>
+        <p class="focus-item-body">401(k), Roth IRA, backdoor Roth, HSA — in what order, and how much. Most new attendings have the right accounts open in the wrong order with the wrong investments.</p>
+      </div>
+
+      <div class="focus-item">
+        <div class="focus-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:var(--lv-navy)">
+            <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/>
+          </svg>
+        </div>
+        <div class="focus-item-h">Tax Planning for the Income Surge</div>
+        <p class="focus-item-body">Filing is not planning. Your first year as an attending is the most important tax year of your career. We build a proactive strategy before April, not a documentation exercise after.</p>
+      </div>
+
+      <div class="focus-item">
+        <div class="focus-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:var(--lv-navy)">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div class="focus-item-h">Estate &amp; Beneficiary Basics</div>
+        <p class="focus-item-body">Beneficiary designations on retirement accounts, basic will structure, disability-of-a-parent contingency. Skipped by 90% of new attendings. Costs real money when discovered late.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-sec">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label">How it works</div>
+      <h2 class="sec-title"><span>Simple from the start</span></h2>
+      <p class="sec-sub">No sales process. No long onboarding before you see anything useful. Here's what happens when you reach out.</p>
+    </div>
+    <div class="how-steps reveal-children">
+      <div class="how-step">
+        <div class="how-step-num">1</div>
+        <h3 class="how-step-h">The Icebreaker Call</h3>
+        <p class="how-step-body">30 minutes. We learn about your situation — income structure, loans, accounts, insurance. You learn how we work. No pitch. No commitment.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">2</div>
+        <h3 class="how-step-h">Your Financial Picture</h3>
+        <p class="how-step-body">We map everything: what you have, what you owe, what you're missing, and what needs to happen. You receive a written summary of what we found and exactly what to do next.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">3</div>
+        <h3 class="how-step-h">Planning that grows with you</h3>
+        <p class="how-step-body">As your career advances — income changes, partnership decisions, growing family — your plan evolves. One relationship, the entire career arc.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OBJECTIONS -->
+<section class="obj-sec">
+  <div class="wrap">
+    <div class="obj-inner">
+      <div class="reveal">
+        <div class="sec-label">Common questions</div>
+        <h2 class="sec-title"><span>Things we hear all the time</span></h2>
+      </div>
+      <div class="obj-grid reveal-children">
+        <div class="obj-item">
+          <div class="obj-q">"I'm still in residency — I can't afford a financial planner yet."</div>
+          <p class="obj-a">The PSLF/SAVE decision alone is a substantial financial choice that has to be made now, not later. The cost of advice at this stage is often smaller than the cost of the wrong decision made without it. We work with residents specifically because of this.</p>
+        </div>
+        <div class="obj-item">
+          <div class="obj-q">"I'll figure it out once I start making real money."</div>
+          <p class="obj-a">The decisions you make in your first 90 days as an attending set the baseline for everything. Most are irreversible. The income is real the day you sign — the planning needs to be there the day before.</p>
+        </div>
+        <div class="obj-item">
+          <div class="obj-q">"You've been reading internet blogs for six months and still haven't done anything."</div>
+          <p class="obj-a">Great start — genuinely. We've reviewed hundreds of physician plans from people who said the same thing. The blogs get most things right. They can't account for your specific situation, your loans, your contract, your spouse's income. That's what we do.</p>
+        </div>
+        <div class="obj-item">
+          <div class="obj-q">"How do I know you won't try to sell me something?"</div>
+          <p class="obj-a">Operating under a fiduciary standard when acting in an advisory capacity, we're required to act in your best interest. Our advisory fee is structured to be consistent regardless of what you buy or invest in. Check our disclosures — it's in writing, not a talking point.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <div class="wrap">
+    <h2 class="cta-h">Year one is happening now.<br><em>Don't look back on it.</em></h2>
+    <p class="cta-sub">The student loan decision. First investments. Disability coverage. Tax strategy for a 5x income jump. These decisions have to happen in the first 90 days — and many physicians make them without a fiduciary in their corner.<br><br>One 30-minute call. No pitch. We'll tell you exactly what to do first.</p>
+    <a href="longview_book.html" class="cta-btn">Schedule an Icebreaker Call &rarr;</a>
+    <div class="cta-note">Focused on Physicians &amp; Dentists</div>
+    <div class="cta-trust">
+      <div class="cta-trust-item">SEC Registered Representatives</div>
+      <div class="cta-trust-item">Student loan decision specialists</div>
+      <div class="cta-trust-item">CFP&reg; professionals</div>
+      <div class="cta-trust-item">No ongoing obligation</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIANCE: required disclaimers (MassMutual review) -->
+<section class="lv-disclaimers" style="max-width:980px;margin:0 auto;padding:28px 20px 4px;font-size:12px;line-height:1.7;color:#7a8694">
+  <p style="margin:0 0 10px">Any discussion of taxes is for general informational purposes only and should not be relied upon as tax or legal advice. Please consult your tax or legal professional regarding your specific situation.</p>
+  <p style="margin:0">Estate Planning services are provided working in conjunction with your Estate Planning Attorney, Tax Attorney and/or CPA. Consult them for specific advice on legal and tax matters.</p>
+</section>
+<!-- LV_CANONICAL_FOOTER -->
+<footer class="lvf" data-canonical-footer="1">
+<style>
+.lvf{background:#0A1A2F;padding:64px 0 0;font-family:'DM Sans',sans-serif;color:#fff}
+.lvf-wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.lvf-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+.lvf-brand{font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:#fff;margin:0 0 6px;line-height:1}
+.lvf-sub{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:10px;display:block}
+.lvf-tag{font-size:12.5px;color:rgba(255,255,255,.4);line-height:1.6;max-width:240px;margin:0}
+.lvf-coltitle{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);margin:0 0 16px}
+.lvf-col a{display:block;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:10px;text-decoration:none;transition:color .18s}
+.lvf-col a:hover{color:rgba(255,255,255,.9)}
+.lvf-crs-row{padding:28px 0;display:flex;justify-content:center;border-bottom:1px solid rgba(255,255,255,.1)}
+.lvf-crs{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#2D6CA2;color:#fff;padding:18px 30px;border-radius:10px;text-decoration:none;min-width:240px;line-height:1.25;box-shadow:0 2px 10px rgba(0,0,0,.22);transition:background .18s,transform .18s;font-family:'DM Sans',sans-serif}
+.lvf-crs:hover{background:#3a7eb8;transform:translateY(-1px)}
+.lvf-crs-top{font-size:14px;font-weight:600;letter-spacing:.06em;color:#fff}
+.lvf-crs-div{display:block;width:80%;height:1px;background:rgba(255,255,255,.5)}
+.lvf-crs-bot{font-size:15px;font-weight:600;color:#fff}
+.lvf-copy{padding:22px 0 6px;font-size:12px;color:rgba(255,255,255,.45);text-align:center;line-height:1.6}
+.lvf-disclosure{padding:6px 0 36px;font-size:11px;color:rgba(255,255,255,.5);line-height:1.65;max-width:920px;margin:0 auto;text-align:center}
+.lvf-bcheck{margin:0 0 14px;font-weight:700;letter-spacing:.06em;color:rgba(255,255,255,.78);font-size:11.5px}
+.lvf-bcheck a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+.lvf-p{margin:0 0 10px;font-style:italic}
+.lvf-p a{color:rgba(255,255,255,.78);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:960px){.lvf-top{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:560px){.lvf-top{grid-template-columns:1fr;gap:28px}}
+</style>
+<div class="lvf-wrap">
+  <div class="lvf-top">
+    <div>
+      <div class="lvf-brand">LongView</div>
+      <span class="lvf-sub">Planning Partners</span>
+      <p class="lvf-tag">Comprehensive Planning for Physicians and Dentists</p>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Services</div>
+      <a href="longview_services.html">Student Loan Strategy</a>
+      <a href="longview_services.html">Tax Planning</a>
+      <a href="longview_services.html">Retirement Planning</a>
+      <a href="longview_services.html">Investment Management</a>
+      <a href="longview_services.html">Insurance Review</a>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Who We Serve</div>
+      <a href="longview_who-we-serve.html">Physicians</a>
+      <a href="longview_who-we-serve.html">Dentists</a>
+      <a href="longview_icp-earlycareer.html">Early Career</a>
+      <a href="longview_icp-laterstage.html">Established</a>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Resources</div>
+      <a href="longview_landing-pslf.html">PSLF Guide</a>
+      <a href="longview_blog.html">Articles</a>
+      <a href="longview_blog.html">All Resources</a>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Contact</div>
+      <a href="mailto:info@longviewplan.com">info@longviewplan.com</a>
+      <a href="tel:9013229114">901-322-9114</a>
+      <a href="longview_book.html">Schedule a Call</a>
+      <a href="longview_licensing.html">Licensing</a>
+      <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener">FINRA BrokerCheck</a>
+    </div>
+  </div>
+  <div class="lvf-crs-row">
+    <a class="lvf-crs" href="https://compass.massmutual.com/file-handler-api-wrapper?url=%2Ffile%2Fblt3e72bd07ab10cfcb" target="_blank" rel="noopener" aria-label="Licensing - Client Relationship Summary (opens in new tab)">
+      <span class="lvf-crs-top">Licensing</span>
+      <span class="lvf-crs-div"></span>
+      <span class="lvf-crs-bot">Client Relationship Summary</span>
+    </a>
+  </div>
+  <div class="lvf-copy">&copy; 2026 LongView Planning Partners &middot; 618 Oakleaf Office Lane, Suite 300, Memphis, TN 38117 &middot; 901-322-9114</div>
+  <div class="lvf-disclosure">
+    <p class="lvf-bcheck">CHECK THE BACKGROUND OF THIS FINANCIAL PROFESSIONAL ON FINRA&rsquo;S <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener">BROKERCHECK</a></p>
+    <p class="lvf-p">Securities, investment advisory and financial planning services are offered through qualified registered representatives of MML Investors Services, LLC, <a href="https://www.sipc.org/" target="_blank" rel="noopener">Member SIPC</a>, 10 Cadillac Drive, Suite 300, Brentwood, TN 37027 (615) 309-6300. LongView Planning Partners is not a subsidiary or affiliate of MML Investors Services, LLC or its affiliated companies. CRN____________</p>
+    <p class="lvf-p">Financial Plan recommendations can be implemented with the advisor of your choosing. Implementation of specific products or services may result in commissions or fees outside of the financial planning fee.*</p>
+  </div>
+</div>
+</footer>
+<!-- /LV_CANONICAL_FOOTER -->
+
+
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>24)},{passive:true});
+  var targets=document.querySelectorAll('.reveal,.reveal-children');
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+  },{threshold:0.01,rootMargin:'0px 0px -20px 0px'});
+  targets.forEach(function(el){io.observe(el);});
+})();
+</script>
+
+</body>
+</html>

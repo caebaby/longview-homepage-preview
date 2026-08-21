@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PSLF in 2026: What Attending Physicians Need to Recalculate Right Now — LongView Planning Partners</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & ROOT ─────────────────────────────────────────── */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --lv-navy:#0773BB;--lv-dark:#054A82;--lv-deeper:#032F57;
+  --lv-sky:#38B0E3;--lv-light:#8CD7F7;
+  --lv-gray:#939598;--lv-gl:#D1D2D4;--lv-off:#F4F8FC;
+  --ink:#0F1923;--body:#3D4A58;
+  --max:1240px;
+  --grad:linear-gradient(95deg,#0773BB 0%,#38B0E3 100%);
+  --trans:.22s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--ink);background:#fff;min-width:320px;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 52px}
+
+/* ── PULSE ANIMATION ──────────────────────────────────────── */
+@keyframes ctaPulse{
+  0%{box-shadow:0 0 0 0 rgba(7,115,187,.4)}
+  70%{box-shadow:0 0 0 10px rgba(7,115,187,0)}
+  100%{box-shadow:0 0 0 0 rgba(7,115,187,0)}
+}
+.btn-primary:not(:hover){animation:ctaPulse 2.4s ease-out infinite}
+
+/* ── TOP BAR ───────────────────────────────────────────────── */
+.topbar{background:var(--lv-deeper)}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:36px}
+.topbar span{font-size:11.5px;color:rgba(255,255,255,.52)}
+.topbar .c{color:rgba(255,255,255,.88);font-weight:500;display:flex;align-items:center;gap:18px}
+.topbar .c a{color:inherit;opacity:.88;transition:opacity var(--trans)}
+.topbar .c a:hover{opacity:1}
+.tb-sep{width:1px;height:12px;background:rgba(255,255,255,.2)}
+
+/* ── NAV ───────────────────────────────────────────────────── */
+.nav-out{background:#fff;border-bottom:1px solid rgba(209,210,212,.6);position:sticky;top:0;z-index:200;transition:box-shadow .3s}
+.nav-out.scrolled{box-shadow:0 4px 32px rgba(5,74,130,.1)}
+.nav-out .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;flex-direction:column;flex-shrink:0;cursor:pointer}
+.logo-name{font-family:'Libre Baskerville',serif;font-size:22px;font-weight:700;color:var(--lv-navy);letter-spacing:-.02em;line-height:1}
+.logo-sub{font-size:9.5px;font-family:'DM Sans',sans-serif;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--lv-gray);margin-top:4px}
+.nav-links{display:flex;gap:6px;align-items:center}
+.nl{font-size:13.5px;color:#5a6472;padding:8px 14px;border-radius:4px;cursor:pointer;transition:color var(--trans);position:relative;white-space:nowrap}
+.nl::after{content:'';position:absolute;bottom:4px;left:14px;right:14px;height:1.5px;background:var(--lv-navy);transform:scaleX(0);transform-origin:left;transition:transform .28s}
+.nl:hover{color:var(--lv-navy)}
+.nl:hover::after,.nl.active::after{transform:scaleX(1)}
+.nl.active{color:var(--lv-navy)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.ncta{font-size:13px;font-weight:600;padding:11px 24px;background:var(--lv-navy);color:#fff;border-radius:4px;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background var(--trans),box-shadow var(--trans),transform var(--trans)}
+.ncta:hover{background:var(--lv-dark);box-shadow:0 6px 20px rgba(7,115,187,.3);transform:translateY(-1px)}
+
+/* ── ARTICLE HERO ──────────────────────────────────────────── */
+.art-hero{background:linear-gradient(130deg,#021E3A 0%,var(--lv-deeper) 50%,var(--lv-dark) 100%);position:relative;overflow:hidden;padding:56px 0 48px}
+.art-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 1px);background-size:26px 26px}
+.art-hero::after{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(-45deg,transparent,transparent 16px,rgba(255,255,255,.016) 16px,rgba(255,255,255,.016) 17px)}
+.art-hero-in{position:relative;z-index:2;max-width:800px}
+.cat-pill{display:inline-flex;align-items:center;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--lv-sky);padding:5px 14px;border-radius:20px;margin-bottom:20px}
+.art-headline{font-family:'Libre Baskerville',serif;font-size:40px;font-weight:700;color:#fff;line-height:1.12;letter-spacing:-.025em;margin-bottom:18px}
+.art-subhead{font-size:16px;color:rgba(255,255,255,.68);line-height:1.72;font-weight:300;margin-bottom:28px;max-width:680px}
+.art-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.art-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--lv-navy),var(--lv-sky));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0;border:2px solid rgba(255,255,255,.25)}
+.art-author-info{display:flex;flex-direction:column;gap:2px}
+.art-author-name{font-size:13px;font-weight:600;color:#fff}
+.art-date{font-size:12px;color:rgba(255,255,255,.5)}
+.art-compliance-pill{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;background:rgba(255,255,255,.06)}
+
+/* ── ARTICLE LAYOUT ────────────────────────────────────────── */
+.art-layout{display:grid;grid-template-columns:1fr 340px;gap:52px;padding:60px 0 80px;align-items:start}
+
+/* ── ARTICLE BODY ──────────────────────────────────────────── */
+.art-body{min-width:0}
+.art-body h2{font-family:'Libre Baskerville',serif;font-size:24px;font-weight:700;color:var(--ink);line-height:1.3;letter-spacing:-.02em;margin-top:40px;margin-bottom:16px;padding-bottom:6px;border-bottom:1px solid var(--lv-gl)}
+.art-body h2:first-child{margin-top:0}
+.art-body p{font-size:16px;color:var(--body);line-height:1.85;margin-bottom:18px;font-weight:300}
+.art-body strong{font-weight:600;color:var(--ink)}
+.art-body ol{margin:0 0 20px 20px;display:flex;flex-direction:column;gap:12px}
+.art-body ol li{font-size:16px;color:var(--body);line-height:1.75;font-weight:300;padding-left:4px}
+.art-body ol li strong{color:var(--ink)}
+.art-body ul{margin:0 0 20px 20px;display:flex;flex-direction:column;gap:10px}
+.art-body ul li{font-size:15.5px;color:var(--body);line-height:1.7;font-weight:300}
+
+/* Pull quote */
+.pull-quote{border-left:4px solid var(--lv-sky);padding:24px 28px;background:rgba(7,115,187,.04);border-radius:0 8px 8px 0;margin:32px 0;position:relative}
+.pull-quote::before{content:'\201C';font-family:'Libre Baskerville',serif;font-size:64px;color:var(--lv-sky);line-height:.7;opacity:.35;position:absolute;top:16px;left:20px}
+.pull-quote-text{font-family:'Libre Baskerville',serif;font-size:20px;font-style:italic;color:#2a3240;line-height:1.68;padding-left:36px}
+.pull-quote-attr{font-size:12px;color:var(--lv-gray);margin-top:10px;padding-left:36px;font-weight:500}
+
+/* Compliance callout */
+.compliance-callout{background:#FFF9EC;border:1px solid #E8D98C;border-left:4px solid #C9A800;border-radius:0 8px 8px 0;padding:20px 24px;margin-top:40px}
+.compliance-callout-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8a6a00;margin-bottom:8px}
+.compliance-callout-text{font-size:13px;color:#5a4a00;line-height:1.65}
+.compliance-callout .cp{display:inline;font-size:10px;background:rgba(201,168,0,.15);border:1px dashed #C9A800;padding:1px 7px;border-radius:3px;color:#8a6a00}
+
+/* ── SIDEBAR ───────────────────────────────────────────────── */
+.art-sidebar{position:sticky;top:100px;display:flex;flex-direction:column;gap:20px}
+.sidebar-card{background:#fff;border:1px solid var(--lv-gl);border-top:3px solid var(--lv-sky);border-radius:8px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.sidebar-card-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lv-sky)}
+.sidebar-author-row{display:flex;align-items:center;gap:12px}
+.sidebar-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--lv-navy),var(--lv-sky));display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0}
+.sidebar-author-name{font-size:14px;font-weight:600;color:var(--ink)}
+.sidebar-bio{font-size:13px;color:var(--body);line-height:1.65;font-weight:300}
+.sidebar-cta{display:flex;align-items:center;justify-content:center;gap:6px;padding:11px 18px;background:var(--lv-navy);color:#fff;border-radius:5px;font-size:13px;font-weight:600;cursor:pointer;transition:background var(--trans),transform var(--trans);text-align:center}
+.sidebar-cta:hover{background:var(--lv-dark);transform:translateY(-1px)}
+.sidebar-lm-title{font-size:15px;font-weight:700;color:var(--ink);line-height:1.35}
+.sidebar-lm-bullets{display:flex;flex-direction:column;gap:8px}
+.sidebar-lm-bullet{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--body);line-height:1.5;font-weight:300}
+.sidebar-lm-bullet-dot{width:5px;height:5px;border-radius:50%;background:var(--lv-sky);flex-shrink:0;margin-top:6px}
+.sidebar-lm-input{height:42px;border:1.5px solid var(--lv-gl);border-radius:5px;padding:0 14px;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--lv-off);width:100%;transition:border-color var(--trans)}
+.sidebar-lm-input:focus{outline:none;border-color:var(--lv-navy)}
+.sidebar-lm-btn{width:100%;height:42px;background:var(--lv-sky);color:#fff;border:none;border-radius:5px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background var(--trans)}
+.sidebar-lm-btn:hover{background:var(--lv-navy)}
+.sidebar-related-title{font-size:13.5px;font-weight:600;color:var(--ink)}
+.related-item{font-size:13px;color:var(--body);line-height:1.5;padding:10px 0;border-bottom:1px solid var(--lv-gl);display:flex;flex-direction:column;gap:4px}
+.related-item:last-child{border-bottom:none}
+.related-coming{font-size:10px;color:var(--lv-gray);text-transform:uppercase;letter-spacing:.1em;font-weight:500}
+
+/* ── AUTHOR BIO STRIP ──────────────────────────────────────── */
+.author-bio-strip{background:var(--lv-off);border-top:1px solid var(--lv-gl);border-bottom:1px solid var(--lv-gl);padding:48px 0}
+.author-bio-in{display:flex;align-items:flex-start;gap:28px}
+.author-bio-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--lv-navy),var(--lv-sky));display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#fff;flex-shrink:0}
+.author-bio-content{flex:1}
+.author-bio-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lv-sky);margin-bottom:6px}
+.author-bio-name{font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:10px}
+.author-bio-text{font-size:14.5px;color:var(--body);line-height:1.75;font-weight:300;margin-bottom:10px;max-width:640px}
+.author-bio-cred{font-size:12px;color:var(--lv-gray);margin-bottom:18px}
+.bio-cta{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;background:var(--lv-navy);color:#fff;border-radius:5px;font-size:13.5px;font-weight:600;cursor:pointer;transition:background var(--trans),transform var(--trans)}
+.bio-cta:hover{background:var(--lv-dark);transform:translateY(-1px)}
+
+/* ── RELATED ARTICLES ──────────────────────────────────────── */
+.related-section{padding:64px 0;background:#fff}
+.section-eyebrow{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--lv-sky);margin-bottom:28px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.related-card{background:#fff;border:1px solid var(--lv-gl);border-top:3px solid var(--lv-gl);border-radius:8px;padding:24px;opacity:.55;filter:grayscale(.3);position:relative;display:flex;flex-direction:column;gap:10px}
+.related-badge{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lv-gray);background:var(--lv-off);border:1px solid var(--lv-gl);padding:3px 10px;border-radius:20px;width:fit-content}
+.related-lock{position:absolute;top:14px;right:14px;width:18px;height:18px;color:var(--lv-gray)}
+.related-card-title{font-size:14.5px;font-weight:600;color:var(--ink);line-height:1.45}
+.related-card-cat{font-size:11px;color:var(--lv-gray)}
+
+/* ── ARTICLE CTA STRIP ─────────────────────────────────────── */
+.art-cta-strip{background:linear-gradient(135deg,#021E3A 0%,var(--lv-dark) 60%,var(--lv-navy) 100%);padding:72px 0;text-align:center;position:relative;overflow:hidden}
+.art-cta-strip::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.05) 1px,transparent 1px);background-size:24px 24px}
+.art-cta-in{position:relative;z-index:2;max-width:600px;margin:0 auto}
+.art-cta-headline{font-family:'Libre Baskerville',serif;font-size:32px;font-weight:700;color:#fff;line-height:1.2;letter-spacing:-.02em;margin-bottom:12px}
+.art-cta-sub{font-size:15.5px;color:rgba(255,255,255,.65);line-height:1.7;font-weight:300;margin-bottom:28px}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:700;padding:16px 36px;background:#fff;color:var(--lv-dark);border-radius:5px;cursor:pointer;letter-spacing:.01em;transition:transform var(--trans),box-shadow var(--trans);text-decoration:none}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(0,0,0,.28)}
+
+/* ── FOOTER ────────────────────────────────────────────────── */
+.footer-pre{background:var(--lv-deeper);padding:22px 0;border-top:1px solid rgba(255,255,255,.07)}
+.footer-pre .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.footer-pre-copy{font-size:13px;color:rgba(255,255,255,.45)}
+.footer-pre-contact{display:flex;align-items:center;gap:24px;font-size:13px;color:rgba(255,255,255,.7);font-weight:500}
+.footer-pre-contact a{color:inherit;transition:color var(--trans)}
+.footer-pre-contact a:hover{color:#fff}
+.footer-out{background:#0D0D0D}
+.footer-out .wrap{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px;padding-top:36px;padding-bottom:36px}
+.footer-logo-name{font-family:'Libre Baskerville',serif;font-size:18px;font-weight:700;color:#fff;line-height:1}
+.footer-logo-sub{font-size:9px;font-family:'DM Sans',sans-serif;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#555;display:block;margin-top:5px}
+.footer-links{display:flex;gap:24px;font-size:12px;color:#666;flex-wrap:wrap}
+.footer-links a{transition:color var(--trans)}
+.footer-links a:hover{color:#999}
+.footer-disc{font-size:11px;color:#444;max-width:480px;line-height:1.65;text-align:right}
+
+/* ── SCROLL REVEAL ─────────────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1);will-change:opacity,transform;backface-visibility:hidden}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ── MOBILE ────────────────────────────────────────────────── */
+@media(max-width:768px){
+  .wrap{padding:0 20px}
+  .topbar .wrap{flex-direction:column;height:auto;padding-top:8px;padding-bottom:8px;gap:4px;text-align:center}
+  .nav-links{display:none}
+  .nav-out .wrap{height:64px}
+  .art-headline{font-size:28px}
+  .art-layout{grid-template-columns:1fr;gap:0}
+  .art-sidebar{position:static;order:2;margin-top:48px}
+  .related-grid{grid-template-columns:1fr}
+  .author-bio-in{flex-direction:column;gap:16px}
+  .footer-out .wrap{flex-direction:column;gap:16px}
+  .footer-disc{text-align:left}
+  .art-cta-headline{font-size:24px}
+}
+</style>
+<link rel="stylesheet" href="assets/lv-polish.css">
+</head>
+<body>
+
+<!-- ── TOP BAR ─────────────────────────────────────────────── -->
+<div class="topbar">
+  <div class="wrap">
+    <span>Comprehensive financial planning for physicians &amp; dentists &mdash; Memphis, TN &amp; nationwide</span>
+    <span class="c">
+      <a href="tel:9013229114">901-322-9114</a>
+      <span class="tb-sep"></span>
+      <a href="mailto:info@longviewplan.com">info@longviewplan.com</a>
+    </span>
+  </div>
+</div>
+
+<!-- ── NAV ─────────────────────────────────────────────────── -->
+<div class="nav-out" id="nav">
+  <div class="wrap">
+    <a class="logo" href="longview_homepage_v8.html">
+      <img src="images/longview-logo.png" alt="LongView Planning Partners" style="height:44px;width:auto;display:block">
+    </a>
+    <div class="nav-links">
+      <a class="nl" href="longview_homepage_v8.html">Why LongView</a>
+      <a class="nl" href="longview_services.html">Our Services</a>
+      <a class="nl" href="longview_who-we-serve.html">Who We Serve</a>
+      <a class="nl" href="longview_process.html">Our Process</a>
+      <a class="nl" href="longview_team.html">Our Team</a>
+      <a class="nl active" href="longview_blog.html">Resources</a>
+    </div>
+    <div class="nav-right">
+      <a class="ncta" href="longview_book.html">Schedule an Icebreaker Call &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── ARTICLE HERO ───────────────────────────────────────────── -->
+<div class="art-hero">
+  <div class="wrap art-hero-in">
+    <div class="cat-pill">Student Loans</div>
+    <h1 class="art-headline">PSLF in 2026: What Attending Physicians Need to Recalculate Right Now</h1>
+    <p class="art-subhead">The rules changed. Again. Here&rsquo;s what it means for attending physicians currently on income-driven repayment.</p>
+    <div class="art-meta">
+      <div class="art-avatar">LV</div>
+      <div class="art-author-info">
+        <div class="art-author-name">LongView Planning Partners</div>
+        <div class="art-date">May 2026 &nbsp;&middot;&nbsp; 8 min read</div>
+      </div>
+      <!-- COMPLIANCE: CRN REQUIRED (article) before publishing -->
+      <div class="art-compliance-pill">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Educational content &mdash; not investment advice
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ARTICLE LAYOUT ─────────────────────────────────────────── -->
+<div class="wrap">
+  <div class="art-layout">
+
+    <!-- ── ARTICLE BODY ──────────────────────────────────────── -->
+    <article class="art-body reveal">
+
+      <p>If you finished residency or fellowship in the last five to ten years with six-figure federal student loan balances, there is a strong chance you built a repayment plan around PSLF &mdash; Public Service Loan Forgiveness. And if you enrolled in SAVE (Saving on a Valuable Education), the income-driven repayment plan that replaced REPAYE, your plan may no longer be what you thought it was.</p>
+
+      <p>This article is not legal or tax advice. What it is: a clear-eyed overview of what changed, what questions attending physicians should be asking right now, and what a thoughtful evaluation process looks like. Every physician&rsquo;s loan situation is different. Physicians should work with a qualified advisor &mdash; ideally one with student loan expertise &mdash; before making any repayment changes.</p>
+
+      <h2>What Changed with PSLF and SAVE in 2025&ndash;2026</h2>
+
+      <p>SAVE, the income-driven repayment plan introduced in 2023, was immediately popular among borrowers with high debt relative to income &mdash; a category that describes a significant portion of attending physicians early in their careers. The plan featured lower monthly payments and a provision that prevented interest from capitalizing when payments didn&rsquo;t fully cover monthly interest.</p>
+
+      <p>Beginning in mid-2024, SAVE became the subject of federal legal challenges. Courts placed the plan in administrative limbo, and millions of borrowers who had enrolled in SAVE &mdash; or were in the process of enrolling &mdash; found their accounts in a period of extended forbearance. As of 2026, the status of SAVE remains unresolved at the federal level, with ongoing litigation determining whether the plan survives in its current form, is modified, or is eliminated.</p>
+
+      <p>For PSLF purposes, the critical question is how this period of forbearance is treated toward the 120 qualifying payment count. Physicians working at nonprofit hospitals, academic medical centers, or government health systems who were counting on SAVE payments to accumulate PSLF credits need to verify &mdash; not assume &mdash; how their servicer is counting this period. The rules are not uniform, and guidance continues to evolve.</p>
+
+      <p>Separately, there have been legislative and regulatory discussions at the federal level about changes to income-driven repayment caps, interest subsidies, and the PSLF program itself. The landscape is shifting in ways that affect long-term projections significantly.</p>
+
+      <h2>What Attending Physicians Need to Do Right Now</h2>
+
+      <ol>
+        <li><strong>Log into your servicer account and pull your payment history.</strong> Confirm your current payment count, your current IDR plan, and what plan you&rsquo;re being counted on. If your account shows a forbearance period, document the dates and contact your servicer to confirm whether that period will count toward PSLF. Get confirmation in writing where possible.</li>
+        <li><strong>Verify your employer eligibility.</strong> Not all nonprofit employment qualifies for PSLF. Your hospital or health system may be a 501(c)(3) entity &mdash; or it may not. Submit an updated Employment Certification Form (ECF) for your current employer and confirm your EIN is on the approved list. Physicians who have changed employers since training should re-verify each employer.</li>
+        <li><strong>Model the refinancing alternative with current numbers.</strong> Refinancing out of federal loans into private loans permanently forfeits PSLF eligibility. This is an irreversible decision. That said, if the PSLF path has been materially disrupted, refinancing to a lower interest rate may represent a better financial outcome depending on your balance, income trajectory, and practice setting. Physicians should model both scenarios with current projected income, not income from five years ago.</li>
+        <li><strong>Evaluate your IDR plan options.</strong> If SAVE is no longer viable, the alternative IDR plans &mdash; IBR, PAYE, and ICR &mdash; have different monthly payment calculations, different interest capitalization rules, and different forgiveness timelines. Physicians may want to evaluate which plan produces the best outcome given the current legal environment and their personal situation.</li>
+        <li><strong>Get a Certified Student Loan Professional (CSLP&reg;) review before making any changes.</strong> The consequences of a wrong move on a $250,000&ndash;$400,000 loan balance are significant. A one-time professional review by an advisor with student loan expertise is inexpensive relative to the cost of a misstep.</li>
+      </ol>
+
+      <h2>The Decision Tree: Should You Stay on IDR or Refinance?</h2>
+
+      <p>There is no universal answer to whether an attending physician should stay the PSLF course or refinance into private loans. The decision depends on several variables that are specific to each person.</p>
+
+      <p>Physicians who may want to continue evaluating PSLF typically work at qualifying nonprofit or government employers, have balances that are large relative to their projected income over the next few years, and have already accumulated a meaningful number of qualifying payment counts that would be forfeited by refinancing.</p>
+
+      <p>Physicians who may want to seriously model the refinancing alternative typically practice in for-profit settings, have incomes that have grown significantly beyond what the IDR formula assumes, or have smaller balances where the math of aggressive private refinancing may come out ahead &mdash; especially if interest rates are favorable at the time of application.</p>
+
+      <div class="pull-quote">
+        <div class="pull-quote-text">&ldquo;For physicians carrying $300k+ in loans, this single decision is often worth more than any investment we&rsquo;ll ever make for them.&rdquo;</div>
+        <div class="pull-quote-attr">&mdash; LongView Planning Partners</div>
+      </div>
+
+      <p>The framing we use with physicians: think of the loan decision as a financial planning question, not a math-only question. PSLF has administrative risk &mdash; rules change, servicers make errors, and political environments shift. Refinancing has interest rate risk and the permanent loss of federal protections. Neither path is without tradeoffs. The goal is to make the choice with full information, not partial information.</p>
+
+      <p>Physicians may also want to evaluate the timing of any decision carefully. If your PSLF payment count is low (under 40&ndash;50 payments), the financial case for staying the PSLF course is harder to make in an uncertain regulatory environment. If your count is high (80+ payments), the value of not starting over is very large, and changes to the program may have less impact on your remaining timeline.</p>
+
+      <h2>The Bottom Line</h2>
+
+      <p>The disruption to SAVE and ongoing uncertainty around income-driven repayment plans has created a real, time-sensitive need for attending physicians to review their student loan strategy &mdash; not the strategy they set up in residency, but the strategy that makes sense given today&rsquo;s rules, today&rsquo;s income, and today&rsquo;s loan balances.</p>
+
+      <p>The physicians most at risk are those who set up SAVE or another IDR plan, enrolled in PSLF tracking, and then moved on and stopped actively monitoring. A lot has changed. Physicians should consider scheduling time specifically to review their current situation, preferably with an advisor who understands both the federal loan system and the income trajectory of a physician career.</p>
+
+      <p>LongView Planning Partners employs Certified Student Loan Professionals (CSLP&reg;) who work with physicians on exactly this analysis. We model both paths, identify the gaps in the current plan, and give physicians a clear recommendation &mdash; not a sales pitch, a recommendation. If you are carrying federal student loans and have not reviewed your strategy in the last 12&ndash;18 months, this is the right time.</p>
+
+      <!-- Compliance callout -->
+      <div class="compliance-callout">
+        <div class="compliance-callout-label">Important Disclosure</div>
+        <div class="compliance-callout-text">
+          This article is for educational purposes only and does not constitute investment, tax, or legal advice. Every physician&rsquo;s loan situation is different. Federal student loan rules, IDR plan eligibility, and PSLF requirements change frequently. Physicians should consult with a qualified advisor, attorney, and/or tax professional before making any changes to their student loan repayment strategy.
+          &nbsp;<span class="cp">Full disclaimer &mdash; COMPLIANCE PLACEHOLDER</span>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- ── SIDEBAR ─────────────────────────────────────────── -->
+    <aside class="art-sidebar">
+
+      <!-- Author card -->
+      <div class="sidebar-card">
+        <div class="sidebar-card-label">Written by</div>
+        <div class="sidebar-author-row">
+          <div class="sidebar-avatar">LV</div>
+          <div class="sidebar-author-name">LongView Planning Partners</div>
+        </div>
+        <div class="sidebar-bio">Advisors serving physicians and dentists. Based in Memphis, TN. Nationwide clients.</div>
+        <a class="sidebar-cta" href="longview_book.html">Schedule an Icebreaker Call &rarr;</a>
+      </div>
+
+      <!-- Lead magnet card -->
+      <div class="sidebar-card">
+        <div class="sidebar-card-label">Free Assessment</div>
+        <div class="sidebar-lm-title">Are You On Track? Take the Physician Financial Readiness Check</div>
+        <div class="sidebar-lm-bullets">
+          <div class="sidebar-lm-bullet"><div class="sidebar-lm-bullet-dot"></div><span>See where you stand across debt, taxes, insurance, and retirement &mdash; in 3 minutes</span></div>
+          <div class="sidebar-lm-bullet"><div class="sidebar-lm-bullet-dot"></div><span>Personalized to your career stage: resident through later-career attending</span></div>
+          <div class="sidebar-lm-bullet"><div class="sidebar-lm-bullet-dot"></div><span>Free. No email required. Instant results.</span></div>
+        </div>
+        <a class="sidebar-lm-btn" href="longview_post-assessment.html" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;text-decoration:none;line-height:42px">See If You&rsquo;re On Track &rarr;</a>
+      </div>
+
+      <!-- Related articles -->
+      <div class="sidebar-card">
+        <div class="sidebar-related-title">Related Articles</div>
+        <div class="related-item">
+          <span>The 5 Financial Mistakes Attendings Make in Their First Year Out of Residency</span>
+          <span class="related-coming">Coming soon</span>
+        </div>
+        <div class="related-item">
+          <span>Filing Is Not Planning: Why High-Income Physicians Overpay in Taxes Every Year</span>
+          <span class="related-coming">Coming soon</span>
+        </div>
+        <div class="related-item">
+          <span>The Physician&rsquo;s Guide to Disability Insurance (Own-Occupation vs. Any-Occupation)</span>
+          <span class="related-coming">Coming soon</span>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- ── AUTHOR BIO STRIP ───────────────────────────────────────── -->
+<div class="author-bio-strip">
+  <div class="wrap">
+    <div class="author-bio-in reveal">
+      <div class="author-bio-avatar">LV</div>
+      <div class="author-bio-content">
+        <div class="author-bio-label">About the author</div>
+        <div class="author-bio-name">LongView Planning Partners</div>
+        <div class="author-bio-text">LongView Planning Partners is a financial planning firm serving physicians and dentists. We work with clients at every career stage &mdash; from residency through retirement &mdash; on student loans, tax strategy, investment management, and comprehensive financial planning.</div>
+        <div class="author-bio-cred">SEC Registered Representatives &nbsp;&middot;&nbsp; Certified Student Loan Professionals (CSLP&reg;) on staff</div>
+        <a class="bio-cta" href="longview_book.html">Schedule an Icebreaker Call &rarr;</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── RELATED ARTICLES ───────────────────────────────────────── -->
+<div class="related-section">
+  <div class="wrap reveal">
+    <div class="section-eyebrow">You might also like</div>
+    <div class="related-grid">
+      <div class="related-card">
+        <svg class="related-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <div class="related-badge">Getting Started</div>
+        <div class="related-card-title">The 5 Financial Mistakes Attendings Make in Their First Year Out of Residency</div>
+        <div class="related-card-cat">Coming soon</div>
+      </div>
+      <div class="related-card">
+        <svg class="related-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <div class="related-badge">Tax Planning</div>
+        <div class="related-card-title">Filing Is Not Planning: Why High-Income Physicians Overpay in Taxes Every Year</div>
+        <div class="related-card-cat">Coming soon</div>
+      </div>
+      <div class="related-card">
+        <svg class="related-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <div class="related-badge">Retirement</div>
+        <div class="related-card-title">What &lsquo;Work-Optional&rsquo; Actually Looks Like for Physicians</div>
+        <div class="related-card-cat">Coming soon</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ARTICLE CTA STRIP ──────────────────────────────────────── -->
+<div class="art-cta-strip">
+  <div class="wrap art-cta-in reveal">
+    <div class="art-cta-headline">Need help navigating your specific loan situation?</div>
+    <p class="art-cta-sub">Our Certified Student Loan Professionals (CSLP&reg;) work primarily with physicians. 30-minute call, no pitch.</p>
+    <a class="btn-primary" href="longview_book.html">Schedule an Icebreaker Call &rarr;</a>
+  </div>
+</div>
+
+<!-- LV_CANONICAL_FOOTER -->
+<footer class="lvf" data-canonical-footer="1">
+<style>
+.lvf{background:#0A1A2F;padding:64px 0 0;font-family:'DM Sans',sans-serif;color:#fff}
+.lvf-wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.lvf-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+.lvf-brand{font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:#fff;margin:0 0 6px;line-height:1}
+.lvf-sub{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:10px;display:block}
+.lvf-tag{font-size:12.5px;color:rgba(255,255,255,.4);line-height:1.6;max-width:240px;margin:0}
+.lvf-coltitle{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);margin:0 0 16px}
+.lvf-col a{display:block;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:10px;text-decoration:none;transition:color .18s}
+.lvf-col a:hover{color:rgba(255,255,255,.9)}
+.lvf-crs-row{padding:28px 0;display:flex;justify-content:center;border-bottom:1px solid rgba(255,255,255,.1)}
+.lvf-crs{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#2D6CA2;color:#fff;padding:18px 30px;border-radius:10px;text-decoration:none;min-width:240px;line-height:1.25;box-shadow:0 2px 10px rgba(0,0,0,.22);transition:background .18s,transform .18s;font-family:'DM Sans',sans-serif}
+.lvf-crs:hover{background:#3a7eb8;transform:translateY(-1px)}
+.lvf-crs-top{font-size:14px;font-weight:600;letter-spacing:.06em;color:#fff}
+.lvf-crs-div{display:block;width:80%;height:1px;background:rgba(255,255,255,.5)}
+.lvf-crs-bot{font-size:15px;font-weight:600;color:#fff}
+.lvf-copy{padding:22px 0 6px;font-size:12px;color:rgba(255,255,255,.45);text-align:center;line-height:1.6}
+.lvf-disclosure{padding:6px 0 36px;font-size:11px;color:rgba(255,255,255,.5);line-height:1.65;max-width:920px;margin:0 auto;text-align:center}
+.lvf-bcheck{margin:0 0 14px;font-weight:700;letter-spacing:.06em;color:rgba(255,255,255,.78);font-size:11.5px}
+.lvf-bcheck a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+.lvf-p{margin:0 0 10px;font-style:italic}
+.lvf-p a{color:rgba(255,255,255,.78);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:960px){.lvf-top{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:560px){.lvf-top{grid-template-columns:1fr;gap:28px}}
+</style>
+<div class="lvf-wrap">
+  <div class="lvf-top">
+    <div>
+      <div class="lvf-brand">LongView</div>
+      <span class="lvf-sub">Planning Partners</span>
+      <p class="lvf-tag">Comprehensive Planning for Physicians and Dentists</p>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Services</div>
+      <a href="longview_services.html">Student Loan Strategy</a>
+      <a href="longview_services.html">Tax Planning</a>
+      <a href="longview_services.html">Retirement Planning</a>
+      <a href="longview_services.html">Investment Management</a>
+      <a href="longview_services.html">Insurance Review</a>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Who We Serve</div>
+      <a href="longview_who-we-serve.html">Physicians</a>
+      <a href="longview_who-we-serve.html">Dentists</a>
+      <a href="longview_icp-earlycareer.html">Early Career</a>
+      <a href="longview_icp-laterstage.html">Established</a>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Resources</div>
+      <a href="longview_landing-pslf.html">PSLF Guide</a>
+      <a href="longview_blog.html">Articles</a>
+      <a href="longview_blog.html">All Resources</a>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Contact</div>
+      <a href="mailto:info@longviewplan.com">info@longviewplan.com</a>
+      <a href="tel:9013229114">901-322-9114</a>
+      <a href="longview_book.html">Schedule a Call</a>
+      <a href="longview_licensing.html">Licensing</a>
+      <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener">FINRA BrokerCheck</a>
+    </div>
+  </div>
+  <div class="lvf-crs-row">
+    <a class="lvf-crs" href="https://compass.massmutual.com/file-handler-api-wrapper?url=%2Ffile%2Fblt3e72bd07ab10cfcb" target="_blank" rel="noopener" aria-label="Licensing - Client Relationship Summary (opens in new tab)">
+      <span class="lvf-crs-top">Licensing</span>
+      <span class="lvf-crs-div"></span>
+      <span class="lvf-crs-bot">Client Relationship Summary</span>
+    </a>
+  </div>
+  <div class="lvf-copy">&copy; 2026 LongView Planning Partners &middot; 618 Oakleaf Office Lane, Suite 300, Memphis, TN 38117 &middot; 901-322-9114</div>
+  <div class="lvf-disclosure">
+    <p class="lvf-bcheck">CHECK THE BACKGROUND OF THIS FINANCIAL PROFESSIONAL ON FINRA&rsquo;S <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener">BROKERCHECK</a></p>
+    <p class="lvf-p">Securities, investment advisory and financial planning services are offered through qualified registered representatives of MML Investors Services, LLC, <a href="https://www.sipc.org/" target="_blank" rel="noopener">Member SIPC</a>, 10 Cadillac Drive, Suite 300, Brentwood, TN 37027 (615) 309-6300. LongView Planning Partners is not a subsidiary or affiliate of MML Investors Services, LLC or its affiliated companies. CRN____________</p>
+    <p class="lvf-p">Financial Plan recommendations can be implemented with the advisor of your choosing. Implementation of specific products or services may result in commissions or fees outside of the financial planning fee.*</p>
+  </div>
+</div>
+</footer>
+<!-- /LV_CANONICAL_FOOTER -->
+
+
+<script>
+(function(){
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){
+    nav.classList.toggle('scrolled', window.scrollY > 24);
+  }, {passive:true});
+
+  var targets = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+  },{threshold:0.01,rootMargin:'0px 0px -20px 0px'});
+  targets.forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>

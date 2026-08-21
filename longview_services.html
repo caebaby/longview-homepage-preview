@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Our Services — LongView Planning Partners</title>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --lv-navy:#0773BB;
+      --lv-dark:#054A82;
+      --lv-deeper:#032F57;
+      --lv-sky:#38B0E3;
+      --lv-light:#8CD7F7;
+      --lv-gray:#939598;
+      --lv-gl:#D1D2D4;
+      --lv-off:#F4F8FC;
+      --ink:#0F1923;
+      --body:#3D4A58;
+      --max:1240px;
+      --trans:.22s cubic-bezier(.4,0,.2,1);
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;color:var(--ink);background:#fff;min-width:320px;-webkit-font-smoothing:antialiased}
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 52px}
+
+    /* NAV */
+    .nav-out{background:#fff;border-bottom:1px solid rgba(209,210,212,.6);position:sticky;top:0;z-index:200;transition:box-shadow .3s}
+    .nav-out.scrolled{box-shadow:0 4px 32px rgba(5,74,130,.1)}
+    .nav-out .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+    .logo{display:flex;flex-shrink:0;cursor:pointer}
+    .nav-links{display:flex;gap:6px;align-items:center}
+    .nl{font-size:13.5px;color:#5a6472;padding:8px 14px;border-radius:4px;cursor:pointer;transition:color var(--trans);white-space:nowrap}
+    .nl:hover,.nl.active{color:var(--lv-navy)}
+    .nl.active{font-weight:600}
+    .ncta{font-size:13px;font-weight:600;padding:11px 24px;background:var(--lv-navy);color:#fff;border-radius:4px;cursor:pointer;white-space:nowrap;transition:background var(--trans),box-shadow var(--trans),transform var(--trans)}
+    .ncta:hover{background:var(--lv-dark);box-shadow:0 6px 20px rgba(7,115,187,.3);transform:translateY(-1px)}
+
+    /* HERO */
+    .hero{background:linear-gradient(135deg,#032F57 0%,#054A82 100%);padding:96px 0 88px;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.055) 1px,transparent 1px);background-size:28px 28px}
+    .hero-in{position:relative;z-index:2;max-width:760px;margin:0 auto;text-align:center}
+    .hero-chip{display:inline-flex;align-items:center;gap:7px;font-size:10.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--lv-light);border:1px solid rgba(140,215,247,.3);padding:5px 14px;border-radius:20px;background:rgba(140,215,247,.08);margin-bottom:28px}
+    .hero-chip-dot{width:5px;height:5px;border-radius:50%;background:var(--lv-sky);flex-shrink:0}
+    .hero-h1{font-family:'Libre Baskerville',serif;font-size:54px;font-weight:700;color:#fff;line-height:1.08;letter-spacing:-.03em;margin-bottom:28px}
+    .hero-h1 em{font-style:italic;background:linear-gradient(105deg,#fff 0%,#c2e8f8 30%,#8CD7F7 60%,#4ab8e8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:inline-block;padding-bottom:0.12em}
+    .hero-sub{font-size:18px;color:rgba(255,255,255,.65);line-height:1.78;font-weight:300;margin:0 auto 44px;max-width:580px}
+    .hero-sub strong{color:rgba(255,255,255,.9);font-weight:500}
+    .hero-cta-group{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:36px}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:17px 34px;background:#fff;color:var(--lv-dark);border-radius:4px;font-size:15px;font-weight:700;cursor:pointer;transition:transform var(--trans),box-shadow var(--trans)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,0,0,.2)}
+    .btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:17px 28px;border:1.5px solid rgba(255,255,255,.28);color:rgba(255,255,255,.8);border-radius:4px;font-size:14px;font-weight:500;cursor:pointer;transition:border-color var(--trans),color var(--trans)}
+    .btn-ghost:hover{border-color:rgba(255,255,255,.65);color:#fff}
+    .hero-trust{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap}
+    .hero-trust-item{font-size:11.5px;color:rgba(255,255,255,.42);letter-spacing:.04em;display:flex;align-items:center;gap:6px}
+    .hero-trust-item::before{content:'';width:4px;height:4px;border-radius:50%;background:rgba(56,176,227,.55);flex-shrink:0}
+    .hero-trust-item:first-child::before{display:none}
+
+    /* SERVICES */
+    .svc-sec{background:#fff;padding:96px 0}
+    .svc-intro{margin-bottom:56px}
+    .svc-intro-label{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--lv-navy);margin-bottom:14px}
+    .svc-intro-h{font-family:'Libre Baskerville',serif;font-size:40px;font-weight:700;color:var(--ink);letter-spacing:-.025em;line-height:1.15;margin-bottom:16px}
+    .svc-intro-sub{font-size:16px;color:var(--body);line-height:1.8;font-weight:300;max-width:600px}
+    .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--lv-gl);border:1px solid var(--lv-gl);border-radius:12px;overflow:hidden}
+    .svc-card{background:#fff;padding:40px 36px;transition:background var(--trans)}
+    .svc-card:hover{background:var(--lv-off)}
+    .svc-icon{width:44px;height:44px;background:rgba(7,115,187,.08);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;flex-shrink:0}
+    .svc-title{font-family:'Libre Baskerville',serif;font-size:18px;font-weight:700;color:var(--ink);margin-bottom:12px;line-height:1.25}
+    .svc-body{font-size:14.5px;color:var(--body);line-height:1.78;font-weight:300}
+    .svc-body strong{color:var(--ink);font-weight:600}
+
+    /* DIFFERENTIATION */
+    .diff-sec{background:var(--lv-deeper);padding:80px 0}
+    .diff-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+    .diff-left h2{font-family:'Libre Baskerville',serif;font-size:36px;font-weight:700;color:#fff;line-height:1.2;margin-bottom:20px;letter-spacing:-.02em}
+    .diff-left p{font-size:16px;color:rgba(255,255,255,.6);line-height:1.8;font-weight:300;margin-bottom:16px}
+    .diff-right{display:flex;flex-direction:column;gap:24px}
+    .diff-item{display:flex;gap:16px;align-items:flex-start}
+    .diff-item-icon{width:36px;height:36px;background:rgba(56,176,227,.15);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .diff-item-h{font-size:15px;font-weight:600;color:#fff;margin-bottom:6px}
+    .diff-item-body{font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;font-weight:300}
+
+    /* ICP SORT */
+    .icp-sort-sec{background:var(--lv-off);border-top:1px solid var(--lv-gl);padding:80px 0}
+    .icp-sort-header{text-align:center;margin-bottom:52px}
+    .icp-sort-eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--lv-navy);margin-bottom:12px}
+    .icp-sort-h{font-family:'Libre Baskerville',serif;font-size:36px;font-weight:700;color:var(--ink);letter-spacing:-.025em;margin-bottom:14px}
+    .icp-sort-sub{font-size:16px;color:var(--body);line-height:1.72;font-weight:300;max-width:560px;margin:0 auto}
+    .icp-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .icp-card{padding:36px 30px;border:1px solid var(--lv-gl);border-radius:12px;background:#fff;box-shadow:0 2px 20px rgba(5,74,130,.05);transition:box-shadow var(--trans),transform var(--trans);display:flex;flex-direction:column}
+    .icp-card:hover{box-shadow:0 8px 36px rgba(5,74,130,.1);transform:translateY(-3px)}
+    .icp-card-badge{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-bottom:16px}
+    .icp-card-badge.early{color:var(--lv-navy);background:rgba(7,115,187,.08);border:1px solid rgba(7,115,187,.2)}
+    .icp-card-badge.peak{color:var(--lv-dark);background:rgba(5,74,130,.08);border:1px solid rgba(5,74,130,.2)}
+    .icp-card-badge.diy{color:var(--lv-deeper);background:rgba(3,47,87,.08);border:1px solid rgba(3,47,87,.18)}
+    .icp-card-h{font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:12px;line-height:1.25}
+    .icp-card-body{font-size:14.5px;color:var(--body);line-height:1.72;font-weight:300;flex:1;margin-bottom:24px}
+    .icp-card-link{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:var(--lv-navy);padding:10px 18px;border-radius:4px;border:2px solid var(--lv-navy);transition:background var(--trans),color var(--trans);align-self:flex-start;cursor:pointer}
+    .icp-card-link:hover{background:var(--lv-navy);color:#fff}
+
+    /* CTA SECTION */
+    .cta-sec{background:var(--lv-deeper);padding:96px 0;text-align:center}
+    .cta-h{font-family:'Libre Baskerville',serif;font-size:48px;font-weight:700;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:20px}
+    .cta-h em{font-style:italic;background:linear-gradient(105deg,#fff 0%,#8CD7F7 60%,#4ab8e8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:inline-block;padding-bottom:0.12em}
+    .cta-sub{font-size:17px;color:rgba(255,255,255,.58);line-height:1.78;font-weight:300;max-width:520px;margin:0 auto 40px}
+    .cta-btn{display:inline-flex;align-items:center;gap:8px;padding:18px 44px;background:#fff;color:var(--lv-dark);border-radius:4px;font-size:16px;font-weight:700;cursor:pointer;transition:transform var(--trans),box-shadow var(--trans)}
+    .cta-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,.25)}
+    .cta-note{font-size:12px;color:rgba(255,255,255,.3);margin-top:16px;letter-spacing:.04em}
+    .cta-trust{display:flex;justify-content:center;gap:28px;margin-top:24px;flex-wrap:wrap}
+    .cta-trust-item{font-size:12px;color:rgba(255,255,255,.35);letter-spacing:.06em;text-transform:uppercase}
+
+    /* FOOTER */
+    .footer-pre{background:var(--lv-deeper);padding:22px 0;border-top:1px solid rgba(255,255,255,.07)}
+    .footer-pre .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+    .footer-pre-copy{font-size:13px;color:rgba(255,255,255,.45)}
+    .footer-pre-contact{display:flex;align-items:center;gap:24px;font-size:13px;color:rgba(255,255,255,.7);font-weight:500}
+    .footer-pre-contact a{color:inherit}
+    .footer-out{background:#0D0D0D}
+    .footer-out .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;padding-top:36px;padding-bottom:36px}
+    .footer-logo-name{font-family:'Libre Baskerville',serif;font-size:18px;font-weight:700;color:#fff}
+    .footer-logo-sub{font-size:9px;font-family:'DM Sans',sans-serif;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#555;display:block;margin-top:5px}
+    .footer-links{display:flex;gap:24px;font-size:12px;color:#666;flex-wrap:wrap}
+    .footer-links a:hover{color:#999}
+    .footer-disc{font-size:11px;color:#444}
+
+    /* REVEAL ANIMATIONS */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1);will-change:opacity,transform;backface-visibility:hidden}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .reveal-children>*{opacity:0;transform:translateY(22px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1);will-change:opacity,transform;backface-visibility:hidden}
+    .reveal-children.visible>*:nth-child(1){opacity:1;transform:translateY(0);transition-delay:.05s}
+    .reveal-children.visible>*:nth-child(2){opacity:1;transform:translateY(0);transition-delay:.12s}
+    .reveal-children.visible>*:nth-child(3){opacity:1;transform:translateY(0);transition-delay:.19s}
+    .reveal-children.visible>*:nth-child(4){opacity:1;transform:translateY(0);transition-delay:.26s}
+    .reveal-children.visible>*:nth-child(5){opacity:1;transform:translateY(0);transition-delay:.33s}
+    .reveal-children.visible>*:nth-child(6){opacity:1;transform:translateY(0);transition-delay:.40s}
+
+    /* RESPONSIVE */
+    @media(max-width:1024px){.svc-grid{grid-template-columns:repeat(2,1fr)}.icp-cards{grid-template-columns:1fr 1fr}}
+    @media(max-width:900px){
+      .wrap{padding:0 28px}
+      .hero-h1{font-size:38px}
+      .svc-intro-h{font-size:30px}
+      .svc-grid{grid-template-columns:1fr}
+      .diff-inner{grid-template-columns:1fr}
+      .icp-cards{grid-template-columns:1fr}
+      .cta-h{font-size:36px}
+      .nav-links{display:none}
+    }
+    @media(max-width:480px){
+      .hero-h1{font-size:32px}
+      .cta-h{font-size:28px}
+    }
+  </style>
+<link rel="stylesheet" href="assets/lv-polish.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <div id="nav" class="nav-out">
+    <div class="wrap">
+      <a href="longview_homepage_v8.html" class="logo">
+        <img src="images/longview-logo.png" alt="LongView Planning Partners" style="height:44px;width:auto;display:block">
+      </a>
+      <nav class="nav-links">
+        <a class="nl" href="longview_homepage_v8.html">Why LongView</a>
+        <a class="nl active" href="longview_services.html">Our Services</a>
+        <a class="nl" href="longview_who-we-serve.html">Who We Serve</a>
+        <a class="nl" href="longview_process.html">Our Process</a>
+        <a class="nl" href="longview_team.html">Our Team</a>
+        <a class="nl" href="longview_blog.html">Resources</a>
+      </nav>
+      <a href="longview_book.html" class="ncta">Schedule an Icebreaker Call &rarr;</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-in">
+        <div class="hero-chip">
+          <span class="hero-chip-dot"></span>
+          What We Do
+        </div>
+        <h1 class="hero-h1">Everything your financial life needs.<br><em>Nothing it doesn't.</em></h1>
+        <p class="hero-sub">We don't manage just your portfolio. We manage the whole picture — because for physicians and dentists, <strong>the whole picture can be complicated.</strong></p>
+        <div class="hero-cta-group">
+          <a href="longview_book.html" class="btn-primary">Schedule an Icebreaker Call &rarr;</a>
+          <a href="longview_who-we-serve.html" class="btn-ghost">See who we work with</a>
+        </div>
+        <div class="hero-trust">
+          <span class="hero-trust-item">SEC Registered Representatives</span>
+          <span class="hero-trust-item">Focused on Physicians &amp; Dentists</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="svc-sec">
+    <div class="wrap">
+      <div class="svc-intro reveal">
+        <div class="svc-intro-label">What We Cover</div>
+        <h2 class="svc-intro-h">The most common areas where physicians lose money.</h2>
+        <p class="svc-intro-sub">We mapped the financial picture of a physician or dentist from training to retirement — and built a process that addresses the areas where the wrong decision is expensive.</p>
+      </div>
+      <div class="svc-grid reveal-children">
+
+        <!-- Card 1: Student Loans -->
+        <div class="svc-card">
+          <div class="svc-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--lv-navy)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3.33 2 8.67 2 12 0v-5"/>
+            </svg>
+          </div>
+          <h3 class="svc-title">Student Loan Strategy</h3>
+          <div class="svc-body">
+            PSLF, IDR, SAVE, refinancing — we model the scenarios that matter and build a repayment strategy that survives rule changes. For physicians carrying significant student debt, this single decision is often one of the most consequential financial choices we'll work on together.
+            <em style="font-size:12px;color:var(--lv-navy);font-weight:500;display:block;margin-top:10px">Especially urgent: the PSLF/SAVE landscape changed. If your strategy is 2+ years old, it needs a review.</em>
+          </div>
+        </div>
+
+        <!-- Card 2: Tax Planning -->
+        <div class="svc-card">
+          <div class="svc-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--lv-navy)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+            </svg>
+          </div>
+          <h3 class="svc-title">Tax Planning (Not Just Filing)</h3>
+          <div class="svc-body">
+            <strong>Filing is not planning.</strong> We work year-round to reduce your tax burden — income, practice, investments, estate — not just document it in April. Many physicians with attending-level income may be over-paying taxes from strategies they don't know to use.
+          </div>
+        </div>
+
+        <!-- Card 3: Retirement -->
+        <div class="svc-card">
+          <div class="svc-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--lv-navy)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h3 class="svc-title">Retirement &amp; Financial Independence</h3>
+          <div class="svc-body">
+            Not "retire and play golf." Work-optional — so you can practice medicine on your own terms, not because you have to. We model your number, your timeline, and the exact savings rate needed to get there.
+          </div>
+        </div>
+
+        <!-- Card 4: Investment Management -->
+        <div class="svc-card">
+          <div class="svc-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--lv-navy)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+            </svg>
+          </div>
+          <!-- COMPLIANCE: confirm each listed service is offered (reviewer queried one service) -->
+          <h3 class="svc-title">Investment Management</h3>
+          <div class="svc-body">
+            Evidence-based and built around your plan and your outcome — not around any particular product, with a focus on keeping investment costs transparent. Asset allocation, tax-location strategy, and coordination across every account you own.
+          </div>
+        </div>
+
+        <!-- Card 5: Insurance -->
+        <div class="svc-card">
+          <div class="svc-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--lv-navy)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3 class="svc-title">Insurance &amp; Risk Analysis</h3>
+          <div class="svc-body">
+            Disability. Malpractice. Life. Umbrella. We review what you have, flag what you're missing, and help you structure disability and life coverage the right way for your situation. As your advisor, our recommendation is based on your situation, not on any product outcome. (Most attending physicians are under-insured on both life and disability.)
+          </div>
+        </div>
+
+        <!-- Card 6: Practice Transitions -->
+        <div class="svc-card">
+          <div class="svc-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--lv-navy)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+              <line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/>
+            </svg>
+          </div>
+          <h3 class="svc-title">Practice Transitions &amp; Business Planning</h3>
+          <div class="svc-body">
+            Partnership buy-ins, PE acquisitions, practice sales — when one of these events happens, your personal financial picture changes overnight. We help you plan around the outcome: how to allocate proceeds, manage the tax impact, and fit the new reality into your long-term plan.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFFERENTIATION SECTION -->
+  <section class="diff-sec">
+    <div class="wrap">
+      <div class="diff-inner">
+        <div class="diff-left reveal">
+          <h2>Why "comprehensive" isn't a marketing word for us</h2>
+          <p>Most advisors specialize in one or two areas — usually the ones that generate the most revenue. You end up with a great investment portfolio, no tax strategy, and a student loan plan that made sense in 2019.</p>
+          <p>We mapped every area where physicians lose money — and built a practice that addresses all of them. Not because it makes for a good pitch. Because leaving one area unaddressed usually costs more than everything else combined.</p>
+        </div>
+        <div class="diff-right reveal-children">
+
+          <div class="diff-item">
+            <div class="diff-item-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--lv-sky)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <div>
+              <div class="diff-item-h">Our advisory fee is structured to be consistent.</div>
+              <div class="diff-item-body">Our advisory fee is structured to be consistent and is not based on the particular investments or products chosen. That means we can tell you when you may not need more insurance, when a lower-cost fund may be better, or when doing nothing may be the right call.</div>
+            </div>
+          </div>
+
+          <div class="diff-item">
+            <div class="diff-item-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--lv-sky)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div>
+              <div class="diff-item-h">Focused on physicians and dentists</div>
+              <div class="diff-item-body">Not "high earners." Not "professionals." We work with people who trained for a decade, carry significant debt, operate in complex tax situations, and have a career arc unlike any other.</div>
+            </div>
+          </div>
+
+          <div class="diff-item">
+            <div class="diff-item-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--lv-sky)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="diff-item-h">A fiduciary standard, in an advisory capacity</div>
+              <div class="diff-item-body">When acting in an advisory capacity, we're required to act in your interest. Our compensation is structured to be consistent regardless of what you buy, how much you invest, or which products you choose.</div>
+            </div>
+          </div>
+
+          <div class="diff-item">
+            <div class="diff-item-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--lv-sky)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="diff-item-h">The whole picture, always</div>
+              <div class="diff-item-body">We don't compartmentalize your financial life into the parts that are convenient to advise on. Every service we offer is designed to work with every other one.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ICP PATHS SECTION -->
+  <section class="icp-sort-sec">
+    <div class="wrap">
+      <div class="icp-sort-header reveal">
+        <div class="icp-sort-eyebrow">Where You Are</div>
+        <h2 class="icp-sort-h">Find your starting point.</h2>
+        <p class="icp-sort-sub">The right services depend on where you are in your career. What's urgent at year 2 is different from year 12.</p>
+      </div>
+      <div class="icp-cards reveal-children">
+
+        <div class="icp-card">
+          <span class="icp-card-badge early">Early Career</span>
+          <h3 class="icp-card-h">Building the right foundation</h3>
+          <p class="icp-card-body">New attending or finishing residency. The income is real — and so are the student loans, the insurance gaps, and the tax decisions. Getting this right in years 1–5 compounds for decades.</p>
+          <a href="longview_icp-earlycareer.html" class="icp-card-link">I'm early career &rarr;</a>
+        </div>
+
+        <div class="icp-card">
+          <span class="icp-card-badge peak">Peak Earning Years</span>
+          <h3 class="icp-card-h">Making it all work together</h3>
+          <p class="icp-card-body">Established attending, real wealth, real complexity. Multiple accounts. High tax burden. Maybe a practice entity. Every piece makes sense — but do they work together? Do the numbers actually point to when you can stop?</p>
+          <a href="longview_icp-laterstage.html" class="icp-card-link">I'm established &rarr;</a>
+        </div>
+
+        <div class="icp-card">
+          <span class="icp-card-badge diy">Self-Managing</span>
+          <h3 class="icp-card-h">A second set of eyes</h3>
+          <p class="icp-card-body">You've done the education. Backdoor Roth, custom indexing, PSLF decision. Built a real plan. What you can't have is the perspective of someone who's seen a hundred versions of your situation.</p>
+          <a href="longview_icp-diy.html" class="icp-card-link">I manage my own finances &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER CTA -->
+  <section class="cta-sec">
+    <div class="wrap">
+      <h2 class="cta-h">The Icebreaker Call.<br><em>No pitch. No commitment. Just clarity.</em></h2>
+      <p class="cta-sub">Physicians and dentists are our primary focus. We've seen many versions of your financial situation — and many versions of what goes wrong. That's what makes the first 30 minutes useful whether you become a client or not.<br><br>Operating under a fiduciary standard when acting in an advisory capacity, our advisory fee is structured to be consistent regardless of what you buy, what you invest, or what you choose — so the advice is, too.</p>
+      <a href="longview_book.html" class="cta-btn">Schedule an Icebreaker Call &rarr;</a>
+      <p class="cta-note">Focused on Physicians &amp; Dentists</p>
+      <div class="cta-trust">
+        <span class="cta-trust-item">CFP&reg; professionals</span>
+        <span class="cta-trust-item">SEC Registered Representatives</span>
+        <span class="cta-trust-item">30-min, no pressure</span>
+      </div>
+    </div>
+  </section>
+
+<!-- LV_CANONICAL_FOOTER -->
+<footer class="lvf" data-canonical-footer="1">
+<style>
+.lvf{background:#0A1A2F;padding:64px 0 0;font-family:'DM Sans',sans-serif;color:#fff}
+.lvf-wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.lvf-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+.lvf-brand{font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:#fff;margin:0 0 6px;line-height:1}
+.lvf-sub{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:10px;display:block}
+.lvf-tag{font-size:12.5px;color:rgba(255,255,255,.4);line-height:1.6;max-width:240px;margin:0}
+.lvf-coltitle{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);margin:0 0 16px}
+.lvf-col a{display:block;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:10px;text-decoration:none;transition:color .18s}
+.lvf-col a:hover{color:rgba(255,255,255,.9)}
+.lvf-crs-row{padding:28px 0;display:flex;justify-content:center;border-bottom:1px solid rgba(255,255,255,.1)}
+.lvf-crs{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#2D6CA2;color:#fff;padding:18px 30px;border-radius:10px;text-decoration:none;min-width:240px;line-height:1.25;box-shadow:0 2px 10px rgba(0,0,0,.22);transition:background .18s,transform .18s;font-family:'DM Sans',sans-serif}
+.lvf-crs:hover{background:#3a7eb8;transform:translateY(-1px)}
+.lvf-crs-top{font-size:14px;font-weight:600;letter-spacing:.06em;color:#fff}
+.lvf-crs-div{display:block;width:80%;height:1px;background:rgba(255,255,255,.5)}
+.lvf-crs-bot{font-size:15px;font-weight:600;color:#fff}
+.lvf-copy{padding:22px 0 6px;font-size:12px;color:rgba(255,255,255,.45);text-align:center;line-height:1.6}
+.lvf-disclosure{padding:6px 0 36px;font-size:11px;color:rgba(255,255,255,.5);line-height:1.65;max-width:920px;margin:0 auto;text-align:center}
+.lvf-bcheck{margin:0 0 14px;font-weight:700;letter-spacing:.06em;color:rgba(255,255,255,.78);font-size:11.5px}
+.lvf-bcheck a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+.lvf-p{margin:0 0 10px;font-style:italic}
+.lvf-p a{color:rgba(255,255,255,.78);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:960px){.lvf-top{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:560px){.lvf-top{grid-template-columns:1fr;gap:28px}}
+</style>
+<div class="lvf-wrap">
+  <div class="lvf-top">
+    <div>
+      <div class="lvf-brand">LongView</div>
+      <span class="lvf-sub">Planning Partners</span>
+      <p class="lvf-tag">Comprehensive Planning for Physicians and Dentists</p>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Services</div>
+      <a href="longview_services.html">Student Loan Strategy</a>
+      <a href="longview_services.html">Tax Planning</a>
+      <a href="longview_services.html">Retirement Planning</a>
+      <a href="longview_services.html">Investment Management</a>
+      <a href="longview_services.html">Insurance Review</a>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Who We Serve</div>
+      <a href="longview_who-we-serve.html">Physicians</a>
+      <a href="longview_who-we-serve.html">Dentists</a>
+      <a href="longview_icp-earlycareer.html">Early Career</a>
+      <a href="longview_icp-laterstage.html">Established</a>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Resources</div>
+      <a href="longview_landing-pslf.html">PSLF Guide</a>
+      <a href="longview_blog.html">Articles</a>
+      <a href="longview_blog.html">All Resources</a>
+    </div>
+    <div class="lvf-col">
+      <div class="lvf-coltitle">Contact</div>
+      <a href="mailto:info@longviewplan.com">info@longviewplan.com</a>
+      <a href="tel:9013229114">901-322-9114</a>
+      <a href="longview_book.html">Schedule a Call</a>
+      <a href="longview_licensing.html">Licensing</a>
+      <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener">FINRA BrokerCheck</a>
+    </div>
+  </div>
+  <div class="lvf-crs-row">
+    <a class="lvf-crs" href="https://compass.massmutual.com/file-handler-api-wrapper?url=%2Ffile%2Fblt3e72bd07ab10cfcb" target="_blank" rel="noopener" aria-label="Licensing - Client Relationship Summary (opens in new tab)">
+      <span class="lvf-crs-top">Licensing</span>
+      <span class="lvf-crs-div"></span>
+      <span class="lvf-crs-bot">Client Relationship Summary</span>
+    </a>
+  </div>
+  <div class="lvf-copy">&copy; 2026 LongView Planning Partners &middot; 618 Oakleaf Office Lane, Suite 300, Memphis, TN 38117 &middot; 901-322-9114</div>
+  <div class="lvf-disclosure">
+    <p class="lvf-bcheck">CHECK THE BACKGROUND OF THIS FINANCIAL PROFESSIONAL ON FINRA&rsquo;S <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener">BROKERCHECK</a></p>
+    <p class="lvf-p">Securities, investment advisory and financial planning services are offered through qualified registered representatives of MML Investors Services, LLC, <a href="https://www.sipc.org/" target="_blank" rel="noopener">Member SIPC</a>, 10 Cadillac Drive, Suite 300, Brentwood, TN 37027 (615) 309-6300. LongView Planning Partners is not a subsidiary or affiliate of MML Investors Services, LLC or its affiliated companies. CRN____________</p>
+    <p class="lvf-p">Financial Plan recommendations can be implemented with the advisor of your choosing. Implementation of specific products or services may result in commissions or fees outside of the financial planning fee.*</p>
+  </div>
+</div>
+</footer>
+<!-- /LV_CANONICAL_FOOTER -->
+
+
+  <script>
+    (function(){
+      var nav=document.getElementById('nav');
+      window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>24)},{passive:true});
+      var targets=document.querySelectorAll('.reveal,.reveal-children');
+      var io=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+      },{threshold:0.01,rootMargin:'0px 0px -20px 0px'});
+      targets.forEach(function(el){io.observe(el);});
+    })();
+  </script>
+
+</body>
+</html>
