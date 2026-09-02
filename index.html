@@ -349,6 +349,7 @@ img{display:block;max-width:100%}
 .fcta-divider::before{left:0}
 .fcta-divider::after{right:0}
 .fcta-form-wrap{background:#fff;border-radius:16px;padding:48px;max-width:680px;margin:0 auto}
+.fcta-form-trust{margin:0 0 30px;padding:0 0 26px;border-bottom:1px solid var(--lv-gl);color:var(--lv-deeper);font-family:'Libre Baskerville',serif;font-size:clamp(20px,2vw,25px);font-weight:700;line-height:1.3;text-align:center}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
 .form-group{display:flex;flex-direction:column;gap:6px}
 .form-group.full{grid-column:1/-1}
@@ -364,7 +365,7 @@ img{display:block;max-width:100%}
 
 /* ── FOOTER ── */
 .footer{background:var(--lv-deeper);padding:72px 0 0}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.1)}
 .footer-brand-name{font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:6px}
 .footer-tagline{font-size:12.5px;color:rgba(255,255,255,.4);line-height:1.6;max-width:240px;margin-top:4px}
 .footer-col-title{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px}
@@ -527,6 +528,10 @@ img{display:block;max-width:100%}
 .lv-story-control:disabled{cursor:not-allowed}
 .lv-story-control svg{margin-left:5px}
 .lv-story-frame.is-playing .lv-story-control{opacity:0;pointer-events:none}
+.lv-story-frame.has-video .lv-story-control{left:auto;right:18px;top:auto;bottom:18px;transform:none;width:auto;height:44px;padding:0 16px;border-radius:999px;gap:8px;font-size:12px;font-weight:700}
+.lv-story-frame.has-video .lv-story-control:hover{transform:translateY(-2px)}
+.lv-story-frame.has-video .lv-story-control svg{width:18px;height:18px;margin:0}
+.lv-story-frame.is-docked{position:fixed;right:24px;bottom:24px;width:min(360px,calc(100vw - 48px))!important;height:auto!important;z-index:900;margin:0;box-shadow:0 24px 70px rgba(3,47,87,.34)}
 .lv-story-caption{position:absolute;z-index:3;left:28px;bottom:24px;color:#fff;font-size:13px;font-weight:600}
 .lv-story-caption span{display:block;margin-top:5px;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lv-light)}
 .lv-story-frame.has-video .lv-story-caption{opacity:0}
@@ -581,6 +586,21 @@ img{display:block;max-width:100%}
 .lv-reels-head{display:flex;align-items:end;justify-content:space-between;gap:48px;margin-bottom:42px}
 .lv-reels-title{font-family:'Libre Baskerville',serif;font-size:clamp(34px,4vw,50px);line-height:1.12;color:var(--ink);max-width:720px}
 .lv-reels-intro{max-width:370px;color:var(--body);font-size:14px;line-height:1.7}
+.lv-team-preview-sec{padding:clamp(86px,9vw,132px) 0;background:var(--lv-deeper);overflow:hidden}
+.lv-team-preview-head{display:flex;align-items:end;justify-content:space-between;gap:48px;margin-bottom:42px}
+.lv-team-preview-head .eyebrow-label{color:var(--lv-sky)}
+.lv-team-preview-title{max-width:700px;color:#f8fbfd;font-family:'Libre Baskerville',serif;font-size:clamp(34px,4vw,52px);line-height:1.12}
+.lv-team-preview-link{flex:0 0 auto;color:#f8fbfd;font-size:13px;font-weight:700;text-decoration:underline;text-underline-offset:5px}
+.lv-team-preview-viewport{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0 14px,#000 15px calc(100% - 15px),transparent calc(100% - 14px));mask-image:linear-gradient(90deg,transparent 0 14px,#000 15px calc(100% - 15px),transparent calc(100% - 14px))}
+.lv-team-preview-rail{display:flex;width:max-content;animation:lvTeamTicker 58s linear infinite;will-change:transform}
+.lv-team-preview-rail:hover,.lv-team-preview-rail:focus-within{animation-play-state:paused}
+.lv-team-preview-group{display:flex;gap:12px;padding-right:12px}
+.lv-team-person{position:relative;flex:0 0 clamp(150px,13vw,190px);width:clamp(150px,13vw,190px);aspect-ratio:3/4;overflow:hidden;background:#0a416d}
+.lv-team-person img{width:100%;height:100%;object-fit:cover;object-position:center 16%;filter:saturate(.72);transition:transform .65s cubic-bezier(.16,1,.3,1),filter .35s ease}
+.lv-team-person:hover img{transform:scale(1.045);filter:saturate(.95)}
+.lv-team-person span{position:absolute;left:0;right:0;bottom:0;padding:28px 12px 12px;background:linear-gradient(transparent,rgba(3,47,87,.9));color:#f8fbfd;font-size:11px;font-weight:700;letter-spacing:.04em}
+@keyframes lvTeamTicker{to{transform:translateX(-50%)}}
+.cta-sub-emphasis{color:rgba(255,255,255,.86);font-weight:700;text-decoration:underline;text-decoration-color:var(--lv-sky);text-decoration-thickness:2px;text-underline-offset:4px}
 .lv-reel-rail{display:grid;grid-template-columns:repeat(3,minmax(0,300px));justify-content:center;gap:24px}
 .lv-reel{position:relative;aspect-ratio:9/16;overflow:hidden;background:#061f36;border:1px solid rgba(140,215,247,.22);isolation:isolate}
 .lv-reel img{width:100%;height:100%;object-fit:cover;object-position:center 18%;filter:saturate(.68);transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .5s}
@@ -632,6 +652,7 @@ img{display:block;max-width:100%}
   .lv-reel-rail{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px;margin-right:-24px;scrollbar-width:thin}
   .lv-reel{flex:0 0 min(72vw,300px);scroll-snap-align:start}
   .lv-reels-head{display:block}.lv-reels-intro{margin-top:18px}
+  .lv-team-preview-head{display:block}.lv-team-preview-link{display:inline-block;margin-top:20px}
 }
 @media(max-width:640px){
   .lv-hero .h1{font-size:38px}
@@ -640,6 +661,10 @@ img{display:block;max-width:100%}
   .lv-career-line{grid-template-columns:repeat(2,1fr);gap:28px 16px}
   .lv-career-stage:nth-child(n+3)::before{top:-8px}
   .lv-story-frame{aspect-ratio:4/5}.lv-story-control{width:74px;height:74px}.lv-story-caption{left:18px;bottom:18px}.lv-story-status{right:14px;top:14px}
+  .lv-story-frame.is-docked{right:12px;bottom:12px;width:calc(100vw - 24px)!important;aspect-ratio:16/9}
+  .lv-team-preview-viewport{overflow-x:auto;-webkit-mask-image:none;mask-image:none;scroll-snap-type:x mandatory}
+  .lv-team-preview-rail{animation:none}
+  .lv-team-person{scroll-snap-align:start}
   .pain-card{grid-template-columns:1fr;gap:10px;padding:26px 0}.pain-body{grid-column:1}.pain-q{font-size:18px}
   .services-grid{grid-template-columns:1fr}.svc-card:nth-child(odd){border-right:0}.svc-card:nth-child(even){padding-left:0}
   .lv-process-visual{min-height:350px}.lv-process-center{width:100px;height:100px;font-size:9px}.lv-process-step{grid-template-columns:52px 1fr}
@@ -651,20 +676,24 @@ img{display:block;max-width:100%}
   .reveal,.reveal-left,.reveal-right,.reveal-scale,.reveal-children>*{opacity:1!important;transform:none!important}
   .lv-hero-poster-still{animation:none;opacity:0}.lv-hero-poster-still:first-child{opacity:1}
   .lv-hero-poster-still img,.lv-orbit-wheel{animation:none!important;transform:none!important}
+  .lv-team-preview-rail{animation:none!important;transform:none!important}
   .lv-process-wheel,.lv-process-marker{transition:none;transform:none!important}.lv-reel img{transition:none}
 }
 </style>
 <link rel="stylesheet" href="assets/lv-polish.css">
-<link rel="stylesheet" href="assets/longview-motion.css">
+<link rel="stylesheet" href="assets/longview-motion.css?v=20260902-icon-align">
 </head>
 <body>
 
 <!-- ── 1. TOP BAR ── -->
 <div class="topbar">
   <div class="wrap">
-    <span class="topbar-left">Memphis, TN &middot; Serving physicians and dentists nationwide</span>
+    <div class="topbar-left lv-location-ticker" aria-label="LongView locations: Memphis, Tennessee; Tupelo, Mississippi; Jackson, Tennessee; and Oxford, Mississippi">
+      <span class="lv-location-label">OUR LOCATIONS</span>
+      <span class="lv-location-window" aria-hidden="true"><span class="lv-location-track">Memphis, TN <b>&middot;</b> Tupelo, MS <b>&middot;</b> Jackson, TN <b>&middot;</b> Oxford, MS <b>&middot;</b> Serving physicians and dentists nationwide <b>&middot;</b>&nbsp;&nbsp; Memphis, TN <b>&middot;</b> Tupelo, MS <b>&middot;</b> Jackson, TN <b>&middot;</b> Oxford, MS <b>&middot;</b> Serving physicians and dentists nationwide <b>&middot;</b></span></span>
+    </div>
     <div class="topbar-right">
-      <a href="mailto:info@longviewplan.com">info@longviewplan.com</a>
+      <a href="mailto:longviewplan@financialguide.com">longviewplan@financialguide.com</a>
       <div class="tb-sep"></div>
       <a href="tel:9013229114">901-322-9114</a>
     </div>
@@ -682,7 +711,6 @@ img{display:block;max-width:100%}
       <a class="nl" href="longview_services.html">Our Services</a>
       <a class="nl" href="longview_process.html">Our Process</a>
       <a class="nl" href="longview_team.html">Our Team</a>
-      <a class="nl" href="longview_blog.html">Resources</a>
     </div>
     <div class="nav-right">
       <a class="ncta" href="longview_book.html">Schedule an Icebreaker Call &rarr;</a>
@@ -697,7 +725,6 @@ img{display:block;max-width:100%}
   <a href="longview_services.html" onclick="toggleMobileNav()">Our Services</a>
   <a href="longview_process.html" onclick="toggleMobileNav()">Our Process</a>
   <a href="longview_team.html" onclick="toggleMobileNav()">Our Team</a>
-  <a href="longview_blog.html" onclick="toggleMobileNav()">Resources</a>
   <a href="longview_book.html" onclick="toggleMobileNav()" style="color:var(--lv-navy);font-weight:600">Schedule an Icebreaker Call &rarr;</a>
 </div>
 
@@ -763,14 +790,14 @@ img{display:block;max-width:100%}
 <section class="lv-story-sec" id="story">
   <div class="wrap">
     <div class="lv-story-frame reveal-scale" data-video-src="media/longview-story-film.mp4" aria-label="LongView story video">
-      <video class="lv-story-video" playsinline preload="none" poster="images/john-prather-card-v4.jpg"></video>
+      <video class="lv-story-video" muted loop playsinline preload="none" poster="images/john-prather-card-v4.jpg"></video>
       <div class="lv-story-posters" aria-hidden="true">
         <figure class="lv-story-poster"><img src="images/john-prather-card-v4.jpg" alt=""></figure>
         <figure class="lv-story-poster"><img src="images/marcus-esposito-v6.jpg" alt=""></figure>
         <figure class="lv-story-poster"><img src="images/louis-holmes-v2.jpg" alt=""></figure>
       </div>
       <button class="lv-story-control" type="button" data-video-control disabled aria-label="LongView story film will be available when approved footage is supplied">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.5 4.5 0 0 0 16.5 12z"/></svg><span class="lv-story-control-text">Unmute</span>
       </button>
     </div>
   </div>
@@ -882,7 +909,7 @@ img{display:block;max-width:100%}
             </div>
             <div class="cta-actions">
               <button class="cta-btn" type="button" id="ctaBtn" onclick="toggleAssess()"></button>
-              <div class="cta-trust">No account required &middot; No spam</div>
+              <div class="cta-trust">No account needed.</div>
             </div>
           </div>
         </div>
@@ -962,7 +989,7 @@ img{display:block;max-width:100%}
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0773BB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
         </div>
         <div class="svc-title">Practice Transitions &amp; Business Planning</div>
-        <p class="svc-body">Partnership buy-in. Ownership. PE acquisition decisions. Selling. These aren't just financial events — they have the potential to restructure everything downstream. <!-- VERIFY WITH CLIENT --><em style="color:var(--lv-gray);font-size:12px">[VERIFY — confirm PE advisory is offered]</em></p>
+        <p class="svc-body">Partnership buy-in. Ownership. Practice transitions. Benefit and retirement plan decisions. These aren't just financial events — they have the potential to restructure everything downstream.</p>
       </div>
     </div>
   </div>
@@ -1046,8 +1073,8 @@ img{display:block;max-width:100%}
 <section class="process-sec" id="process">
   <div class="wrap">
     <div class="reveal">
-      <div class="eyebrow-label">THE FOUR PHASES</div>
-      <h2 class="sec-hl">Our planning process</h2>
+      <div class="eyebrow-label">THE LONGVIEW PROCESS</div>
+      <h2 class="sec-hl">The Wealth Care Guide</h2>
       <p style="font-size:16px;color:var(--body);line-height:1.8;font-weight:300;max-width:520px;margin:16px 0 0">A continuous cycle &mdash; each phase builds on the last and feeds the next. This is not a one-time engagement. It&rsquo;s an ongoing relationship calibrated to wherever you are in your career.</p>
     </div>
     <div class="lv-process-layout">
@@ -1065,26 +1092,39 @@ img{display:block;max-width:100%}
           <span class="lv-dial-node lv-dial-node-4">04</span>
           <span class="lv-dial-orbit"></span>
           <span class="lv-dial-core">
-            <span class="lv-dial-step" id="lvDialStep">01</span>
+            <img class="lv-dial-brandmark" src="images/lpp-symbol.png" alt="">
           </span>
         </div>
       </div>
       <div class="lv-process-list">
-        <div class="lv-process-step is-active" data-wheel-turn="0">
+        <div class="lv-process-step is-active" data-phase="1" data-wheel-turn="0">
           <div class="lv-step-number">01</div>
-          <div><div class="step-label">PHASE 01</div><div class="step-title">Discover</div><div class="lv-step-actions">Explore &middot; Identify<br>Gather &middot; Affirm</div><p class="step-body">We learn everything about you &mdash; income, debts, benefits, goals, and fears. No judgment, no product pitch, no agenda. Just a complete picture of where you are today and where you want to go.</p></div>
+          <div><div class="step-label">PHASE 01</div><div class="step-title">Discovery Interview</div><p class="step-body">Identify and discuss financial objectives &amp; explain the planning process.</p></div>
         </div>
-        <div class="lv-process-step" data-wheel-turn="28">
+        <div class="lv-process-step" data-phase="2" data-wheel-turn="28">
           <div class="lv-step-number">02</div>
-          <div><div class="step-label">PHASE 02</div><div class="step-title">Plan</div><div class="lv-step-actions">Organize &middot; Design<br>Test &middot; Recommend</div><p class="step-body">We build your customized financial plan &mdash; every recommendation tied directly to your goals and values, stress-tested against real scenarios. A clear framework for making financial decisions with confidence, not guesswork.</p></div>
+          <div><div class="step-label">PHASE 02</div><div class="step-title">Data Gathering</div><p class="step-body">Gather all necessary information for the creation of your financial plan.</p></div>
         </div>
-        <div class="lv-process-step" data-wheel-turn="56">
+        <div class="lv-process-step" data-phase="3" data-wheel-turn="56">
           <div class="lv-step-number">03</div>
-          <div><div class="step-label">PHASE 03</div><div class="step-title">Implement*</div><div class="lv-step-actions">Construct &middot; Analyze<br>Execute &middot; Protect</div><p class="step-body">Your plan becomes real. We coordinate with your accountant, estate planning attorney, and other advisors to execute &mdash; taking complexity off your plate so you can focus on medicine.</p><p class="lv-step-footnote">*Financial plan recommendations can be implemented with the advisor of your choosing. Implementation of specific products or services may result in commissions or fees outside of the financial plan fee. Periodic reviews may require a new planning agreement and result in additional fees.</p></div>
+          <div><div class="step-label">PHASE 03</div><div class="step-title">Plan Design</div><p class="step-body">Develop a flexible and customized plan to address each goal.</p></div>
         </div>
-        <div class="lv-process-step" data-wheel-turn="84">
+        <div class="lv-process-step" data-phase="4" data-wheel-turn="84">
           <div class="lv-step-number">04</div>
-          <div><div class="step-label">PHASE 04</div><div class="step-title">Guide</div><div class="lv-step-actions">Monitor &middot; Measure<br>Review &middot; Align</div><p class="step-body">Life changes. Your plan adapts. We meet regularly to keep your financial life aligned as your career, family, and goals evolve. A plan that isn&rsquo;t reviewed is just a document &mdash; this is where the ongoing relationship earns its keep.</p></div>
+          <div><div class="step-label">PHASE 04</div><div class="step-title">Plan Delivery</div><p class="step-body">Present the plan findings and review recommendations.</p></div>
+        </div>
+        <div class="lv-process-extension lv-post-plan">
+          <div class="step-label">ONGOING</div>
+          <h3 class="lv-post-plan-title">Post Plan Delivery</h3>
+          <div class="lv-post-plan-grid">
+            <article class="lv-post-plan-item"><h4>Implement*</h4><span aria-hidden="true"></span><p>Execute the plan recommendations with appropriate financial products.</p></article>
+            <article class="lv-post-plan-item"><h4>Monitor</h4><span aria-hidden="true"></span><p>Evaluate the performance of each financial product relative to its stated objective and make adjustments as needed.</p></article>
+            <article class="lv-post-plan-item"><h4>Review</h4><span aria-hidden="true"></span><p>Update and evaluate your progress toward your financial goals and make necessary changes.</p></article>
+          </div>
+          <p class="lv-step-footnote">*Financial plan recommendations can be implemented with the advisor of your choosing. Implementation of specific products or services may result in commissions or fees outside of the financial plan fee. Periodic reviews may require a new planning agreement and result in additional fees.</p>
+        </div>
+        <div class="lv-process-extension lv-process-extension--wheel reveal-scale" aria-label="The complete financial planning picture">
+          <figure class="lv-financial-wheel lv-financial-wheel--process"><img src="images/longview-financial-planning-wheel-client.png" width="1542" height="1543" alt="Nine connected financial planning areas: objectives, cash flow, debt, asset protection, education, investments, charitable giving, estate planning, and ongoing monitoring"></figure>
         </div>
       </div>
     </div>
@@ -1098,8 +1138,55 @@ img{display:block;max-width:100%}
   </div>
 </section>
 
+<section class="lv-team-preview-sec" aria-labelledby="lvTeamPreviewTitle">
+  <div class="wrap">
+    <div class="lv-team-preview-head reveal">
+      <h2 class="lv-team-preview-title" id="lvTeamPreviewTitle">The Team That Serves You</h2>
+      <a class="lv-team-preview-link" href="longview_team.html">Meet the full team &rarr;</a>
+    </div>
+    <div class="lv-team-preview-viewport reveal">
+      <div class="lv-team-preview-rail">
+        <div class="lv-team-preview-group">
+          <span class="lv-team-person"><img src="images/john-prather-card-v4.jpg" alt="John Prather"><span>John Prather</span></span>
+          <span class="lv-team-person"><img src="images/marcus-esposito-v6.jpg" alt="Marcus Esposito"><span>Marcus Esposito</span></span>
+          <span class="lv-team-person"><img src="images/louis-holmes-v2.jpg" alt="Louis Holmes"><span>Louis Holmes</span></span>
+          <span class="lv-team-person"><img src="images/chelsea-leguenec.jpg" alt="Chelsea LeGuenec"><span>Chelsea LeGuenec</span></span>
+          <span class="lv-team-person"><img src="images/ale-works.jpg" alt="Alexandria Works"><span>Alexandria Works</span></span>
+          <span class="lv-team-person"><img src="images/beau-hill.jpg" alt="Beau Hill"><span>Beau Hill</span></span>
+          <span class="lv-team-person"><img src="images/garrett-east.jpg" alt="Garrett East"><span>Garrett East</span></span>
+          <span class="lv-team-person"><img src="images/jason-schultz.jpg" alt="Jason Schultz"><span>Jason Schultz</span></span>
+          <span class="lv-team-person"><img src="images/john-jordan.jpg" alt="John Jordan"><span>John Jordan</span></span>
+          <span class="lv-team-person"><img src="images/noah-douglas.jpg" alt="Noah Douglas"><span>Noah Douglas</span></span>
+          <span class="lv-team-person"><img src="images/mitchell-marino.jpg" alt="Mitchell Marino"><span>Mitchell Marino</span></span>
+          <span class="lv-team-person"><img src="images/james-prather-gray.jpg" alt="James Prather"><span>James Prather</span></span>
+          <span class="lv-team-person"><img src="images/susan-shorter.jpg" alt="Susan Shorter"><span>Susan Shorter</span></span>
+          <span class="lv-team-person"><img src="images/savannah-reeves.jpg" alt="Savannah Reeves"><span>Savannah Reeves</span></span>
+          <span class="lv-team-person"><img src="images/wilson-yearwood.jpg" alt="Wilson Yearwood"><span>Wilson Yearwood</span></span>
+        </div>
+        <div class="lv-team-preview-group" aria-hidden="true" inert>
+          <span class="lv-team-person"><img src="images/john-prather-card-v4.jpg" alt=""><span>John Prather</span></span>
+          <span class="lv-team-person"><img src="images/marcus-esposito-v6.jpg" alt=""><span>Marcus Esposito</span></span>
+          <span class="lv-team-person"><img src="images/louis-holmes-v2.jpg" alt=""><span>Louis Holmes</span></span>
+          <span class="lv-team-person"><img src="images/chelsea-leguenec.jpg" alt=""><span>Chelsea LeGuenec</span></span>
+          <span class="lv-team-person"><img src="images/ale-works.jpg" alt=""><span>Alexandria Works</span></span>
+          <span class="lv-team-person"><img src="images/beau-hill.jpg" alt=""><span>Beau Hill</span></span>
+          <span class="lv-team-person"><img src="images/garrett-east.jpg" alt=""><span>Garrett East</span></span>
+          <span class="lv-team-person"><img src="images/jason-schultz.jpg" alt=""><span>Jason Schultz</span></span>
+          <span class="lv-team-person"><img src="images/john-jordan.jpg" alt=""><span>John Jordan</span></span>
+          <span class="lv-team-person"><img src="images/noah-douglas.jpg" alt=""><span>Noah Douglas</span></span>
+          <span class="lv-team-person"><img src="images/mitchell-marino.jpg" alt=""><span>Mitchell Marino</span></span>
+          <span class="lv-team-person"><img src="images/james-prather-gray.jpg" alt=""><span>James Prather</span></span>
+          <span class="lv-team-person"><img src="images/susan-shorter.jpg" alt=""><span>Susan Shorter</span></span>
+          <span class="lv-team-person"><img src="images/savannah-reeves.jpg" alt=""><span>Savannah Reeves</span></span>
+          <span class="lv-team-person"><img src="images/wilson-yearwood.jpg" alt=""><span>Wilson Yearwood</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── 10. TESTIMONIALS ── -->
-<section class="testi-sec" id="testimonials">
+<section class="testi-sec" id="testimonials" hidden>
   <div class="wrap">
     <div class="reveal">
       <div class="eyebrow-label">CLIENT RESULTS</div>
@@ -1133,7 +1220,7 @@ img{display:block;max-width:100%}
 </section>
 
 <!-- ── 11. RESOURCES ── -->
-<section class="resources-sec" id="resources">
+<section class="resources-sec" id="resources" hidden>
   <div class="wrap">
     <div class="reveal">
       <div class="eyebrow-label">INSIGHTS</div>
@@ -1196,6 +1283,7 @@ img{display:block;max-width:100%}
     </div>
     <div class="fcta-divider">OR FILL OUT THE FORM BELOW</div>
     <div class="fcta-form-wrap reveal" id="contact-form">
+      <div class="fcta-form-trust">Trusted by doctors for over 30 years</div>
       <form id="clarityForm" onsubmit="handleFormSubmit(event)" novalidate>
         <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
         <input type="text" name="company_url" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
@@ -1251,10 +1339,10 @@ img{display:block;max-width:100%}
 </section>
 
 <!-- ── 13. SHORT-FORM PERSPECTIVES ── -->
-<section class="lv-reels-sec" id="perspectives">
+<section class="lv-reels-sec" id="perspectives" hidden>
   <div class="wrap">
     <div class="lv-reel-rail">
-      <article class="lv-reel reveal" data-video-src="media/reels/john-on-track.mp4" aria-label="John Prather short-form video preview; approved clip pending">
+      <article class="lv-reel reveal" data-pending-video-src="media/reels/john-on-track.mp4" aria-label="John Prather short-form video preview; approved clip pending">
         <img src="images/john-prather-card-v4.jpg" alt="John Prather of LongView Planning Partners">
         <video class="lv-reel-video" playsinline preload="none" poster="images/john-prather-card-v4.jpg"></video>
         <div class="lv-reel-meta"><span>01 &middot; John</span><span>Clip pending</span></div>
@@ -1262,7 +1350,7 @@ img{display:block;max-width:100%}
           <button class="lv-reel-play" type="button" data-video-control disabled aria-label="John's clip will be available when approved footage is supplied"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
         </div>
       </article>
-      <article class="lv-reel reveal" data-video-src="media/reels/marcus-income-to-wealth.mp4" aria-label="Marcus Esposito short-form video preview; approved clip pending">
+      <article class="lv-reel reveal" data-pending-video-src="media/reels/marcus-income-to-wealth.mp4" aria-label="Marcus Esposito short-form video preview; approved clip pending">
         <img src="images/marcus-esposito-v6.jpg" alt="Marcus Esposito of LongView Planning Partners">
         <video class="lv-reel-video" playsinline preload="none" poster="images/marcus-esposito-v6.jpg"></video>
         <div class="lv-reel-meta"><span>02 &middot; Marcus</span><span>Clip pending</span></div>
@@ -1270,7 +1358,7 @@ img{display:block;max-width:100%}
           <button class="lv-reel-play" type="button" data-video-control disabled aria-label="Marcus's clip will be available when approved footage is supplied"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
         </div>
       </article>
-      <article class="lv-reel reveal" data-video-src="media/reels/louis-retirement-number.mp4" aria-label="Louis Holmes short-form video preview; approved clip pending">
+      <article class="lv-reel reveal" data-pending-video-src="media/reels/louis-retirement-number.mp4" aria-label="Louis Holmes short-form video preview; approved clip pending">
         <img src="images/louis-holmes-v2.jpg" alt="Louis Holmes of LongView Planning Partners">
         <video class="lv-reel-video" playsinline preload="none" poster="images/louis-holmes-v2.jpg"></video>
         <div class="lv-reel-meta"><span>03 &middot; Louis</span><span>Clip pending</span></div>
@@ -1287,7 +1375,7 @@ img{display:block;max-width:100%}
 <style>
 .lvf{background:#0A1A2F;padding:64px 0 0;font-family:'DM Sans',sans-serif;color:#fff}
 .lvf-wrap{max-width:1200px;margin:0 auto;padding:0 24px}
-.lvf-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+.lvf-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
 .lvf-brand{font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:#fff;margin:0 0 6px;line-height:1}
 .lvf-sub{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:10px;display:block}
 .lvf-tag{font-size:12.5px;color:rgba(255,255,255,.4);line-height:1.6;max-width:240px;margin:0}
@@ -1331,7 +1419,7 @@ img{display:block;max-width:100%}
       <a href="longview_icp-earlycareer.html">Early Career</a>
       <a href="longview_icp-laterstage.html">Established</a>
     </div>
-    <div class="lvf-col">
+    <div class="lvf-col" hidden>
       <div class="lvf-coltitle">Resources</div>
       <a href="longview_landing-pslf.html">PSLF Guide</a>
       <a href="longview_blog.html">Articles</a>
@@ -1339,7 +1427,7 @@ img{display:block;max-width:100%}
     </div>
     <div class="lvf-col">
       <div class="lvf-coltitle">Contact</div>
-      <a href="mailto:info@longviewplan.com">info@longviewplan.com</a>
+      <a href="mailto:longviewplan@financialguide.com">longviewplan@financialguide.com</a>
       <a href="tel:9013229114">901-322-9114</a>
       <a href="longview_book.html">Schedule a Call</a>
       <a href="longview_licensing.html">Licensing</a>
@@ -1498,13 +1586,13 @@ function handleFormSubmit(e){
     } else {
       btn.disabled = false;
       btn.textContent = origLabel;
-      errEl.textContent = 'Something went wrong sending your request. Please try again or email info@longviewplan.com.';
+      errEl.textContent = 'Something went wrong sending your request. Please try again or email longviewplan@financialguide.com.';
       errEl.style.display = 'block';
     }
   }).catch(function(){
     btn.disabled = false;
     btn.textContent = origLabel;
-    errEl.textContent = 'Network error. Please try again or email info@longviewplan.com.';
+    errEl.textContent = 'Network error. Please try again or email longviewplan@financialguide.com.';
     errEl.style.display = 'block';
   });
 }
@@ -1521,7 +1609,7 @@ var STAGES = [
       {title:'I\'m earning $60k with $300k in debt — where do I even start?',body:'Cash flow during training is brutally tight. The right moves now protect your transition to attending income.',tag:'Cash Flow'}
     ],
     kit:{tag:'Complimentary Guide',title:'The Resident\'s Survival Guide',desc:'',items:[]},
-    cta:{title:'See exactly where your training-year decisions are setting you up.',sub:'10 quick questions. We\'ll show you the gaps most residents don\'t know they have.',btn:'Get my resident snapshot →'},
+    cta:{title:'Know what to prioritize before your first attending paycheck.',sub:'10 quick questions. We\'ll show you the gaps most residents don\'t know they have.',btn:'Get my resident snapshot →'},
     qs:[
       {q:'Are you enrolled in an income-driven repayment plan (PAYE/SAVE/IBR) for your student loans?',hint:'This matters for PSLF eligibility — and the plan type matters.',opts:['Yes — PAYE, SAVE, or IBR','No — I\'m on the standard plan','I refinanced privately','Not sure what plan I\'m on'],score:[1,0,0,0]},
       {q:'Has anyone pitched you a whole life or universal life policy since starting training?',hint:'Be honest — there\'s no wrong answer here.',opts:['Yes — and implemented a policy','Yes — reviewed but did not implement','Not yet','Not sure what kind of policy I have'],score:[0,1,1,0]},
@@ -1545,7 +1633,7 @@ var STAGES = [
       {title:'An advisor says he specializes in doctors — should I trust him?',body:'Most don\'t. Ask any advisor how they\'re compensated and whether their fee changes based on what you buy. The answer tells you everything.',tag:'Advisor Risk'}
     ],
     kit:{tag:'Complimentary Checklist',title:'The New Attending\'s First-Year Financial Checklist',desc:'',items:[]},
-    cta:{title:'See how your first-year financial decisions are stacking up.',sub:'10 quick questions. We\'ll tell you the gaps most new attendings miss.',btn:'Get my early-career snapshot →'},
+    cta:{title:'Know which financial moves deserve your attention first.',sub:'10 quick questions. We\'ll tell you the gaps most new attendings miss.',btn:'Get my early-career snapshot →'},
     qs:[
       {q:'Since your income jumped, do you know where every dollar is going each month?',hint:'Lifestyle creep happens in the first 12 months if it\'s going to happen.',opts:['Yes — tracked','Mostly','Not really','No — and it scares me'],score:[1,1,0,0]},
       {q:'Have you evaluated tax-advantaged strategies appropriate to your situation?',hint:'401(k), backdoor Roth, HSA, 457(b) if your employer offers one.',opts:['Yes — have evaluated and implemented where appropriate','Most of them','Some, not all','Not sure what\'s available'],score:[1,1,0,0]},
@@ -1569,7 +1657,7 @@ var STAGES = [
       {title:'My estate is a mess — I\'m not sure my beneficiaries are even right',body:'Most physicians who\'ve built meaningful wealth have never had a true estate review. This is expensive when it matters.',tag:'Estate Planning'}
     ],
     kit:{tag:'Complimentary Audit',title:'The Mid-Career Physician\'s Money Audit',desc:'',items:[]},
-    cta:{title:'Find out if your decade of income built what it should have.',sub:'10 quick questions. We\'ll show you what established physicians most commonly miss.',btn:'Get my mid-career snapshot →'},
+    cta:{title:'See whether your wealth is keeping pace with the career you\'ve built.',sub:'10 quick questions. We\'ll show you what established physicians most commonly miss.',btn:'Get my mid-career snapshot →'},
     qs:[
       {q:'How organized is your financial life across accounts and institutions?',hint:'Many established physicians have accounts scattered across multiple firms.',opts:['Fully organized','Mostly organized','Somewhat scattered','Very scattered'],score:[1,1,0,0]},
       {q:'Which statement feels most true right now?',hint:'Honest answers here lead to the most useful results.',opts:['I know what I own and why I own it','I know most of it','I have pieces in place but no big picture','I don\'t have a clear picture'],score:[1,1,0,0]},
@@ -1593,7 +1681,7 @@ var STAGES = [
       {title:'I\'m thinking about selling my practice and don\'t know where to start',body:'Practice exits are complex — valuations, earnouts, tax implications. Most advisors aren\'t equipped for this.',tag:'Practice Exit'}
     ],
     kit:{tag:'Complimentary Playbook',title:'The Physician\'s Retirement Readiness Playbook',desc:'',items:[]},
-    cta:{title:'See exactly where you stand on retirement readiness.',sub:'10 quick questions. We\'ll show you the gap between where you are and where you need to be.',btn:'Get my retirement snapshot →'},
+    cta:{title:'See what stands between you and becoming work-optional.',sub:'10 quick questions. We\'ll show you the gap between where you are and where you need to be.',btn:'Get my retirement snapshot →'},
     qs:[
       {q:'How clear are you on when you could realistically retire if you wanted to?',hint:'Retirement readiness is a calculation, not a feeling.',opts:['Very clear','Somewhat clear','Not very clear','No real clarity yet'],score:[1,1,0,0]},
       {q:'Have you evaluated tax-advantaged strategies appropriate to your situation?',hint:'The pre-retirement decade is the highest-leverage Roth window.',opts:['Yes — written, with a CPA or advisor','Discussed it but nothing formal','Haven\'t started seriously','Didn\'t know this was something to plan'],score:[1,0,0,0]},
@@ -1727,7 +1815,17 @@ function render(idx, animate) {
     buildProbs(s);
   }
   ctaTitleEl.textContent = s.cta.title;
-  ctaSubEl.textContent = s.cta.sub;
+  var ctaLead = '10 quick questions.';
+  if (s.cta.sub.indexOf(ctaLead) === 0) {
+    ctaSubEl.replaceChildren();
+    var ctaLeadEl = document.createElement('span');
+    ctaLeadEl.className = 'cta-sub-emphasis';
+    ctaLeadEl.textContent = ctaLead;
+    ctaSubEl.appendChild(ctaLeadEl);
+    ctaSubEl.appendChild(document.createTextNode(s.cta.sub.slice(ctaLead.length)));
+  } else {
+    ctaSubEl.textContent = s.cta.sub;
+  }
   if (!assessOpen) setCtaButtonLabel(s.cta.btn, animate);
   if (assessOpen) resetAssess();
 }
@@ -1800,20 +1898,29 @@ document.addEventListener('touchend', function(e){
   setStage(stage, false);
 });
 
+function openAssess() {
+  assessOpen = true;
+  assessEl.classList.add('open');
+  setCtaButtonLabel('↑ Close', false);
+  ctaBtnEl.classList.add('is-open');
+  resetAssess();
+  setTimeout(function(){
+    var assessmentBody = document.querySelector('.assess-body');
+    if (!assessmentBody) return;
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    assessmentBody.scrollIntoView({behavior:reducedMotion ? 'auto' : 'smooth', block:'start'});
+  }, 180);
+}
+
 function toggleAssess() {
-  assessOpen = !assessOpen;
-  assessEl.classList.toggle('open', assessOpen);
-  if(assessOpen) {
-    setCtaButtonLabel('↑ Close', false);
-    ctaBtnEl.classList.add('is-open');
-    resetAssess();
-    setTimeout(function(){
-      document.querySelector('.assess-body').scrollIntoView({behavior:'smooth', block:'start'});
-    }, 520);
-  } else {
-    setCtaButtonLabel(STAGES[stage].cta.btn, true);
-    ctaBtnEl.classList.remove('is-open');
+  if (!assessOpen) {
+    openAssess();
+    return;
   }
+  assessOpen = false;
+  assessEl.classList.remove('open');
+  setCtaButtonLabel(STAGES[stage].cta.btn, true);
+  ctaBtnEl.classList.remove('is-open');
 }
 
 function resetAssess() {
@@ -1990,7 +2097,7 @@ function emailSubmit(btn) {
         setTimeout(function(){ window.location.assign(vslUrl); }, 900);
       }
     } else {
-      box.innerHTML = origHtml + '<div style="text-align:center;color:#c0392b;font-size:12px;margin-top:8px">Couldn\'t send — please try again or email info@longviewplan.com.</div>';
+      box.innerHTML = origHtml + '<div style="text-align:center;color:#c0392b;font-size:12px;margin-top:8px">Couldn\'t send — please try again or email longviewplan@financialguide.com.</div>';
     }
   }).catch(function(){
     box.innerHTML = origHtml + '<div style="text-align:center;color:#c0392b;font-size:12px;margin-top:8px">Network error. Please try again.</div>';
@@ -2046,9 +2153,14 @@ setStage(stage, false);
       var control = slot.querySelector('[data-video-control]');
       video.addEventListener('loadedmetadata', function(){
         slot.classList.add('has-video');
+        if(slot.classList.contains('lv-story-frame')){
+          video.muted = true;
+          video.loop = true;
+          video.play().catch(function(){});
+        }
         if(control){
           control.disabled = false;
-          control.setAttribute('aria-label', 'Play video');
+          control.setAttribute('aria-label', slot.classList.contains('lv-story-frame') ? 'Unmute video' : 'Play video');
         }
         var status = slot.querySelector('.lv-reel-meta span:last-child');
         if(status) status.textContent = 'Watch';
@@ -2056,12 +2168,40 @@ setStage(stage, false);
 
       if(control){
         control.addEventListener('click', function(){
+          if(slot.classList.contains('lv-story-frame')){
+            video.muted = !video.muted;
+            var controlText = control.querySelector('.lv-story-control-text');
+            if(controlText) controlText.textContent = video.muted ? 'Unmute' : 'Mute';
+            control.setAttribute('aria-label', video.muted ? 'Unmute video' : 'Mute video');
+            return;
+          }
           video.controls = true;
           slot.classList.add('is-playing');
           video.play().catch(function(){ slot.classList.remove('is-playing'); });
         });
       }
       video.addEventListener('ended', function(){ slot.classList.remove('is-playing'); });
+
+      if(slot.classList.contains('lv-story-frame') && 'IntersectionObserver' in window){
+        var storyParent = slot.parentElement;
+        var storySection = slot.closest('.lv-story-sec');
+        var hasEntered = false;
+        var storyObserver = new IntersectionObserver(function(entries){
+          entries.forEach(function(entry){
+            if(entry.isIntersecting){
+              hasEntered = true;
+              slot.classList.remove('is-docked');
+              if(storyParent) storyParent.style.minHeight = '';
+              if(storySection) storySection.classList.remove('has-docked-video');
+            } else if(hasEntered && entry.boundingClientRect.top < 0 && !video.paused){
+              if(storyParent) storyParent.style.minHeight = Math.round(slot.getBoundingClientRect().height) + 'px';
+              slot.classList.add('is-docked');
+              if(storySection) storySection.classList.add('has-docked-video');
+            }
+          });
+        }, {threshold:.12});
+        storyObserver.observe(slot);
+      }
     }).catch(function(){ /* Poster fallback remains fully functional. */ });
   });
 })();
@@ -2075,17 +2215,26 @@ setStage(stage, false);
   var wheel = document.getElementById('lvProcessWheel');
   var steps = Array.prototype.slice.call(document.querySelectorAll('.lv-process-step'));
   var dialNodes = Array.prototype.slice.call(document.querySelectorAll('.lv-dial-node'));
+  var dialBrandmark = wheel && wheel.querySelector('.lv-dial-brandmark');
   var dialStep = document.getElementById('lvDialStep');
   if(!section || !layout || !visual || !wheel || !steps.length) return;
 
   var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var motionMode = document.documentElement.classList.contains('motion-mode');
   var ticking = false;
+  var activeIndex = -1;
 
   function activate(index){
+    var changed = index !== activeIndex;
     steps.forEach(function(item, i){ item.classList.toggle('is-active', i === index); });
     dialNodes.forEach(function(item, i){ item.classList.toggle('is-active', i === index); });
     if(dialStep) dialStep.textContent = String(index + 1).padStart(2, '0');
+    if(changed && dialBrandmark && !reducedMotion){
+      dialBrandmark.classList.remove('is-step-pulse');
+      void dialBrandmark.offsetWidth;
+      dialBrandmark.classList.add('is-step-pulse');
+    }
+    activeIndex = index;
   }
 
   function updateProcessMotion(){
@@ -2138,6 +2287,6 @@ setStage(stage, false);
   updateProcessMotion();
 })();
 </script>
-<script src="assets/longview-motion.js"></script>
+<script src="assets/longview-motion.js?v=20260902-assessment-steps"></script>
 </body>
 </html>

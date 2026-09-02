@@ -70,7 +70,7 @@
     assessmentSection.classList.add('is-awaiting-stage');
     var assessmentGuide=document.createElement('div');
     assessmentGuide.className='lv-assessment-guide';
-    assessmentGuide.innerHTML='<span><b class="lv-assessment-guide-copy">What stage are you in?</b></span><small>Click a stage to open the assessment built for you.</small>';
+    assessmentGuide.innerHTML='<ol class="lv-assessment-steps"><li><b>Step 1.</b><span class="lv-assessment-guide-copy">Select your current phase</span></li><li><b>Step 2.</b><span>Answer questions</span></li><li><b>Step 3.</b><span>Get the clarity you need</span></li></ol>';
     var assessmentGuideCopy=assessmentGuide.querySelector('.lv-assessment-guide-copy');
     var assessmentSwitcher=document.createElement('div');
     assessmentSwitcher.className='lv-assessment-switcher';
@@ -79,12 +79,12 @@
     function clearAssessmentPreview(){
       Array.prototype.forEach.call(assessmentSwitcher.children,function(option){option.classList.remove('is-preview')});
       assessmentSection.classList.remove('is-hovering-stage');
-      assessmentGuideCopy.textContent='What stage are you in?';
+      assessmentGuideCopy.textContent='Select your current phase';
     }
     function previewAssessmentOption(button){
       Array.prototype.forEach.call(assessmentSwitcher.children,function(option){option.classList.toggle('is-preview',option===button)});
       assessmentSection.classList.add('is-hovering-stage');
-      assessmentGuideCopy.textContent='Click to choose this stage.';
+      assessmentGuideCopy.textContent='Click to choose this phase.';
     }
     window.STAGES.forEach(function(stageItem,index){
       var button=document.createElement('button');
@@ -120,6 +120,7 @@
       originalSetStage(index,animate);
       assessmentSection.classList.remove('is-awaiting-stage');
       syncAssessmentStage(index);
+      if(window.openAssess)window.openAssess();
     };
     syncAssessmentStage(-1);
   }
