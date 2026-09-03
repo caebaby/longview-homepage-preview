@@ -200,6 +200,10 @@
 }
 .motion-mode .slider-sec.is-awaiting-stage .section{opacity:.34;filter:saturate(.25);transform:translateY(7px);pointer-events:none}
 .motion-mode .slider-sec .s-kc{padding:0}
+.motion-mode .slider-sec .quiz-trust{
+  margin:0;padding:22px 28px 18px;color:var(--motion-night);background:var(--motion-white);
+  font-size:clamp(20px,2.2vw,28px);text-align:left;
+}
 .motion-mode .slider-sec .cta-card{
   min-height:clamp(220px,24vw,300px);padding:clamp(38px,5vw,68px);border-radius:7px;
   background:var(--motion-night);border:1px solid oklch(0.72 0.125 225 / .28);

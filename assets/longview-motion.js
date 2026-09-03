@@ -57,6 +57,16 @@
   makeDisclosureGroup('.svc-card',-1);
 
   var hero=document.querySelector('.lv-hero');
+  var heroStills=hero?Array.prototype.slice.call(hero.querySelectorAll('.lv-hero-poster-still')):[];
+  if(heroStills.length>1&&!reducedMotion){
+    var heroStillIndex=0;
+    window.setInterval(function(){
+      if(hero.classList.contains('has-video'))return;
+      heroStills[heroStillIndex].classList.remove('is-active');
+      heroStillIndex=(heroStillIndex+1)%heroStills.length;
+      heroStills[heroStillIndex].classList.add('is-active');
+    },4200);
+  }
   var story=document.querySelector('.lv-story-sec');
   var trust=document.querySelector('.trust-bar');
   if(story&&trust&&story.previousElementSibling!==trust)story.parentNode.insertBefore(trust,story);
