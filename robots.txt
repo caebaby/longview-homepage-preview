@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+
+# Review deployment only. Replace this file with the approved production
+# crawler policy after compliance sign-off and the final domain are ready.

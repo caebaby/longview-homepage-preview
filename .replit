@@ -1,0 +1,27 @@
+run = "python3 -m http.server 3000 --bind 0.0.0.0"
+entrypoint = "index.html"
+
+[deployment]
+deploymentTarget = "static"
+publicDir = "."
+
+[[deployment.responseHeaders]]
+path = "/*"
+name = "X-Content-Type-Options"
+value = "nosniff"
+
+[[deployment.responseHeaders]]
+path = "/*"
+name = "Referrer-Policy"
+value = "strict-origin-when-cross-origin"
+
+# Keep the public review URL out of search results until the compliance,
+# testimonial, scheduling, form, and final-domain items are approved.
+[[deployment.responseHeaders]]
+path = "/*"
+name = "X-Robots-Tag"
+value = "noindex, nofollow"
+
+[[ports]]
+localPort = 3000
+externalPort = 80

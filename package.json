@@ -1,0 +1,13 @@
+{
+  "name": "longview-planning-partners-replit-handoff",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static LongView Planning Partners website prepared for Replit hosting",
+  "scripts": {
+    "start": "python3 -m http.server 3000 --bind 0.0.0.0",
+    "check": "node scripts/check-site.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
